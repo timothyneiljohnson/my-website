@@ -1,0 +1,117 @@
+import { ForwardedRef, HTMLAttributes, ReactNode } from 'react';
+
+declare type GrowShrink = number | string | boolean;
+declare type Size = number | 'auto';
+
+export interface RowColBaseProps extends HTMLAttributes<HTMLDivElement> {
+  children?: ReactNode | ReactNode[];
+  ref?: ForwardedRef<HTMLDivElement>;
+  style?: any;
+
+  around?: boolean;
+  between?: boolean;
+  bottom?: boolean;
+  center?: boolean;
+  end?: boolean;
+  endProp?: boolean;
+  first?: boolean;
+  flex?: boolean;
+  grow?: GrowShrink;
+  last?: boolean;
+  middle?: boolean;
+  reverse?: boolean;
+  shrink?: GrowShrink;
+  start?: boolean;
+  top?: boolean;
+  xsAround?: boolean;
+  xsBetween?: boolean;
+  xsBottom?: boolean;
+  xsCenter?: boolean;
+  xsEnd?: boolean;
+  xsFirst?: boolean;
+  xsGrow?: GrowShrink;
+  xsHiddenDown?: boolean;
+  xsHiddenUp?: boolean;
+  xsLast?: boolean;
+  xsMiddle?: boolean;
+  xsReverse?: boolean;
+  xsShrink?: GrowShrink;
+  xsStart?: boolean;
+  xsTop?: boolean;
+  smAround?: boolean;
+  smBetween?: boolean;
+  smBottom?: boolean;
+  smCenter?: boolean;
+  smEnd?: boolean;
+  smFirst?: boolean;
+  smGrow?: GrowShrink;
+  smHiddenDown?: boolean;
+  smHiddenUp?: boolean;
+  smLast?: boolean;
+  smMiddle?: boolean;
+  smReverse?: boolean;
+  smShrink?: GrowShrink;
+  smStart?: boolean;
+  smTop?: boolean;
+  mdAround?: boolean;
+  mdBetween?: boolean;
+  mdBottom?: boolean;
+  mdCenter?: boolean;
+  mdEnd?: boolean;
+  mdFirst?: boolean;
+  mdGrow?: GrowShrink;
+  mdHiddenDown?: boolean;
+  mdHiddenUp?: boolean;
+  mdLast?: boolean;
+  mdMiddle?: boolean;
+  mdReverse?: boolean;
+  mdShrink?: GrowShrink;
+  mdStart?: boolean;
+  mdTop?: boolean;
+  lgAround?: boolean;
+  lgBetween?: boolean;
+  lgBottom?: boolean;
+  lgCenter?: boolean;
+  lgEnd?: boolean;
+  lgFirst?: boolean;
+  lgGrow?: GrowShrink;
+  lgHiddenDown?: boolean;
+  lgHiddenUp?: boolean;
+  lgLast?: boolean;
+  lgMiddle?: boolean;
+  lgReverse?: boolean;
+  lgShrink?: GrowShrink;
+  lgStart?: boolean;
+  lgTop?: boolean;
+  xlAround?: boolean;
+  xlBetween?: boolean;
+  xlBottom?: boolean;
+  xlCenter?: boolean;
+  xlEnd?: boolean;
+  xlFirst?: boolean;
+  xlGrow?: GrowShrink;
+  xlHiddenDown?: boolean;
+  xlHiddenUp?: boolean;
+  xlLast?: boolean;
+  xlMiddle?: boolean;
+  xlReverse?: boolean;
+  xlShrink?: GrowShrink;
+  xlStart?: boolean;
+  xlTop?: boolean;
+}
+
+export interface ColProps extends RowColBaseProps {
+  xs?: Size;
+  sm?: Size;
+  md?: Size;
+  lg?: Size;
+  xl?: Size;
+
+  offset?: number;
+
+  xsOffset?: number;
+  smOffset?: number;
+  mdOffset?: number;
+  lgOffset?: number;
+  xlOffset?: number;
+}
