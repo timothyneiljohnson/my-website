@@ -1,0 +1,66 @@
+{
+  "name": "my-website",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3001",
+    "build": "next build",
+    "lint": "lint",
+    "start": "next start",
+    "storybook": "start-storybook -s public -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "workspaces": {
+    "packages": [
+      "eslint-plugin"
+    ]
+  },
+  "dependencies": {
+    "@use-gesture/react": "^10.2.11",
+    "axios": "^0.21.1",
+    "babel-plugin-prismjs": "^2.1.0",
+    "babel-plugin-styled-components": "^2.0.7",
+    "babel-preset-next": "^1.4.0",
+    "html-react-parser": "^1.2.4",
+    "next": "latest",
+    "next-compose-plugins": "^2.2.1",
+    "next-images": "^1.8.4",
+    "normalize.css": "^8.0.1",
+    "prism-react-renderer": "^1.3.1",
+    "prismjs": "^1.27.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "styled-components": "^5.2.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.8",
+    "@next/eslint-plugin-next": "12.1.0",
+    "@storybook/addon-actions": "^6.4.22",
+    "@storybook/addon-essentials": "^6.4.22",
+    "@storybook/addon-interactions": "^6.4.22",
+    "@storybook/addon-links": "^6.4.22",
+    "@storybook/addon-postcss": "^2.0.0",
+    "@storybook/react": "^6.4.22",
+    "@storybook/testing-library": "^0.0.9",
+    "@types/styled-components": "^5.1.24",
+    "@typescript-eslint/eslint-plugin": "^5.22.0",
+    "@typescript-eslint/parser": "^5.22.0",
+    "autoprefixer": "^10.4.4",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.4",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.1.5",
+    "eslint-plugin-jest-dom": "^4.0.1",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-storybook": "^0.5.8",
+    "jest": "^28.1.0",
+    "postcss": "^8.1.10",
+    "postcss-import": "^14.1.0",
+    "tailwindcss": "^2.0.2",
+    "typescript": "^4.6.3"
+  }
+}
