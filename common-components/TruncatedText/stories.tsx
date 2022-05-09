@@ -24,7 +24,7 @@ export const CharacterLimit = () => (
 
 export const LineLimit = () => (
   <div style={{ width: '400px' }}>
-    <TruncatedText lines={3} expandable>
+    <TruncatedText expandable lines={3}>
       {SAMPLE_TEXT}
     </TruncatedText>
   </div>
@@ -32,7 +32,12 @@ export const LineLimit = () => (
 
 export const CustomOpenCloseText = () => (
   <div style={{ width: '300px' }}>
-    <TruncatedText lines={5} expandable openText="Say more, please" closeText="That's a little much, I take it back">
+    <TruncatedText
+      closeText="That's a little much, I take it back"
+      expandable
+      lines={5}
+      openText="Say more, please"
+    >
       {SAMPLE_TEXT}
     </TruncatedText>
   </div>

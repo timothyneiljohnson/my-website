@@ -9,10 +9,10 @@ export default {
 export const Default = ({ height, width, noFadeIn, round, src }) => (
   <Image
     height={height}
-    width={width}
     noFadeIn={noFadeIn}
     round={round}
     src={src}
+    width={width}
   />
 );
 Default.args = {
@@ -24,10 +24,10 @@ Default.args = {
 export const Round = ({ height, width, noFadeIn, round, src }) => (
   <Image
     height={height}
-    width={width}
     noFadeIn={noFadeIn}
     round={round}
     src={src}
+    width={width}
   />
 );
 Round.args = {

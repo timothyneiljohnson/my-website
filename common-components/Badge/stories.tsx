@@ -51,7 +51,7 @@ export const Default = ({ inline, color, textColor }) => (
     </div>
     <PlainGrid columns={5} min="180px" rowGap="20px">
       {['xs', 'sm', 'md', 'lg', 'xl'].map((size: StandardSizes, i) => (
-        <div style={{ maxWidth: '180px' }}>
+        <div key={i} style={{ maxWidth: '180px' }}>
           {[...Array(3)].map((_, index) => (
             <span
               key={i}

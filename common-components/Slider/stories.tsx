@@ -15,11 +15,11 @@ export const Default = ({
   trackColor,
 }) =>
   ['xs', 'sm', 'md', 'lg', 'xl'].map((value: StandardSizes, i) => (
-    <div style={{ marginBottom: '20px', width: '400px' }} key={i}>
+    <div key={i} style={{ marginBottom: '20px', width: '400px' }}>
       <Slider
         hoverProgressColor={hoverProgressColor}
-        progressColor={progressColor}
         markerColor={markerColor}
+        progressColor={progressColor}
         size={size ?? value}
         trackColor={trackColor}
       />

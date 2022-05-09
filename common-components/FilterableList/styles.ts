@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const FilterList = styled.ul`
-  padding: 3px 0 0 35px;
+  padding: 3px 0 0 5px;
   font-size: 12px;
   height: 60px;
   position: relative;

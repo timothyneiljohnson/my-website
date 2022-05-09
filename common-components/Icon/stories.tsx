@@ -22,7 +22,16 @@ const iconArgTypes = {
   },
 };
 
-export const Default = ({ fill, height, hoverFill, name, rotate, size, src, width }) => (
+export const Default = ({
+  fill,
+  height,
+  hoverFill,
+  name,
+  rotate,
+  size,
+  src,
+  width,
+}) => (
   <Icon
     fill={fill}
     height={height}
@@ -53,13 +62,13 @@ export const CustomSource = ({
 }) => (
   <Icon
     fill={fill}
-    name={name}
-    size={size}
-    src={src}
     height={height}
     hoverFill={hoverFill}
-    width={width}
+    name={name}
     rotate={rotate}
+    size={size}
+    src={src}
+    width={width}
   />
 );
 CustomSource.args = {

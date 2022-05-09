@@ -15,8 +15,8 @@ const ButtonDemoRow = ({ variant, disabled = false }: ButtonProps) => {
 
   return (
     <>
-      {sizes.map((size: ButtonProps['size']) => (
-        <tr>
+      {sizes.map((size: ButtonProps['size'], i) => (
+        <tr key={i}>
           <div style={{ margin: '8px 8px 8px 0' }}>
             <Button disabled={disabled} size={size} variant={variant}>
               {`Button ${size}`}
