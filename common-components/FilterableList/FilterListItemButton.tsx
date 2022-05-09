@@ -1,8 +1,9 @@
+import { ReactNode } from 'react';
 import { Button } from '../Button';
 
 interface FilterListItemLinkProps {
   categoryId: string;
-  children: Element | string;
+  children: ReactNode | string;
   isSelected: boolean;
   onFilterCallback: (categoryId: string) => void;
 }

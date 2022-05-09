@@ -14,9 +14,9 @@ export const AppItem = ({ appData }: AppProps) => (
     <AppOrFolderInner>
       {appData.widget}
       <Image
-        src={`/image-assets/phone-home/apps/${appData.image}`}
-        fullWidth
         draggable={false}
+        fullWidth
+        src={`/image-assets/phone-home/apps/${appData.image}`}
       />
     </AppOrFolderInner>
   </AppItemStyled>

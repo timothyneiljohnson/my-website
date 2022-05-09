@@ -13,8 +13,8 @@ interface StyledImageProps {
 
 export const StyledImage = styled.img<StyledImageProps>`
   height: ${({ height }) => `${height > 0 ? `${height}px` : 'auto'}`};
-  width: ${({ fullWidth, width }) =>
-    `${width > 0 ? `${width}px` : fullWidth ? '100%' : 'auto'}`};
+  width: ${({ width }) => `${width > 0 ? `${width}px` : 'auto'};`};
+  ${({ width, fullWidth }) => `${!width && fullWidth ? 'width: 100%;' : ''}`}
   ${({ shortestSideLength, round }) =>
     round
       ? `

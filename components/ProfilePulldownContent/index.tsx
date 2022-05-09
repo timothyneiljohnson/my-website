@@ -18,10 +18,8 @@ export const ProfilePulldownContent: FC = () => {
       <ProfileWrapper isDarkMode={isDarkMode}>
         <ProfileDescription isDarkMode={isDarkMode}>
           <Heading
+            color={isDarkMode ? colors.grayLightest : colors.grayDarker}
             level={4}
-            color={
-              isDarkMode ? colors.grayLightest : colors.grayDarker
-            }
           >
             Timothy Neil Johnson
           </Heading>
@@ -33,18 +31,19 @@ export const ProfilePulldownContent: FC = () => {
           <ContactMeWrapper>
             <ContactMeLink href="mailto:timothyneiljohnson@gmail.com">
               <Icon
-                size={42}
+                fill={isDarkMode ? colors.white : colors.grayDarkest}
                 name="mail-outline"
-                fill={
-                  isDarkMode ? colors.white : colors.grayDarkest
-                }
+                size={42}
               />
             </ContactMeLink>
-            <ContactMeLink href="linkedin.com/in/timothyneiljohnson" target="_blank">
+            <ContactMeLink
+              href="linkedin.com/in/timothyneiljohnson"
+              target="_blank"
+            >
               <Icon
-                size={33}
-                name="logo-linkedin"
                 fill={isDarkMode ? colors.white : '#306EA8'}
+                name="logo-linkedin"
+                size={33}
               />
             </ContactMeLink>
           </ContactMeWrapper>

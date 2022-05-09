@@ -41,14 +41,14 @@ const MediaQueriesProvider = ({ children }: MediaQueriesProps) => {
     const handleQueryListener = () => {
       const updatedMatches = keys.reduce((acc, media) => {
         acc[media] = !!(
-          mediaQueryLists[media] && mediaQueryLists[media].matches
+          mediaQueryLists[media]?.matches
         );
         return acc;
       }, {});
       setQueryMatch(updatedMatches);
     };
 
-    if (window && window.matchMedia) {
+    if (window?.matchMedia) {
       const matches = {};
       keys.forEach((media) => {
         if (typeof mediaQueries[media] === 'string') {

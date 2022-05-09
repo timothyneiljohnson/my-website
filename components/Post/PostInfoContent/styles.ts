@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors, decorations } from '../../design-tokens';
+import { colors, decorations } from '../../../common-components/design-tokens';
 
 export const PostInfoWrapper = styled.div`
   color: ${colors.white};

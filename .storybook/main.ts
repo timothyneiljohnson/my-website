@@ -1,4 +1,9 @@
-module.exports = {
+// .storybook/main.ts
+
+// Imports the Storybook's configuration API
+import type { StorybookConfig } from '@storybook/core-common';
+
+const config: StorybookConfig = {
   stories: [
     '../common-components/**/stories.@(ts|tsx)',
     '../components/**/stories.@(ts|tsx)',
@@ -24,3 +29,4 @@ module.exports = {
   ],
   framework: '@storybook/react',
 };
+module.exports = config;

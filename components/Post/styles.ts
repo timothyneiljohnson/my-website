@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import { colors, decorations, mediaQueries } from '../design-tokens';
-import { Heading } from '../Heading';
-import { Image } from '../Image';
+import { colors, decorations, mediaQueries } from '../../common-components/design-tokens';
+import { Heading, Image } from '../../common-components';
 
 interface PostBodyProps {
   isDarkMode?: boolean;

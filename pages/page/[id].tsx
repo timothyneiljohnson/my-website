@@ -46,7 +46,7 @@ export const getStaticProps = async ({ params }) => {
   const res = await axios.get(`${PAGES_API_URL}/${params.id}`);
   const page = await res.data;
 
-  const featuredImg = await getFeaturedImage(page.featured_media);
+  const featuredImg = page.featured_media ? await getFeaturedImage(page.featured_media) : null;
   const author = await getAuthor(page.author);
 
   return {

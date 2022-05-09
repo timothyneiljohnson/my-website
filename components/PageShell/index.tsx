@@ -30,7 +30,7 @@ export const PageShell = ({ children }) => {
     <>
       <Head>
         <title>Tim J: Software Engineer</title>
-        <link href="/favicon.ico" rel="icon" />
+        <link href="/favicon.png" rel="icon" />
       </Head>
       <GlobalStyles
         isDarkMode={isDarkMode}

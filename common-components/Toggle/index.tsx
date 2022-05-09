@@ -19,9 +19,9 @@ export const Toggle = ({
 
   return (
     <StyledToggleLabel
-      isActive={toggleValue}
-      inactiveColor={inactiveColor}
       activeColor={activeColor}
+      inactiveColor={inactiveColor}
+      isActive={toggleValue}
       size={size}
     >
       <HiddenCheckbox onChange={toggleToggle} />

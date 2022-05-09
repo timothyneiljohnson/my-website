@@ -29,17 +29,17 @@ const Post = ({ title, featuredImg, content, date }) => {
     <PageShell>
       <StyledPageContainer isDarkMode={isDarkMode}>
         <PostHeading
-            level={1}
-            size={1}
-            color={isDarkMode ? colors.grayLightest : null}
-            animateTyping
-          >
+          animateTyping
+          color={isDarkMode ? colors.grayLightest : null}
+          level={1}
+          size={1}
+        >
           {title}
         </PostHeading>
         <div>
           <FeaturedPageImage src={featuredImg} />
         </div>
-        <StyledDate>Published on {formattedDate}</StyledDate>
+        <StyledDate>{`Published on ${formattedDate}`}</StyledDate>
         <div>{parse(content)}</div>
       </StyledPageContainer>
     </PageShell>
@@ -65,7 +65,7 @@ export const getStaticProps = async ({ params }) => {
   const res = await axios.get(`${POSTS_API_URL}/${params.id}`);
   const post = await res.data;
 
-  const featuredImg = await getFeaturedImage(post.featured_media);
+  const featuredImg = post.featured_media ? await getFeaturedImage(post.featured_media) : null;
   const author = await getAuthor(post.author);
 
   return {

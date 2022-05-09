@@ -1,5 +1,5 @@
 import React from 'react';
-import { Post } from '..';
+import { Post } from '.';
 import { globalDecorators } from '../../storybook/decoratorHelpers';
 import PostFixture from './__tests__/__fixtures__';
 

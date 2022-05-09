@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useState } from 'react';
 import { getAllPostsWithImagesFromServer } from '../../lib/utils';
-import { Placeholder, Post } from '../../common-components';
+import { Placeholder } from '../../common-components';
 import { PageShell } from '../../components/PageShell';
+import { Post } from '../../components/Post';
 
 const Blog = () => {
   const [posts, setPosts] = useState([]);

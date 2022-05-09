@@ -16,7 +16,7 @@ export const getAllPostsFromServer = async (callback) => {
     callback(data);
     return data;
   } catch (error) {
-    throw new Error(error);
+    return console.error(error);
   }
 };
 
@@ -27,7 +27,7 @@ export const getAllPostsWithImagesFromServer = async (callback) => {
     callback(data);
     return data;
   } catch (error) {
-    throw new Error(error);
+    return console.error(error);
   }
 };
 
@@ -38,7 +38,7 @@ export const getFeaturedPostsFromServer = async (callback) => {
     callback(data);
     return data;
   } catch (error) {
-    throw new Error(error);
+    return console.error(error);
   }
 };
 
@@ -49,7 +49,7 @@ export const getBannerPostsFromServer = async (callback) => {
     callback(data);
     return data;
   } catch (error) {
-    throw new Error(error);
+    return console.error(error);
   }
 };
 
@@ -60,7 +60,7 @@ export const getFeaturedCategoriesFromServer = async (callback) => {
     callback(data);
     return data;
   } catch (error) {
-    throw new Error(error);
+    return console.error(error);
   }
 };
 
@@ -71,7 +71,7 @@ export const getAuthor = async (id) => {
     } = await axios.get(`${AUTHORS_API_URL}/${id}`);
     return name;
   } catch (error) {
-    throw new Error(error);
+    return console.error(error);
   }
 };
 
@@ -80,6 +80,6 @@ export const getFeaturedImage = async (id) => {
     const res = await axios.get(`${MEDIA_API_URL}/${id}`);
     return res.data.guid.rendered;
   } catch (error) {
-    throw new Error(error);
+    return console.error(error);
   }
 };

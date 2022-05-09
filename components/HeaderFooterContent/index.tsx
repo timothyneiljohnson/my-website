@@ -18,21 +18,20 @@ export const HeaderFooterContent = forwardRef<HTMLButtonElement, NavProps>(
     return (
       <Grid>
         <Row>
-          <Col md={6} xs={12} center={smMax ? true : null} flex>
+          <Col center={smMax ? true : null} flex md={6} xs={12}>
             <NextLink href="/" passHref>
               <LogoLink>
                 <Image
-                  src={isDarkMode ? '/name-logo-darkMode.svg' : '/name-logo.svg'}
                   height={30}
+                  src={
+                    isDarkMode ? '/name-logo-darkMode.svg' : '/name-logo.svg'
+                  }
                 />
               </LogoLink>
             </NextLink>
           </Col>
-          <Col md={6} xs={12} mdEnd center flex>
-            <Nav
-              handleOpenProfileDrawer={handleOpenProfileDrawer}
-              ref={ref}
-            />
+          <Col center flex md={6} mdEnd xs={12}>
+            <Nav handleOpenProfileDrawer={handleOpenProfileDrawer} ref={ref} />
           </Col>
         </Row>
       </Grid>

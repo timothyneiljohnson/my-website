@@ -32,10 +32,10 @@ export const Image = (props: ImageProps) => {
       className={className}
       fullWidth={fullWidth}
       height={heightValue}
-      width={widthValue}
+      noFadeIn={noFadeIn}
       round={round}
       shortestSideLength={shortestSideLength}
-      noFadeIn={noFadeIn}
+      width={widthValue}
       {...restProps}
     />
   );

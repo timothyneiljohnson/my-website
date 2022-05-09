@@ -79,7 +79,7 @@ export default {
       file: '/image-assets/music-player/songs/10.m4a',
     },
     {
-      title: "I Can't Win",
+      title: 'I Can\'t Win',
       artist: 'The Strokes',
       seconds: 162,
       plays: '16,699,482',

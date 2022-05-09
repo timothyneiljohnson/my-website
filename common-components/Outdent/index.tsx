@@ -16,10 +16,10 @@ export const Outdent = ({
   style,
 }: OutdentProps) => (
   <StyledOutdent
-    horizontal={Math.abs(horizontal) * -1}
-    vertical={Math.abs(vertical) * -1}
     className={className}
+    horizontal={Math.abs(horizontal) * -1}
     style={style}
+    vertical={Math.abs(vertical) * -1}
   >
     {children}
   </StyledOutdent>

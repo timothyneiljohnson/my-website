@@ -1,5 +1,5 @@
-import { colors } from '../design-tokens';
-import { Icon } from '../Icon';
+import { colors } from '../../common-components/design-tokens';
+import { Icon } from '../../common-components/Icon';
 
 interface CategoryIconProps {
   categories: number[];

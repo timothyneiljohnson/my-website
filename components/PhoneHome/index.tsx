@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useDrag } from '@use-gesture/react';
-import { Row } from '../../common-components/Row';
+import { Col, Grid, Row } from '../../common-components';
+import { colors } from '../../common-components/design-tokens';
 import { AppItem } from './components/AppItem';
 import { FolderItem } from './components/FolderItem';
 import {
@@ -23,8 +24,6 @@ import {
   PhoneHomeScreenPagesRow,
 } from './styles';
 import { pagesMock, dockAppsMockMock } from './__fixtures__';
-import { Col, Grid } from '../../common-components';
-import { colors } from '../../common-components/design-tokens';
 import { PaginationIndicator } from './components/PaginationIndicator';
 import { TopUtilityBar } from './components/TopUtilityBar';
 

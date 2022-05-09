@@ -1,4 +1,5 @@
 module.exports = {
+  root: true,
   settings: {
     'import/resolver': {
       node: {
@@ -13,6 +14,7 @@ module.exports = {
   extends: [
     'airbnb',
     'eslint:recommended',
+    'plugin:@next/next/recommended',
     'plugin:import/react',
     'plugin:import/recommended',
     'plugin:import/typescript',
@@ -31,7 +33,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint'],
+  plugins: ['@typescript-eslint', 'react'],
   overrides: [
     {
       files: ['**/*stories.tsx', '**/*.test.{ts,tsx}'],
@@ -81,11 +83,12 @@ module.exports = {
     'function-paren-newline': 0,
     'implicit-arrow-linebreak': 0,
     'import/extensions': 0,
+    'import/no-cycle': 0,
     'import/prefer-default-export': 0,
     'jsx-a11y/anchor-is-valid': 0,
     'no-array-constructor': 0,
     'no-confusing-arrow': 0,
-    'no-console': 2,
+    'no-console': [2, { allow: ['warn', 'error'] }],
     'no-dupe-class-members': 0,
     'no-redeclare': 0,
     'no-shadow': 0,

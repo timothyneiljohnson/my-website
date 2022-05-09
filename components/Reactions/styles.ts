@@ -1,8 +1,6 @@
 import styled from 'styled-components';
-import { Col } from '../../common-components/Col';
+import { Col, Icon, Image } from '../../common-components';
 import { colors, decorations } from '../../common-components/design-tokens';
-import { Icon } from '../../common-components/Icon';
-import { Image } from '../../common-components/Image';
 
 interface StyledReactionsProps {
   height?: number;

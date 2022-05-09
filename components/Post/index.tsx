@@ -14,12 +14,11 @@ import {
 } from './styles';
 import { shortMonthNames } from './constants';
 import { PostInfo } from './PostInfoContent';
-import { StickyElement } from '../StickyElement';
 import { CategoryIcon } from './CategoryIcon';
-import { colors, gradients } from '../design-tokens';
-import { useMediaQueries } from '../../components/media-queries-context';
-import { Col, Grid, Link, Ribbon, Row } from '..';
-import { useStorageDarkMode } from '../../components/storage-dark-mode-context';
+import { colors, gradients } from '../../common-components/design-tokens';
+import { useMediaQueries } from '../media-queries-context';
+import { Col, Grid, Link, Ribbon, Row, StickyElement } from '../../common-components';
+import { useStorageDarkMode } from '../storage-dark-mode-context';
 
 export const Post = ({ post }) => {
   const ref = useRef(null);
@@ -40,20 +39,20 @@ export const Post = ({ post }) => {
     <PostWrapper isDarkMode={isDarkMode} ref={ref}>
       <Grid>
         <Row>
-          <Col xs={12} sm={8} md={9} flex>
+          <Col flex md={9} sm={8} xs={12}>
             <PostInnerContainer isDarkMode={isDarkMode}>
               <div
                 onMouseEnter={toggleRibbonHover}
                 onMouseLeave={toggleRibbonHover}
               >
                 <Ribbon
-                  thickness={smMax ? 45 : 62}
-                  textColor={colors.white}
-                  gradientStart={gradients.secondary.start}
-                  gradientEnd={gradients.secondary.end}
-                  right={smMax ? 24 : 36}
-                  top={isDarkMode ? 0 : 2}
                   endStyle={isRibbonHovered ? 'point' : 'split'}
+                  gradientEnd={gradients.secondary.end}
+                  gradientStart={gradients.secondary.start}
+                  right={smMax ? 24 : 36}
+                  textColor={colors.white}
+                  thickness={smMax ? 45 : 62}
+                  top={isDarkMode ? 0 : 2}
                 >
                   {xsMax && (
                     <CategoryIcon categories={post.categories} size={26} />
@@ -66,11 +65,19 @@ export const Post = ({ post }) => {
                 {sm && (
                   <TeardropCategoryWrapper isDarkMode={isDarkMode}>
                     <TeardropCategoryInner>
-                      <CategoryIcon categories={post.categories} size={smMax ? 22 : 26} />
+                      <CategoryIcon
+                        categories={post.categories}
+                        size={smMax ? 22 : 26}
+                      />
                     </TeardropCategoryInner>
                   </TeardropCategoryWrapper>
                 )}
-                <PostHeading level={2} size={1} color={colors.grayDarkest} isDarkMode={isDarkMode}>
+                <PostHeading
+                  color={colors.grayDarkest}
+                  isDarkMode={isDarkMode}
+                  level={2}
+                  size={1}
+                >
                   {post.title.rendered}
                 </PostHeading>
                 {featuredImg && (
@@ -91,13 +98,13 @@ export const Post = ({ post }) => {
               </PostBody>
             </PostInnerContainer>
           </Col>
-          <Col xs={12} sm={4} md={3} xsHiddenDown flex>
+          <Col flex md={3} sm={4} xs={12} xsHiddenDown>
             <StickyElement
+              targetBottomOffset={-38}
               targetRef={ref}
               targetTopOffset={20}
-              targetBottomOffset={-38}
             >
-              <PostInfo title={post.title.rendered} date={post.date} />
+              <PostInfo date={post.date} title={post.title.rendered} />
             </StickyElement>
           </Col>
         </Row>

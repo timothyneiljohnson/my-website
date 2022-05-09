@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { StickyElement } from '..';
 import { colors } from '../design-tokens';
-import { PostInfo } from '../Post/PostInfoContent';
+import { PostInfo } from '../../components/Post/PostInfoContent';
 
 export default {
   title: 'Common/StickyElement',
