@@ -44,6 +44,9 @@ export const applyStyleToScreenSizesAndDefault = (
 };
 
 export const RowColBase = styled.div<RowColBaseProps>`
+  /* Flex */
+  ${({ flex }) => flex && 'display: flex;'}
+
   ${(props) => css`
     /* Around */
     ${applyStyleToScreenSizesAndDefault(

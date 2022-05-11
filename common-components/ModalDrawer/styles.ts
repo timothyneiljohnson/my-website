@@ -13,7 +13,7 @@ export const FloatingCloseButtonWrapper = styled.div<FloatingCloseButtonWrapperP
   position: absolute;
   align-items: center;
   justify-content: center;
-  z-index: 999;
+  z-index: 100;
   ${({ direction, offset }) =>
     `${getOppositedirection(direction)}: ${-offset}px;`}
 `;
@@ -67,8 +67,7 @@ export const ModalDrawerInner = styled.div<ModalDrawerInnerProps>`
 `;
 
 export const ModalHeading = styled(Heading)`
-  padding: 12px 0;
-  width: calc(100% - 36px);
+  padding: 12px 12px 0 0;
 `;
 
 interface FullscreenOverlayProps {
@@ -101,10 +100,8 @@ interface StandardCloseButtonProps {
   isHorizontal: boolean;
 }
 export const StandardCloseButton = styled.button<StandardCloseButtonProps>`
-  margin: 16px 16px 0 0;
-  position: absolute;
-  right: 0;
-  top: 0;
+  margin-top: 14px;
+  margin-right: -6px;
   z-index: 100;
 
   &:focus,

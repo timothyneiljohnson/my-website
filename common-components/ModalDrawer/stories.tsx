@@ -33,7 +33,7 @@ export const Default = ({ closeType, customClose, direction, title }) => {
         direction={direction}
         isOpen={isOpen}
         onCloseCallback={onCloseCallback}
-        title="Lorem ipsum dolor sit amet"
+        title={title}
       >
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
         ut aliquip ex ea commodo consequat. Duis aute irure dolor in
@@ -45,6 +45,10 @@ export const Default = ({ closeType, customClose, direction, title }) => {
   );
 };
 Default.decorators = globalDecorators;
+Default.args = {
+  title: 'Lorem ipsum dolor sit amet',
+  size: 330,
+};
 
 export const CustomClose = ({
   background,

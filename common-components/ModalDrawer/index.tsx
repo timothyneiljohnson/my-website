@@ -1,5 +1,8 @@
 import { ReactElement, useCallback, useEffect, useRef, useState } from 'react';
+import { Col } from '../Col';
 import { colors } from '../design-tokens';
+import { Grid } from '../Grid';
+import { Row } from '../Row';
 import { SideNames } from '../types';
 import {
   CloseIcon,
@@ -100,24 +103,35 @@ export const ModalDrawer = ({
         size={size}
       >
         <ModalDrawerInner>
-          {title && <ModalHeading level={2}>{title}</ModalHeading>}
+          <Grid>
+            <Row end noWrap>
+              {title && (
+                <Col shrink>
+                  <ModalHeading level={2}>{title}</ModalHeading>
+                </Col>
+              )}
+              {closeType === 'corner' && (
+                <Col end flex grow top>
+                  <StandardCloseButton
+                    direction={direction}
+                    isHorizontal={isHorizontal}
+                    onClick={onClose}
+                  >
+                    {customClose ?? (
+                      <CloseIcon
+                        fill={colors.grayLight}
+                        name="close-outline"
+                        size={36}
+                      />
+                    )}
+                  </StandardCloseButton>
+                </Col>
+              )}
+            </Row>
+          </Grid>
           {children}
         </ModalDrawerInner>
-        {closeType === 'corner' && (
-          <StandardCloseButton
-            direction={direction}
-            isHorizontal={isHorizontal}
-            onClick={onClose}
-          >
-            {customClose ?? (
-              <CloseIcon
-                fill={colors.grayLight}
-                name="close-outline"
-                size={36}
-              />
-            )}
-          </StandardCloseButton>
-        )}
+
         {closeType === 'floating' && (
           <FloatingCloseButtonWrapper
             direction={direction}
