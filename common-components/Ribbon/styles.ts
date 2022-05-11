@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { animation, decorations, helpers } from '../design-tokens';
+import { animation, decorations } from '../design-tokens';
+import { getOppositedirection } from '../helpers';
 import { getRibbonClipPath } from './helpers';
 
 interface RibbonWrapperProps {
@@ -24,12 +25,12 @@ export const RibbonWrapper = styled.div<RibbonWrapperProps>`
   &:before {
     height: 0;
     width: 0;
-    ${({ side, facing }) => side === 'top' ? facing : helpers.getOppositeDirection(facing)}:
+    ${({ side, facing }) => side === 'top' ? facing : getOppositedirection(facing)}:
     ${({ side, thickness }) => (side === 'top' ? thickness : -10)}px;
     ${({ side }) => side}: 0;
     filter: brightness(70%);
-    ${({ facing }) => `border-${helpers.getOppositeDirection(facing)}: 10px solid transparent;`}
-    ${({ side, color }) => `border-${helpers.getOppositeDirection(side)}: 4px solid ${color};`}
+    ${({ facing }) => `border-${getOppositedirection(facing)}: 10px solid transparent;`}
+    ${({ side, color }) => `border-${getOppositedirection(side)}: 4px solid ${color};`}
     position: absolute;
     content: '';
   }
@@ -61,6 +62,6 @@ export const StyledRibbonPolygon = styled.div<StyledRibbonPolygonProps>`
     !gradientStart
       ? color
       : `linear-gradient(${gradientStart}, ${gradientEnd})`};
-  transition: clip-path ${animation.durationSlow}ms ease-in-out;
+  transition: clip-path ${animation.durations.slow}ms ease-in-out;
   ${({ endStyle, side, lift }) => getRibbonClipPath({ endStyle, side, lift })}
 `;

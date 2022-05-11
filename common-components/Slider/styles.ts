@@ -18,7 +18,7 @@ export const SliderActive = styled.div<SliderActiveProps>`
   background: ${({ hoverProgressColor, isDragging, progressColor }) =>
     isDragging && hoverProgressColor ? hoverProgressColor : progressColor};
   height: 100%;
-  transition: background ${animation.durationFastest}ms ease-in-out;
+  transition: background ${animation.durations.fastest}ms ease-in-out;
 `;
 
 interface StyledSliderWrapperProps {
@@ -46,8 +46,8 @@ interface StyledSliderTrackProps {
   percentage?: number;
 }
 export const StyledSliderTrack = styled.div<StyledSliderTrackProps>`
-  transition: background-color ${animation.durationFaster}ms ease-out,
-    box-shadow ${animation.durationFaster}ms ease-out;
+  transition: background-color ${animation.durations.faster}ms ease-out,
+    box-shadow ${animation.durations.faster}ms ease-out;
   transform: translateX();
   background: ${({ trackColor }) => trackColor};
   border-radius: 999px;

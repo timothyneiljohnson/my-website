@@ -15,15 +15,6 @@ export const StyledPlaceholder = styled.div<StyledPlaceholderProps>`
   background: ${({ isDarkMode }) => isDarkMode ? `linear-gradient(-45deg, ${colors.grayDark} 0%, ${colors.grayLight} 33%, ${colors.grayDark} 66%, ${colors.grayLight} 100%)` : `linear-gradient(-45deg, ${colors.grayLightest} 0%, ${colors.grayLighter} 33%, ${colors.grayLightest} 66%, ${colors.grayLighter} 100%)`};
   background-size: 400%;
   position: relative;
-  animation: color ${animation.durationSlowest}ms linear infinite;
+  animation: ${animation.keyframes.backgroundPosition} ${animation.durations.slowest}ms linear infinite;
   ${decorations.borderRadiusStyle}
-
-  @keyframes color {
-    0% {
-      background-position: 100% 0%
-    }
-    100% {
-        background-position: 0% 100%
-    }
-  }
 `;

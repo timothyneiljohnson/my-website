@@ -67,7 +67,7 @@ export const FilterableList = ({
           setIsAnimating(false);
           setForeshadowMap({});
         },
-        noAnimation ? 0 : animation.durationSlow * 1.3
+        noAnimation ? 0 : animation.durations.slow * 1.3
       );
     },
     [filterId, noAnimation]

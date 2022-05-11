@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { animation } from '../design-tokens';
 import { StandardSizes } from '../types';
 
 export const sizeMap = {
@@ -39,34 +40,18 @@ export const LoadingDot = styled.div<LoadingDotProps>`
   border-radius: 50%;
   background-color: ${({ color }) => color};
   color: ${({ color }) => color};
-  animation: dotRising 1.2s infinite linear;
+  animation: ${({ size }) => animation.keyframes.riseInRiseOut(sizeMap[size] * 1.4)} 1.2s infinite linear;
   animation-delay: 0.15s;
 
   &:first-child {
     left: ${({ size }) => sizeMap[size] * -1.5}px;
-    animation: dotRising 1.2s infinite linear;
+    animation: ${({ size }) => animation.keyframes.riseInRiseOut(sizeMap[size] * 1.4)} 1.2s infinite linear;
     animation-delay: 0s;
   }
 
   &:nth-child(3) {
     left: ${({ size }) => sizeMap[size] * 1.5}px;
-    animation: dotRising 1.2s infinite linear;
+    animation: ${({ size }) => animation.keyframes.riseInRiseOut(sizeMap[size] * 1.4)} 1.2s infinite linear;
     animation-delay: 0.3s;
-  }
-
-  @keyframes dotRising {
-    0% {
-      transform: translateY(${({ size }) => `${sizeMap[size] * 1.4}px`});
-      opacity: 0;
-    }
-    33%,
-    66% {
-      transform: translateY(0px);
-      opacity: 1;
-    }
-    100% {
-      transform: translateY(${({ size }) => `${sizeMap[size] * -1.8}px`});
-      opacity: 0;
-    }
   }
 `;

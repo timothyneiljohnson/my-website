@@ -1,6 +1,10 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Col, Icon, Image } from '../../common-components';
-import { colors, decorations } from '../../common-components/design-tokens';
+import {
+  animation,
+  colors,
+  decorations,
+} from '../../common-components/design-tokens';
 
 interface StyledReactionsProps {
   height?: number;
@@ -48,20 +52,7 @@ export const StyledReactionsSelectorInner = styled.div`
   justify-content: center;
   height: 100%;
 
-  animation: risein 400ms ease;
-
-  @keyframes risein {
-    0% {
-      transform: translateY(100px);
-      opacity: 0;
-      pointer-events: none;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-      pointer-events: auto;
-    }
-  }
+  animation: ${animation.keyframes.riseAndFadeIn(100)} 400ms ease;
 `;
 
 interface StaticReactionImageProps {
@@ -70,19 +61,11 @@ interface StaticReactionImageProps {
 
 export const StaticReactionImage = styled(Image)<StaticReactionImageProps>`
   margin-right: 7px;
-  ${({ animate }) => animate && (`animation: emphasizeicon 400ms ease;`)}
-  
-  @keyframes emphasizeicon {
-    0% {
-      transform: rotate(0) scale(1);
-    }
-    80% {
-      transform: rotate(-18deg) scale(1.18);
-    }
-    100% {
-      transform: rotate(0) scale(1);
-    }
-  }
+  ${({ animate }) =>
+    animate &&
+    css`
+      animation: ${animation.keyframes.emphasisGrowAndRotate} 400ms ease;
+    `}
 `;
 
 export const AnimatedReactionImage = styled(Image)`

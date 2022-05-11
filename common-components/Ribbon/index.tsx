@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
-import { colors, helpers } from '../design-tokens';
+import { colors } from '../design-tokens';
+import { getOppositedirection } from '../helpers';
 import { RibbonWrapper, StyledRibbonPolygon } from './styles';
 
 interface RibbonProps {
@@ -38,7 +39,7 @@ export const Ribbon = ({
   const lift = thickness * 0.25 ?? 0;
   const defaultFacingValue = side === 'top' ? 'right' : 'bottom';
   const facing = reverse
-    ? helpers.getOppositeDirection(defaultFacingValue)
+    ? getOppositedirection(defaultFacingValue)
     : defaultFacingValue;
 
   return (

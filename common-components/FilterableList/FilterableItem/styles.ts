@@ -24,7 +24,7 @@ export const FilterableItemWrapper = styled.li<FilterableItemWrapperProps>`
     };
     transition: ${
       isAnimating
-        ? `transform ${animation.durationSlow}ms ease-in-out, opacity ${animation.durationFast}ms ease-in-out`
+        ? `transform ${animation.durations.slow}ms ease-in-out, opacity ${animation.durations.fast}ms ease-in-out`
         : 'none'
     };`}
 

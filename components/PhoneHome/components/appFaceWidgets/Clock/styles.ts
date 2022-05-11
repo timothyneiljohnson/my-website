@@ -1,16 +1,5 @@
 import styled from 'styled-components';
-import { colors } from '../../../../../common-components/design-tokens';
-
-const rotateKeyframes = `
-  @keyframes rotate {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-`;
+import { animation, colors } from '../../../../../common-components/design-tokens';
 
 export const SecondHand = styled.div`
   border-radius: 4px;
@@ -19,13 +8,8 @@ export const SecondHand = styled.div`
   left: calc(50%);
   top: calc(50%);
   height: 41.5%;
-  animation-duration: 60s;
   transform-origin: top center;
-  animation-name: rotate;
-  animation-iteration-count:infinite;
-  animation-timing-function:linear;
-
-  ${rotateKeyframes}
+  animation: ${animation.keyframes.rotate360} 60s infinite linear;
 `;
 
 export const MinuteHand = styled.div`
@@ -36,13 +20,8 @@ export const MinuteHand = styled.div`
   left: calc(50% - 1px);
   top: calc(50% - 1px);
   height: 41.5%;
-  animation-duration: 3600s;
   transform-origin: top center;
-  animation-name: rotate;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-
-  ${rotateKeyframes}
+  animation: ${animation.keyframes.rotate360} 3600s infinite linear;
 `;
 
 export const HourHand = styled.div`
@@ -53,13 +32,8 @@ export const HourHand = styled.div`
   left: calc(50% - 1px);
   top: calc(50% - 1px);
   height: 24.5%;
-  animation-duration: 43200s;
   transform-origin: top center;
-  animation-name: rotate;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-
-  ${rotateKeyframes}
+  animation: ${animation.keyframes.rotate360} 43200s infinite linear;
 `;
 
 export const ClockPin = styled.div`

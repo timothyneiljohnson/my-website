@@ -1,44 +1,55 @@
 import styled from 'styled-components';
-import { animation, helpers } from '../design-tokens';
+import { a11y, animation, focusStyle } from '../design-tokens';
+import { Heading, Icon } from '..';
+import { getOppositedirection } from '../helpers';
+import { SideNames } from '../types';
 
-export const CloseDrawer = styled.div`
-  margin-top: 12px;
+interface FloatingCloseButtonWrapperProps {
+  direction: SideNames;
+  offset: number;
+}
+export const FloatingCloseButtonWrapper = styled.div<FloatingCloseButtonWrapperProps>`
   text-align: center;
   position: absolute;
-  z-index: 100;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  ${({ direction, offset }) =>
+    `${getOppositedirection(direction)}: ${-offset}px;`}
 `;
 
 interface ModalDrawerContainerProps {
-  direction: 'top' | 'right' | 'bottom' | 'left';
+  background: string;
+  direction: SideNames;
   isHorizontal: boolean;
   isOverlayDisplayed: boolean;
   isOpen: boolean;
   size: number;
 }
-
 export const ModalDrawerContainer = styled.div<ModalDrawerContainerProps>`
   position: fixed;
   z-index: 100;
+  background: ${({ background }) => background};
 
   ${({ direction, isHorizontal, isOpen, size }) => `
-    transition: margin-${direction} ${animation.durationSlow}ms ease-in-out;
+    transition: margin-${direction} ${animation.durations.slow}ms ease-in-out;
     margin-${direction}: ${isOpen ? 0 : `${-size}px`};
-    ${isHorizontal ? 'width' : 'height'}: ${size}px;
+    ${isHorizontal ? 'min-width' : 'min-height'}: ${size}px;
     ${isHorizontal ? 'height' : 'width'}: 100%;
     ${direction}: 0;
     ${direction === 'bottom' ? 'bottom' : 'top'}: 0;
-    ${helpers.reduceMotionOverrideStyle}
+    ${a11y.reduceMotionOverrideStyle}
   `}
 
-  ${CloseDrawer} {
-    ${({ direction, isHorizontal, isOpen, isOverlayDisplayed, size }) => `
-      display: ${isOverlayDisplayed ? 'block' : 'none'};
-      transition: ${direction} ${animation.durationSlow}ms ease-in-out, opacity ${animation.durationFaster}ms ease-in-out;
-      ${direction}: ${isOpen ? `${size}px` : 0};
+  ${FloatingCloseButtonWrapper} {
+    ${({ direction, isHorizontal, isOpen, isOverlayDisplayed }) => `
+      display: ${isOverlayDisplayed ? 'flex' : 'none'};
+      transition: ${direction} ${
+      animation.durations.slow
+    }ms ease-in-out, opacity ${animation.durations.faster}ms ease-in-out;
       opacity: ${isOpen ? '1' : '0'};
       ${isHorizontal ? 'height' : 'width'}: 100%;
-      padding: 0 15px;
-      ${helpers.reduceMotionOverrideStyle}
+      ${a11y.reduceMotionOverrideStyle}
     `}
   }
 `;
@@ -46,19 +57,24 @@ export const ModalDrawerContainer = styled.div<ModalDrawerContainerProps>`
 interface ModalDrawerInnerProps {
   background?: string;
 }
-
 export const ModalDrawerInner = styled.div<ModalDrawerInnerProps>`
-  padding: 0 15px;
+  position: absolute;
+  padding: 0 20px;
   width: 100%;
   height: 100%;
   background: ${({ background }) => background};
+  overflow: hidden;
+`;
+
+export const ModalHeading = styled(Heading)`
+  padding: 12px 0;
+  width: calc(100% - 36px);
 `;
 
 interface FullscreenOverlayProps {
   isOpen: boolean;
   isDarkMode?: boolean;
 }
-
 export const FullscreenOverlay = styled.div<FullscreenOverlayProps>`
   position: fixed;
   background: rgba(51, 51, 51, 0.8);
@@ -66,11 +82,37 @@ export const FullscreenOverlay = styled.div<FullscreenOverlayProps>`
   height: 100%;
   z-index: 99;
   inset: 0;
-  transition: opacity ${animation.durationFast}ms ease-in-out;
-  opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
-  ${helpers.reduceMotionOverrideStyle}
+  opacity: 0;
+  transition: opacity ${animation.durations.fast}ms ease-in-out;
+  ${({ isOpen }) => (isOpen ? 'opacity: 1;' : '')};
+  ${a11y.reduceMotionOverrideStyle}
 
-  ${({ isDarkMode }) => isDarkMode && `
+  ${({ isDarkMode }) =>
+    isDarkMode &&
+    `
     background: rgba(30, 30, 30, 0.95);
   `}
+  animation: ${animation.keyframes.fadeIn} ${animation.durations
+    .fast}ms ease-in-out;
+`;
+
+interface StandardCloseButtonProps {
+  direction: SideNames;
+  isHorizontal: boolean;
+}
+export const StandardCloseButton = styled.button<StandardCloseButtonProps>`
+  margin: 16px 16px 0 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 100;
+
+  &:focus,
+  &:active {
+    ${focusStyle}
+  }
+`;
+
+export const CloseIcon = styled(Icon)`
+  display: block;
 `;

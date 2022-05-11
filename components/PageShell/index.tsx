@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import { useRef, useCallback, useState } from 'react';
-import { Footer, Header, ModalDrawer } from '../../common-components';
+import { Button, Footer, Header, ModalDrawer } from '../../common-components';
+import { colors } from '../../common-components/design-tokens';
+import { useMediaQueries } from '../media-queries-context';
 import { ProfilePulldownContent } from '../ProfilePulldownContent';
 import { useStorageDarkMode } from '../storage-dark-mode-context';
 import { GlobalStyles } from './globalStyles';
@@ -10,6 +12,7 @@ export const PageShell = ({ children }) => {
   const [isProfilePulldownOpen, setProfilePulldownOpen] = useState(false);
   const profileButtonFocusRef = useRef(null);
   const { isDarkMode } = useStorageDarkMode();
+  const { smMax } = useMediaQueries();
 
   const onCloseCallback = useCallback(() => {
     setProfilePulldownOpen(false);
@@ -32,9 +35,7 @@ export const PageShell = ({ children }) => {
         <title>Tim J: Software Engineer</title>
         <link href="/favicon.png" rel="icon" />
       </Head>
-      <GlobalStyles
-        isDarkMode={isDarkMode}
-      />
+      <GlobalStyles isDarkMode={isDarkMode} />
       <Header
         handleOpenProfileDrawer={handleOpenProfileDrawer}
         ref={profileButtonFocusRef}
@@ -42,11 +43,13 @@ export const PageShell = ({ children }) => {
       <StyledMain>{children}</StyledMain>
       <Footer handleOpenProfileDrawer={handleOpenProfileDrawer} />
       <ModalDrawer
-        customCloseText="Close profile"
+        background={isDarkMode ? colors.grayDarker : colors.grayLightest}
+        closeType="floating"
+        customClose={<Button size="sm">Close profile</Button>}
         direction="top"
         isOpen={isProfilePulldownOpen}
         onCloseCallback={onCloseCallback}
-        size={345}
+        size={smMax ? 320 : 330}
       >
         <ProfilePulldownContent />
       </ModalDrawer>

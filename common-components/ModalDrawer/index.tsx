@@ -1,33 +1,42 @@
-import { ReactElement, useCallback, useEffect, useState } from 'react';
-import { Button } from '../Button';
+import { ReactElement, useCallback, useEffect, useRef, useState } from 'react';
 import { colors } from '../design-tokens';
+import { SideNames } from '../types';
 import {
-  CloseDrawer,
+  CloseIcon,
+  FloatingCloseButtonWrapper,
   FullscreenOverlay,
   ModalDrawerContainer,
   ModalDrawerInner,
+  ModalHeading,
+  StandardCloseButton,
 } from './styles';
 
 interface ModalDrawerProps {
   background?: string;
-  children: ReactElement;
-  direction?: 'top' | 'right' | 'bottom' | 'left';
+  children: ReactElement | ReactElement[] | string;
+  closeType?: 'corner' | 'floating';
+  direction?: SideNames;
   isOpen: boolean;
-  customCloseText?: string;
+  customClose?: ReactElement;
   onCloseCallback: () => void;
   size?: number;
+  title?: string;
 }
 
 export const ModalDrawer = ({
   background = colors.white,
   children,
-  customCloseText,
+  closeType = 'corner',
+  customClose,
   direction = 'right',
   isOpen,
   onCloseCallback,
   size = 320,
+  title,
 }: ModalDrawerProps) => {
   const [isOverlayDisplayed, setIsOverlayDisplayed] = useState(isOpen);
+  const [floatingCloseOffset, setFloatingCloseOffset] = useState(0);
+  const floatingCloseRef = useRef(null);
 
   const onClose = useCallback(() => {
     onCloseCallback();
@@ -60,22 +69,73 @@ export const ModalDrawer = ({
 
   const isHorizontal = direction === 'left' || direction === 'right';
 
+  // Calculate offset for 'floating' close button:
+  // Its size in the relevant dimension + 12px
+  useEffect(() => {
+    const refWidth = floatingCloseRef.current?.clientWidth;
+    const refHeight = floatingCloseRef.current?.clientHeight;
+
+    if (
+      isOverlayDisplayed &&
+      closeType === 'floating' &&
+      floatingCloseRef.current
+    ) {
+      if (isHorizontal) {
+        setFloatingCloseOffset(refWidth + 12);
+      } else {
+        setFloatingCloseOffset(refHeight + 12);
+      }
+    }
+  }, [closeType, floatingCloseRef, isHorizontal, isOverlayDisplayed]);
+
   return (
     <>
       <ModalDrawerContainer
         aria-hidden={!isOpen}
+        background={background}
         direction={direction}
         isHorizontal={isHorizontal}
         isOpen={isOpen}
         isOverlayDisplayed={isOverlayDisplayed}
         size={size}
       >
-        <ModalDrawerInner background={background}>{children}</ModalDrawerInner>
-        <CloseDrawer onClick={onClose}>
-          <Button onClick={onClose} size="sm">
-            {customCloseText ?? 'Close'}
-          </Button>
-        </CloseDrawer>
+        <ModalDrawerInner>
+          {title && <ModalHeading level={2}>{title}</ModalHeading>}
+          {children}
+        </ModalDrawerInner>
+        {closeType === 'corner' && (
+          <StandardCloseButton
+            direction={direction}
+            isHorizontal={isHorizontal}
+            onClick={onClose}
+          >
+            {customClose ?? (
+              <CloseIcon
+                fill={colors.grayLight}
+                name="close-outline"
+                size={36}
+              />
+            )}
+          </StandardCloseButton>
+        )}
+        {closeType === 'floating' && (
+          <FloatingCloseButtonWrapper
+            direction={direction}
+            offset={floatingCloseOffset}
+            onClick={onClose}
+            ref={floatingCloseRef}
+          >
+            <button>
+              {customClose ?? (
+                <CloseIcon
+                  fill={colors.grayLighter}
+                  name="close-circle"
+                  size={36}
+                />
+              )}
+            </button>
+          </FloatingCloseButtonWrapper>
+        )}
       </ModalDrawerContainer>
       {isOverlayDisplayed && (
         <FullscreenOverlay isOpen={isOpen} onClick={onClose} />

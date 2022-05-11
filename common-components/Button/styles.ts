@@ -47,7 +47,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
   border: 1px solid ${defaultButtonBorderColor};
   color: ${({ textColor }) => (textColor ?? defaultButtonTextColor)};
   white-space: nowrap;
-  transition: filter ${animation.durationFaster}ms; 
+  transition: filter ${animation.durations.faster}ms; 
   ${({ pill }) =>
     pill ? 'border-radius: 9999px;' : decorations.buttons.borderRadiusStyle}
 

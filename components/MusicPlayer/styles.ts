@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Col, Grid, Heading, Icon, Image, Row } from '../../common-components';
 import {
   animation,
@@ -44,7 +44,7 @@ export const SuperHeading = styled(Heading)`
 `;
 
 export const MainPlayIcon = styled(Icon)`
-  transition: transform ${animation.durationFaster}ms ease-in-out;
+  transition: transform ${animation.durations.faster}ms ease-in-out;
 
   &:hover {
     transform: scale(1.1);
@@ -136,28 +136,11 @@ export const CurrentTrackTitle = styled.span<CurrentTrackTitleProps>`
   display: inline-block;
 
   ${({ animate, animationDistance }) =>
-    animate && `animation: marquee ${animationDistance * 320}ms linear;`}
-
-  @keyframes marquee {
-    0% {
-      transform: translate(0, 0);
-    }
-    40% {
-      transform: translate(
-        -${({ animationDistance }) => animationDistance}px,
-        0
-      );
-    }
-    60% {
-      transform: translate(
-        -${({ animationDistance }) => animationDistance}px,
-        0
-      );
-    }
-    100% {
-      transform: translate(0, 0);
-    }
-  }
+    animate &&
+    css`
+      animation: ${animation.keyframes.overflowMarqueeBounce(animationDistance)}
+        ${animationDistance * 320}ms linear;
+    `}
 `;
 
 export const CurrentTrackSummaryCol = styled(Col)`

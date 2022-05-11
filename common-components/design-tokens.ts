@@ -1,6 +1,8 @@
+import { keyframes } from 'styled-components';
+
 const colors = {
   primary: '#5874DC',
-  secondary: '#6aab9c',
+  secondary: '#67b4a2',
   tertiary: '#384E78',
   quaternary: '#e06c78',
   quinary: '#fa9284',
@@ -58,22 +60,118 @@ const decorations = {
     lgStyle: '',
   },
   headingFontStyle: {
-    h1: 'font-size: 32px; line-height: 36px;',
-    h2: 'font-size: 22px; line-height: 26px;',
-    h3: 'font-size: 18px; line-height: 22px;',
-    h4: 'font-size: 14px; line-height: 18px;',
-    h5: 'font-size: 12px; line-height: 16px;',
-    h6: 'font-size: 12px; line-height: 16px;',
+    h1: `
+      font-size: 32px;
+      line-height: 36px;
+    `,
+    h2: `
+      font-size: 22px;
+      line-height: 26px;
+    `,
+    h3: `
+      font-size: 18px;
+      line-height: 22px;
+    `,
+    h4: `
+      font-size: 14px;
+      line-height: 18px;
+    `,
+    h5: `
+      font-size: 12px;
+      line-height: 16px;
+    `,
+    h6: `
+      font-size: 12px;
+      line-height: 16px;
+    `,
   },
 };
 
 const animation = {
-  durationSlowest: 2000,
-  durationSlower: 800,
-  durationSlow: 500,
-  durationFast: 350,
-  durationFaster: 200,
-  durationFastest: 100,
+  durations: {
+    slowest: 2000,
+    slower: 800,
+    slow: 500,
+    fast: 350,
+    faster: 200,
+    fastest: 100,
+  },
+  keyframes: {
+    backgroundPosition: keyframes`
+      from {
+        background-position: 100% 0%;
+      }
+      to {
+          background-position: 0% 100%;
+      }
+    `,
+    emphasisGrowAndRotate: keyframes`
+      0% {
+        transform: rotate(0) scale(1);
+      }
+      80% {
+        transform: rotate(-18deg) scale(1.18);
+      }
+      100% {
+        transform: rotate(0) scale(1);
+      }
+    `,
+    fadeIn: keyframes`
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    `,
+    overflowMarqueeBounce: (distance: number) => keyframes`
+      0% {
+      transform: translate(0, 0);
+      }
+      40%,
+      60% {
+        transform: translate(${-distance}px, 0);
+      }
+      100% {
+        transform: translate(0, 0);
+      }
+    `,
+    riseInRiseOut: (distance: number) => keyframes`
+      0% {
+        transform: translateY(${distance}px);
+        opacity: 0;
+      }
+      33%,
+      66% {
+        transform: translateY(0px);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(${-distance}px);
+        opacity: 0;
+      }
+    `,
+    riseAndFadeIn: (distance: number) => keyframes`
+      from {
+        transform: translateY(${distance}px);
+        opacity: 0;
+        pointer-events: none;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+    `,
+    rotate360: keyframes`
+      from {
+        transform: rotate(0);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    `,
+  },
 };
 
 const breakpoints = {
@@ -121,26 +219,19 @@ const spacing = {
 const font = {
   families: {
     heading:
-      '-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
-    body: '-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
-    monospace: 'SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
+      '-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+    body: '-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+    monospace:
+      'SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
   },
 };
 
-const helpers = {
-  getOppositeDirection: (direction: string) => {
-    const opposites = {
-      top: 'bottom',
-      left: 'right',
-      bottom: 'top',
-      right: 'left',
-    };
-    return opposites[direction];
-  },
+const a11y = {
   reduceMotionOverrideStyle: `@media ${mediaQueries.reduceMotion} { transition: none; }`,
 };
 
 export {
+  a11y,
   animation,
   breakpoints,
   colors,
@@ -148,7 +239,6 @@ export {
   focusStyle,
   font,
   gradients,
-  helpers,
   mediaQueries,
   spacing,
 };

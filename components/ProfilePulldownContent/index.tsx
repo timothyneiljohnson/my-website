@@ -1,55 +1,95 @@
 import { FC } from 'react';
-import { Heading, Icon } from '../../common-components';
+import {
+  Button,
+  Col,
+  Grid,
+  Heading,
+  Row,
+} from '../../common-components';
 import { colors } from '../../common-components/design-tokens';
+import { useMediaQueries } from '../media-queries-context';
 import { useStorageDarkMode } from '../storage-dark-mode-context';
 import {
   ContactMeWrapper,
   ContactMeLink,
-  MapBackground,
+  MyNameIs,
   ProfileDescription,
-  ProfileWrapper,
+  BioCallToActionWrapper,
+  ProfilePicture,
+  ContactMeIcon,
 } from './styles';
 
 export const ProfilePulldownContent: FC = () => {
   const { isDarkMode } = useStorageDarkMode();
+  const { smMax } = useMediaQueries();
 
   return (
-    <MapBackground isDarkMode={isDarkMode}>
-      <ProfileWrapper isDarkMode={isDarkMode}>
-        <ProfileDescription isDarkMode={isDarkMode}>
-          <Heading
-            color={isDarkMode ? colors.grayLightest : colors.grayDarker}
-            level={4}
-          >
-            Timothy Neil Johnson
-          </Heading>
-          <p>
-            Hi, I'm a driven, experienced developer/designer in Minneapolis.
-          </p>
-          <p>Lead Software Engineer at Target.</p>
-          <p>Get in touch:</p>
-          <ContactMeWrapper>
-            <ContactMeLink href="mailto:timothyneiljohnson@gmail.com">
-              <Icon
-                fill={isDarkMode ? colors.white : colors.grayDarkest}
-                name="mail-outline"
-                size={42}
-              />
-            </ContactMeLink>
-            <ContactMeLink
-              href="linkedin.com/in/timothyneiljohnson"
-              target="_blank"
+    <ProfileDescription isDarkMode={isDarkMode}>
+      <Grid>
+        <Row noWrap>
+          <Col>
+            <ContactMeWrapper>
+              <ContactMeLink
+                href="https://github.com/timothyneiljohnson"
+                target="_blank"
+              >
+                <ContactMeIcon
+                  fill={isDarkMode ? colors.white : colors.grayDarker}
+                  name="logo-github"
+                  size={24}
+                />
+              </ContactMeLink>
+              <ContactMeLink href="mailto:timothyneiljohnson@gmail.com">
+                <ContactMeIcon
+                  fill={isDarkMode ? colors.white : colors.grayDarker}
+                  name={isDarkMode ? 'mail' : 'mail-outline'}
+                  size={24}
+                />
+              </ContactMeLink>
+              <ContactMeLink
+                href="https://linkedin.com/in/timothyneiljohnson"
+                target="_blank"
+              >
+                <ContactMeIcon
+                  fill={isDarkMode ? colors.white : colors.grayDarker}
+                  name="logo-linkedin"
+                  size={24}
+                />
+              </ContactMeLink>
+            </ContactMeWrapper>
+          </Col>
+          <Col shrink>
+            <MyNameIs>Hi, my name is</MyNameIs>
+            <Heading
+              color={
+                isDarkMode ? colors.grayLightest : colors.grayDarker
+              }
+              level={smMax ? 2 : 1}
             >
-              <Icon
-                fill={isDarkMode ? colors.white : '#306EA8'}
-                name="logo-linkedin"
-                size={33}
-              />
-            </ContactMeLink>
-          </ContactMeWrapper>
-        </ProfileDescription>
-      </ProfileWrapper>
-    </MapBackground>
+              Tim Johnson.
+              <br />
+              Software Engineer 👨‍💻
+            </Heading>
+            <p>
+              I'm a driven, experienced developer/designer based in
+              Minneapolis.
+            </p>
+            <p>Lead Software Engineer at Target.</p>
+            <BioCallToActionWrapper>
+              <Button href="mailto:timothyneiljohnson@gmail.com">
+                Get In Touch
+              </Button>
+              <Button href="#" variant="primary">
+                My Resume
+              </Button>
+            </BioCallToActionWrapper>
+          </Col>
+          <Col grow smHiddenDown>
+            <ProfilePicture src="/photo.png" />
+          </Col>
+        </Row>
+      </Grid>
+    </ProfileDescription>
   );
 };
 

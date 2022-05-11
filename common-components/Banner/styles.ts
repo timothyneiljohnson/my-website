@@ -27,7 +27,7 @@ export const BannerSlideStyled = styled.div<BannerSlideStyledProps>`
   max-width: 1000px;
   height: 450px;
   position: absolute;
-  transition: opacity ${animation.durationSlow}ms ease-in-out;
+  transition: opacity ${animation.durations.slow}ms ease-in-out;
   opacity: ${({ isCurrentSlide }) => (isCurrentSlide ? 1 : 0)};
   overflow: hidden;
   ${decorations.borderRadiusStyle}
@@ -68,7 +68,7 @@ export const StyledBannerControl = styled.button<StyledBannerControlProps>`
     !isActive &&
     `
     box-shadow: inset 0 0 4px 1.5px ${colors.grayLighter};
-    transition: filter ${animation.durationFaster}ms ease-in-out;
+    transition: filter ${animation.durations.faster}ms ease-in-out;
     &:hover {
       ${decorations.buttons.hoverFilterStyle}
     }
@@ -96,7 +96,7 @@ interface NextPreviousControlProps {
 export const NextPreviousControl = styled(StyledBannerControl)<NextPreviousControlProps>`
   height: 24px;
   width: 24px;
-  transition: transform ${animation.durationFaster}ms ease-in-out;
+  transition: transform ${animation.durations.faster}ms ease-in-out;
 
   &:hover,
   &:focus,

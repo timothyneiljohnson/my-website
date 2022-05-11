@@ -59,3 +59,13 @@ export const hexToRgba = (hexColor: string, alpha: number) => {
 
 export const pluralize = (string: string, array?: any[], custom?: string) =>
   Math.abs(array.length) === 1 ? string : `${string}${custom ?? 's'}`;
+
+export const getOppositedirection = (direction: string) => {
+  const oppositesMap = {
+    top: 'bottom',
+    left: 'right',
+    bottom: 'top',
+    right: 'left',
+  };
+  return oppositesMap[direction];
+};

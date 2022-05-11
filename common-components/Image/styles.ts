@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { animation } from '../design-tokens';
 
 interface StyledImageProps {
@@ -25,19 +25,14 @@ export const StyledImage = styled.img<StyledImageProps>`
   `
       : ''};
   overflow: hidden;
-  transition: border-radius ${animation.durationFaster}ms ease-in-out,
-    width ${animation.durationFaster}ms ease-in-out,
-    height ${animation.durationFaster}ms ease-in-out;
-  animation: fadeInAnimation
-    ${({ noFadeIn }) =>
-      `${noFadeIn ? 0 : animation.durationFast}ms ease-in-out`};
+  transition: border-radius ${animation.durations.faster}ms ease-in-out,
+    width ${animation.durations.faster}ms ease-in-out,
+    height ${animation.durations.faster}ms ease-in-out;
 
-  @keyframes fadeInAnimation {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
+  ${({ noFadeIn }) =>
+    !noFadeIn &&
+    css`
+      animation: ${animation.keyframes.fadeIn} ${animation.durations.fast}ms
+        ease-in-out;
+    `}
 `;

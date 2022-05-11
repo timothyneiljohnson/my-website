@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import {
   animation,
   colors,
@@ -22,7 +22,9 @@ export const FeaturedPostHeading = styled(Heading)<FeaturedPostHeadingProps>`
   color: ${colors.grayDarkest};
   margin: 15px 0 0 12px;
 
-  ${({ isDarkMode }) => isDarkMode && `
+  ${({ isDarkMode }) =>
+    isDarkMode &&
+    `
     color: ${colors.white};
   `}
 `;
@@ -55,12 +57,14 @@ export const ViewThisFeature = styled.span<ViewThisFeatureProps>`
   display: flex;
   opacity: 0;
   z-index: 10;
-  transition: opacity ${animation.durationFaster}ms ease-in-out;
+  transition: opacity ${animation.durations.faster}ms ease-in-out;
   background-color: ${colors.white};
   padding: 10px 10px 9px;
   ${decorations.borderRadiusStyle}
 
-  ${({ isDarkMode }) => isDarkMode && `
+  ${({ isDarkMode }) =>
+    isDarkMode &&
+    `
     background-color: ${colors.grayDark};
   `}
 `;
@@ -76,7 +80,9 @@ export const ViewThisFeatureText = styled.span<ViewThisFeatureTextProps>`
   white-space: nowrap;
   color: ${colors.grayDarker};
 
-  ${({ isDarkMode }) => isDarkMode && `
+  ${({ isDarkMode }) =>
+    isDarkMode &&
+    `
     color: ${colors.white};
   `}
 `;
@@ -93,56 +99,46 @@ export const FeaturedPostWrapper = styled.a<FeaturedPostWrapperProps>`
   ${decorations.borderRadiusStyle}
   ${decorations.boxShadow.smStyle}
 
-  ${({ isDarkMode }) => isDarkMode && `
-    background-color: ${colors.grayDarker};
-    background-clip: padding-box;
+  ${({ isDarkMode }) =>
+    isDarkMode &&
+    css`
+      background-color: ${colors.grayDarker};
+      background-clip: padding-box;
 
-    &:hover {
-      box-shadow: none;
-    }
-    &:after {
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      content: '';
-      position: absolute;
-      transition: top ${animation.durationFaster}ms ease-in-out,
-        left ${animation.durationFaster}ms ease-in-out,
-        height ${animation.durationFaster}ms ease-in-out,
-        width ${animation.durationFaster}ms ease-in-out;
-      border-radius: 10px;
-      z-index: -1;
-      background: linear-gradient(
-        60deg,
-        ${gradients.primary.start},
-        ${gradients.primary.end},
-        ${gradients.secondary.start},
-        ${gradients.secondary.end}
-      );
-    }
-    &:hover&:after {
-      top: -5px;
-      left: -5px;
-      height: calc(100% + 10px);
-      width: calc(100% + 10px);
-      animation: animatedgradient ${animation.durationSlowest}ms ease alternate
-        infinite;
-      background-size: 300% 300%;
-
-      @keyframes animatedgradient {
-        0% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
-        }
+      &:hover {
+        box-shadow: none;
       }
-    }
-  `}
+      &:after {
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        content: '';
+        position: absolute;
+        transition: top ${animation.durations.faster}ms ease-in-out,
+          left ${animation.durations.faster}ms ease-in-out,
+          height ${animation.durations.faster}ms ease-in-out,
+          width ${animation.durations.faster}ms ease-in-out;
+        border-radius: 10px;
+        z-index: -1;
+        background: linear-gradient(
+          60deg,
+          ${gradients.primary.start},
+          ${gradients.primary.end},
+          ${gradients.secondary.start},
+          ${gradients.secondary.end}
+        );
+      }
+      &:hover&:after {
+        top: -5px;
+        left: -5px;
+        height: calc(100% + 10px);
+        width: calc(100% + 10px);
+        animation: ${animation.keyframes.backgroundPosition}
+          ${animation.durations.slowest}ms ease alternate infinite;
+        background-size: 300% 300%;
+      }
+    `}
 
   &:focus,
   &:active {
@@ -151,11 +147,11 @@ export const FeaturedPostWrapper = styled.a<FeaturedPostWrapperProps>`
 
   ${FeaturedPostImage} {
     opacity: 1;
-    transition: opacity ${animation.durationFast}ms ease-out;
+    transition: opacity ${animation.durations.fast}ms ease-out;
   }
 
   ${ViewThisFeatureText} {
-    transition: transform ${animation.durationFaster}ms ease-out;
+    transition: transform ${animation.durations.faster}ms ease-out;
     transform: scale(0.92);
   }
 
@@ -175,7 +171,9 @@ export const FeaturedPostWrapper = styled.a<FeaturedPostWrapperProps>`
     ${FeaturedPostHeading} {
       color: ${colors.primary};
 
-      ${({ isDarkMode }) => isDarkMode && `
+      ${({ isDarkMode }) =>
+        isDarkMode &&
+        `
         color: ${colors.quinary};
       `}
     }

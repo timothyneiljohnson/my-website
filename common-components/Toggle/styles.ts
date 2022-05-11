@@ -22,8 +22,8 @@ export const StyledToggleLabel = styled.label<StyledToggleLabelProps>`
     `${sizeMap[size] > 0 ? `${sizeMap[size]}px` : '100%'}`};
   width: ${({ size }) =>
     `${sizeMap[size] > 0 ? `${sizeMap[size] * 2 - 4}px` : '100%'}`};
-  transition: background-color ${animation.durationFaster}ms ease-out,
-    box-shadow ${animation.durationFaster}ms ease-out;
+  transition: background-color ${animation.durations.faster}ms ease-out,
+    box-shadow ${animation.durations.faster}ms ease-out;
   transform: translateX();
   background-color: ${({ isActive, inactiveColor, activeColor }) =>
     isActive ? activeColor : inactiveColor};
@@ -48,7 +48,7 @@ export const ToggleSwitch = styled.div<ToggleSwitchProps>`
   height: calc(100% - 4px);
   width: calc(50% - 2px);
   margin-left: 2px;
-  transition: transform ${animation.durationFaster}ms ease-out;
+  transition: transform ${animation.durations.faster}ms ease-out;
   transform: translateX(${({ isActive }) => (isActive ? '100%' : 0)});
 `;
 

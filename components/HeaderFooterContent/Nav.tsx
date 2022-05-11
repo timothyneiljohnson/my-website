@@ -5,6 +5,7 @@ import { Button, Icon } from '../../common-components';
 import { MainNavList, MainNavListItem } from './styles';
 import { colors, gradients } from '../../common-components/design-tokens';
 import { useStorageDarkMode } from '../storage-dark-mode-context';
+import { useMediaQueries } from '../media-queries-context';
 
 interface NavProps {
   handleOpenProfileDrawer: () => void;
@@ -16,6 +17,8 @@ export const Nav = forwardRef<HTMLButtonElement, NavProps>(
     const isHome = pathname === '/';
     const isBlog = pathname === '/blog' || pathname?.startsWith('/post');
     const { isDarkMode, toggleDarkMode } = useStorageDarkMode();
+    const { xsMax } = useMediaQueries();
+    const navButtonSize = xsMax ? 'sm' : 'md';
 
     const handleDarkModeToggle = useCallback(() => {
       toggleDarkMode();
@@ -29,6 +32,7 @@ export const Nav = forwardRef<HTMLButtonElement, NavProps>(
               gradientEnd={isHome ? gradients.primary.end : null}
               gradientStart={isHome ? gradients.primary.start : null}
               pill
+              size={navButtonSize}
               textColor={isHome || isDarkMode ? colors.white : null}
             >
               Work
@@ -41,6 +45,7 @@ export const Nav = forwardRef<HTMLButtonElement, NavProps>(
               gradientEnd={isBlog ? gradients.primary.end : null}
               gradientStart={isBlog ? gradients.primary.start : null}
               pill
+              size={navButtonSize}
               textColor={isBlog || isDarkMode ? colors.white : null}
             >
               Blog
@@ -48,12 +53,17 @@ export const Nav = forwardRef<HTMLButtonElement, NavProps>(
           </NextLink>
         </MainNavListItem>
         <MainNavListItem>
-          <Button onClick={handleOpenProfileDrawer} pill ref={ref}>
+          <Button
+            onClick={handleOpenProfileDrawer}
+            pill
+            ref={ref}
+            size={navButtonSize}
+          >
             Profile
           </Button>
         </MainNavListItem>
         <MainNavListItem>
-          <Button onClick={handleDarkModeToggle} pill>
+          <Button onClick={handleDarkModeToggle} pill size={navButtonSize}>
             {isDarkMode ? (
               <Icon
                 fill={`${isDarkMode ? colors.white : colors.grayDarkest}`}

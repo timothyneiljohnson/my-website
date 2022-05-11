@@ -105,16 +105,16 @@ export const FolderInner = styled(AppOrFolderInner)<FolderInnerProps>`
     isOpen &&
     animateClose &&
     `
-    animation: closeFolder 480ms forwards normal;
+    animation: openFolder 480ms forwards reverse;
     z-index: 999;
   `}
 
   animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   @keyframes openFolder {
-    0% {
+    from {
       transform: scale(1) translate(0, 0);
     }
-    100% {
+    to {
       transform: scale(4.85)
         translate(
           calc(var(--translation-x) * 1px),
@@ -125,7 +125,7 @@ export const FolderInner = styled(AppOrFolderInner)<FolderInnerProps>`
     }
   }
   @keyframes closeFolder {
-    0% {
+    from {
       transform: scale(4.85)
         translate(
           calc(var(--translation-x) * 1px),
@@ -134,7 +134,7 @@ export const FolderInner = styled(AppOrFolderInner)<FolderInnerProps>`
       border-radius: 12%;
       height: 95%;
     }
-    100% {
+    to {
       transform: scale(1) translate(0, 0);
     }
   }

@@ -8,7 +8,7 @@ export const StyledRow = styled(RowColBase)<RowProps>`
   display: flex;
   flex: 0 1 auto;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: ${({ noWrap }) => noWrap ? 'nowrap' : 'wrap'};
 
   /* Col Gap */
   ${(props) =>

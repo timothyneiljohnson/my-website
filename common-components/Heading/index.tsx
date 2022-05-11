@@ -1,7 +1,8 @@
+import { ReactNode } from 'react';
 import { StyledHeading } from './styles';
 
 interface HeadingProps {
-  children: string;
+  children: string | ReactNode | ReactNode[];
   className?: string;
   color?: string;
   level?: number;

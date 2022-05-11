@@ -53,7 +53,11 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         pointerGradient={pointerGradient}
         ref={ref}
         size={size}
-        style={{ '--mouse-x': mousePosition.x, '--mouse-y': mousePosition.y }}
+        style={
+          pointerGradient
+            ? { '--mouse-x': mousePosition.x, '--mouse-y': mousePosition.y }
+            : undefined
+        }
         textColor={textColor}
         variant={variant}
         {...restProps}
@@ -68,7 +72,11 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         pointerGradient={pointerGradient}
         ref={ref}
         size={size}
-        style={{ '--mouse-x': mousePosition.x, '--mouse-y': mousePosition.y }}
+        style={
+          pointerGradient
+            ? { '--mouse-x': mousePosition.x, '--mouse-y': mousePosition.y }
+            : undefined
+        }
         textColor={textColor}
         variant={variant}
         {...restProps}
