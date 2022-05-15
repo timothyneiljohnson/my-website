@@ -20,12 +20,21 @@ export const Badge = ({
   pill,
   size = 'sm',
   textColor = colors.white,
-}: BadgeProps) => (
-  <StyledBadge className={className} inline={inline}>
-    <BadgeInner color={color} pill={pill} size={size} textColor={textColor}>
-      {children}
-    </BadgeInner>
-  </StyledBadge>
-);
+}: BadgeProps) => {
+  const isSingleChar = typeof children === 'string' && children.length === 1;
+  return (
+    <StyledBadge className={className} inline={inline}>
+      <BadgeInner
+        color={color}
+        isSingleChar={isSingleChar}
+        pill={pill}
+        size={size}
+        textColor={textColor}
+      >
+        {children}
+      </BadgeInner>
+    </StyledBadge>
+  );
+};
 
 Badge.displayName = 'Badge';

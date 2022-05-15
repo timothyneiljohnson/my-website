@@ -29,6 +29,7 @@ export const StyledBadge = styled.div<StyledBadgeProps>`
 
 interface BadgeInnerProps {
   color: string;
+  isSingleChar: boolean;
   pill?: boolean;
   size: StandardSizes;
   textColor: string;
@@ -40,11 +41,17 @@ export const BadgeInner = styled.span<BadgeInnerProps>`
   border-radius: ${({ pill }) => (!pill ? '4px' : '999px')};
   background-color: ${({ color }) => color};
   color: ${({ textColor }) => textColor};
-  min-width: 1.25em;
+  ${({ isSingleChar }) => isSingleChar ? `
+    width: 1.25em;
+    padding: 0.8em;
+  ` : `
+    min-width: 1.25em;
+    padding: 0.8em 0.5em;
+  `}
   height: 1.25em;
   font-size: ${({ size }) => sizeMap[size]};
   font-weight: 400;
-  padding: 0.8em 0.5em;
+  
   white-space: nowrap;
   line-height: 1;
 `;
