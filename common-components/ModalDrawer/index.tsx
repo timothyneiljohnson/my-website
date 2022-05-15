@@ -139,15 +139,15 @@ export const ModalDrawer = ({
             onClick={onClose}
             ref={floatingCloseRef}
           >
-            <button>
-              {customClose ?? (
+            {customClose ?? (
+              <button>
                 <CloseIcon
                   fill={colors.grayLighter}
                   name="close-circle"
                   size={36}
                 />
-              )}
-            </button>
+              </button>
+            )}
           </FloatingCloseButtonWrapper>
         )}
       </ModalDrawerContainer>

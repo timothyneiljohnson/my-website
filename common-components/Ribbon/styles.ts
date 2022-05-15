@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 import { animation, decorations } from '../design-tokens';
 import { getOppositedirection } from '../helpers';
+import { SideNames } from '../types';
 import { getRibbonClipPath } from './helpers';
 
 interface RibbonWrapperProps {
-  facing?: 'left' | 'top' | 'right' | 'bottom';
+  facing?: SideNames;
   thickness?: number;
   left?: number;
   top?: number;
@@ -39,7 +40,7 @@ export const RibbonWrapper = styled.div<RibbonWrapperProps>`
 interface StyledRibbonPolygonProps {
   color?: string;
   endStyle?: 'split' | 'point' | 'slant' | 'reverseSlant';
-  facing?: 'left' | 'top' | 'right' | 'bottom';
+  facing?: SideNames;
   gradientStart?: string;
   gradientEnd?: string;
   textColor?: string;
