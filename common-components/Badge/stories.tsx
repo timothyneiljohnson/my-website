@@ -1,5 +1,5 @@
 import React from 'react';
-import { Badge } from '..';
+import { Badge } from '.';
 import { colors } from '../design-tokens';
 import { PlainGrid } from '../PlainGrid';
 import { StandardSizes } from '../types';
@@ -15,7 +15,7 @@ export const Default = ({ inline, color, textColor }) => (
       {['green', 'blue', 'orange', 'red', 'gray'].map(
         (badgeColor: StandardSizes, i) => (
           <span
-            key={i}
+            key={`inline-badge-pill${i}`}
             style={{
               position: 'relative',
               marginRight: '15px',
@@ -34,7 +34,7 @@ export const Default = ({ inline, color, textColor }) => (
       {['green', 'blue', 'orange', 'red', 'gray'].map(
         (badgeColor: StandardSizes, i) => (
           <span
-            key={i}
+            key={`inline-badge${i}`}
             style={{
               position: 'relative',
               marginRight: '15px',
@@ -54,7 +54,7 @@ export const Default = ({ inline, color, textColor }) => (
         <div key={i} style={{ maxWidth: '180px' }}>
           {[...Array(3)].map((_, index) => (
             <span
-              key={i}
+              key={`badge${i}-${index}`}
               style={{
                 position: 'relative',
                 margin: `0 ${(index + 1) * 10 + 30}px 20px 0`,

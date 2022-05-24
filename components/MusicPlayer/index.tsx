@@ -1,14 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import {
-  Col,
-  Divider,
-  Grid,
-  Icon,
-  Image,
-  PlainGrid,
-  Row,
-  Slider,
-} from '../../common-components';
+import { Col } from '../../common-components/Col';
+import { Divider } from '../../common-components/Divider';
+import { Grid } from '../../common-components/Grid';
+import { Icon } from '../../common-components/Icon';
+import { Image } from '../../common-components/Image';
+import { PlainGrid } from '../../common-components/PlainGrid';
+import { Row } from '../../common-components/Row';
+import { Slider } from '../../common-components/Slider';
 import { colors } from '../../common-components/design-tokens';
 import { pluralize } from '../../common-components/helpers';
 import {
@@ -652,7 +650,7 @@ export const MusicPlayer = ({
             <Grid>
               <Row colGap={0.075} middle style={{ padding: '0 15px' }}>
                 <Col xs={3}>
-                  <Image src={image} />
+                  <Image layout="fill" src={image} />
                 </Col>
                 <CurrentTrackSummaryCol ref={marqueeContainerRef} xs={7}>
                   <CurrentTrackTitle

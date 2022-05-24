@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { animation, colors, decorations, focusStyle } from '../design-tokens';
+import { Image } from '../Image';
 
 export const BannerWrapper = styled.div`
   height: 490px;
@@ -7,8 +8,9 @@ export const BannerWrapper = styled.div`
 `;
 
 export const StyledBanner = styled.a`
-  width: 100%;
   height: 450px;
+  width: 100%;
+  max-width: 1000px;
   overflow: hidden;
   display: block;
   position: relative;
@@ -16,17 +18,12 @@ export const StyledBanner = styled.a`
   ${decorations.borderRadiusStyle}
 `;
 
-interface BannerSlideStyledProps {
-  imageUrl: string;
+interface BannerImageStyledProps {
   isCurrentSlide: boolean;
 }
-export const BannerSlideStyled = styled.div<BannerSlideStyledProps>`
-  background: url(${({ imageUrl }) => imageUrl}) no-repeat;
-  background-size: cover;
-  width: 100%;
-  max-width: 1000px;
-  height: 450px;
-  position: absolute;
+export const BannerImageStyled = styled(Image).withConfig({
+  shouldForwardProp: (prop) => !['isCurrentSlide'].includes(prop),
+})<BannerImageStyledProps>`
   transition: opacity ${animation.durations.slow}ms ease-in-out;
   opacity: ${({ isCurrentSlide }) => (isCurrentSlide ? 1 : 0)};
   overflow: hidden;
@@ -42,6 +39,7 @@ export const BannerControlsStyled = styled.div`
 `;
 
 interface StyledBannerControlProps {
+  ariaLabel?: string;
   isActive?: boolean;
   isDarkMode?: boolean;
 }
@@ -54,8 +52,8 @@ export const StyledBannerControl = styled.button<StyledBannerControlProps>`
     isActive ? colors.grayLight : colors.grayLightest};
   border-radius: 50%;
   overflow: hidden;
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   margin-left: 10px;
   font-weight: bold;
 
@@ -78,10 +76,14 @@ export const StyledBannerControl = styled.button<StyledBannerControlProps>`
     ${focusStyle}
   }
 
-  ${({ isDarkMode }) => isDarkMode && `
+  ${({ isDarkMode }) =>
+    isDarkMode &&
+    `
     ${({ isActive }) => `
       background-color: ${isActive ? colors.grayLightest : colors.grayLight};
-      box-shadow: inset 0 0 4px 1.5px ${isActive ? colors.grayLightest : colors.grayLight};
+      box-shadow: inset 0 0 4px 1.5px ${
+        isActive ? colors.grayLightest : colors.grayLight
+      };
     `}
 
     &:hover {
@@ -93,7 +95,9 @@ export const StyledBannerControl = styled.button<StyledBannerControlProps>`
 interface NextPreviousControlProps {
   isDarkMode?: boolean;
 }
-export const NextPreviousControl = styled(StyledBannerControl)<NextPreviousControlProps>`
+export const NextPreviousControl = styled(
+  StyledBannerControl
+)<NextPreviousControlProps>`
   height: 24px;
   width: 24px;
   transition: transform ${animation.durations.faster}ms ease-in-out;
@@ -104,7 +108,9 @@ export const NextPreviousControl = styled(StyledBannerControl)<NextPreviousContr
     transform: scale(1.1);
   }
 
-  ${({ isDarkMode }) => isDarkMode && `
+  ${({ isDarkMode }) =>
+    isDarkMode &&
+    `
     background-color: ${colors.grayLightest};
   `}
 `;

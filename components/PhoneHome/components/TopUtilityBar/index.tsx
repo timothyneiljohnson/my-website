@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react';
-import { Grid, Col, Icon, Row } from '../../../../common-components';
+import { Grid } from '../../../../common-components/Grid';
+import { Col } from '../../../../common-components/Col';
+import { Icon } from '../../../../common-components/Icon';
+import { Row } from '../../../../common-components/Row';
 import { colors } from '../../../../common-components/design-tokens';
 import {
   CellNetwork,

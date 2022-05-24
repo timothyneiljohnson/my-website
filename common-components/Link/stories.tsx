@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from '..';
+import { Link } from '.';
 import { colors } from '../design-tokens';
 
 export default {

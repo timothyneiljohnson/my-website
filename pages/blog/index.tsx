@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import { getAllPostsWithImagesFromServer } from '../../lib/utils';
-import { Placeholder } from '../../common-components';
+import { Placeholder } from '../../common-components/Placeholder';
 import { PageShell } from '../../components/PageShell';
 import { Post } from '../../components/Post';
 

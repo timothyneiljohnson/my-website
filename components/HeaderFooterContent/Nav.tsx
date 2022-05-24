@@ -1,7 +1,8 @@
 import { forwardRef, useCallback } from 'react';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
-import { Button, Icon } from '../../common-components';
+import { Button } from '../../common-components/Button';
+import { Icon } from '../../common-components/Icon';
 import { MainNavList, MainNavListItem } from './styles';
 import { colors, gradients } from '../../common-components/design-tokens';
 import { useStorageDarkMode } from '../storage-dark-mode-context';
@@ -64,6 +65,9 @@ export const Nav = forwardRef<HTMLButtonElement, NavProps>(
         </MainNavListItem>
         <MainNavListItem>
           <Button onClick={handleDarkModeToggle} pill size={navButtonSize}>
+            <span className="h-sr-only">
+              {isDarkMode ? 'Enable light mode' : 'Enable dark mode'}
+            </span>
             {isDarkMode ? (
               <Icon
                 fill={`${isDarkMode ? colors.white : colors.grayDarkest}`}

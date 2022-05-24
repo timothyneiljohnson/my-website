@@ -11,7 +11,7 @@ interface FilterableItemWrapperProps {
   wasFilteredOut: boolean;
 }
 
-export const FilterableItemWrapper = styled.li<FilterableItemWrapperProps>`
+export const FilterableItemWrapper = styled.div<FilterableItemWrapperProps>`
   position: relative;
   z-index: 1;
   display: ${(props) =>

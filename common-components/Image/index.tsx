@@ -1,9 +1,9 @@
+import { ImageProps as NextImageProps } from 'next/image';
 import { StyledImage } from './styles';
 
-interface ImageProps {
+interface ImageProps extends NextImageProps {
   className?: string;
   draggable?: boolean;
-  fullWidth?: boolean;
   height?: number;
   width?: number;
   noFadeIn?: boolean;
@@ -15,7 +15,6 @@ interface ImageProps {
 export const Image = (props: ImageProps) => {
   const {
     className,
-    fullWidth,
     height,
     width,
     noFadeIn,
@@ -30,7 +29,6 @@ export const Image = (props: ImageProps) => {
   return (
     <StyledImage
       className={className}
-      fullWidth={fullWidth}
       height={heightValue}
       noFadeIn={noFadeIn}
       round={round}

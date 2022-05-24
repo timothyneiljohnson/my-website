@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { Image } from '../../../../common-components';
+import { Image } from '../../../../common-components/Image';
 import { AppItemStyled, AppOrFolderInner } from '../../styles';
 
 interface AppProps {
@@ -15,7 +15,7 @@ export const AppItem = ({ appData }: AppProps) => (
       {appData.widget}
       <Image
         draggable={false}
-        fullWidth
+        layout="fill"
         src={`/image-assets/phone-home/apps/${appData.image}`}
       />
     </AppOrFolderInner>

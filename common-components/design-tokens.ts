@@ -1,7 +1,8 @@
 import { keyframes } from 'styled-components';
+import { SideNames } from './types';
 
 const colors = {
-  primary: '#5874DC',
+  primary: 'hsl(227, 65%, 60%)',
   secondary: '#67b4a2',
   tertiary: '#384E78',
   quaternary: '#e06c78',
@@ -13,6 +14,12 @@ const colors = {
   grayDark: '#666',
   grayDarker: '#333',
   grayDarkest: '#222',
+  messages: {
+    info: '#248fc8',
+    warning: '#e29f4c',
+    success: '#2aa956',
+    error: '#cb3b3e',
+  },
 };
 
 const gradients = {
@@ -99,10 +106,10 @@ const animation = {
   keyframes: {
     backgroundPosition: keyframes`
       from {
-        background-position: 100% 0%;
+        background-position: 100%;
       }
       to {
-          background-position: 0% 100%;
+        background-position: 0%;
       }
     `,
     emphasisGrowAndRotate: keyframes`
@@ -136,7 +143,19 @@ const animation = {
         transform: translate(0, 0);
       }
     `,
-    riseInRiseOut: (distance: number) => keyframes`
+    scaleFadeIn: (initialScale: number) => keyframes`
+      from {
+        transform: scale(${initialScale});
+        opacity: 0;
+        pointer-events: none;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+        pointer-events: auto;
+      }
+    `,
+    slideInSlideOut: (distance: number) => keyframes`
       0% {
         transform: translateY(${distance}px);
         opacity: 0;
@@ -151,9 +170,23 @@ const animation = {
         opacity: 0;
       }
     `,
-    riseAndFadeIn: (distance: number) => keyframes`
+    slideIn: (direction: SideNames, distance: number) => keyframes`
       from {
-        transform: translateY(${distance}px);
+        transform: ${
+          ['bottom', 'top'].includes(direction) ? 'translateY' : 'translateX'
+        }(${['bottom', 'right'].includes(direction) ? distance : -distance}px);
+        pointer-events: none;
+      }
+      to {
+        transform: translateY(0px);
+        pointer-events: auto;
+      }
+    `,
+    slideFadeIn: (direction: SideNames, distance: number) => keyframes`
+      from {
+        transform: ${
+          ['bottom', 'top'].includes(direction) ? 'translateY' : 'translateX'
+        }(${['bottom', 'right'].includes(direction) ? distance : -distance}px);
         opacity: 0;
         pointer-events: none;
       }
@@ -171,6 +204,9 @@ const animation = {
         transform: rotate(360deg);
       }
     `,
+  },
+  curve: {
+    bounce: 'cubic-bezier(0.68, -0.6, 0.32, 1.8)',
   },
 };
 

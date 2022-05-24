@@ -1,6 +1,9 @@
 import NextLink from 'next/link';
 import { forwardRef } from 'react';
-import { Grid, Row, Col, Image } from '../../common-components';
+import { Grid } from '../../common-components/Grid';
+import { Row } from '../../common-components/Row';
+import { Col } from '../../common-components/Col';
+import { Image } from '../../common-components/Image';
 import { useMediaQueries } from '../media-queries-context';
 import { useStorageDarkMode } from '../storage-dark-mode-context';
 import { Nav } from './Nav';
@@ -22,7 +25,9 @@ export const HeaderFooterContent = forwardRef<HTMLButtonElement, NavProps>(
             <NextLink href="/" passHref>
               <LogoLink>
                 <Image
-                  height={30}
+                  alt="Timothy Neil Johnson"
+                  layout="fill"
+                  priority
                   src={
                     isDarkMode ? '/name-logo-darkMode.svg' : '/name-logo.svg'
                   }

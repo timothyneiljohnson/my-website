@@ -4,13 +4,11 @@ import {
   getFeaturedCategoriesFromServer,
   getFeaturedPostsFromServer,
 } from '../lib/utils';
-import {
-  Banner,
-  FeaturedPost,
-  FilterableList,
-  Outdent,
-  Placeholder,
-} from '../common-components';
+import { Banner } from '../common-components/Banner';
+import { FeaturedPost } from '../common-components/FeaturedPost';
+import { FilterableList } from '../common-components/FilterableList';
+import { Outdent } from '../common-components/Outdent';
+import { Placeholder } from '../common-components/Placeholder';
 import { PageShell } from '../components/PageShell';
 import { FEATURED_CATEGORY_ID } from '../lib/constants';
 import { useMediaQueries } from '../components/media-queries-context';

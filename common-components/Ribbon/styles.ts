@@ -59,6 +59,7 @@ export const StyledRibbonPolygon = styled.div<StyledRibbonPolygonProps>`
   padding: ${({ side }) => (side === 'top' ? '30px 5px' : '5px 30px')};
   ${({ side, facing }) => side === 'top' ? `border-top-${facing}` : `border-${facing}-${side}`}-radius: 5px;
   color: ${({ textColor }) => textColor};
+  pointer-events: none;
   background: ${({ color, gradientStart, gradientEnd }) =>
     !gradientStart
       ? color

@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
-import { ModalDrawer } from '..';
+import styled from 'styled-components';
+import { ModalDrawer } from '.';
 import { ProfilePulldownContent } from '../../components/ProfilePulldownContent';
 import { globalDecorators } from '../../storybook/decoratorHelpers';
 import { Button } from '../Button';
@@ -9,6 +10,18 @@ export default {
   title: 'Common/ModalDrawer',
   component: ModalDrawer,
 };
+
+const StyledStoryStageContainer = styled.div`
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+`;
+
+const StyledModalButtonContainer = styled.div`
+  margin: 16px;
+`;
 
 export const Default = ({ closeType, customClose, direction, title }) => {
   const ref = useRef(null);
@@ -20,12 +33,12 @@ export const Default = ({ closeType, customClose, direction, title }) => {
   };
 
   return (
-    <div style={{ position: 'fixed', left: '0' }}>
-      <div style={{ margin: '16px' }}>
+    <StyledStoryStageContainer>
+      <StyledModalButtonContainer>
         <Button onClick={handleClick} ref={ref}>
           Open ModalDrawer
         </Button>
-      </div>
+      </StyledModalButtonContainer>
       <ModalDrawer
         background={colors.grayLightest}
         closeType={closeType}
@@ -41,7 +54,7 @@ export const Default = ({ closeType, customClose, direction, title }) => {
         pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
         qui officia deserunt mollit anim id est laborum.
       </ModalDrawer>
-    </div>
+    </StyledStoryStageContainer>
   );
 };
 Default.decorators = globalDecorators;
@@ -66,12 +79,12 @@ export const CustomClose = ({
   };
 
   return (
-    <div style={{ position: 'fixed', left: '0' }}>
-      <div style={{ margin: '16px' }}>
+    <StyledStoryStageContainer>
+      <StyledModalButtonContainer>
         <Button onClick={handleClick} ref={ref}>
           Open ModalDrawer
         </Button>
-      </div>
+      </StyledModalButtonContainer>
       <ModalDrawer
         background={background}
         closeType={closeType}
@@ -83,7 +96,7 @@ export const CustomClose = ({
       >
         <ProfilePulldownContent />
       </ModalDrawer>
-    </div>
+    </StyledStoryStageContainer>
   );
 };
 CustomClose.decorators = globalDecorators;
@@ -92,5 +105,51 @@ CustomClose.args = {
   direction: 'top',
   closeType: 'floating',
   customClose: <Button size="sm">Close profile</Button>,
+  size: 330,
+};
+
+export const Fullscreen = ({
+  background,
+  closeType,
+  customClose,
+  direction,
+  modalType,
+  title,
+}) => {
+  const ref = useRef(null);
+  const [isOpen, setIsOpen] = useState(false);
+  const handleClick = () => setIsOpen(true);
+  const onCloseCallback = () => {
+    setIsOpen(false);
+    ref.current.focus();
+  };
+
+  return (
+    <StyledStoryStageContainer>
+      <StyledModalButtonContainer>
+        <Button onClick={handleClick} ref={ref}>
+          Open ModalDrawer
+        </Button>
+      </StyledModalButtonContainer>
+      <ModalDrawer
+        background={background}
+        closeType={closeType}
+        customClose={customClose}
+        direction={direction}
+        isOpen={isOpen}
+        modalType={modalType}
+        onCloseCallback={onCloseCallback}
+        title={title}
+      >
+        <ProfilePulldownContent />
+      </ModalDrawer>
+    </StyledStoryStageContainer>
+  );
+};
+Fullscreen.decorators = globalDecorators;
+Fullscreen.args = {
+  background: colors.grayLightest,
+  direction: 'top',
+  modalType: 'fullscreen',
   size: 330,
 };

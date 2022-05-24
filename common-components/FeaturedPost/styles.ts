@@ -42,12 +42,12 @@ export const FeaturedPostImage = styled(Image)`
 `;
 
 export const ViewThisFeatureWrapper = styled.div`
-  position: absolute;
   width: 100%;
   height: 287px;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 `;
 
 interface ViewThisFeatureProps {

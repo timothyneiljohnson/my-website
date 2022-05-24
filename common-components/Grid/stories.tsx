@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid } from '..';
+import { Grid } from '.';
 
 export default {
   title: 'Common/Layout/Grid',

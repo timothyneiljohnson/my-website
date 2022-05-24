@@ -1,6 +1,10 @@
 import styled from 'styled-components';
-import { colors, decorations, mediaQueries } from '../../common-components/design-tokens';
-import { Heading, Image } from '../../common-components';
+import {
+  colors,
+  decorations,
+  mediaQueries,
+} from '../../common-components/design-tokens';
+import { Heading } from '../../common-components/Heading';
 
 interface PostBodyProps {
   isDarkMode?: boolean;
@@ -29,10 +33,7 @@ export const PostBody = styled.div<PostBodyProps>`
   `}
 `;
 
-interface PostHeadingProps {
-  isDarkMode?: boolean;
-}
-export const PostHeading = styled(Heading)<PostHeadingProps>`
+export const PostHeading = styled(Heading)`
   text-transform: uppercase;
   margin-bottom: 22px;
   word-break: break-word;
@@ -44,17 +45,11 @@ export const PostHeading = styled(Heading)<PostHeadingProps>`
   @media ${mediaQueries.xxsMax} {
     ${decorations.headingFontStyle.h3}
   }
-
-  ${({ isDarkMode }) =>
-    isDarkMode &&
-    `
-    color: ${colors.grayLighter};
-  `}
 `;
 
-export const ExcerptImage = styled(Image)`
-  height: auto;
-  width: 100%;
+export const ExcerptImageWrapper = styled.div`
+  position: relative;
+  height: 300px;
   margin-bottom: 22px;
 `;
 
@@ -134,7 +129,7 @@ export const TeardropCategoryWrapper = styled.div<TeardropCategoryWrapperProps>`
   ${({ isDarkMode }) =>
     isDarkMode &&
     `
-    background-color: ${colors.quinary};
+    background-color: ${colors.secondary};
   `}
 `;
 

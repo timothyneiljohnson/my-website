@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components';
-import { Col, Icon, Image } from '../../common-components';
+import { Col } from '../../common-components/Col';
+import { Icon } from '../../common-components/Icon';
+import { Image } from '../../common-components/Image';
 import {
   animation,
   colors,
@@ -52,7 +54,7 @@ export const StyledReactionsSelectorInner = styled.div`
   justify-content: center;
   height: 100%;
 
-  animation: ${animation.keyframes.riseAndFadeIn(100)} 400ms ease;
+  animation: ${animation.keyframes.slideFadeIn('bottom', 100)} 400ms ease;
 `;
 
 interface StaticReactionImageProps {

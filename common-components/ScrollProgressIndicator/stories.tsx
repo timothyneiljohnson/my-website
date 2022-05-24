@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { ScrollProgressIndicator } from '..';
+import { ScrollProgressIndicator } from '.';
 
 export default {
   title: 'Common/ScrollProgressIndicator',

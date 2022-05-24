@@ -1,5 +1,5 @@
 import React from 'react';
-import { Outdent } from '..';
+import { Outdent } from '.';
 
 export default {
   title: 'Common/Layout/Outdent',

@@ -6,19 +6,25 @@ import {
   Day,
   Month,
   PostHeading,
-  ExcerptImage,
   PostInnerContainer,
   PostWrapper,
   TeardropCategoryWrapper,
   TeardropCategoryInner,
+  ExcerptImageWrapper,
 } from './styles';
 import { shortMonthNames } from './constants';
 import { PostInfo } from './PostInfoContent';
 import { CategoryIcon } from './CategoryIcon';
 import { colors, gradients } from '../../common-components/design-tokens';
 import { useMediaQueries } from '../media-queries-context';
-import { Col, Grid, Link, Ribbon, Row, StickyElement } from '../../common-components';
+import { Col } from '../../common-components/Col';
+import { Grid } from '../../common-components/Grid';
+import { Link } from '../../common-components/Link';
+import { Ribbon } from '../../common-components/Ribbon';
+import { Row } from '../../common-components/Row';
+import { StickyElement } from '../../common-components/StickyElement';
 import { useStorageDarkMode } from '../storage-dark-mode-context';
+import { Image } from '../../common-components/Image';
 
 export const Post = ({ post }) => {
   const ref = useRef(null);
@@ -73,8 +79,7 @@ export const Post = ({ post }) => {
                   </TeardropCategoryWrapper>
                 )}
                 <PostHeading
-                  color={colors.grayDarkest}
-                  isDarkMode={isDarkMode}
+                  color={isDarkMode ? colors.white : colors.grayDarkest}
                   level={2}
                   size={1}
                 >
@@ -83,7 +88,17 @@ export const Post = ({ post }) => {
                 {featuredImg && (
                   <NextLink href={`/post/${post.id}`} passHref>
                     <a>
-                      <ExcerptImage src={featuredImg} />
+                      <ExcerptImageWrapper>
+                        <Image
+                          alt={post.title.rendered}
+                          layout="fill"
+                          objectFit="cover"
+                          objectPosition="top"
+                          priority
+                          sizes="50vw"
+                          src={featuredImg}
+                        />
+                      </ExcerptImageWrapper>
                     </a>
                   </NextLink>
                 )}
@@ -91,7 +106,12 @@ export const Post = ({ post }) => {
                   <div>{parse(post.excerpt.rendered)}</div>
                   <p>
                     <NextLink href={`/post/${post.id}`} passHref>
-                      <Link noUnderline>Continue reading</Link>
+                      <Link
+                        color={isDarkMode ? colors.secondary : colors.primary}
+                        noUnderline
+                      >
+                        Continue reading
+                      </Link>
                     </NextLink>
                   </p>
                 </div>

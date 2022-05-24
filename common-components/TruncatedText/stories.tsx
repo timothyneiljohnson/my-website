@@ -1,5 +1,5 @@
 import React from 'react';
-import { TruncatedText } from '..';
+import { TruncatedText } from '.';
 
 export default {
   title: 'Common/TruncatedText',

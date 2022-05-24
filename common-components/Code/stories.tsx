@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code } from '..';
+import { Code } from '.';
 
 export default {
   title: 'Common/Code',

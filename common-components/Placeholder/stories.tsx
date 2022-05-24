@@ -1,5 +1,5 @@
 import React from 'react';
-import { Placeholder } from '..';
+import { Placeholder } from '.';
 import { globalDecorators } from '../../storybook/decoratorHelpers';
 
 export default {

@@ -15,6 +15,7 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
     const { color = colors.primary, noUnderline = false, ...restProps } = props;
     return (
       <StyledLink
+        as={restProps.role === 'button' ? 'button' : 'a'}
         color={color}
         noUnderline={noUnderline}
         ref={ref}

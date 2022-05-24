@@ -20,8 +20,10 @@ export const MainNavListItem = styled.li`
 `;
 
 export const LogoLink = styled.a`
-  height: auto;
+  height: 30px;
+  width: 100%;
   display: inline-block;
   outline: none;
   margin-top: 21px;
+  position: relative;
 `;

@@ -20,8 +20,8 @@ const primaryButtonBGColor = colors.primary;
 const primaryButtonBorderColor = colors.primary;
 const primaryButtonTextColor = colors.white;
 
-const secondaryButtonBGColor = colors.secondary;
-const secondaryButtonBorderColor = colors.secondary;
+const secondaryButtonBGColor = colors.tertiary;
+const secondaryButtonBorderColor = colors.tertiary;
 const secondaryButtonTextColor = colors.white;
 
 const defaultButtonBorderColor = colors.grayLighter;

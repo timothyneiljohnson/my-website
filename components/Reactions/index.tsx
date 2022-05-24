@@ -13,7 +13,8 @@ import {
   StyledActionCol,
   reactionSvgs,
 } from './styles';
-import { Grid, Row } from '../../common-components';
+import { Grid } from '../../common-components/Grid';
+import { Row } from '../../common-components/Row';
 import { colors } from '../../common-components/design-tokens';
 
 export const Reactions = () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Ribbon } from '..';
+import { Ribbon } from '.';
 import { colors, gradients } from '../design-tokens';
 
 export default {

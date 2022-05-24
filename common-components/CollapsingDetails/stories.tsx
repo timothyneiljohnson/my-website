@@ -1,5 +1,5 @@
 import React from 'react';
-import { CollapsingDetails } from '..';
+import { CollapsingDetails } from '.';
 
 export default {
   title: 'Common/CollapsingDetails',

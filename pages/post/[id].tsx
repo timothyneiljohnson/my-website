@@ -1,4 +1,3 @@
-import axios from 'axios';
 import parse from 'html-react-parser';
 import Prism from 'prismjs';
 import { useEffect } from 'react';
@@ -6,13 +5,14 @@ import { getAuthor, getFeaturedImage } from '../../lib/utils';
 import { POSTS_API_URL } from '../../lib/constants';
 import { PageShell } from '../../components/PageShell';
 import {
-  FeaturedPageImage,
+  FeaturedImageWrapper,
   PostHeading,
   StyledDate,
   StyledPageContainer,
 } from '../../components/PageShell/styles';
 import { colors } from '../../common-components/design-tokens';
 import { useStorageDarkMode } from '../../components/storage-dark-mode-context';
+import { Image } from '../../common-components/Image';
 
 const Post = ({ title, featuredImg, content, date }) => {
   // PrismJS requires the DOM
@@ -30,16 +30,27 @@ const Post = ({ title, featuredImg, content, date }) => {
       <StyledPageContainer isDarkMode={isDarkMode}>
         <PostHeading
           animateTyping
-          color={isDarkMode ? colors.grayLightest : null}
+          color={isDarkMode ? colors.white : null}
           level={1}
           size={1}
         >
           {title}
         </PostHeading>
-        <div>
-          <FeaturedPageImage src={featuredImg} />
-        </div>
-        <StyledDate>{`Published on ${formattedDate}`}</StyledDate>
+        {featuredImg && (
+          <FeaturedImageWrapper>
+            <Image
+              alt={title}
+              layout="fill"
+              objectFit="cover"
+              objectPosition="top"
+              priority
+              src={featuredImg}
+            />
+          </FeaturedImageWrapper>
+        )}
+        <StyledDate isDarkMode={isDarkMode}>
+          {`Published on ${formattedDate}`}
+        </StyledDate>
         <div>{parse(content)}</div>
       </StyledPageContainer>
     </PageShell>
@@ -48,8 +59,7 @@ const Post = ({ title, featuredImg, content, date }) => {
 
 // This function gets called at build time
 export const getStaticPaths = async () => {
-  const res = await axios.get(POSTS_API_URL);
-  const posts = res.data;
+  const posts = await (await fetch(POSTS_API_URL)).json();
 
   // Get the paths we want to pre-render based on posts
   const paths = posts.map((post) => ({
@@ -62,10 +72,11 @@ export const getStaticPaths = async () => {
 
 // This also gets called at build time
 export const getStaticProps = async ({ params }) => {
-  const res = await axios.get(`${POSTS_API_URL}/${params.id}`);
-  const post = await res.data;
+  const post = await (await fetch(`${POSTS_API_URL}/${params.id}`)).json();
 
-  const featuredImg = post.featured_media ? await getFeaturedImage(post.featured_media) : null;
+  const featuredImg = post.featured_media
+    ? await getFeaturedImage(post.featured_media)
+    : null;
   const author = await getAuthor(post.author);
 
   return {

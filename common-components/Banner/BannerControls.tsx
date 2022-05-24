@@ -34,6 +34,7 @@ export const BannerControls = ({
   return length > 1 ? (
     <BannerControlsStyled>
       <NextPreviousControl
+        aria-label="Go to previous slide"
         isActive
         isDarkMode={isDarkMode}
         onClick={handlePreviousSlideControlClick}
@@ -46,6 +47,7 @@ export const BannerControls = ({
       </NextPreviousControl>
       {[...Array(length)].map((_, index) => (
         <StyledBannerControl
+          aria-label={`Go to slide ${index + 1}`}
           isActive={index === currentIndex}
           isDarkMode={isDarkMode}
           key={index}
@@ -53,6 +55,7 @@ export const BannerControls = ({
         />
       ))}
       <NextPreviousControl
+        aria-label="Go to next slide"
         isActive
         isDarkMode={isDarkMode}
         onClick={handleNextSlideControlClick}

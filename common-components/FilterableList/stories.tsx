@@ -1,5 +1,5 @@
 import React from 'react';
-import { FilterableList } from '..';
+import { FilterableList } from '.';
 import { globalDecorators } from '../../storybook/decoratorHelpers';
 import { FeaturedPost } from '../FeaturedPost';
 import { Image } from '../Image';

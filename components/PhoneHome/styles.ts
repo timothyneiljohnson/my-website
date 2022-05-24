@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { colors, mediaQueries } from '../../common-components/design-tokens';
-import { Icon, PlainGrid, Row } from '../../common-components';
+import { Icon } from '../../common-components/Icon';
+import { PlainGrid } from '../../common-components/PlainGrid';
+import { Row } from '../../common-components/Row';
 
 interface StyledPhoneHomeProps {
   height?: number;

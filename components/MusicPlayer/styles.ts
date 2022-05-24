@@ -1,5 +1,10 @@
 import styled, { css } from 'styled-components';
-import { Col, Grid, Heading, Icon, Image, Row } from '../../common-components';
+import { Col } from '../../common-components/Col';
+import { Grid } from '../../common-components/Grid';
+import { Heading } from '../../common-components/Heading';
+import { Icon } from '../../common-components/Icon';
+import { Image } from '../../common-components/Image';
+import { Row } from '../../common-components/Row';
 import {
   animation,
   colors,

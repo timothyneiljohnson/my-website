@@ -1,5 +1,5 @@
 import React from 'react';
-import { Toggle } from '..';
+import { Toggle } from '.';
 import { StandardSizes } from '../types';
 
 export default {

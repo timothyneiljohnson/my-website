@@ -1,4 +1,4 @@
-import { BannerSlideStyled } from './styles';
+import { BannerImageStyled } from './styles';
 
 interface BannerSlideProps {
   isCurrentSlide: boolean;
@@ -6,9 +6,15 @@ interface BannerSlideProps {
 }
 
 export const BannerSlide = ({ isCurrentSlide, post }: BannerSlideProps) => (
-  <BannerSlideStyled
-    imageUrl={post._embedded['wp:featuredmedia']['0'].source_url}
+  <BannerImageStyled
+    alt={post.title.rendered}
     isCurrentSlide={isCurrentSlide}
+    layout="fill"
+    objectFit="cover"
+    objectPosition="top"
+    priority
+    sizes="60vw"
+    src={post._embedded['wp:featuredmedia']['0'].source_url}
   />
 );
 

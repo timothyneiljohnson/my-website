@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col } from '..';
+import { Col } from '.';
 
 export default {
   title: 'Common/Layout/Col',

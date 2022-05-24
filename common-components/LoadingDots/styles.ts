@@ -40,18 +40,18 @@ export const LoadingDot = styled.div<LoadingDotProps>`
   border-radius: 50%;
   background-color: ${({ color }) => color};
   color: ${({ color }) => color};
-  animation: ${({ size }) => animation.keyframes.riseInRiseOut(sizeMap[size] * 1.4)} 1.2s infinite linear;
+  animation: ${({ size }) => animation.keyframes.slideInSlideOut(sizeMap[size] * 1.4)} 1.2s infinite linear;
   animation-delay: 0.15s;
 
-  &:first-child {
+  &:first-of-type {
     left: ${({ size }) => sizeMap[size] * -1.5}px;
-    animation: ${({ size }) => animation.keyframes.riseInRiseOut(sizeMap[size] * 1.4)} 1.2s infinite linear;
+    animation: ${({ size }) => animation.keyframes.slideInSlideOut(sizeMap[size] * 1.4)} 1.2s infinite linear;
     animation-delay: 0s;
   }
 
   &:nth-child(3) {
     left: ${({ size }) => sizeMap[size] * 1.5}px;
-    animation: ${({ size }) => animation.keyframes.riseInRiseOut(sizeMap[size] * 1.4)} 1.2s infinite linear;
+    animation: ${({ size }) => animation.keyframes.slideInSlideOut(sizeMap[size] * 1.4)} 1.2s infinite linear;
     animation-delay: 0.3s;
   }
 `;

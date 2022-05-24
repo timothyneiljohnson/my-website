@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon } from '..';
+import { Icon } from '.';
 import { colors } from '../design-tokens';
 import { IconList } from './helpers';
 
@@ -15,11 +15,11 @@ const iconArgTypes = {
     },
   },
   name: {
+    options: IconList,
     control: {
       type: 'select',
-      options: IconList,
-    },
-  },
+    }
+  }
 };
 
 export const Default = ({

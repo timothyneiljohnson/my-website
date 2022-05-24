@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { Icon, Image } from '../../common-components';
+import { Icon } from '../../common-components/Icon';
+import { Image } from '../../common-components/Image';
 import { animation, colors, mediaQueries } from '../../common-components/design-tokens';
 
 interface ProfileDescriptionProps {

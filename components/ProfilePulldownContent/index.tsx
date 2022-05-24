@@ -1,11 +1,9 @@
 import { FC } from 'react';
-import {
-  Button,
-  Col,
-  Grid,
-  Heading,
-  Row,
-} from '../../common-components';
+import { Button } from '../../common-components/Button';
+import { Col } from '../../common-components/Col';
+import { Grid } from '../../common-components/Grid';
+import { Heading } from '../../common-components/Heading';
+import { Row } from '../../common-components/Row';
 import { colors } from '../../common-components/design-tokens';
 import { useMediaQueries } from '../media-queries-context';
 import { useStorageDarkMode } from '../storage-dark-mode-context';
@@ -61,9 +59,7 @@ export const ProfilePulldownContent: FC = () => {
           <Col shrink>
             <MyNameIs>Hi, my name is</MyNameIs>
             <Heading
-              color={
-                isDarkMode ? colors.grayLightest : colors.grayDarker
-              }
+              color={isDarkMode ? colors.grayLightest : colors.grayDarker}
               level={smMax ? 2 : 1}
             >
               Tim Johnson.
@@ -71,8 +67,7 @@ export const ProfilePulldownContent: FC = () => {
               Software Engineer 👨‍💻
             </Heading>
             <p>
-              I'm a driven, experienced developer/designer based in
-              Minneapolis.
+              I'm a driven, experienced developer/designer based in Minneapolis.
             </p>
             <p>Lead Software Engineer at Target.</p>
             <BioCallToActionWrapper>
@@ -84,8 +79,13 @@ export const ProfilePulldownContent: FC = () => {
               </Button>
             </BioCallToActionWrapper>
           </Col>
-          <Col grow smHiddenDown>
-            <ProfilePicture src="/photo.png" />
+          <Col end flex grow smHiddenDown>
+            <ProfilePicture
+              height={222}
+              layout="fixed"
+              src="/photo.png"
+              width={184}
+            />
           </Col>
         </Row>
       </Grid>

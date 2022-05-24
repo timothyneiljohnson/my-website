@@ -1,6 +1,6 @@
 import React from 'react';
 import { LoadingDotsProps } from '.';
-import { LoadingDots } from '..';
+import { LoadingDots } from '.';
 import { PlainGrid } from '../PlainGrid';
 import { StandardSizes } from '../types';
 

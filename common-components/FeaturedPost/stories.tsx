@@ -1,5 +1,5 @@
 import React from 'react';
-import { FeaturedPost } from '..';
+import { FeaturedPost } from '.';
 import { globalDecorators } from '../../storybook/decoratorHelpers';
 import FeaturedPostFixture from './__tests__/__fixtures__';
 

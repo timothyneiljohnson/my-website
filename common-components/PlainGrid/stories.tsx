@@ -1,5 +1,5 @@
 import React from 'react';
-import { PlainGrid } from '..';
+import { PlainGrid } from '.';
 
 export default {
   title: 'Common/Layout/PlainGrid',

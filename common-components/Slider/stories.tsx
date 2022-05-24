@@ -1,6 +1,6 @@
 import React from 'react';
 import { StandardSizes } from '../types';
-import { Slider } from '..';
+import { Slider } from '.';
 
 export default {
   title: 'Common/Slider',

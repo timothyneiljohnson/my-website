@@ -7,6 +7,9 @@ import { BannerSlide } from './BannerSlide';
 interface BannerProps {
   slides?: {
     id: number;
+    title: {
+      rendered: string;
+    };
   }[];
 }
 
@@ -19,7 +22,9 @@ export const Banner = ({ slides = [] }: BannerProps) => {
 
   useEffect(() => {
     const bannerTimeout = setTimeout(() => {
-      setCurrentIndex(currentIndex === slides.length - 1 ? 0 : currentIndex + 1);
+      setCurrentIndex(
+        currentIndex === slides.length - 1 ? 0 : currentIndex + 1
+      );
     }, 4000);
 
     return () => clearTimeout(bannerTimeout);
@@ -30,7 +35,11 @@ export const Banner = ({ slides = [] }: BannerProps) => {
       <NextLink href={`/post/${slides[currentIndex].id}`} passHref>
         <StyledBanner>
           {slides.map((post, index) => (
-            <BannerSlide isCurrentSlide={currentIndex === index} key={index} post={post} />
+            <BannerSlide
+              isCurrentSlide={currentIndex === index}
+              key={index}
+              post={post}
+            />
           ))}
         </StyledBanner>
       </NextLink>

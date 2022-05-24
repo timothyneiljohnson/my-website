@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Heading } from '../../common-components';
+import { Heading } from '../../common-components/Heading';
 import { colors, decorations } from '../../common-components/design-tokens';
 
 export const StyledMain = styled.main`
@@ -28,14 +28,21 @@ export const StyledPageContainer = styled.div<StyledPageContainerProps>`
   ${decorations.boxShadow.smStyle}
 `;
 
-export const FeaturedPageImage = styled.img`
-  padding-bottom: 16px;
+export const FeaturedImageWrapper = styled.div`
+  position: relative;
   width: 100%;
+  height: 500px;
+  margin-bottom: 16px;
 `;
 
-export const StyledDate = styled.div`
+interface StyledDateProps {
+  isDarkMode?: boolean;
+}
+export const StyledDate = styled.div<StyledDateProps>`
   font-family: Helvetica, Arial, Sans-Serif;
-  color: ${colors.grayLight};
+  ${({ isDarkMode }) => `
+    color: ${isDarkMode ? colors.grayLighter : colors.grayDark};
+  `}
   font-weight: bold;
   font-style: italic;
   letter-spacing: 0.2px;

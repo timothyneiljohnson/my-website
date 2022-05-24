@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { StickyElement } from '..';
+import { StickyElement } from '.';
 import { colors } from '../design-tokens';
 import { PostInfo } from '../../components/Post/PostInfoContent';
 

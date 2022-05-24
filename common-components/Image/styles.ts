@@ -1,8 +1,8 @@
+import Image, { ImageProps } from 'next/image';
 import styled, { css } from 'styled-components';
 import { animation } from '../design-tokens';
 
-interface StyledImageProps {
-  fullWidth?: boolean;
+interface StyledImageProps extends ImageProps {
   height?: number;
   width?: number;
   topMargin?: number;
@@ -11,10 +11,10 @@ interface StyledImageProps {
   shortestSideLength?: number;
 }
 
-export const StyledImage = styled.img<StyledImageProps>`
-  height: ${({ height }) => `${height > 0 ? `${height}px` : 'auto'}`};
-  width: ${({ width }) => `${width > 0 ? `${width}px` : 'auto'};`};
-  ${({ width, fullWidth }) => `${!width && fullWidth ? 'width: 100%;' : ''}`}
+export const StyledImage = styled(Image).withConfig({
+  shouldForwardProp: (prop) =>
+    !['noFadeIn', 'round', 'shortestSideLength'].includes(prop),
+})<StyledImageProps>`
   ${({ shortestSideLength, round }) =>
     round
       ? `

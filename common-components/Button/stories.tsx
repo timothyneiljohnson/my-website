@@ -1,6 +1,6 @@
 import React from 'react';
 import { ButtonProps } from '.';
-import { Button } from '..';
+import { Button } from '.';
 import { globalDecorators } from '../../storybook/decoratorHelpers';
 import { colors, gradients } from '../design-tokens';
 import { Icon } from '../Icon';
@@ -16,13 +16,13 @@ const ButtonDemoRow = ({ variant, disabled = false }: ButtonProps) => {
   return (
     <>
       {sizes.map((size: ButtonProps['size'], i) => (
-        <tr key={i}>
-          <div style={{ margin: '8px 8px 8px 0' }}>
+        <div key={i}>
+          <div style={{ margin: '12px 12px 12px 0' }}>
             <Button disabled={disabled} size={size} variant={variant}>
               {`Button ${size}`}
             </Button>
           </div>
-        </tr>
+        </div>
       ))}
     </>
   );
@@ -38,33 +38,35 @@ export const ButtonVariantsAndSizes = () => (
         <td>disabled</td>
       </tr>
     </thead>
-    <tr>
-      <td>
-        <ButtonDemoRow variant="primary" />
-      </td>
-      <td>
-        <ButtonDemoRow variant="secondary" />
-      </td>
-      <td>
-        <ButtonDemoRow />
-      </td>
-      <td>
-        <ButtonDemoRow disabled />
-      </td>
-    </tr>
+    <tbody>
+      <tr>
+        <td>
+          <ButtonDemoRow variant="primary" />
+        </td>
+        <td>
+          <ButtonDemoRow variant="secondary" />
+        </td>
+        <td>
+          <ButtonDemoRow />
+        </td>
+        <td>
+          <ButtonDemoRow disabled />
+        </td>
+      </tr>
+    </tbody>
   </table>
 );
 ButtonVariantsAndSizes.decorators = globalDecorators;
 
 export const FullWidthButton = () => (
-  <table style={{ width: '300px', background: colors.grayLightest }}>
-    <tr>
+  <div style={{ width: '300px', background: colors.grayLightest }}>
+    <div>
       <Button>Normal Button</Button>
-    </tr>
-    <tr>
+    </div>
+    <div>
       <Button fullWidth>Full-Width Button</Button>
-    </tr>
-  </table>
+    </div>
+  </div>
 );
 FullWidthButton.decorators = globalDecorators;
 

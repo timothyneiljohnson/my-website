@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 import { a11y, animation, focusStyle } from '../design-tokens';
-import { Heading, Icon } from '..';
+import { Heading } from '../Heading';
+import { Icon } from '../Icon';
 import { getOppositedirection } from '../helpers';
 import { SideNames } from '../types';
+import { Transition } from '../Transition';
 
 interface FloatingCloseButtonWrapperProps {
   direction: SideNames;
@@ -19,34 +21,31 @@ export const FloatingCloseButtonWrapper = styled.div<FloatingCloseButtonWrapperP
 `;
 
 interface ModalDrawerContainerProps {
-  background: string;
   direction: SideNames;
   isHorizontal: boolean;
-  isOverlayDisplayed: boolean;
   isOpen: boolean;
   size: number;
+  modalType: 'fullscreen' | 'float';
 }
 export const ModalDrawerContainer = styled.div<ModalDrawerContainerProps>`
   position: fixed;
   z-index: 100;
-  background: ${({ background }) => background};
 
-  ${({ direction, isHorizontal, isOpen, size }) => `
-    transition: margin-${direction} ${animation.durations.slow}ms ease-in-out;
-    margin-${direction}: ${isOpen ? 0 : `${-size}px`};
-    ${isHorizontal ? 'min-width' : 'min-height'}: ${size}px;
+  ${({ direction, modalType, isHorizontal, size }) => `
+    ${isHorizontal ? 'width' : 'height'}: ${size}px;
     ${isHorizontal ? 'height' : 'width'}: 100%;
+    ${modalType === 'fullscreen' ? `
+      height: 100%;
+      width: 100%;
+    ` : ''}
     ${direction}: 0;
     ${direction === 'bottom' ? 'bottom' : 'top'}: 0;
     ${a11y.reduceMotionOverrideStyle}
   `}
 
   ${FloatingCloseButtonWrapper} {
-    ${({ direction, isHorizontal, isOpen, isOverlayDisplayed }) => `
-      display: ${isOverlayDisplayed ? 'flex' : 'none'};
-      transition: ${direction} ${
-      animation.durations.slow
-    }ms ease-in-out, opacity ${animation.durations.faster}ms ease-in-out;
+    ${({ isHorizontal, isOpen }) => `
+      transition: opacity ${animation.durations.faster}ms ease-in-out;
       opacity: ${isOpen ? '1' : '0'};
       ${isHorizontal ? 'height' : 'width'}: 100%;
       ${a11y.reduceMotionOverrideStyle}
@@ -54,10 +53,10 @@ export const ModalDrawerContainer = styled.div<ModalDrawerContainerProps>`
   }
 `;
 
-interface ModalDrawerInnerProps {
+interface ModalDrawerInnerTransitionProps {
   background?: string;
 }
-export const ModalDrawerInner = styled.div<ModalDrawerInnerProps>`
+export const ModalDrawerInnerTransition = styled(Transition)<ModalDrawerInnerTransitionProps>`
   position: absolute;
   padding: 0 20px;
   width: 100%;

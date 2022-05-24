@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useDrag } from '@use-gesture/react';
-import { Col, Grid, Row } from '../../common-components';
+import { Col } from '../../common-components/Col';
+import { Grid } from '../../common-components/Grid';
+import { Row } from '../../common-components/Row';
 import { colors } from '../../common-components/design-tokens';
 import { AppItem } from './components/AppItem';
 import { FolderItem } from './components/FolderItem';

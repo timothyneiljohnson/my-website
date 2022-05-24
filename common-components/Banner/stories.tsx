@@ -1,5 +1,5 @@
 import React from 'react';
-import { Banner } from '..';
+import { Banner } from '.';
 import { MediaQueriesProvider } from '../../components/media-queries-context';
 import { globalDecorators } from '../../storybook/decoratorHelpers';
 import BannerPostsFixture from './__tests__/__fixtures__';

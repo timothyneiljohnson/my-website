@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Icon } from '../../../../common-components';
+import { Icon } from '../../../../common-components/Icon';
 
 interface TopUtilityBarProps {
   isSearchOpen?: boolean;

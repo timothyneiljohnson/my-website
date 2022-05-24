@@ -15,7 +15,7 @@ export const Heading = ({
   children,
   color,
   className,
-  level = 1,
+  level = 3,
   size,
   animateTyping,
   noMargin,
