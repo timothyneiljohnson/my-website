@@ -20,6 +20,7 @@ export const FilterListItemButton = ({
     variant={isSelected ? 'secondary' : null}
   >
     {children}
+    {isSelected && <span className="h-sr-only">- active</span>}
   </Button>
 );
 

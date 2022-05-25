@@ -32,6 +32,7 @@ export const SliderWrapper = styled.div<StyledSliderWrapperProps>`
   height: ${({ size }) => sizeMap[size]}px;
   width: 100%;
   position: relative;
+  cursor: pointer;
 
   &:hover {
     ${SliderActive} {

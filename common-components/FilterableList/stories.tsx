@@ -2,7 +2,6 @@ import React from 'react';
 import { FilterableList } from '.';
 import { globalDecorators } from '../../storybook/decoratorHelpers';
 import { FeaturedPost } from '../FeaturedPost';
-import { Image } from '../Image';
 import {
   CategoriesFixture,
   ItemsWithCategoriesFixture,
@@ -41,7 +40,7 @@ export const PlayingCardsDemo = () => (
     minWidth="140px"
   >
     {CardsWithSuitsFixture.map((card, index) => (
-      <Image key={index} src={card.icon} />
+      <img alt="card" key={index} src={card.icon} />
     ))}
   </FilterableList>
 );

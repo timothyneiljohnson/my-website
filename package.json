@@ -61,7 +61,6 @@
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-storybook": "^0.5.12",
-    "install": "^0.13.0",
     "jest": "^28.1.0",
     "postcss": "^8.1.10",
     "postcss-import": "^14.1.0",

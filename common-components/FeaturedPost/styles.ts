@@ -47,7 +47,6 @@ export const ViewThisFeatureWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
 `;
 
 interface ViewThisFeatureProps {
@@ -60,6 +59,7 @@ export const ViewThisFeature = styled.span<ViewThisFeatureProps>`
   transition: opacity ${animation.durations.faster}ms ease-in-out;
   background-color: ${colors.white};
   padding: 10px 10px 9px;
+  position: absolute;
   ${decorations.borderRadiusStyle}
 
   ${({ isDarkMode }) =>

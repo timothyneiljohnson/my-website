@@ -55,6 +55,7 @@ export const Nav = forwardRef<HTMLButtonElement, NavProps>(
         </MainNavListItem>
         <MainNavListItem>
           <Button
+            aria-label="Profile - shows more content"
             onClick={handleOpenProfileDrawer}
             pill
             ref={ref}

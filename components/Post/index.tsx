@@ -12,7 +12,7 @@ import {
   TeardropCategoryInner,
   ExcerptImageWrapper,
 } from './styles';
-import { shortMonthNames } from './constants';
+import { monthNames, shortMonthNames } from './constants';
 import { PostInfo } from './PostInfoContent';
 import { CategoryIcon } from './CategoryIcon';
 import { colors, gradients } from '../../common-components/design-tokens';
@@ -32,8 +32,9 @@ export const Post = ({ post }) => {
   const toggleRibbonHover = useCallback(() => {
     setIsRibbonHovered(!isRibbonHovered);
   }, [isRibbonHovered]);
-
-  const shortMonth = shortMonthNames[new Date(post.date).getMonth()];
+  const postDateMonth = new Date(post.date).getMonth();
+  const month = monthNames[postDateMonth];
+  const shortMonth = shortMonthNames[postDateMonth];
   const dateOfMonth = new Date(post.date).getDate();
   const featuredMedia = post._embedded['wp:featuredmedia'] ?? {};
   const featuredImg = featuredMedia['0']?.source_url;
@@ -60,11 +61,15 @@ export const Post = ({ post }) => {
                   thickness={smMax ? 45 : 62}
                   top={isDarkMode ? 0 : 2}
                 >
-                  {xsMax && (
-                    <CategoryIcon categories={post.categories} size={26} />
-                  )}
-                  <Day>{dateOfMonth}</Day>
-                  <Month>{shortMonth}</Month>
+                  <div aria-label={`Posted on ${month} ${dateOfMonth}`}>
+                    <div aria-hidden>
+                      {xsMax && (
+                        <CategoryIcon categories={post.categories} size={26} />
+                      )}
+                      <Day>{dateOfMonth}</Day>
+                      <Month>{shortMonth}</Month>
+                    </div>
+                  </div>
                 </Ribbon>
               </div>
               <PostBody isDarkMode={isDarkMode}>

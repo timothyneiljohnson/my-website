@@ -67,11 +67,14 @@ export const Reactions = () => {
     }
   }, [reactionType]);
 
-  useEffect(() => () => {
-    // Clean up on unmount
-    clearTimeout(reactionSelectorShownTimeout.current);
-    clearTimeout(reactionSelectorHiddenTimeout.current);
-  }, []);
+  useEffect(
+    () => () => {
+      // Clean up on unmount
+      clearTimeout(reactionSelectorShownTimeout.current);
+      clearTimeout(reactionSelectorHiddenTimeout.current);
+    },
+    []
+  );
 
   const staticReactionIcon = reactionType
     ? reactionSvgs[reactionType]
@@ -91,25 +94,53 @@ export const Reactions = () => {
               <StyledReactionsSelector>
                 <StyledReactionsSelectorInner>
                   <button onClick={() => handleSetReactionType('like')}>
-                    <AnimatedReactionImage size={40} src="/image-assets/reactions/like.gif" />
+                    <AnimatedReactionImage
+                      height={40}
+                      src="/image-assets/reactions/like.gif"
+                      width={40}
+                    />
                   </button>
                   <button onClick={() => handleSetReactionType('love')}>
-                    <AnimatedReactionImage size={40} src="/image-assets/reactions/love.gif" />
+                    <AnimatedReactionImage
+                      height={40}
+                      src="/image-assets/reactions/love.gif"
+                      width={40}
+                    />
                   </button>
                   <button onClick={() => handleSetReactionType('care')}>
-                    <AnimatedReactionImage size={40} src="/image-assets/reactions/care.gif" />
+                    <AnimatedReactionImage
+                      height={40}
+                      src="/image-assets/reactions/care.gif"
+                      width={40}
+                    />
                   </button>
                   <button onClick={() => handleSetReactionType('laugh')}>
-                    <AnimatedReactionImage size={40} src="/image-assets/reactions/laugh.gif" />
+                    <AnimatedReactionImage
+                      height={40}
+                      src="/image-assets/reactions/laugh.gif"
+                      width={40}
+                    />
                   </button>
                   <button onClick={() => handleSetReactionType('wow')}>
-                    <AnimatedReactionImage size={40} src="/image-assets/reactions/wow.gif" />
+                    <AnimatedReactionImage
+                      height={40}
+                      src="/image-assets/reactions/wow.gif"
+                      width={40}
+                    />
                   </button>
                   <button onClick={() => handleSetReactionType('sad')}>
-                    <AnimatedReactionImage size={40} src="/image-assets/reactions/sad.gif" />
+                    <AnimatedReactionImage
+                      height={40}
+                      src="/image-assets/reactions/sad.gif"
+                      width={40}
+                    />
                   </button>
                   <button onClick={() => handleSetReactionType('angry')}>
-                    <AnimatedReactionImage size={40} src="/image-assets/reactions/angry.gif" />
+                    <AnimatedReactionImage
+                      height={40}
+                      src="/image-assets/reactions/angry.gif"
+                      width={40}
+                    />
                   </button>
                 </StyledReactionsSelectorInner>
               </StyledReactionsSelector>
@@ -121,9 +152,9 @@ export const Reactions = () => {
               >
                 <StaticReactionImage
                   animate={isStaticReactionAnimating}
-                  noFadeIn
-                  size={19}
+                  height={19}
                   src={staticReactionIcon}
+                  width={19}
                 />
                 <StyledReactionTypeSpan>
                   {reactionType ?? 'like'}

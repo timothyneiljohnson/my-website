@@ -21,7 +21,7 @@ export const FeaturedPost = ({ post }: FeaturedPostProps) => {
     <NextLink href={`/post/${post.id}`} passHref>
       <FeaturedPostWrapper isDarkMode={isDarkMode}>
         <ViewThisFeatureWrapper>
-          <FeaturedPostImage alt={title} layout="fill" priority src={imageUrl} />
+          <FeaturedPostImage alt={title} layout="fill" objectFit="cover" priority src={imageUrl} />
           <ViewThisFeature isDarkMode={isDarkMode}>
             <ViewThisFeatureText isDarkMode={isDarkMode}>
               View this feature

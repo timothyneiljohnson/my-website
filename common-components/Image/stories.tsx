@@ -1,5 +1,6 @@
 import React from 'react';
 import { Image } from '.';
+import { globalDecorators } from '../../storybook/decoratorHelpers';
 
 export default {
   title: 'Common/Image',
@@ -20,6 +21,7 @@ Default.args = {
   width: 380,
   src: '/athens.jpg',
 };
+Default.decorators = globalDecorators;
 
 export const Round = ({ height, width, noFadeIn, round, src }) => (
   <Image
@@ -36,3 +38,4 @@ Round.args = {
   width: 380,
   src: '/athens.jpg',
 };
+Round.decorators = globalDecorators;

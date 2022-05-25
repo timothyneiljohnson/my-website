@@ -10,7 +10,6 @@ import { Slider } from '../../common-components/Slider';
 import { colors } from '../../common-components/design-tokens';
 import { pluralize } from '../../common-components/helpers';
 import {
-  CoverImage,
   CurrentTrackTitle,
   CurrentTrackSummaryCol,
   HoverIcon,
@@ -130,11 +129,9 @@ export const MusicPlayer = ({
         currentTrackIndex === tracklist.length - 1 ? 0 : currentTrackIndex + 1;
     }
 
-    return () => {
-      setIsPlaying(true);
-      setCurrentTrack(tracklist[nextIndex]);
-      setCurrentTrackIndex(nextIndex);
-    };
+    setIsPlaying(true);
+    setCurrentTrack(tracklist[nextIndex]);
+    return setCurrentTrackIndex(nextIndex);
   }, [currentTrackIndex, isShuffled, tracklist]);
 
   const handlePreviousTrack = useCallback(() => {
@@ -456,7 +453,13 @@ export const MusicPlayer = ({
                     <Row style={{ color: colors.white, padding: '30px' }}>
                       <Col smHiddenUp xs={1} />
                       <Col sm={4} xs={10}>
-                        <CoverImage src={image} />
+                        <img
+                          alt={name}
+                          src={image}
+                          style={{
+                            boxShadow: 'rgba(0, 0, 0, 0.35) 10px 10px 48px 0',
+                          }}
+                        />
                       </Col>
                       <Col sm={8} style={{ padding: '0 30px' }} xs={12}>
                         <div
@@ -469,14 +472,16 @@ export const MusicPlayer = ({
                         </div>
                         <SuperHeading level={1}>{name}</SuperHeading>
                         <div>
-                          <Image
-                            round
-                            size={28}
+                          <img
+                            alt={creator.name}
+                            height={28}
                             src={creator.image}
                             style={{
                               display: 'inline-block',
                               marginRight: '6px',
+                              borderRadius: '50%',
                             }}
+                            width={28}
                           />
                           <span style={{ fontWeight: '500' }}>
                             {creator.name}

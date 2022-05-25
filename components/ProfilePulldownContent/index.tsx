@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useEffect, useRef } from 'react';
 import { Button } from '../../common-components/Button';
 import { Col } from '../../common-components/Col';
 import { Grid } from '../../common-components/Grid';
@@ -20,6 +20,11 @@ import {
 export const ProfilePulldownContent: FC = () => {
   const { isDarkMode } = useStorageDarkMode();
   const { smMax } = useMediaQueries();
+  const headingRef = useRef(null);
+
+  useEffect(() => {
+    headingRef.current.focus();
+  }, []);
 
   return (
     <ProfileDescription isDarkMode={isDarkMode}>
@@ -57,15 +62,23 @@ export const ProfilePulldownContent: FC = () => {
             </ContactMeWrapper>
           </Col>
           <Col shrink>
-            <MyNameIs>Hi, my name is</MyNameIs>
-            <Heading
-              color={isDarkMode ? colors.grayLightest : colors.grayDarker}
-              level={smMax ? 2 : 1}
+            <div
+              aria-label="Hi. My name is Tim Johnson, Software Engineer."
+              aria-level={3}
+              ref={headingRef}
+              role="heading"
+              tabIndex={-1}
             >
-              Tim Johnson.
-              <br />
-              Software Engineer 👨‍💻
-            </Heading>
+              <MyNameIs>Hi, my name is</MyNameIs>
+              <Heading
+                color={isDarkMode ? colors.grayLightest : colors.grayDarker}
+                level={smMax ? 2 : 1}
+              >
+                Tim Johnson.
+                <br />
+                Software Engineer 👨‍💻
+              </Heading>
+            </div>
             <p>
               I'm a driven, experienced developer/designer based in Minneapolis.
             </p>

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Icon } from '../../common-components/Icon';
 import { Image } from '../../common-components/Image';
 import { animation, colors, mediaQueries } from '../../common-components/design-tokens';
+import { Heading } from '../../common-components/Heading';
 
 interface ProfileDescriptionProps {
   isDarkMode?: boolean;
@@ -44,6 +45,10 @@ export const ContactMeIcon = styled(Icon)`
     cubic-bezier(0.25, 0.46, 0.45, 0.94);
 `;
 
+export const StyledHeading = styled(Heading)`
+  margin-top: 0;
+`;
+
 export const ContactMeLink = styled.a`
   display: flex;
   align-items: center;
@@ -58,7 +63,7 @@ export const ContactMeLink = styled.a`
 
 export const MyNameIs = styled.p`
   color: ${colors.secondary};
-  padding-bottom: 4px;
+  padding-bottom: 0;
   line-height: 1.5;
 `;
 

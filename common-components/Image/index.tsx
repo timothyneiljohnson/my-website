@@ -1,5 +1,8 @@
 import { ImageProps as NextImageProps } from 'next/image';
-import { StyledImage } from './styles';
+import { useContext } from 'react';
+import { ImageOptimizationContext } from './image-optimization-context';
+
+import { StyledImage, StyledImageContainer } from './styles';
 
 interface ImageProps extends NextImageProps {
   className?: string;
@@ -13,29 +16,29 @@ interface ImageProps extends NextImageProps {
   style?: any;
 }
 export const Image = (props: ImageProps) => {
-  const {
-    className,
-    height,
-    width,
-    noFadeIn,
-    round,
-    size,
-    ...restProps
-  } = props;
+  const { className, height, width, noFadeIn, round, size, ...restProps } =
+    props;
+  const { unoptimized } = useContext(ImageOptimizationContext);
   const shortestSideLength = Math.min(height, width);
   const heightValue = size ?? height;
   const widthValue = size ?? width;
 
   return (
-    <StyledImage
+    <StyledImageContainer
       className={className}
       height={heightValue}
-      noFadeIn={noFadeIn}
       round={round}
       shortestSideLength={shortestSideLength}
       width={widthValue}
-      {...restProps}
-    />
+    >
+      <StyledImage
+        height={heightValue}
+        noFadeIn={noFadeIn}
+        unoptimized={unoptimized}
+        width={widthValue}
+        {...restProps}
+      />
+    </StyledImageContainer>
   );
 };
 

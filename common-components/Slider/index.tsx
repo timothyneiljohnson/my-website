@@ -89,7 +89,7 @@ export const Slider = ({
       const trackWidth = ref.current.clientWidth;
       const newPercent = Math.min(
         Math.max(
-          (positionXOnElement - sizeMap[size] / 2 - sizeMap[size]) /
+          (positionXOnElement + sizeMap[size] / 2 - sizeMap[size]) /
             (trackWidth - sizeMap[size]),
           0
         ),

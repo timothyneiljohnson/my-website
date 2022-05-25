@@ -99,6 +99,8 @@ export const FolderInner = styled(AppOrFolderInner)<FolderInnerProps>`
     isOpen &&
     !animateClose &&
     `
+    background: rgb(195, 195, 195, 0.75);
+    backdrop-filter: blur(0px);
     animation: openFolder 480ms forwards normal;
     padding: 6%; // Snap change, because padding transitions cause layout recalculations
     z-index: 999;
@@ -107,7 +109,7 @@ export const FolderInner = styled(AppOrFolderInner)<FolderInnerProps>`
     isOpen &&
     animateClose &&
     `
-    animation: openFolder 480ms forwards reverse;
+    animation: closeFolder 480ms forwards normal;
     z-index: 999;
   `}
 

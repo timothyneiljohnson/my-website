@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components';
 import { Col } from '../../common-components/Col';
 import { Icon } from '../../common-components/Icon';
-import { Image } from '../../common-components/Image';
 import {
   animation,
   colors,
@@ -61,7 +60,7 @@ interface StaticReactionImageProps {
   animate?: boolean;
 }
 
-export const StaticReactionImage = styled(Image)<StaticReactionImageProps>`
+export const StaticReactionImage = styled.img<StaticReactionImageProps>`
   margin-right: 7px;
   ${({ animate }) =>
     animate &&
@@ -70,7 +69,7 @@ export const StaticReactionImage = styled(Image)<StaticReactionImageProps>`
     `}
 `;
 
-export const AnimatedReactionImage = styled(Image)`
+export const AnimatedReactionImage = styled.img`
   transform: scale(1);
   transition: transform 150ms ease-in-out;
   transform-origin: bottom center;

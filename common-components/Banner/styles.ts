@@ -4,13 +4,14 @@ import { Image } from '../Image';
 
 export const BannerWrapper = styled.div`
   height: 490px;
-  max-width: 1000px;
+  width: 100%;
+  max-width: 970px;
 `;
 
 export const StyledBanner = styled.a`
   height: 450px;
   width: 100%;
-  max-width: 1000px;
+  max-width: 970px;
   overflow: hidden;
   display: block;
   position: relative;
@@ -28,6 +29,14 @@ export const BannerImageStyled = styled(Image).withConfig({
   opacity: ${({ isCurrentSlide }) => (isCurrentSlide ? 1 : 0)};
   overflow: hidden;
   ${decorations.borderRadiusStyle}
+`;
+
+export const BannerSlideStyled = styled.div`
+  position: absolute;
+  height: 450px;
+  width: 100%;
+  max-width: 970px;
+  overflow: hidden;
 `;
 
 export const BannerControlsStyled = styled.div`

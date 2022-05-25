@@ -16,28 +16,4 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
     line-height: 1.2;
     min-width: 300px;
   }
-
-  p {
-    padding-bottom: 8px;
-  }
-
-  code,
-  pre {
-    background-color: #042f38 !important;
-  }
-
-  .h-position-relative {
-    position: relative;
-  }
-
-  .h-sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0,0,0,0);
-    border: 0;
-  }
 `;
