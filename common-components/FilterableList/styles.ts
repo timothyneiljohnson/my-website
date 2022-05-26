@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { spacing } from '../design-tokens';
 
 export const FilterList = styled.ul`
   padding: 3px 0 0 5px;
@@ -11,13 +12,13 @@ export const FilterList = styled.ul`
 
 export const FilterListWrapper = styled.div`
   width: 100%;
-  margin-top: 23px;
+  margin-top: ${spacing.x6};
   overflow: hidden;
 `;
 
 export const FilterListItemStyled = styled.li`
   display: inline-block;
-  margin: 0 12px 0 0;
+  margin: 0 ${spacing.x3} 0 0;
 `;
 
 export const HiddenForeshadow = styled.div`

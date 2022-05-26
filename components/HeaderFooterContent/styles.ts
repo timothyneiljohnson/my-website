@@ -1,17 +1,17 @@
 import styled from 'styled-components';
-import { mediaQueries } from '../../common-components/design-tokens';
+import { mediaQueries, spacing } from '../../common-components/design-tokens';
 
 export const MainNavList = styled.ul`
-  margin-top: 16px;
+  margin-top: ${spacing.x4};
   right: 0;
 `;
 
 export const MainNavListItem = styled.li`
   float: left;
-  margin-right: 12px;
+  margin-right: ${spacing.x3};
 
   @media ${mediaQueries.xsMax} {
-    margin-right: 8px;
+    margin-right: ${spacing.x2};
   }
 
   &:last-child {

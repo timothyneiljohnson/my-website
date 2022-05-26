@@ -35,15 +35,17 @@ export const Transition = ({
   }, [inValue]);
 
   useEffect(() => {
-    // Immediately show element when "in" changes to true
-    if (inValue) {
-      setIsShown(true);
+    if (inValue !== isShown) {
+      // Immediately show element when "in" changes to true
+      if (inValue) {
+        setIsShown(!isShown);
+      }
+      setShouldAnimate(true); // animation start
     }
-    setShouldAnimate(true); // animation start
-  }, [inValue]);
+  }, [isShown, inValue]);
 
   let keyframe = animation.keyframes.fadeIn;
-  let timingFunction = 'linear';
+  let timingFunction = 'ease-in-out';
   switch (type) {
     case 'slide':
       keyframe = animation.keyframes.slideIn(direction, distance);

@@ -14,6 +14,7 @@ export const ScrollProgressIndicatorWrapper = styled.div<ScrollProgressIndicator
   height: calc(var(--indicator-height, 0) * 1px);
   width: 100%;
   position: relative;
+  z-index: 98;
 `;
 
 interface StyledScrollProgressIndicatorProps {

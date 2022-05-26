@@ -13,13 +13,13 @@ interface FilterableItemWrapperProps {
 
 export const FilterableItemWrapper = styled.div<FilterableItemWrapperProps>`
   position: relative;
-  z-index: 1;
+  z-index: 0;
   display: ${(props) =>
     props.isForeshadowItem && props.isFilteredOut ? 'none' : 'block'};
   ${({ animationDistanceX, animationDistanceY, isAnimating }) =>
     `transform: ${
       isAnimating
-        ? `translate(${-animationDistanceX}px, ${-animationDistanceY}px)`
+        ? `translate(-${animationDistanceX}px, -${animationDistanceY}px)`
         : 'none'
     };
     transition: ${
@@ -36,7 +36,7 @@ export const FilterableItemWrapper = styled.div<FilterableItemWrapperProps>`
     opacity: 0;
     z-index: 0;
     // TODO: Try margin instead of transform! It's still taking up its original space...
-    transform: translate(${-props.animationDistanceX}px, ${-props.animationDistanceY}px);
+    transform: translate(-${props.animationDistanceX}px, -${props.animationDistanceY}px);
   `}
   ${(props) =>
     props.isFilteredOut &&
@@ -44,7 +44,7 @@ export const FilterableItemWrapper = styled.div<FilterableItemWrapperProps>`
     `
     display: none;
     opacity: 0;
-    // transform: translate(${-props.animationDistanceX}px, ${-props.animationDistanceY}px);
+    // transform: translate(-${props.animationDistanceX}px, -${props.animationDistanceY}px);
   `}
 
   /* If was filtered out before, and is filtered out now — hide */

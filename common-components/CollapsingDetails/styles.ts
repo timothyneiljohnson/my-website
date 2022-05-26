@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { animation, colors } from '../design-tokens';
+import { animation, colors, spacing } from '../design-tokens';
 import { Icon } from '../Icon';
 
 interface StyledCollapsingDetailsProps {
@@ -22,7 +22,7 @@ export const DetailsSection = styled.div<DetailsSectionProps>`
   transition: height ${animation.durations.fast}ms ease-in-out;
   visibility: ${({ isOpen }) => isOpen ? 'visible' : 'hidden'};
   height: ${({ isOpen, detailsHeight }) => isOpen ? `${detailsHeight + 24}px` : '0'};
-  margin: ${({ isOpen }) => isOpen ? '16px' : '0'};
+  margin: ${({ isOpen }) => isOpen ? spacing.x4 : '0'};
 `;
 
 interface StyledIconProps {
@@ -36,7 +36,7 @@ export const StyledIcon = styled(Icon)<StyledIconProps>`
 export const ToggleButton = styled.button`
   width: 100%;
   height: 100%;
-  padding: 8px 10px 8px 16px;
+  padding: ${spacing.x2} 10px ${spacing.x2} ${spacing.x4};
   display: flex;
   flex-direction: row;
   align-items: center;

@@ -1,14 +1,21 @@
-import React, { useRef, useState } from 'react';
+import dynamic from 'next/dynamic';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { ModalDrawer } from '.';
+import { ModalDrawerProps } from './types';
 import { ProfilePulldownContent } from '../../components/ProfilePulldownContent';
 import { globalDecorators } from '../../storybook/decoratorHelpers';
 import { Button } from '../Button';
 import { colors } from '../design-tokens';
 
+const DynamicModalDrawer = dynamic<ModalDrawerProps>(() =>
+  import('.').then(
+    ({ ModalDrawer }) => ModalDrawer
+  )
+);
+
 export default {
   title: 'Common/ModalDrawer',
-  component: ModalDrawer,
+  component: DynamicModalDrawer,
 };
 
 const StyledStoryStageContainer = styled.div`
@@ -25,12 +32,27 @@ const StyledModalButtonContainer = styled.div`
 
 export const Default = ({ closeType, customClose, direction, title }) => {
   const ref = useRef(null);
-  const [isOpen, setIsOpen] = useState(false);
-  const handleClick = () => setIsOpen(true);
-  const onCloseCallback = () => {
-    setIsOpen(false);
-    ref.current.focus();
-  };
+  const [isModalDrawerOpen, setIsModalDrawerOpen] = useState(false);
+  const [isModalOverlayDisplayed, setIsModalOverlayDisplayed] = useState(false);
+  const focusRef = useRef(null);
+
+  const handleClick = () => setIsModalDrawerOpen(true);
+
+  const onCloseCallback = useCallback(() => {
+    setIsModalDrawerOpen(false);
+    setTimeout(() => {
+      setIsModalOverlayDisplayed(false);
+    }, 400);
+    if (focusRef && 'current' in focusRef) {
+      focusRef.current?.focus();
+    }
+  }, [focusRef]);
+
+  useEffect(() => {
+    if (isModalDrawerOpen) {
+      setIsModalOverlayDisplayed(true);
+    }
+  }, [isModalDrawerOpen]);
 
   return (
     <StyledStoryStageContainer>
@@ -39,26 +61,29 @@ export const Default = ({ closeType, customClose, direction, title }) => {
           Open ModalDrawer
         </Button>
       </StyledModalButtonContainer>
-      <ModalDrawer
-        background={colors.grayLightest}
-        closeType={closeType}
-        customClose={customClose}
-        direction={direction}
-        isOpen={isOpen}
-        onCloseCallback={onCloseCallback}
-        title={title}
-      >
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-        ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
-        qui officia deserunt mollit anim id est laborum.
-      </ModalDrawer>
+      {isModalOverlayDisplayed && (
+        <DynamicModalDrawer
+          background={colors.grayLightest}
+          closeType={closeType}
+          customClose={customClose}
+          direction={direction}
+          isOpen={isModalDrawerOpen}
+          onCloseCallback={onCloseCallback}
+          title={title}
+        >
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+          ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+          qui officia deserunt mollit anim id est laborum.
+        </DynamicModalDrawer>
+      )}
     </StyledStoryStageContainer>
   );
 };
 Default.decorators = globalDecorators;
 Default.args = {
+  direction: 'right',
   title: 'Lorem ipsum dolor sit amet',
   size: 330,
 };
@@ -71,12 +96,27 @@ export const CustomClose = ({
   title,
 }) => {
   const ref = useRef(null);
-  const [isOpen, setIsOpen] = useState(false);
-  const handleClick = () => setIsOpen(true);
-  const onCloseCallback = () => {
-    setIsOpen(false);
-    ref.current.focus();
-  };
+  const [isModalDrawerOpen, setIsModalDrawerOpen] = useState(false);
+  const [isModalOverlayDisplayed, setIsModalOverlayDisplayed] = useState(false);
+  const focusRef = useRef(null);
+
+  const handleClick = () => setIsModalDrawerOpen(true);
+
+  const onCloseCallback = useCallback(() => {
+    setIsModalDrawerOpen(false);
+    setTimeout(() => {
+      setIsModalOverlayDisplayed(false);
+    }, 400);
+    if (focusRef && 'current' in focusRef) {
+      focusRef.current?.focus();
+    }
+  }, [focusRef]);
+
+  useEffect(() => {
+    if (isModalDrawerOpen) {
+      setIsModalOverlayDisplayed(true);
+    }
+  }, [isModalDrawerOpen]);
 
   return (
     <StyledStoryStageContainer>
@@ -85,17 +125,19 @@ export const CustomClose = ({
           Open ModalDrawer
         </Button>
       </StyledModalButtonContainer>
-      <ModalDrawer
-        background={background}
-        closeType={closeType}
-        customClose={customClose}
-        direction={direction}
-        isOpen={isOpen}
-        onCloseCallback={onCloseCallback}
-        title={title}
-      >
-        <ProfilePulldownContent />
-      </ModalDrawer>
+      {isModalOverlayDisplayed && (
+        <DynamicModalDrawer
+          background={background}
+          closeType={closeType}
+          customClose={customClose}
+          direction={direction}
+          isOpen={isModalDrawerOpen}
+          onCloseCallback={onCloseCallback}
+          title={title}
+        >
+          <ProfilePulldownContent />
+        </DynamicModalDrawer>
+      )}
     </StyledStoryStageContainer>
   );
 };
@@ -108,6 +150,68 @@ CustomClose.args = {
   size: 330,
 };
 
+export const Float = ({
+  background,
+  closeType,
+  customClose,
+  direction,
+  modalType,
+  title,
+}) => {
+  const ref = useRef(null);
+  const [isModalDrawerOpen, setIsModalDrawerOpen] = useState(false);
+  const [isModalOverlayDisplayed, setIsModalOverlayDisplayed] = useState(false);
+  const focusRef = useRef(null);
+
+  const handleClick = () => setIsModalDrawerOpen(true);
+
+  const onCloseCallback = useCallback(() => {
+    setIsModalDrawerOpen(false);
+    setTimeout(() => {
+      setIsModalOverlayDisplayed(false);
+    }, 400);
+    if (focusRef && 'current' in focusRef) {
+      focusRef.current?.focus();
+    }
+  }, [focusRef]);
+
+  useEffect(() => {
+    if (isModalDrawerOpen) {
+      setIsModalOverlayDisplayed(true);
+    }
+  }, [isModalDrawerOpen]);
+
+  return (
+    <StyledStoryStageContainer>
+      <StyledModalButtonContainer>
+        <Button onClick={handleClick} ref={ref}>
+          Open ModalDrawer
+        </Button>
+      </StyledModalButtonContainer>
+      {isModalOverlayDisplayed && (
+        <DynamicModalDrawer
+          background={background}
+          closeType={closeType}
+          customClose={customClose}
+          direction={direction}
+          isOpen={isModalDrawerOpen}
+          modalType={modalType}
+          onCloseCallback={onCloseCallback}
+          title={title}
+        >
+          <ProfilePulldownContent />
+        </DynamicModalDrawer>
+      )}
+    </StyledStoryStageContainer>
+  );
+};
+Float.decorators = globalDecorators;
+Float.args = {
+  background: colors.grayLightest,
+  modalType: 'float',
+  size: 330,
+};
+
 export const Fullscreen = ({
   background,
   closeType,
@@ -117,12 +221,27 @@ export const Fullscreen = ({
   title,
 }) => {
   const ref = useRef(null);
-  const [isOpen, setIsOpen] = useState(false);
-  const handleClick = () => setIsOpen(true);
-  const onCloseCallback = () => {
-    setIsOpen(false);
-    ref.current.focus();
-  };
+  const [isModalDrawerOpen, setIsModalDrawerOpen] = useState(false);
+  const [isModalOverlayDisplayed, setIsModalOverlayDisplayed] = useState(false);
+  const focusRef = useRef(null);
+
+  const handleClick = () => setIsModalDrawerOpen(true);
+
+  const onCloseCallback = useCallback(() => {
+    setIsModalDrawerOpen(false);
+    setTimeout(() => {
+      setIsModalOverlayDisplayed(false);
+    }, 400);
+    if (focusRef && 'current' in focusRef) {
+      focusRef.current?.focus();
+    }
+  }, [focusRef]);
+
+  useEffect(() => {
+    if (isModalDrawerOpen) {
+      setIsModalOverlayDisplayed(true);
+    }
+  }, [isModalDrawerOpen]);
 
   return (
     <StyledStoryStageContainer>
@@ -131,18 +250,20 @@ export const Fullscreen = ({
           Open ModalDrawer
         </Button>
       </StyledModalButtonContainer>
-      <ModalDrawer
-        background={background}
-        closeType={closeType}
-        customClose={customClose}
-        direction={direction}
-        isOpen={isOpen}
-        modalType={modalType}
-        onCloseCallback={onCloseCallback}
-        title={title}
-      >
-        <ProfilePulldownContent />
-      </ModalDrawer>
+      {isModalOverlayDisplayed && (
+        <DynamicModalDrawer
+          background={background}
+          closeType={closeType}
+          customClose={customClose}
+          direction={direction}
+          isOpen={isModalDrawerOpen}
+          modalType={modalType}
+          onCloseCallback={onCloseCallback}
+          title={title}
+        >
+          <ProfilePulldownContent />
+        </DynamicModalDrawer>
+      )}
     </StyledStoryStageContainer>
   );
 };

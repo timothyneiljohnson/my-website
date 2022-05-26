@@ -15,6 +15,7 @@ import {
   BioCallToActionWrapper,
   ProfilePicture,
   ContactMeIcon,
+  StyledHeadingContainer,
 } from './styles';
 
 export const ProfilePulldownContent: FC = () => {
@@ -62,7 +63,7 @@ export const ProfilePulldownContent: FC = () => {
             </ContactMeWrapper>
           </Col>
           <Col shrink>
-            <div
+            <StyledHeadingContainer
               aria-label="Hi. My name is Tim Johnson, Software Engineer."
               aria-level={3}
               ref={headingRef}
@@ -78,7 +79,7 @@ export const ProfilePulldownContent: FC = () => {
                 <br />
                 Software Engineer 👨‍💻
               </Heading>
-            </div>
+            </StyledHeadingContainer>
             <p>
               I'm a driven, experienced developer/designer based in Minneapolis.
             </p>
@@ -96,6 +97,7 @@ export const ProfilePulldownContent: FC = () => {
             <ProfilePicture
               height={222}
               layout="fixed"
+              noFadeIn
               src="/photo.png"
               width={184}
             />

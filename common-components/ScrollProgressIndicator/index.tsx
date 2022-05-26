@@ -11,8 +11,8 @@ interface ScrollProgressIndicatorProps {
 }
 export const ScrollProgressIndicator = ({
   className,
-  color,
-  height,
+  color = '#f00',
+  height = 4,
 }: ScrollProgressIndicatorProps) => {
   const [progress, setProgress] = useState(0);
 

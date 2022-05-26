@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { animation, decorations, focusStyle } from '../design-tokens';
+import { animation, decorations, focusStyle, spacing } from '../design-tokens';
 import { Heading } from '../Heading';
 import { Icon } from '../Icon';
 import { getOppositedirection } from '../helpers';
@@ -41,9 +41,9 @@ interface ToastInnerProps {
   textColor?: string;
 }
 export const ToastInner = styled.div<ToastInnerProps>`
-  padding: 12px;
-  margin: 16px;
-  width: calc(100% - 32px);
+  padding: ${spacing.x3};
+  margin: ${spacing.x4};
+  width: calc(100% - ${spacing.x8});
   height: auto;
   color: ${({ color }) => color};
   background: ${({ accentColor, background }) =>
@@ -54,18 +54,18 @@ export const ToastInner = styled.div<ToastInnerProps>`
 `;
 
 export const ToastHeading = styled(Heading)`
-  margin: 4px 0 0;
+  margin: ${spacing.x1} 0 0;
 `;
 
 export const ToastTypeIcon = styled(Icon)`
-  margin: 4px 12px 0 0;
+  margin: ${spacing.x1} ${spacing.x3} 0 0;
 `;
 
 interface StandardCloseButtonProps {
   direction: SideNamesVertical;
 }
 export const StandardCloseButton = styled.button<StandardCloseButtonProps>`
-  margin-right: -4px;
+  margin-right: -${spacing.x1};
   z-index: 100;
 
   &:focus,
@@ -79,5 +79,5 @@ export const CloseIcon = styled(Icon)`
 `;
 
 export const ToastBody = styled.div`
-  margin-top: 4px;
+  margin-top: ${spacing.x1};
 `;

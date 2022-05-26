@@ -3,6 +3,7 @@ import {
   colors,
   decorations,
   mediaQueries,
+  spacing,
 } from '../../common-components/design-tokens';
 import { Heading } from '../../common-components/Heading';
 
@@ -13,17 +14,17 @@ export const PostBody = styled.div<PostBodyProps>`
   background: url('/postBottom.jpg') no-repeat 0 bottom,
     url('/postTop.jpg') no-repeat 0 top, url('/postbg.png') repeat-y 0 0;
   background-size: 100% auto;
-  padding: 30px 120px 70px 48px;
+  padding: ${spacing.x8} 120px 70px ${spacing.x12};
   width: 100%;
   line-height: 1.6em;
   font-size: 14px;
 
   @media ${mediaQueries.smMax} {
-    padding: 20px 90px 40px 30px;
+    padding: ${spacing.x5} 90px ${spacing.x10} ${spacing.x8};
   }
 
   @media ${mediaQueries.xsMax} {
-    padding: 15px 85px 30px 25px;
+    padding: ${spacing.x4} 85px ${spacing.x8} ${spacing.x6};
   }
 
   ${({ isDarkMode }) =>
@@ -35,29 +36,21 @@ export const PostBody = styled.div<PostBodyProps>`
 
 export const PostHeading = styled(Heading)`
   text-transform: uppercase;
-  margin-bottom: 22px;
+  /* margin-bottom: ${spacing.x6}; */
   word-break: break-word;
-
-  @media ${mediaQueries.smMax} {
-    ${decorations.headingFontStyle.h2}
-  }
-
-  @media ${mediaQueries.xxsMax} {
-    ${decorations.headingFontStyle.h3}
-  }
 `;
 
 export const ExcerptImageWrapper = styled.div`
   position: relative;
   height: 300px;
-  margin-bottom: 22px;
+  margin-bottom: ${spacing.x6};
 `;
 
 export const Day = styled.div`
-  margin-top: 12px;
+  margin-top: ${spacing.x3};
   font-weight: bold;
   text-shadow: 0 -1px 0px ${colors.grayDark};
-  font-size: 24px;
+  font-size: ${spacing.x6};
   letter-spacing: 1px;
 `;
 
@@ -94,7 +87,7 @@ interface PostWrapperProps {
 }
 export const PostWrapper = styled.div<PostWrapperProps>`
   position: relative;
-  margin-bottom: 55px;
+  margin-bottom: ${spacing.x14};
 
   ${({ isDarkMode }) =>
     isDarkMode &&
@@ -107,7 +100,7 @@ interface TeardropCategoryWrapperProps {
   isDarkMode?: boolean;
 }
 export const TeardropCategoryWrapper = styled.div<TeardropCategoryWrapperProps>`
-  top: 30px;
+  top: ${spacing.x8};
   position: absolute;
   background-color: ${colors.grayDarkest};
   align-items: center;
@@ -115,15 +108,15 @@ export const TeardropCategoryWrapper = styled.div<TeardropCategoryWrapperProps>`
   justify-content: center;
   border-radius: 0 50% 50%;
   transform: rotate(135deg);
-  left: -30px;
+  left: -${spacing.x8};
   height: 52px;
   width: 52px;
 
   @media ${mediaQueries.smMax} {
     height: 34px;
     width: 34px;
-    left: -20px;
-    top: 24px;
+    left: -${spacing.x5};
+    top: ${spacing.x6};
   }
 
   ${({ isDarkMode }) =>

@@ -1,15 +1,14 @@
 import styled from 'styled-components';
-import { Heading } from '../../common-components/Heading';
-import { colors, decorations } from '../../common-components/design-tokens';
+import { colors, decorations, mediaQueries, spacing } from '../../common-components/design-tokens';
 
 export const StyledMain = styled.main`
   width: 100%;
   max-width: 1000px;
-  margin: 30px auto;
-  padding: 0 15px;
+  margin: ${spacing.x8} auto;
+  padding: 0 ${spacing.x4};
 
   p {
-    padding-bottom: 10px;
+    padding-bottom: ${spacing.x2};
     font-size: 16px;
     line-height: 24px;
   }
@@ -23,16 +22,25 @@ export const StyledPageContainer = styled.div<StyledPageContainerProps>`
     background-color: ${isDarkMode ? colors.grayDarker : colors.white};
     color: ${isDarkMode ? colors.grayLightest : colors.grayDarker};
   `}
-  padding: 36px;
+  padding: ${spacing.x9};
   ${decorations.borderRadiusStyle}
   ${decorations.boxShadow.smStyle}
+
+
+  @media ${mediaQueries.smMax} {
+    padding: ${spacing.x4};
+  }
 `;
 
 export const FeaturedImageWrapper = styled.div`
   position: relative;
   width: 100%;
   height: 500px;
-  margin-bottom: 16px;
+  margin: ${spacing.x6} 0 ${spacing.x4};
+
+  @media ${mediaQueries.smMax} {
+    margin: ${spacing.x4} 0 ${spacing.x2};
+  }
 `;
 
 interface StyledDateProps {
@@ -46,9 +54,5 @@ export const StyledDate = styled.div<StyledDateProps>`
   font-weight: bold;
   font-style: italic;
   letter-spacing: 0.2px;
-  padding: 12px 0;
-`;
-
-export const PostHeading = styled(Heading)`
-  margin: 8px 0 12px;
+  padding: ${spacing.x3} 0;
 `;

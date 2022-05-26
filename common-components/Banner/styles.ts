@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { animation, colors, decorations, focusStyle } from '../design-tokens';
+import { animation, colors, decorations, focusStyle, spacing } from '../design-tokens';
 import { Image } from '../Image';
 
 export const BannerWrapper = styled.div`
@@ -17,6 +17,10 @@ export const StyledBanner = styled.a`
   position: relative;
   ${decorations.boxShadow.mdStyle}
   ${decorations.borderRadiusStyle}
+
+  &:focus, &:active {
+    ${focusStyle}
+  }
 `;
 
 interface BannerImageStyledProps {
@@ -41,7 +45,7 @@ export const BannerSlideStyled = styled.div`
 
 export const BannerControlsStyled = styled.div`
   width: 100%;
-  padding-top: 16px;
+  padding-top: ${spacing.x4};
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -63,7 +67,7 @@ export const StyledBannerControl = styled.button<StyledBannerControlProps>`
   overflow: hidden;
   width: 20px;
   height: 20px;
-  margin-left: 10px;
+  margin-left: ${spacing.x2};
   font-weight: bold;
 
   color: ${({ isActive }) => (isActive ? colors.white : colors.grayDarker)};

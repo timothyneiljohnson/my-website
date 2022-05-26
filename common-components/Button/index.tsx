@@ -40,7 +40,10 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const handleMouseMove = useCallback(
       (event) => {
         if (!pointerGradient) return;
-        setMousePosition({ x: event.clientX, y: event.clientY });
+        const { pageX, pageY, target } = event;        
+        const { offsetLeft, offsetTop } = target;
+
+        setMousePosition({ x: pageX - offsetLeft, y: pageY - offsetTop });
       },
       [pointerGradient]
     );

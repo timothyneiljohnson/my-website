@@ -3,7 +3,7 @@ import { SideNames } from './types';
 
 const colors = {
   primary: 'hsl(227, 65%, 60%)',
-  secondary: '#67b4a2',
+  secondary: '#6cc0ac',
   tertiary: '#384E78',
   quaternary: '#e06c78',
   quinary: '#fa9284',
@@ -65,32 +65,6 @@ const decorations = {
     smStyle: '',
     mdStyle: 'filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.2));',
     lgStyle: '',
-  },
-  headingFontStyle: {
-    h1: `
-      font-size: 32px;
-      line-height: 36px;
-    `,
-    h2: `
-      font-size: 22px;
-      line-height: 26px;
-    `,
-    h3: `
-      font-size: 18px;
-      line-height: 22px;
-    `,
-    h4: `
-      font-size: 14px;
-      line-height: 18px;
-    `,
-    h5: `
-      font-size: 12px;
-      line-height: 16px;
-    `,
-    h6: `
-      font-size: 12px;
-      line-height: 16px;
-    `,
   },
 };
 
@@ -250,6 +224,10 @@ const spacing = {
   x8: '32px',
   x9: '36px',
   x10: '40px',
+  x11: '44px',
+  x12: '48px',
+  x13: '52px',
+  x14: '56px',
 };
 
 const font = {
@@ -259,6 +237,32 @@ const font = {
     body: '-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
     monospace:
       'SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
+  },
+  headingStyle: {
+    h1: `
+      font-size: 32px;
+      line-height: 36px;
+    `,
+    h2: `
+      font-size: 22px;
+      line-height: 26px;
+    `,
+    h3: `
+      font-size: 18px;
+      line-height: 22px;
+    `,
+    h4: `
+      font-size: 14px;
+      line-height: 18px;
+    `,
+    h5: `
+      font-size: 12px;
+      line-height: 16px;
+    `,
+    h6: `
+      font-size: 12px;
+      line-height: 16px;
+    `,
   },
 };
 

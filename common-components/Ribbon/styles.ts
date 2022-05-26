@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { animation, decorations } from '../design-tokens';
+import { animation, decorations, spacing } from '../design-tokens';
 import { getOppositedirection } from '../helpers';
 import { SideNames } from '../types';
 import { getRibbonClipPath } from './helpers';
@@ -56,7 +56,7 @@ export const StyledRibbonPolygon = styled.div<StyledRibbonPolygonProps>`
   flex-direction: column;
   text-align: center;
   height: 100%;
-  padding: ${({ side }) => (side === 'top' ? '30px 5px' : '5px 30px')};
+  padding: ${({ side }) => (side === 'top' ? `${spacing.x8} ${spacing.x1}` : `${spacing.x1} ${spacing.x8}`)};
   ${({ side, facing }) => side === 'top' ? `border-top-${facing}` : `border-${facing}-${side}`}-radius: 5px;
   color: ${({ textColor }) => textColor};
   pointer-events: none;

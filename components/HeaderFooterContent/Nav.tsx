@@ -33,6 +33,7 @@ export const Nav = forwardRef<HTMLButtonElement, NavProps>(
               gradientEnd={isHome ? gradients.primary.end : null}
               gradientStart={isHome ? gradients.primary.start : null}
               pill
+              pointerGradient={isHome}
               size={navButtonSize}
               textColor={isHome || isDarkMode ? colors.white : null}
             >
@@ -46,6 +47,7 @@ export const Nav = forwardRef<HTMLButtonElement, NavProps>(
               gradientEnd={isBlog ? gradients.primary.end : null}
               gradientStart={isBlog ? gradients.primary.start : null}
               pill
+              pointerGradient={isBlog}
               size={navButtonSize}
               textColor={isBlog || isDarkMode ? colors.white : null}
             >

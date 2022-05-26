@@ -9,7 +9,7 @@ import { useMediaQueries } from '../media-queries-context';
 import { useStorageDarkMode } from '../storage-dark-mode-context';
 import { GlobalStyles } from './globalStyles';
 import { StyledMain } from './styles';
-import { ModalDrawerProps } from '../../common-components/ModalDrawer';
+import { ModalDrawerProps } from '../../common-components/ModalDrawer/types';
 import { BASE_URL } from '../../lib/constants';
 
 const DynamicModalDrawer = dynamic<ModalDrawerProps>(() =>
@@ -25,30 +25,30 @@ const DynamicProfilePulldownContent = dynamic(() =>
 );
 
 export const PageShell = ({ children }) => {
-  const [isProfilePulldownOpen, setProfilePulldownOpen] = useState(false);
+  const [isModalDrawerOpen, setIsModalDrawerOpen] = useState(false);
   const [isModalOverlayDisplayed, setIsModalOverlayDisplayed] = useState(false);
-  const profileButtonFocusRef = useRef(null);
+  const focusRef = useRef(null);
   const { isDarkMode } = useStorageDarkMode();
   const { smMax } = useMediaQueries();
 
   useEffect(() => {
-    if (isProfilePulldownOpen) {
+    if (isModalDrawerOpen) {
       setIsModalOverlayDisplayed(true);
     }
-  }, [isProfilePulldownOpen]);
+  }, [isModalDrawerOpen]);
 
   const onCloseCallback = useCallback(() => {
-    setProfilePulldownOpen(false);
+    setIsModalDrawerOpen(false);
     setTimeout(() => {
       setIsModalOverlayDisplayed(false);
     }, 400);
-    if (profileButtonFocusRef && 'current' in profileButtonFocusRef) {
-      profileButtonFocusRef.current?.focus();
+    if (focusRef && 'current' in focusRef) {
+      focusRef.current?.focus();
     }
-  }, [profileButtonFocusRef]);
+  }, [focusRef]);
 
   const handleOpenProfileDrawer = useCallback(() => {
-    setProfilePulldownOpen(true);
+    setIsModalDrawerOpen(true);
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
@@ -69,7 +69,7 @@ export const PageShell = ({ children }) => {
       <GlobalStyles isDarkMode={isDarkMode} />
       <Header
         handleOpenProfileDrawer={handleOpenProfileDrawer}
-        ref={profileButtonFocusRef}
+        ref={focusRef}
       />
       <StyledMain>{children}</StyledMain>
       <Footer handleOpenProfileDrawer={handleOpenProfileDrawer} />
@@ -79,7 +79,7 @@ export const PageShell = ({ children }) => {
           closeType="floating"
           customClose={<Button size="sm">Close profile</Button>}
           direction="top"
-          isOpen={isProfilePulldownOpen}
+          isOpen={isModalDrawerOpen}
           onCloseCallback={onCloseCallback}
           size={smMax ? 320 : 330}
         >

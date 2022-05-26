@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 import { Icon } from '../../common-components/Icon';
 import { Image } from '../../common-components/Image';
-import { animation, colors, mediaQueries } from '../../common-components/design-tokens';
+import { animation, colors, focusStyle, mediaQueries, spacing } from '../../common-components/design-tokens';
 import { Heading } from '../../common-components/Heading';
 
 interface ProfileDescriptionProps {
   isDarkMode?: boolean;
 }
 export const ProfileDescription = styled.div<ProfileDescriptionProps>`
-  padding: 36px 0;
+  padding: ${spacing.x9} 0;
   color: ${colors.grayDarker};
   max-width: 1000px;
   margin: 0 auto;
@@ -22,20 +22,20 @@ export const ProfileDescription = styled.div<ProfileDescriptionProps>`
 
 export const BioCallToActionWrapper = styled.ul`
   display: flex;
-  column-gap: 10px;
-  padding-top: 24px;
+  column-gap: ${spacing.x3};
+  padding-top: ${spacing.x6};
 `;
 
 export const ContactMeWrapper = styled.ul`
   display: flex;
   flex-direction: column;
-  row-gap: 14px;
+  row-gap: ${spacing.x3};
 
   // TODO: Get Row's "gap" working with px and remove
-  padding-right: 32px;
+  padding-right: ${spacing.x7};
 
   @media ${mediaQueries.smMax} {
-    padding-right: 16px;
+    padding-right: ${spacing.x4};
   }
 `;
 
@@ -52,6 +52,10 @@ export const StyledHeading = styled(Heading)`
 export const ContactMeLink = styled.a`
   display: flex;
   align-items: center;
+
+  &:focus, &:active {
+    ${focusStyle}
+  }
 
   &:hover {
     ${ContactMeIcon} {
@@ -70,4 +74,10 @@ export const MyNameIs = styled.p`
 export const ProfilePicture = styled(Image)`
   max-width: 200px;
   margin-left: auto;
+`;
+
+export const StyledHeadingContainer = styled.div`
+  &:focus{
+    outline: none;   
+  }
 `;

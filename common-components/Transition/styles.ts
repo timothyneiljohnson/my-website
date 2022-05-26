@@ -9,6 +9,7 @@ interface StyledTransitionProps {
   timingFunction: string;
 }
 export const StyledTransition = styled.div<StyledTransitionProps>`
+  display: inline-block;
   opacity: ${({ isShown }) => (isShown ? '1' : '0')};
   ${({ duration, inValue, keyframe, shouldAnimate, timingFunction }) =>
     shouldAnimate &&

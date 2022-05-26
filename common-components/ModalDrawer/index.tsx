@@ -1,10 +1,8 @@
-import { ReactElement, useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { Col } from '../Col';
 import { animation, colors } from '../design-tokens';
 import { Grid } from '../Grid';
 import { Row } from '../Row';
-import { TransitionProps } from '../Transition';
-import { SideNames } from '../types';
 import {
   CloseIcon,
   FloatingCloseButtonWrapper,
@@ -14,19 +12,7 @@ import {
   ModalHeading,
   StandardCloseButton,
 } from './styles';
-
-export interface ModalDrawerProps extends TransitionProps {
-  background?: string;
-  children: ReactElement | ReactElement[] | string;
-  closeType?: 'corner' | 'floating';
-  direction?: SideNames;
-  customClose?: ReactElement;
-  isOpen?: boolean;
-  modalType?: 'fullscreen' | 'float';
-  onCloseCallback: () => void;
-  size?: number;
-  title?: string;
-}
+import { ModalDrawerProps } from './types';
 
 export const ModalDrawer = ({
   background = colors.white,
@@ -41,6 +27,7 @@ export const ModalDrawer = ({
   title,
 }: ModalDrawerProps) => {
   const [floatingCloseOffset, setFloatingCloseOffset] = useState(0);
+  const [isFloatingCloseShown, setIsFloatingCloseShown] = useState(false);
   const floatingCloseRef = useRef(null);
 
   const onKeyDownCallback = useCallback(
@@ -76,74 +63,83 @@ export const ModalDrawer = ({
     }
   }, [closeType, floatingCloseRef, isHorizontal]);
 
-  return (
-    <>
-      <ModalDrawerContainer
-        aria-hidden={!isOpen}
-        direction={direction}
-        isHorizontal={isHorizontal}
-        isOpen={isOpen}
-        modalType={modalType}
-        size={size}
-      >
-        <ModalDrawerInnerTransition
-          background={background}
-          direction={direction}
-          distance={size}
-          duration={animation.durations.slow}
-          in={isOpen}
-          type="slide"
-        >
-          <Grid>
-            <Row end noWrap>
-              {title && (
-                <Col shrink>
-                  <ModalHeading level={2}>{title}</ModalHeading>
-                </Col>
-              )}
-              {closeType === 'corner' && (
-                <Col end flex grow top>
-                  <StandardCloseButton
-                    direction={direction}
-                    isHorizontal={isHorizontal}
-                    onClick={onCloseCallback}
-                  >
-                    {customClose ?? (
-                      <CloseIcon
-                        fill={colors.grayLight}
-                        name="close-outline"
-                        size={36}
-                      />
-                    )}
-                  </StandardCloseButton>
-                </Col>
-              )}
-            </Row>
-          </Grid>
-          {children}
-        </ModalDrawerInnerTransition>
+  useEffect(() => {
+    if (floatingCloseOffset > 12) {
+      setIsFloatingCloseShown(isOpen);
+    }
+  }, [floatingCloseOffset, isOpen]);
 
-        {closeType === 'floating' && (
-          <FloatingCloseButtonWrapper
-            direction={direction}
-            offset={floatingCloseOffset}
-            onClick={onCloseCallback}
-            ref={floatingCloseRef}
-          >
-            {customClose ?? (
-              <button>
-                <CloseIcon
-                  fill={colors.grayLighter}
-                  name="close-circle"
-                  size={36}
-                />
-              </button>
+  return (
+    <ModalDrawerContainer
+      aria-hidden={!isOpen}
+      direction={direction}
+      isHorizontal={isHorizontal}
+      isOpen={isOpen}
+      modalType={modalType}
+      size={size}
+    >
+      <ModalDrawerInnerTransition
+        background={background}
+        direction={direction}
+        distance={size}
+        duration={animation.durations.slow}
+        in={isOpen}
+        type={
+          ['fullscreen', 'float'].includes(modalType)
+            ? 'scaleFadeBounce'
+            : 'slide'
+        }
+      >
+        <Grid>
+          <Row end noWrap>
+            {title && (
+              <Col shrink>
+                <ModalHeading level={2}>{title}</ModalHeading>
+              </Col>
             )}
-          </FloatingCloseButtonWrapper>
-        )}
-      </ModalDrawerContainer>
+            {closeType === 'corner' && (
+              <Col end flex grow top>
+                <StandardCloseButton
+                  direction={direction}
+                  isHorizontal={isHorizontal}
+                  onClick={onCloseCallback}
+                >
+                  {customClose ?? (
+                    <CloseIcon
+                      fill={colors.grayLight}
+                      name="close-outline"
+                      size={36}
+                    />
+                  )}
+                </StandardCloseButton>
+              </Col>
+            )}
+          </Row>
+        </Grid>
+        {children}
+      </ModalDrawerInnerTransition>
+
+      {closeType === 'floating' && (
+        <FloatingCloseButtonWrapper
+          direction={direction}
+          isShown={isFloatingCloseShown}
+          offset={floatingCloseOffset}
+          onClick={onCloseCallback}
+          ref={floatingCloseRef}
+        >
+          {customClose ?? (
+            <button>
+              <CloseIcon
+                fill={colors.grayLighter}
+                name="close-circle"
+                size={36}
+              />
+            </button>
+          )}
+        </FloatingCloseButtonWrapper>
+      )}
       <FullscreenOverlay isOpen={isOpen} onClick={onCloseCallback} />
-    </>
+    </ModalDrawerContainer>
   );
 };
 

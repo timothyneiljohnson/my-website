@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import styled from 'styled-components';
 import { HeadingElement } from './HeadingElement';
-import { colors, decorations, font } from '../design-tokens';
+import { colors, font, spacing } from '../design-tokens';
 
 interface StyledHeadingProps {
   children?: string | ReactNode | ReactNode[];
@@ -14,9 +14,9 @@ interface StyledHeadingProps {
 
 export const StyledHeading = styled(HeadingElement)<StyledHeadingProps>`
   font-weight: bold;
-  margin: ${({ noMargin }) => (noMargin ? 0 : '8px 0 12px')};
+  margin: ${({ noMargin }) => (noMargin ? 0 : `${spacing.x2} 0 ${spacing.x3}`)};
   color: ${({ color }) => (color ?? undefined)};
-  ${({ level, size }) => decorations.headingFontStyle[`h${size ?? level}`]}
+  ${({ level, size }) => font.headingStyle[`h${size ?? level}`]}
 
   ${({ animateTyping, children, color }) =>
     animateTyping && typeof children === 'string' &&

@@ -1,12 +1,12 @@
 import styled from 'styled-components';
-import { colors, decorations } from '../../../common-components/design-tokens';
+import { colors, decorations, spacing } from '../../../common-components/design-tokens';
 
 export const PostInfoWrapper = styled.div`
   color: ${colors.white};
   height: auto;
-  width: calc(100% - 20px);
-  padding: 8px 16px;
-  margin-left: 20px;
+  width: calc(100% - ${spacing.x5});
+  padding: ${spacing.x2} ${spacing.x4};
+  margin-left: ${spacing.x5};
   line-height: 16px;
   font-size: 12px;
   font-weight: bold;
@@ -19,7 +19,7 @@ export const PostInfoWrapper = styled.div`
     content: '';
     position: absolute;
     right: 100%;
-    top: 10px;
+    top: ${spacing.x3};
     width: 0;
     height: 0;
     border-top: 8px solid transparent;

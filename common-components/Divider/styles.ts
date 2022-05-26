@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { spacing } from '../design-tokens';
 
 interface StyledDividerProps {
   color: string;
@@ -6,5 +7,5 @@ interface StyledDividerProps {
 }
 export const StyledDivider = styled.hr<StyledDividerProps>`
   border-top: ${({ height }) => height}px solid ${({ color }) => color};
-  margin: 10px 0;
+  margin: ${spacing.x3} 0;
 `;

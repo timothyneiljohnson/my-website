@@ -9,6 +9,7 @@ interface FooterProps {
 
 export const Footer = ({ handleOpenProfileDrawer }: FooterProps) => {
   const { isDarkMode } = useStorageDarkMode();
+  const year = new Date().getFullYear();
 
   return (
     <StyledFooter isDarkMode={isDarkMode}>
@@ -17,8 +18,7 @@ export const Footer = ({ handleOpenProfileDrawer }: FooterProps) => {
           handleOpenProfileDrawer={handleOpenProfileDrawer}
         />
         <p>
-          Copyright © 2022
-          {' '}
+          {`Copyright © ${year} `}
           <NextLink href="/" passHref>
             <a>Timothy Neil Johnson</a>
           </NextLink>

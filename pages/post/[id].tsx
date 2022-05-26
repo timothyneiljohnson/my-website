@@ -6,13 +6,15 @@ import { POSTS_API_URL } from '../../lib/constants';
 import { PageShell } from '../../components/PageShell';
 import {
   FeaturedImageWrapper,
-  PostHeading,
   StyledDate,
   StyledPageContainer,
 } from '../../components/PageShell/styles';
 import { colors } from '../../common-components/design-tokens';
 import { useStorageDarkMode } from '../../components/storage-dark-mode-context';
 import { Image } from '../../common-components/Image';
+import { Heading } from '../../common-components/Heading';
+import { ScrollProgressIndicator } from '../../common-components/ScrollProgressIndicator';
+import { useMediaQueries } from '../../components/media-queries-context';
 
 const Post = ({ title, featuredImg, content, date }) => {
   // PrismJS requires the DOM
@@ -25,35 +27,42 @@ const Post = ({ title, featuredImg, content, date }) => {
   }).format(new Date(date));
 
   const { isDarkMode } = useStorageDarkMode();
+  const { smMax } = useMediaQueries();
+
   return (
-    <PageShell>
-      <StyledPageContainer isDarkMode={isDarkMode}>
-        <PostHeading
-          animateTyping
-          color={isDarkMode ? colors.white : null}
-          level={1}
-          size={1}
-        >
-          {title}
-        </PostHeading>
-        {featuredImg && (
-          <FeaturedImageWrapper>
-            <Image
-              alt={title}
-              layout="fill"
-              objectFit="cover"
-              objectPosition="top"
-              priority
-              src={featuredImg}
-            />
-          </FeaturedImageWrapper>
-        )}
-        <StyledDate isDarkMode={isDarkMode}>
-          {`Published on ${formattedDate}`}
-        </StyledDate>
-        <div>{parse(content)}</div>
-      </StyledPageContainer>
-    </PageShell>
+    <>
+      <ScrollProgressIndicator
+        color={isDarkMode ? colors.secondary : colors.primary}
+      />
+      <PageShell>
+        <StyledPageContainer isDarkMode={isDarkMode}>
+          <Heading
+            animateTyping
+            color={isDarkMode ? colors.white : null}
+            level={1}
+            size={smMax ? 2 : 1}
+          >
+            {title}
+          </Heading>
+          {featuredImg && (
+            <FeaturedImageWrapper>
+              <Image
+                alt={title}
+                layout="fill"
+                objectFit="cover"
+                objectPosition="top"
+                priority
+                src={featuredImg}
+              />
+            </FeaturedImageWrapper>
+          )}
+          <StyledDate isDarkMode={isDarkMode}>
+            {`Published on ${formattedDate}`}
+          </StyledDate>
+          <div>{parse(content)}</div>
+        </StyledPageContainer>
+      </PageShell>
+    </>
   );
 };
 

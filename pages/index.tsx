@@ -12,6 +12,7 @@ import { Placeholder } from '../common-components/Placeholder';
 import { PageShell } from '../components/PageShell';
 import { FEATURED_CATEGORY_ID } from '../lib/constants';
 import { useMediaQueries } from '../components/media-queries-context';
+import { spacing } from '../common-components/design-tokens';
 
 const Featured = () => {
   const [categories, setCategories] = useState([]);
@@ -49,7 +50,7 @@ const Featured = () => {
           <FilterableList
             allCategoryId={FEATURED_CATEGORY_ID}
             categories={categories}
-            gap="8px"
+            gap={spacing.x2}
             itemsWithCategories={featuredPosts}
             minWidth="180px"
             noAnimation={reduceMotion}

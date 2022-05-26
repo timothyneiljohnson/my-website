@@ -71,7 +71,7 @@ export const SliderMarker = styled.div<SliderMarkerProps>`
   background: ${({ markerColor }) => markerColor};
   border-radius: 999px;
   cursor: pointer;
-  top: 0px;
+  top: 0;
   height: ${({ size }) => sizeMap[size]}px;
   width: ${({ size }) => sizeMap[size]}px;
   left: calc(

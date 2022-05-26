@@ -42,6 +42,13 @@ export const Post = ({ post }) => {
   const { xsMax, smMax, sm } = useMediaQueries();
   const { isDarkMode } = useStorageDarkMode();
 
+  let postHeadingSize = 1;
+  if (xsMax) {
+    postHeadingSize = 3;
+  } else if (smMax) {
+    postHeadingSize = 2;
+  }
+
   return (
     <PostWrapper isDarkMode={isDarkMode} ref={ref}>
       <Grid>
@@ -86,7 +93,7 @@ export const Post = ({ post }) => {
                 <PostHeading
                   color={isDarkMode ? colors.white : colors.grayDarkest}
                   level={2}
-                  size={1}
+                  size={postHeadingSize}
                 >
                   {post.title.rendered}
                 </PostHeading>
