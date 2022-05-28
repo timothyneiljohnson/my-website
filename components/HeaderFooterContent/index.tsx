@@ -23,7 +23,14 @@ export const HeaderFooterContent = forwardRef<
   return (
     <Grid>
       <Row>
-        <Col center={smMax ? true : null} flex md={6} xs={12}>
+        <Col
+          center={smMax ? true : null}
+          flex
+          md={6}
+          middle
+          start={!smMax ? true : null}
+          xs={12}
+        >
           <NextLink href="/" passHref>
             <LogoLink>
               <Image
@@ -35,7 +42,7 @@ export const HeaderFooterContent = forwardRef<
             </LogoLink>
           </NextLink>
         </Col>
-        <Col center flex md={6} mdEnd xs={12}>
+        <Col center flex md={6} mdEnd middle xs={12}>
           <Nav handleOpenProfileDrawer={handleOpenProfileDrawer} ref={ref} />
         </Col>
       </Row>

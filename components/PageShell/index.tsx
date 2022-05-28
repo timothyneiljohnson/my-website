@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
-import { useRef, useCallback, useState, useEffect } from 'react';
+import { useRef, useCallback, useState, useEffect, ReactNode } from 'react';
 import { Button } from '../../common-components/Button';
 import { Footer } from '../../common-components/Footer';
 import { Header } from '../../common-components/Header';
@@ -24,23 +24,27 @@ const DynamicProfilePulldownContent = dynamic(() =>
   )
 );
 
-export const PageShell = ({ children }) => {
-  const [isModalDrawerOpen, setIsModalDrawerOpen] = useState(false);
-  const [isModalOverlayDisplayed, setIsModalOverlayDisplayed] = useState(false);
+interface PageShellProps {
+  children?: ReactNode;
+  isFullWidth?: boolean;
+}
+export const PageShell = ({ children, isFullWidth }: PageShellProps) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalDisplayed, setIsModalDisplayed] = useState(false);
   const focusRef = useRef(null);
   const { isDarkMode } = useStorageDarkMode();
   const { smMax } = useMediaQueries();
 
   useEffect(() => {
-    if (isModalDrawerOpen) {
-      setIsModalOverlayDisplayed(true);
+    if (isModalOpen) {
+      setIsModalDisplayed(true);
     }
-  }, [isModalDrawerOpen]);
+  }, [isModalOpen]);
 
   const onCloseCallback = useCallback(() => {
-    setIsModalDrawerOpen(false);
+    setIsModalOpen(false);
     setTimeout(() => {
-      setIsModalOverlayDisplayed(false);
+      setIsModalDisplayed(false);
     }, 400);
     if (focusRef && 'current' in focusRef) {
       focusRef.current?.focus();
@@ -48,7 +52,7 @@ export const PageShell = ({ children }) => {
   }, [focusRef]);
 
   const handleOpenProfileDrawer = useCallback(() => {
-    setIsModalDrawerOpen(true);
+    setIsModalOpen(true);
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
@@ -69,17 +73,18 @@ export const PageShell = ({ children }) => {
       <GlobalStyles isDarkMode={isDarkMode} />
       <Header
         handleOpenProfileDrawer={handleOpenProfileDrawer}
+        isFullWidth={isFullWidth}
         ref={focusRef}
       />
-      <StyledMain>{children}</StyledMain>
+      <StyledMain isFullWidth={isFullWidth}>{children}</StyledMain>
       <Footer handleOpenProfileDrawer={handleOpenProfileDrawer} />
-      {isModalOverlayDisplayed && (
+      {isModalDisplayed && (
         <DynamicModalDrawer
           background={isDarkMode ? colors.grayDarker : colors.grayLightest}
           closeType="floating"
           customClose={<Button size="sm">Close profile</Button>}
           direction="top"
-          isOpen={isModalDrawerOpen}
+          isOpen={isModalOpen}
           onCloseCallback={onCloseCallback}
           size={smMax ? 320 : 330}
         >

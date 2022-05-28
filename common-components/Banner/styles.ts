@@ -1,5 +1,11 @@
 import styled from 'styled-components';
-import { animation, colors, decorations, focusStyle, spacing } from '../design-tokens';
+import {
+  animation,
+  colors,
+  decorations,
+  focusStyle,
+  spacing,
+} from '../design-tokens';
 import { Image } from '../Image';
 
 export const BannerWrapper = styled.div`
@@ -108,16 +114,14 @@ export const StyledBannerControl = styled.button<StyledBannerControlProps>`
 interface NextPreviousControlProps {
   isDarkMode?: boolean;
 }
-export const NextPreviousControl = styled(
+const NextPreviousControl = styled(
   StyledBannerControl
 )<NextPreviousControlProps>`
   height: 24px;
   width: 24px;
   transition: transform ${animation.durations.faster}ms ease-in-out;
 
-  &:hover,
-  &:focus,
-  &:active {
+  &:hover {
     transform: scale(1.1);
   }
 
@@ -126,4 +130,12 @@ export const NextPreviousControl = styled(
     `
     background-color: ${colors.grayLightest};
   `}
+`;
+
+export const NextControl = styled(NextPreviousControl)`
+  padding-left: 1px;
+`;
+
+export const PreviousControl = styled(NextPreviousControl)`
+  padding-right: 1px;
 `;

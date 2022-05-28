@@ -4,11 +4,12 @@ import { HeaderFooterContent } from '../../components/HeaderFooterContent';
 
 interface HeaderProps {
   handleOpenProfileDrawer: () => void;
+  isFullWidth: boolean;
 }
 
 export const Header = forwardRef<HTMLButtonElement, HeaderProps>(
-  ({ handleOpenProfileDrawer }: HeaderProps, ref) => (
-    <StyledHeader>
+  ({ handleOpenProfileDrawer, isFullWidth }: HeaderProps, ref) => (
+    <StyledHeader isFullWidth={isFullWidth}>
       <HeaderFooterContent
         handleOpenProfileDrawer={handleOpenProfileDrawer}
         ref={ref}

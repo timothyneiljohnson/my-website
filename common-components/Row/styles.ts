@@ -6,9 +6,10 @@ import { RowProps } from './types';
 export const StyledRow = styled(RowColBase)<RowProps>`
   box-sizing: border-box;
   display: flex;
-  flex: 0 1 auto;
+  flex-basis: auto;
   flex-direction: row;
   flex-wrap: ${({ noWrap }) => noWrap ? 'nowrap' : 'wrap'};
+  width: 100%;
 
   /* Col Gap */
   ${(props) =>

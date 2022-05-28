@@ -11,6 +11,7 @@ import {
   TeardropCategoryWrapper,
   TeardropCategoryInner,
   ExcerptImageWrapper,
+  StyledRibbon,
 } from './styles';
 import { monthNames, shortMonthNames } from './constants';
 import { PostInfo } from './PostInfoContent';
@@ -20,11 +21,11 @@ import { useMediaQueries } from '../media-queries-context';
 import { Col } from '../../common-components/Col';
 import { Grid } from '../../common-components/Grid';
 import { Link } from '../../common-components/Link';
-import { Ribbon } from '../../common-components/Ribbon';
 import { Row } from '../../common-components/Row';
 import { StickyElement } from '../../common-components/StickyElement';
 import { useStorageDarkMode } from '../storage-dark-mode-context';
 import { Image } from '../../common-components/Image';
+import { Outdent } from '../../common-components/Outdent';
 
 export const Post = ({ post }) => {
   const ref = useRef(null);
@@ -59,11 +60,11 @@ export const Post = ({ post }) => {
                 onMouseEnter={toggleRibbonHover}
                 onMouseLeave={toggleRibbonHover}
               >
-                <Ribbon
+                <StyledRibbon
                   endStyle={isRibbonHovered ? 'point' : 'split'}
                   gradientEnd={gradients.secondary.end}
                   gradientStart={gradients.secondary.start}
-                  right={smMax ? 24 : 36}
+                  right={smMax ? 20 : 36}
                   textColor={colors.white}
                   thickness={smMax ? 45 : 62}
                   top={isDarkMode ? 0 : 2}
@@ -77,57 +78,59 @@ export const Post = ({ post }) => {
                       <Month>{shortMonth}</Month>
                     </div>
                   </div>
-                </Ribbon>
+                </StyledRibbon>
               </div>
-              <PostBody isDarkMode={isDarkMode}>
-                {sm && (
-                  <TeardropCategoryWrapper isDarkMode={isDarkMode}>
-                    <TeardropCategoryInner>
-                      <CategoryIcon
-                        categories={post.categories}
-                        size={smMax ? 22 : 26}
-                      />
-                    </TeardropCategoryInner>
-                  </TeardropCategoryWrapper>
-                )}
-                <PostHeading
-                  color={isDarkMode ? colors.white : colors.grayDarkest}
-                  level={2}
-                  size={postHeadingSize}
-                >
-                  {post.title.rendered}
-                </PostHeading>
-                {featuredImg && (
-                  <NextLink href={`/post/${post.id}`} passHref>
-                    <a>
-                      <ExcerptImageWrapper>
-                        <Image
-                          alt={post.title.rendered}
-                          layout="fill"
-                          objectFit="cover"
-                          objectPosition="top"
-                          priority
-                          sizes="50vw"
-                          src={featuredImg}
+              <Outdent horizontal={3}>
+                <PostBody isDarkMode={isDarkMode}>
+                  {sm && (
+                    <TeardropCategoryWrapper isDarkMode={isDarkMode}>
+                      <TeardropCategoryInner>
+                        <CategoryIcon
+                          categories={post.categories}
+                          size={smMax ? 22 : 26}
                         />
-                      </ExcerptImageWrapper>
-                    </a>
-                  </NextLink>
-                )}
-                <div>
-                  <div>{parse(post.excerpt.rendered)}</div>
-                  <p>
+                      </TeardropCategoryInner>
+                    </TeardropCategoryWrapper>
+                  )}
+                  <PostHeading
+                    color={isDarkMode ? colors.white : colors.grayDarkest}
+                    level={2}
+                    size={postHeadingSize}
+                  >
+                    {post.title.rendered}
+                  </PostHeading>
+                  {featuredImg && (
                     <NextLink href={`/post/${post.id}`} passHref>
-                      <Link
-                        color={isDarkMode ? colors.secondary : colors.primary}
-                        noUnderline
-                      >
-                        Continue reading
-                      </Link>
+                      <a>
+                        <ExcerptImageWrapper>
+                          <Image
+                            alt={post.title.rendered}
+                            layout="fill"
+                            objectFit="cover"
+                            objectPosition="top"
+                            priority
+                            sizes="50vw"
+                            src={featuredImg}
+                          />
+                        </ExcerptImageWrapper>
+                      </a>
                     </NextLink>
-                  </p>
-                </div>
-              </PostBody>
+                  )}
+                  <div>
+                    <div>{parse(post.excerpt.rendered)}</div>
+                    <p>
+                      <NextLink href={`/post/${post.id}`} passHref>
+                        <Link
+                          color={isDarkMode ? colors.secondary : colors.primary}
+                          noUnderline
+                        >
+                          Continue reading
+                        </Link>
+                      </NextLink>
+                    </p>
+                  </div>
+                </PostBody>
+              </Outdent>
             </PostInnerContainer>
           </Col>
           <Col flex md={3} sm={4} xs={12} xsHiddenDown>

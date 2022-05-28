@@ -5,8 +5,8 @@ export interface GridProps extends HTMLAttributes<HTMLDivElement> {
   children?: ReactNode | ReactNode[];
   fixed?: boolean;
 }
-export const Grid = ({ children, fixed }: GridProps) => (
-  <StyledGrid fixed={fixed}>{children}</StyledGrid>
+export const Grid = ({ children, fixed, ...restProps }: GridProps) => (
+  <StyledGrid fixed={fixed} {...restProps}>{children}</StyledGrid>
 );
 
 Grid.displayName = 'Grid';

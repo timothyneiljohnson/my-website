@@ -50,5 +50,6 @@ export const TitleWrapper = styled.div`
 export const IconWrapper = styled.div`
   justify-content: center;
   align-items: center;
+  display: flex;
   height: 30px;
 `;

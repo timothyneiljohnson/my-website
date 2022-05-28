@@ -1,10 +1,19 @@
 import styled from 'styled-components';
-import { colors, decorations, mediaQueries, spacing } from '../../common-components/design-tokens';
+import {
+  colors,
+  decorations,
+  mediaQueries,
+  spacing,
+} from '../../common-components/design-tokens';
 
-export const StyledMain = styled.main`
+interface StyledMainProps {
+  isFullWidth?: boolean;
+}
+export const StyledMain = styled.main<StyledMainProps>`
   width: 100%;
-  max-width: 1000px;
-  margin: ${spacing.x8} auto;
+  ${({ isFullWidth }) =>
+    isFullWidth ? 'text-align: center;' : 'max-width: 1000px;'}
+  margin: 0 auto ${spacing.x8};
   padding: 0 ${spacing.x4};
 
   p {

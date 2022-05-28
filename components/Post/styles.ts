@@ -6,6 +6,7 @@ import {
   spacing,
 } from '../../common-components/design-tokens';
 import { Heading } from '../../common-components/Heading';
+import { Ribbon } from '../../common-components/Ribbon';
 
 interface PostBodyProps {
   isDarkMode?: boolean;
@@ -20,11 +21,11 @@ export const PostBody = styled.div<PostBodyProps>`
   font-size: 14px;
 
   @media ${mediaQueries.smMax} {
-    padding: ${spacing.x5} 90px ${spacing.x10} ${spacing.x8};
+    padding: ${spacing.x5} ${spacing.x8} ${spacing.x10} ${spacing.x8};
   }
 
   @media ${mediaQueries.xsMax} {
-    padding: ${spacing.x4} 85px ${spacing.x8} ${spacing.x6};
+    padding: ${spacing.x4} ${spacing.x6} ${spacing.x8} ${spacing.x6};
   }
 
   ${({ isDarkMode }) =>
@@ -36,14 +37,25 @@ export const PostBody = styled.div<PostBodyProps>`
 
 export const PostHeading = styled(Heading)`
   text-transform: uppercase;
-  /* margin-bottom: ${spacing.x6}; */
   word-break: break-word;
+
+  @media ${mediaQueries.smMax} {
+    padding-right: 90px;
+  }
+
+  @media ${mediaQueries.xsMax} {
+    padding-right: 85px;
+  }
 `;
 
 export const ExcerptImageWrapper = styled.div`
   position: relative;
   height: 300px;
-  margin-bottom: ${spacing.x6};
+  margin: ${spacing.x6} 0 ${spacing.x6};
+
+  @media ${mediaQueries.smMax} {
+    margin: ${spacing.x3} 0 ${spacing.x3};
+  }
 `;
 
 export const Day = styled.div`
@@ -131,4 +143,8 @@ export const TeardropCategoryInner = styled.div`
   align-items: center;
   justify-content: center;
   transform: rotate(-135deg);
+`;
+
+export const StyledRibbon = styled(Ribbon)`
+  z-index: 1;
 `;

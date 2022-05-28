@@ -5,6 +5,7 @@ import { Icon } from '../Icon';
 import { getOppositedirection } from '../helpers';
 import { SideNames } from '../types';
 import { Transition } from '../Transition';
+import { Grid } from '../Grid';
 
 interface FloatingCloseButtonWrapperProps {
   direction: SideNames;
@@ -33,6 +34,7 @@ interface ModalDrawerContainerProps {
 }
 export const ModalDrawerContainer = styled.div<ModalDrawerContainerProps>`
   position: fixed;
+  z-index: 99;
 
   ${({ direction, modalType, isHorizontal, size }) => `
     ${isHorizontal ? 'width' : 'height'}: ${size}px;
@@ -40,6 +42,11 @@ export const ModalDrawerContainer = styled.div<ModalDrawerContainerProps>`
     ${modalType === 'fullscreen' ? `
       height: 100%;
       width: 100%;
+
+      ${ModalDrawerInnerTransition} {
+        left: 0;
+        top: 0;
+      }
     ` : ''}
     ${modalType === 'float' ? `
       display: flex;
@@ -139,4 +146,10 @@ export const StandardCloseButton = styled.button<StandardCloseButtonProps>`
 
 export const CloseIcon = styled(Icon)`
   display: block;
+`;
+
+export const StyledGrid = styled(Grid)`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 `;

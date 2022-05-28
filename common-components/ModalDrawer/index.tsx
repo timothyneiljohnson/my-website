@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Col } from '../Col';
 import { animation, colors } from '../design-tokens';
-import { Grid } from '../Grid';
 import { Row } from '../Row';
+import { TransitionTypes } from '../Transition/types';
 import {
   CloseIcon,
   FloatingCloseButtonWrapper,
@@ -11,6 +11,7 @@ import {
   ModalDrawerInnerTransition,
   ModalHeading,
   StandardCloseButton,
+  StyledGrid,
 } from './styles';
 import { ModalDrawerProps } from './types';
 
@@ -69,6 +70,13 @@ export const ModalDrawer = ({
     }
   }, [floatingCloseOffset, isOpen]);
 
+  let transitionType: TransitionTypes = 'slide';
+  if (modalType === 'fullscreen') {
+    transitionType = 'fade';
+  } else if (modalType === 'float') {
+    transitionType = 'scaleFadeBounce';
+  }
+
   return (
     <ModalDrawerContainer
       aria-hidden={!isOpen}
@@ -84,13 +92,9 @@ export const ModalDrawer = ({
         distance={size}
         duration={animation.durations.slow}
         in={isOpen}
-        type={
-          ['fullscreen', 'float'].includes(modalType)
-            ? 'scaleFadeBounce'
-            : 'slide'
-        }
+        type={transitionType}
       >
-        <Grid>
+        <StyledGrid>
           <Row end noWrap>
             {title && (
               <Col shrink>
@@ -115,8 +119,10 @@ export const ModalDrawer = ({
               </Col>
             )}
           </Row>
-        </Grid>
-        {children}
+          <Row flex grow>
+            <Col xs={12}>{children}</Col>
+          </Row>
+        </StyledGrid>
       </ModalDrawerInnerTransition>
 
       {closeType === 'floating' && (
@@ -138,7 +144,9 @@ export const ModalDrawer = ({
           )}
         </FloatingCloseButtonWrapper>
       )}
-      <FullscreenOverlay isOpen={isOpen} onClick={onCloseCallback} />
+      {modalType !== 'fullscreen' && (
+        <FullscreenOverlay isOpen={isOpen} onClick={onCloseCallback} />
+      )}
     </ModalDrawerContainer>
   );
 };

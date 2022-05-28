@@ -127,13 +127,6 @@ export const RowColBase = styled.div<RowColBaseProps>`
         justify-content: flex-end;
       `
       : ''}
-`;
-
-export const StyledCol = styled(RowColBase)<ColProps>`
-  box-sizing: border-box;
-  flex: 0 0 auto;
-  padding-right: ${(props) => config(props).gutterWidth / 2}px;
-  padding-left: ${(props) => config(props).gutterWidth / 2}px;
 
   /* Grow */
   ${(props) =>
@@ -148,8 +141,8 @@ export const StyledCol = styled(RowColBase)<ColProps>`
   ${(props) =>
     props.grow &&
     `
-      flex-grow: ${props.grow === true ? 1 : props.grow};
-      `}
+    flex-grow: ${props.grow === true ? 1 : props.grow};
+  `}
 
   /* Shrink */
   ${(props) =>
@@ -163,6 +156,13 @@ export const StyledCol = styled(RowColBase)<ColProps>`
 
   ${(props) =>
     props.shrink && `flex-shrink: ${props.shrink === true ? 1 : props.shrink}`};
+`;
+
+export const StyledCol = styled(RowColBase)<ColProps>`
+  box-sizing: border-box;
+  flex-basis: auto;
+  padding-right: ${(props) => config(props).gutterWidth / 2}px;
+  padding-left: ${(props) => config(props).gutterWidth / 2}px;
 
   /* Offset */
   ${(props) =>

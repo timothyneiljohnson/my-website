@@ -15,6 +15,7 @@ import { Image } from '../../common-components/Image';
 import { Heading } from '../../common-components/Heading';
 import { ScrollProgressIndicator } from '../../common-components/ScrollProgressIndicator';
 import { useMediaQueries } from '../../components/media-queries-context';
+import { PhotoGallery } from '../../common-components/PhotoGallery';
 
 const Post = ({ title, featuredImg, content, date }) => {
   // PrismJS requires the DOM
@@ -22,19 +23,22 @@ const Post = ({ title, featuredImg, content, date }) => {
     Prism.highlightAll();
   }, []);
 
+  const { isDarkMode } = useStorageDarkMode();
+  const { smMax } = useMediaQueries();
   const formattedDate = new Intl.DateTimeFormat('en-US', {
     dateStyle: 'long',
   }).format(new Date(date));
 
-  const { isDarkMode } = useStorageDarkMode();
-  const { smMax } = useMediaQueries();
+  // TODO: Figure out better way to handle post shortcodes
+  const hasPhotoGallery = content.includes('[photogallery]');
+  const parsedContent = parse(content.replace('[photogallery]', ''));
 
   return (
     <>
       <ScrollProgressIndicator
         color={isDarkMode ? colors.secondary : colors.primary}
       />
-      <PageShell>
+      <PageShell isFullWidth={hasPhotoGallery}>
         <StyledPageContainer isDarkMode={isDarkMode}>
           <Heading
             animateTyping
@@ -44,7 +48,7 @@ const Post = ({ title, featuredImg, content, date }) => {
           >
             {title}
           </Heading>
-          {featuredImg && (
+          {featuredImg && !hasPhotoGallery && (
             <FeaturedImageWrapper>
               <Image
                 alt={title}
@@ -59,7 +63,14 @@ const Post = ({ title, featuredImg, content, date }) => {
           <StyledDate isDarkMode={isDarkMode}>
             {`Published on ${formattedDate}`}
           </StyledDate>
-          <div>{parse(content)}</div>
+          <div>{parsedContent}</div>
+          {hasPhotoGallery && (
+            <PhotoGallery
+              imageUrls={[...Array(29)].map(
+                (_, i) => `/image-assets/photo-gallery/${i + 1}.jpg`
+              )}
+            />
+          )}
         </StyledPageContainer>
       </PageShell>
     </>

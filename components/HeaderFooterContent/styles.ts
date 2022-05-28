@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { mediaQueries, spacing } from '../../common-components/design-tokens';
 
 export const MainNavList = styled.ul`
-  margin-top: ${spacing.x4};
+  margin: ${spacing.x2} 0;
   right: 0;
 `;
 
@@ -21,9 +21,10 @@ export const MainNavListItem = styled.li`
 
 export const LogoLink = styled.a`
   height: 30px;
-  width: 100%;
+  max-width: 100%;
   display: inline-block;
   outline: none;
-  margin-top: 21px;
+  margin: ${spacing.x2} 0;
   position: relative;
+  aspect-ratio: 1507 / 92;
 `;

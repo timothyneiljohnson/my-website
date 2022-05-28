@@ -36,8 +36,8 @@ export const CollapsingDetails = ({
           <StyledIcon
             fill={colors.grayLight}
             isOpen={isOpen}
-            name="chevron-down"
-            size={30}
+            name="chevron-down-sharp"
+            size={28}
           />
         </IconWrapper>
       </ToggleButton>

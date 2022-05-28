@@ -1,9 +1,20 @@
 import styled from 'styled-components';
-import { spacing } from '../design-tokens';
+import { mediaQueries, spacing } from '../design-tokens';
 
-export const StyledHeader = styled.header`
-  margin: 0 auto ${spacing.x9};
+interface StyledHeaderProps {
+  isFullWidth: boolean;
+}
+export const StyledHeader = styled.header<StyledHeaderProps>`
   width: 100%;
-  max-width: 1000px;
-  padding: ${spacing.x10} ${spacing.x4} 0;
+  ${({ isFullWidth }) => !isFullWidth && 'max-width: 1000px;'}
+  padding: ${spacing.x10} ${spacing.x4} ${spacing.x6};
+  margin: 0 auto;
+
+  @media ${mediaQueries.smMax} {
+    padding: ${spacing.x6} ${spacing.x4} ${spacing.x3};
+  }
+
+  @media ${mediaQueries.xsMax} {
+    padding: ${spacing.x4} ${spacing.x4} ${spacing.x2};
+  }
 `;

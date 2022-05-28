@@ -18,7 +18,7 @@ export const Nav = forwardRef<HTMLButtonElement, NavProps>(
     const isHome = pathname === '/';
     const isBlog = pathname === '/blog' || pathname?.startsWith('/post');
     const { isDarkMode, toggleDarkMode } = useStorageDarkMode();
-    const { xsMax } = useMediaQueries();
+    const { xsMax, md } = useMediaQueries();
     const navButtonSize = xsMax ? 'sm' : 'md';
 
     const handleDarkModeToggle = useCallback(() => {
@@ -33,7 +33,7 @@ export const Nav = forwardRef<HTMLButtonElement, NavProps>(
               gradientEnd={isHome ? gradients.primary.end : null}
               gradientStart={isHome ? gradients.primary.start : null}
               pill
-              pointerGradient={isHome}
+              pointerGradient={isHome && md}
               size={navButtonSize}
               textColor={isHome || isDarkMode ? colors.white : null}
             >
@@ -47,7 +47,7 @@ export const Nav = forwardRef<HTMLButtonElement, NavProps>(
               gradientEnd={isBlog ? gradients.primary.end : null}
               gradientStart={isBlog ? gradients.primary.start : null}
               pill
-              pointerGradient={isBlog}
+              pointerGradient={isBlog && md}
               size={navButtonSize}
               textColor={isBlog || isDarkMode ? colors.white : null}
             >

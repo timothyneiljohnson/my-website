@@ -19,9 +19,8 @@ export const Heading = ({
   size,
   animateTyping,
   noMargin,
-}: HeadingProps) => {
-  console.log({ size });
-  return animateTyping ? (
+}: HeadingProps) =>
+  animateTyping ? (
     <div className={className}>
       <StyledHeading
         animateTyping={animateTyping}
@@ -46,5 +45,4 @@ export const Heading = ({
       {children}
     </StyledHeading>
   );
-  };
 Heading.displayName = 'Heading';

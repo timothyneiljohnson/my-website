@@ -4,7 +4,8 @@ import { colors } from '../design-tokens';
 import { Icon } from '../Icon';
 import {
   BannerControlsStyled,
-  NextPreviousControl,
+  NextControl,
+  PreviousControl,
   StyledBannerControl,
 } from './styles';
 
@@ -33,7 +34,7 @@ export const BannerControls = ({
 
   return length > 1 ? (
     <BannerControlsStyled>
-      <NextPreviousControl
+      <PreviousControl
         aria-label="Go to previous slide"
         isActive
         isDarkMode={isDarkMode}
@@ -44,7 +45,7 @@ export const BannerControls = ({
           name="chevron-back"
           size={18}
         />
-      </NextPreviousControl>
+      </PreviousControl>
       {[...Array(length)].map((_, index) => (
         <StyledBannerControl
           aria-label={`Go to slide ${index + 1}`}
@@ -54,7 +55,7 @@ export const BannerControls = ({
           onClick={() => onSlideChangeCallback(index)}
         />
       ))}
-      <NextPreviousControl
+      <NextControl
         aria-label="Go to next slide"
         isActive
         isDarkMode={isDarkMode}
@@ -65,7 +66,7 @@ export const BannerControls = ({
           name="chevron-forward"
           size={18}
         />
-      </NextPreviousControl>
+      </NextControl>
     </BannerControlsStyled>
   ) : null;
 };
