@@ -158,7 +158,9 @@ export const RowColBase = styled.div<RowColBaseProps>`
     props.shrink && `flex-shrink: ${props.shrink === true ? 1 : props.shrink}`};
 `;
 
-export const StyledCol = styled(RowColBase)<ColProps>`
+export const StyledCol = styled(RowColBase).withConfig({
+  shouldForwardProp: (prop) => (['children']).includes(prop),
+})<ColProps>`
   box-sizing: border-box;
   flex-basis: auto;
   padding-right: ${(props) => config(props).gutterWidth / 2}px;

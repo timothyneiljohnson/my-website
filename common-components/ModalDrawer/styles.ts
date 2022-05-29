@@ -22,7 +22,7 @@ export const FloatingCloseButtonWrapper = styled.div<FloatingCloseButtonWrapperP
   transition: opacity ${animation.durations.faster}ms ease-in-out;
   opacity: ${({ isShown }) => isShown ? '1' : '0'};
   ${({ direction, offset }) =>
-    `${getOppositedirection(direction)}: -${offset}px;`}
+    `${getOppositedirection(direction)}: ${-offset}px;`}
 `;
 
 interface ModalDrawerContainerProps {

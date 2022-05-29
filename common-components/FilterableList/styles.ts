@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { spacing } from '../design-tokens';
+import styled, { css } from 'styled-components';
+import { animation, spacing } from '../design-tokens';
 
 export const FilterList = styled.ul`
   padding: 3px 0 0 5px;
@@ -24,4 +24,36 @@ export const FilterListItemStyled = styled.li`
 export const HiddenForeshadow = styled.div`
   overflow: hidden;
   height: 0;
+  opacity: 0;
+`;
+
+interface FilterableItemsContainerProps {
+  isAnimating: boolean;
+  startingHeight: number | null;
+  endingHeight: number | null;
+}
+export const FilterableItemsContainer = styled.div<FilterableItemsContainerProps>`
+  /* Preserve starting height */
+  ${({ isAnimating, startingHeight }) =>
+    isAnimating &&
+    startingHeight !== null &&
+    `
+    height: ${Math.max(startingHeight)}px;
+  `}
+  /* Update height to largest of starting or ending height, animate height */
+  ${({ isAnimating, startingHeight, endingHeight }) =>
+    isAnimating &&
+    startingHeight !== null &&
+    endingHeight !== null && 
+    css`
+      height: ${Math.max(startingHeight, endingHeight)}px;
+      overflow: hidden;
+      ${css`
+        animation: ${animation.keyframes.changeHeight(
+            Math.max(startingHeight, endingHeight),
+            endingHeight
+          )} ${animation.durations.fast}ms ${animation.durations.faster}ms ease-in-out forwards;
+      `}
+    `
+  }
 `;

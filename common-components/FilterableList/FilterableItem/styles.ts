@@ -1,32 +1,60 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { animation } from '../../design-tokens';
 
 interface FilterableItemWrapperProps {
-  animationDistanceX: number | null;
-  animationDistanceY: number | null;
   isAnimating: boolean;
   isForeshadowItem: boolean;
   isFilteredOut: boolean;
   itemWidth: number;
   wasFilteredOut: boolean;
+  style: {
+    '--animation-distance-x': number | null;
+    '--animation-distance-y': number | null;
+    '--animation-start-width': number | null;
+    '--animation-start-x': number | null;
+    '--animation-start-y': number | null;
+  };
 }
 
 export const FilterableItemWrapper = styled.div<FilterableItemWrapperProps>`
   position: relative;
   z-index: 0;
+
+  /* Send items to animation start position */
+  ${({ isAnimating, isForeshadowItem }) =>
+    isAnimating &&
+    !isForeshadowItem &&
+    `
+    position: absolute;
+    left: calc(var(--animation-start-x) * 1px);
+    top: calc(var(--animation-start-y) * 1px);
+    width: calc(var(--animation-start-width) * 1px);
+  `}
+
+  ${({ isAnimating, isFilteredOut, isForeshadowItem, wasFilteredOut }) =>
+    isAnimating &&
+    !isForeshadowItem &&
+    !isFilteredOut &&
+    wasFilteredOut &&
+    css`
+      animation: ${animation.keyframes.fadeIn} ${animation.durations.slow}ms ease-in-out;
+    `
+  }
+
   display: ${(props) =>
     props.isForeshadowItem && props.isFilteredOut ? 'none' : 'block'};
-  ${({ animationDistanceX, animationDistanceY, isAnimating }) =>
+  ${({ isAnimating }) =>
     `transform: ${
       isAnimating
-        ? `translate(-${animationDistanceX}px, -${animationDistanceY}px)`
+        ? `translate(calc(var(--animation-distance-x) * -1px), calc(var(--animation-distance-y) * -1px))`
         : 'none'
     };
     transition: ${
       isAnimating
         ? `transform ${animation.durations.slow}ms ease-in-out, opacity ${animation.durations.fast}ms ease-in-out`
         : 'none'
-    };`}
+    };
+  `}
 
   /* If was not filtered out before, and is filtered out now — translate to origin */
   ${(props) =>
@@ -35,8 +63,7 @@ export const FilterableItemWrapper = styled.div<FilterableItemWrapperProps>`
     `
     opacity: 0;
     z-index: 0;
-    // TODO: Try margin instead of transform! It's still taking up its original space...
-    transform: translate(-${props.animationDistanceX}px, -${props.animationDistanceY}px);
+    transform: translate(calc(var(--animation-distance-x) * -1px), calc(var(--animation-distance-y) * -1px));
   `}
   ${(props) =>
     props.isFilteredOut &&
@@ -44,7 +71,6 @@ export const FilterableItemWrapper = styled.div<FilterableItemWrapperProps>`
     `
     display: none;
     opacity: 0;
-    // transform: translate(-${props.animationDistanceX}px, -${props.animationDistanceY}px);
   `}
 
   /* If was filtered out before, and is filtered out now — hide */
@@ -53,18 +79,6 @@ export const FilterableItemWrapper = styled.div<FilterableItemWrapperProps>`
     props.isFilteredOut &&
     `
     display: none;
+    opacity: 0;
   `}
-  
-  /* If was filtered out before, and is not filtered out now — translate from origin to foreshadow position
-  ${(props) =>
-    props.wasFilteredOut &&
-    !props.isFilteredOut &&
-    props.isAnimating &&
-    !props.isForeshadowItem &&
-    `
-    transform: translate(0px, 0px);
-  `} */
-
-
-  
 `;

@@ -1,13 +1,13 @@
-import { ReactElement, useCallback, useRef, useState } from 'react';
+import { ReactElement, useCallback, useEffect, useRef, useState } from 'react';
 import { FilterableItem } from './FilterableItem';
 import {
   FilterList,
   FilterListWrapper,
   FilterListItemStyled,
   HiddenForeshadow,
+  FilterableItemsContainer,
 } from './styles';
 import { FilterListItemButton } from './FilterListItemButton';
-import { animation } from '../design-tokens';
 import { PlainGrid } from '../PlainGrid';
 
 interface FilterableListProps {
@@ -17,7 +17,6 @@ interface FilterableListProps {
   gap: string;
   itemsWithCategories: any[];
   minWidth?: string;
-  noAnimation?: boolean;
 }
 
 export const FilterableList = ({
@@ -27,19 +26,23 @@ export const FilterableList = ({
   gap,
   itemsWithCategories,
   minWidth,
-  noAnimation,
 }: FilterableListProps) => {
   const [filterId, setFilterId] = useState(allCategoryId);
   const [prevFilterId, setPrevFilterId] = useState(allCategoryId);
   const [foreshadowMap, setForeshadowMap] = useState({});
+  const [startingPositionsMap, setStartingPositionsMap] = useState({});
+  const [startingContainerHeight, setStartingContainerHeight] = useState(null);
+  const [foreshadowContainerHeight, setForeshadowContainerHeight] = useState(null);
   const [isAnimating, setIsAnimating] = useState(false);
   const listBaseRef = useRef(null);
+  const foreshadowRef = useRef(null);
 
   const onForeshadowingCallback = useCallback(
-    ({ itemId, foreshadowPositionX, foreshadowPositionY }) => {
+    ({ itemId, foreshadowWidth, foreshadowPositionX, foreshadowPositionY }) => {
       setForeshadowMap((currentValue) => ({
         ...currentValue,
         [itemId]: {
+          foreshadowWidth,
           foreshadowPositionX,
           foreshadowPositionY,
         },
@@ -58,20 +61,47 @@ export const FilterableList = ({
 
   const onFilterCallback = useCallback(
     (id) => {
-      setPrevFilterId(filterId);
-      setFilterId(id);
-      setIsAnimating(true);
-      // TODO: Key off of animation end instead
-      setTimeout(
-        () => {
-          setIsAnimating(false);
-          setForeshadowMap({});
-        },
-        noAnimation ? 0 : animation.durations.slow * 1.3
-      );
+      if (!isAnimating) {
+        // Create starting positions map
+        const startingPositionsValue = {};
+        const nodes = listBaseRef.current?.children[0]?.childNodes || [];
+        for (let i = 0, n = nodes.length; i < n; i += 1) {
+          const { clientWidth, offsetLeft, offsetTop } = nodes[i];
+          startingPositionsValue[i] = {
+            clientWidth,
+            offsetLeft,
+            offsetTop,
+          };
+        }
+        setStartingPositionsMap(startingPositionsValue);
+
+        // Set starting container height
+        setStartingContainerHeight(listBaseRef.current?.clientHeight);
+
+        setPrevFilterId(filterId);
+        setFilterId(id);
+        setIsAnimating(true);
+      }
     },
-    [filterId, noAnimation]
+    [filterId, isAnimating]
   );
+
+  const onAnimationEnd = useCallback(() => {
+    setTimeout(() => {
+      setIsAnimating(false);
+      setForeshadowMap({});
+      setStartingPositionsMap({});
+      setForeshadowContainerHeight(null);
+      setStartingContainerHeight(null);
+    }, 200);
+  }, []);
+
+  useEffect(() => {
+    // Wait until Foreshadow items have updated
+    if (isAnimating) {
+      setForeshadowContainerHeight(foreshadowRef.current?.clientHeight);
+    }
+  }, [isAnimating]);
 
   const renderListItems = (isForeshadowItem: boolean) => (
     <PlainGrid gap={gap} min={minWidth}>
@@ -88,6 +118,7 @@ export const FilterableList = ({
             key={i}
             listBaseRef={listBaseRef}
             onForeshadowingCallback={onForeshadowingCallback}
+            startingPositionsMap={startingPositionsMap}
             wasFilteredOut={
               !itemsWithCategories[i].categories.includes(prevFilterId)
             }
@@ -120,10 +151,18 @@ export const FilterableList = ({
           </FilterList>
         </FilterListWrapper>
       )}
-      <div ref={listBaseRef}>{listItems}</div>
-      {isAnimating && (
-        <HiddenForeshadow>{foreshadowListItems}</HiddenForeshadow>
-      )}
+      <FilterableItemsContainer
+        endingHeight={foreshadowContainerHeight}
+        isAnimating={isAnimating}
+        onAnimationEnd={onAnimationEnd}
+        ref={listBaseRef}
+        startingHeight={startingContainerHeight} 
+      >
+        {listItems}
+      </FilterableItemsContainer>
+      <HiddenForeshadow>
+        <div ref={foreshadowRef}>{foreshadowListItems}</div>
+      </HiddenForeshadow>
     </>
   );
 };

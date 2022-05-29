@@ -10,10 +10,10 @@ export const Clock = () => {
   return (
     <AppFaceWidgetWrapper>
       <div style={{ transform: 'rotate(180deg)', height: '100%', width: '100%' }}>
-        <HourHand style={{ animationDelay: `-${hours}s` }} />
-        <MinuteHand style={{ animationDelay: `-${mins}s` }} />
+        <HourHand style={{ animationDelay: `${-hours}s` }} />
+        <MinuteHand style={{ animationDelay: `${-mins}s` }} />
         <ClockPin />
-        <SecondHand style={{ animationDelay: `-${secs}s` }} />
+        <SecondHand style={{ animationDelay: `${-secs}s` }} />
       </div>
     </AppFaceWidgetWrapper>
   );

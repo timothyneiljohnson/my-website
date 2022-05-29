@@ -4,6 +4,7 @@ import { FilterableItemWrapper } from './styles';
 interface FilterableItemProps {
   children: ReactElement;
   foreshadowMap: any;
+  startingPositionsMap: any;
   isAnimating: boolean;
   isFilteredOut: boolean;
   wasFilteredOut: boolean;
@@ -12,6 +13,7 @@ interface FilterableItemProps {
   listBaseRef: MutableRefObject<HTMLDivElement | null>;
   onForeshadowingCallback: (props: {
     itemId: number | string;
+    foreshadowWidth: number;
     foreshadowPositionX: number;
     foreshadowPositionY: number;
   }) => void;
@@ -25,11 +27,13 @@ export const FilterableItem = ({
   isForeshadowItem,
   itemId,
   foreshadowMap,
+  startingPositionsMap,
   listBaseRef,
   onForeshadowingCallback,
 }: FilterableItemProps) => {
   const currentItemRef = useRef(null);
   const itemForeshadowData = foreshadowMap[itemId] ?? {};
+  const itemStartingPositionData = startingPositionsMap[itemId] ?? {};
 
   const originPositionX = listBaseRef.current?.getBoundingClientRect().left;
   const originPositionY = listBaseRef.current?.getBoundingClientRect().top;
@@ -37,6 +41,11 @@ export const FilterableItem = ({
   const itemPositionY = currentItemRef.current?.getBoundingClientRect().top;
   const listBaseHeight = listBaseRef.current?.clientHeight;
   const itemWidth = currentItemRef.current?.clientWidth;
+
+  const { offsetLeft, offsetTop, clientWidth } = itemStartingPositionData;
+  const animationStartX = offsetLeft || originPositionX;
+  const animationStartY = offsetTop || originPositionY;
+  const animationStartWidth = clientWidth || itemForeshadowData.foreshadowWidth;
 
   let animationDistanceX = isForeshadowItem
     ? 0
@@ -55,6 +64,7 @@ export const FilterableItem = ({
     if (isAnimating && isForeshadowItem) {
       onForeshadowingCallback({
         itemId,
+        foreshadowWidth: itemWidth,
         foreshadowPositionX: itemPositionX,
         foreshadowPositionY: !Number.isNaN(foreshadowPositionY)
           ? foreshadowPositionY
@@ -63,23 +73,29 @@ export const FilterableItem = ({
     }
   }, [
     foreshadowPositionY,
+    isAnimating,
     isForeshadowItem,
     itemId,
     itemPositionX,
     itemPositionY,
-    isAnimating,
+    itemWidth,
     onForeshadowingCallback,
   ]);
 
   return (
     <FilterableItemWrapper
-      animationDistanceX={animationDistanceX}
-      animationDistanceY={animationDistanceY}
       isAnimating={isAnimating}
       isFilteredOut={isFilteredOut}
       isForeshadowItem={isForeshadowItem}
       itemWidth={itemWidth}
       ref={currentItemRef}
+      style={{
+        '--animation-distance-x': animationDistanceX,
+        '--animation-distance-y': animationDistanceY,
+        '--animation-start-width': animationStartWidth,
+        '--animation-start-x': animationStartX,
+        '--animation-start-y': animationStartY,
+      }}
       wasFilteredOut={wasFilteredOut}
     >
       {children}

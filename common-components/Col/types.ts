@@ -106,9 +106,7 @@ export interface ColProps extends RowColBaseProps {
   md?: Size;
   lg?: Size;
   xl?: Size;
-
   offset?: number;
-
   xsOffset?: number;
   smOffset?: number;
   mdOffset?: number;
