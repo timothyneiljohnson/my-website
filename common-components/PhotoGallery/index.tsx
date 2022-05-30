@@ -10,6 +10,7 @@ import {
   StyledFullscreenImage,
   StyledImage,
   StyledRow,
+  StyledButton,
   StyledGrid,
   StyledCol,
 } from './styles';
@@ -113,35 +114,32 @@ export const PhotoGallery = ({
     >
       <PhotoGalleryCol>
         {imageUrlsChunk1.map((imageUrl, i) => (
-          <StyledImage
+          <StyledButton
             key={`${imageUrl}${i}`}
-            masonry
             onClick={() => handleOpenModal(imageUrl)}
-            sizes="33vw"
-            src={imageUrl}
-          />
+          >
+            <StyledImage masonry sizes="33vw" src={imageUrl} />
+          </StyledButton>
         ))}
       </PhotoGalleryCol>
       <PhotoGalleryCol>
         {imageUrlsChunk2.map((imageUrl, i) => (
-          <StyledImage
+          <StyledButton
             key={`${imageUrl}${i}`}
-            masonry
             onClick={() => handleOpenModal(imageUrl)}
-            sizes="33vw"
-            src={imageUrl}
-          />
+          >
+            <StyledImage masonry sizes="33vw" src={imageUrl} />
+          </StyledButton>
         ))}
       </PhotoGalleryCol>
       <PhotoGalleryCol>
         {imageUrlsChunk3.map((imageUrl, i) => (
-          <StyledImage
+          <StyledButton
             key={`${imageUrl}${i}`}
-            masonry
             onClick={() => handleOpenModal(imageUrl)}
-            sizes="33vw"
-            src={imageUrl}
-          />
+          >
+            <StyledImage masonry sizes="33vw" src={imageUrl} />
+          </StyledButton>
         ))}
       </PhotoGalleryCol>
       {isModalDisplayed && selectedImageIndex !== null && (

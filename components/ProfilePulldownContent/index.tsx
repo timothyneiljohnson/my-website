@@ -16,6 +16,8 @@ import {
   ProfilePicture,
   ContactMeIcon,
   StyledHeadingContainer,
+  SkillsList,
+  AndMore,
 } from './styles';
 
 export const ProfilePulldownContent: FC = () => {
@@ -30,7 +32,7 @@ export const ProfilePulldownContent: FC = () => {
   return (
     <ProfileDescription isDarkMode={isDarkMode}>
       <Grid>
-        <Row noWrap>
+        <Row colGap={0.01} noWrap>
           <Col>
             <ContactMeWrapper>
               <ContactMeLink
@@ -84,6 +86,16 @@ export const ProfilePulldownContent: FC = () => {
               I'm a driven, experienced developer/designer based in Minneapolis.
             </p>
             <p>Lead Software Engineer at Target.</p>
+            <br />
+            <p>
+              <b>Skills:</b>
+              {' '}
+              <SkillsList>
+                React JS, Next JS, TypeScript, Storybook, styled-components
+              </SkillsList>
+              {' '}
+              <AndMore>+ more.</AndMore>
+            </p>
             <BioCallToActionWrapper>
               <Button href="mailto:timothyneiljohnson@gmail.com">
                 Get In Touch

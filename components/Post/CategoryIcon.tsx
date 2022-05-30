@@ -7,10 +7,11 @@ interface CategoryIconProps {
 }
 
 export const categoryIconMap = {
-  '4': 'color-palette',
-  '6': 'trophy',
-  '7': 'camera',
-  '10': 'code-slash',
+  '4': 'color-palette', // Web Design
+  '6': 'trophy', // Awards
+  '7': 'camera', // Photography
+  '8': 'accessibility', // Accessibility
+  '11': 'code-slash', // Tutorials
 };
 
 export const CategoryIcon = ({ categories, ...restProps }: CategoryIconProps) => {

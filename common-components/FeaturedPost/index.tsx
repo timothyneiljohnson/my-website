@@ -1,4 +1,5 @@
 import NextLink from 'next/link';
+import parse from 'html-react-parser';
 import { useStorageDarkMode } from '../../components/storage-dark-mode-context';
 import {
   FeaturedPostHeading,
@@ -14,14 +15,21 @@ interface FeaturedPostProps {
 }
 
 export const FeaturedPost = ({ post }: FeaturedPostProps) => {
-  const title = post.title.rendered;
-  const imageUrl = post._embedded['wp:featuredmedia']['0'].source_url;
   const { isDarkMode } = useStorageDarkMode();
+  const title = post.title.rendered;
+  const highlightImageUrl = post.acf.highlight_image;
+
   return (
     <NextLink href={`/post/${post.id}`} passHref>
       <FeaturedPostWrapper isDarkMode={isDarkMode}>
         <ViewThisFeatureWrapper>
-          <FeaturedPostImage alt={title} layout="fill" objectFit="cover" priority src={imageUrl} />
+          <FeaturedPostImage
+            alt={title}
+            layout="fill"
+            objectFit="cover"
+            priority
+            src={highlightImageUrl}
+          />
           <ViewThisFeature isDarkMode={isDarkMode}>
             <ViewThisFeatureText isDarkMode={isDarkMode}>
               View this feature
@@ -29,8 +37,8 @@ export const FeaturedPost = ({ post }: FeaturedPostProps) => {
           </ViewThisFeature>
         </ViewThisFeatureWrapper>
         <div>
-          <FeaturedPostHeading isDarkMode={isDarkMode} level={3} size={5}>
-            {title}
+          <FeaturedPostHeading isDarkMode={isDarkMode} level={3} size={4}>
+            {parse(title)}
           </FeaturedPostHeading>
         </div>
       </FeaturedPostWrapper>

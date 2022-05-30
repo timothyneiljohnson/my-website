@@ -38,6 +38,7 @@ export const PostBody = styled.div<PostBodyProps>`
 export const PostHeading = styled(Heading)`
   text-transform: uppercase;
   word-break: break-word;
+  letter-spacing: -0.25px;
 
   @media ${mediaQueries.smMax} {
     padding-right: 90px;

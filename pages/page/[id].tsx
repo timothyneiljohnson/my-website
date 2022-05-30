@@ -1,5 +1,5 @@
 import parse from 'html-react-parser';
-import { getAuthor, getFeaturedImage } from '../../lib/utils';
+import { getMedia } from '../../lib/utils';
 import { PAGES_API_URL } from '../../lib/constants';
 import { PageShell } from '../../components/PageShell';
 import {
@@ -57,15 +57,13 @@ export const getStaticProps = async ({ params }) => {
     await fetch(`${PAGES_API_URL}/${params.id}`)
   ).json();
 
-  const featuredImg = page.featured_media ? await getFeaturedImage(page.featured_media) : null;
-  const author = await getAuthor(page.author);
+  const featuredImg = page.featured_media ? await getMedia(page.featured_media) : null;
 
   return {
     props: {
       title: page.title.rendered,
       content: page.content.rendered,
       featuredImg,
-      author,
       date: page.date,
     },
   };

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Icon } from '../../common-components/Icon';
 import { Image } from '../../common-components/Image';
-import { animation, colors, focusStyle, mediaQueries, spacing } from '../../common-components/design-tokens';
+import { animation, colors, focusStyle, gradients, mediaQueries, spacing } from '../../common-components/design-tokens';
 import { Heading } from '../../common-components/Heading';
 
 interface ProfileDescriptionProps {
@@ -32,7 +32,7 @@ export const ContactMeWrapper = styled.ul`
   row-gap: ${spacing.x3};
 
   // TODO: Get Row's "gap" working with px and remove
-  padding-right: ${spacing.x7};
+  padding-right: ${spacing.x5};
 
   @media ${mediaQueries.smMax} {
     padding-right: ${spacing.x4};
@@ -67,6 +67,7 @@ export const ContactMeLink = styled.a`
 
 export const MyNameIs = styled.p`
   color: ${colors.secondary};
+  font-weight: 500;
   padding-bottom: 0;
   line-height: 1.5;
 `;
@@ -80,4 +81,20 @@ export const StyledHeadingContainer = styled.div`
   &:focus{
     outline: none;   
   }
+`;
+
+export const SkillsList = styled.span`
+  font-weight: bold;
+  background-image: linear-gradient(45deg, ${gradients.primary.start}, ${gradients.primary.end});
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent;
+`;
+
+export const AndMore = styled.span`
+  font-style: italic;
+  color: ${colors.grayLight};
+  white-space: nowrap;
 `;

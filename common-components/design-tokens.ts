@@ -58,7 +58,7 @@ const decorations = {
   },
   boxShadow: {
     smStyle: 'box-shadow: rgba(0, 0, 0, 0.15) 0 1px 3px 1px;',
-    mdStyle: 'box-shadow: rgba(0, 0, 0, 0.15) 0 4px 4px 0;',
+    mdStyle: 'box-shadow: rgba(0, 0, 0, 0.15) 0 2px 3px 3px;',
     lgStyle: '',
   },
   filterShadow: {
@@ -260,16 +260,16 @@ const font = {
       line-height: 22px;
     `,
     h4: `
-      font-size: 14px;
-      line-height: 18px;
+      font-size: 13px;
+      line-height: 17px;
     `,
     h5: `
       font-size: 12px;
       line-height: 16px;
     `,
     h6: `
-      font-size: 12px;
-      line-height: 16px;
+      font-size: 11px;
+      line-height: 15px;
     `,
   },
 };

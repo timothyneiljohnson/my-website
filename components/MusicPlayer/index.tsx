@@ -470,7 +470,7 @@ export const MusicPlayer = ({
                         >
                           {type}
                         </div>
-                        <SuperHeading level={1}>{name}</SuperHeading>
+                        <SuperHeading color="#fff" level={1}>{name}</SuperHeading>
                         <div>
                           <img
                             alt={creator.name}
@@ -655,7 +655,7 @@ export const MusicPlayer = ({
             <Grid>
               <Row colGap={0.075} middle style={{ padding: '0 15px' }}>
                 <Col xs={3}>
-                  <Image layout="fill" src={image} />
+                  <Image masonry src={image} />
                 </Col>
                 <CurrentTrackSummaryCol ref={marqueeContainerRef} xs={7}>
                   <CurrentTrackTitle

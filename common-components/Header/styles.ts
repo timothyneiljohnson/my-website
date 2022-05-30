@@ -6,7 +6,7 @@ interface StyledHeaderProps {
 }
 export const StyledHeader = styled.header<StyledHeaderProps>`
   width: 100%;
-  ${({ isFullWidth }) => !isFullWidth && 'max-width: 1000px;'}
+  ${({ isFullWidth }) => !isFullWidth && 'max-width: 1032px;'}
   padding: ${spacing.x10} ${spacing.x4} ${spacing.x6};
   margin: 0 auto;
 

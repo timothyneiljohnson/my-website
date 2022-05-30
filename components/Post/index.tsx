@@ -97,7 +97,7 @@ export const Post = ({ post }) => {
                     level={2}
                     size={postHeadingSize}
                   >
-                    {post.title.rendered}
+                    {parse(post.title.rendered)}
                   </PostHeading>
                   {featuredImg && (
                     <NextLink href={`/post/${post.id}`} passHref>

@@ -15,7 +15,7 @@ export const BannerSlide = ({ isCurrentSlide, post }: BannerSlideProps) => (
       objectPosition="top"
       priority
       sizes="60vw"
-      src={post._embedded['wp:featuredmedia']['0'].source_url}
+      src={post.acf.banner_image}
     />
   </BannerSlideStyled>
 );

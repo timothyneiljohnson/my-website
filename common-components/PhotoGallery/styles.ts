@@ -5,6 +5,7 @@ import {
   colors,
   decorations,
   focusStyle,
+  mediaQueries,
   spacing,
 } from '../design-tokens';
 import { Grid } from '../Grid';
@@ -83,6 +84,10 @@ export const GalleryNavButton = styled.button`
   &:active {
     ${focusStyle}
   }
+
+  @media ${mediaQueries.smMax} {
+    padding: 0;
+  }
 `;
 
 export const ImageCountStatus = styled.div`
@@ -92,4 +97,11 @@ export const ImageCountStatus = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+
+export const StyledButton = styled.button`
+  &:focus {
+    ${focusStyle}
+    outline-offset: 0;
+  }
 `;

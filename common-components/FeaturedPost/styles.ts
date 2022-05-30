@@ -5,6 +5,7 @@ import {
   decorations,
   focusStyle,
   gradients,
+  spacing,
 } from '../design-tokens';
 import { Heading } from '../Heading';
 import { Image } from '../Image';
@@ -20,7 +21,7 @@ interface FeaturedPostHeadingProps {
 }
 export const FeaturedPostHeading = styled(Heading)<FeaturedPostHeadingProps>`
   color: ${colors.grayDarkest};
-  margin: 15px 0 0 12px;
+  margin: ${spacing.x4} ${spacing.x3} 0;
 
   ${({ isDarkMode }) =>
     isDarkMode &&
@@ -61,6 +62,7 @@ export const ViewThisFeature = styled.span<ViewThisFeatureProps>`
   padding: 10px 10px 9px;
   position: absolute;
   ${decorations.borderRadiusStyle}
+  ${decorations.boxShadow.smStyle}
 
   ${({ isDarkMode }) =>
     isDarkMode &&
@@ -96,6 +98,7 @@ export const FeaturedPostWrapper = styled.a<FeaturedPostWrapperProps>`
   position: relative;
   margin: 5px;
   background-color: ${colors.white};
+  transition: box-shadow ${animation.durations.faster}ms ease-in-out;
   ${decorations.borderRadiusStyle}
   ${decorations.boxShadow.smStyle}
 
@@ -155,7 +158,9 @@ export const FeaturedPostWrapper = styled.a<FeaturedPostWrapperProps>`
     transform: scale(0.92);
   }
 
-  &:hover {
+  &:hover, &:focus {
+    ${decorations.boxShadow.mdStyle}
+
     ${ViewThisFeature} {
       opacity: 1;
     }
@@ -165,7 +170,7 @@ export const FeaturedPostWrapper = styled.a<FeaturedPostWrapperProps>`
     }
 
     ${FeaturedPostImage} {
-      opacity: 0.8;
+      opacity: 0.6;
     }
 
     ${FeaturedPostHeading} {

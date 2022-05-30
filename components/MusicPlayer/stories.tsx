@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { MusicPlayer } from '.';
+import { globalDecorators } from '../../storybook/decoratorHelpers';
 
 export default {
   title: 'Experiments/MusicPlayer',
@@ -21,3 +22,4 @@ export const Default = ({ primaryColor }) => (
     <MusicPlayer primaryColor={primaryColor} />
   </StyledStoryStageContainer>
 );
+Default.decorators = globalDecorators;

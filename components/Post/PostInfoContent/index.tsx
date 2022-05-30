@@ -1,3 +1,4 @@
+import parse from 'html-react-parser';
 import { PostInfoDate, PostInfoWrapper } from './styles';
 
 interface PostInfoProps {
@@ -14,7 +15,7 @@ export const PostInfo = ({ title, date }: PostInfoProps) => {
 
   return (
     <PostInfoWrapper>
-      <div>{title}</div>
+      <div>{parse(title)}</div>
       <PostInfoDate>
         {formattedDate}
       </PostInfoDate>

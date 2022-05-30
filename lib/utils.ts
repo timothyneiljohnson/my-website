@@ -1,5 +1,4 @@
 import {
-  AUTHORS_API_URL,
   BANNER_POSTS_API_URL,
   FEATURED_CATEGORIES_API_URL,
   FEATURED_POSTS_API_URL,
@@ -11,9 +10,7 @@ import {
 export const getAllPostsFromServer = async (callback) => {
   // get all posts from Server
   try {
-    const data = await (
-      await fetch(POSTS_API_URL)
-    ).json();
+    const data = await (await fetch(POSTS_API_URL)).json();
 
     callback(data);
     return data;
@@ -22,79 +19,53 @@ export const getAllPostsFromServer = async (callback) => {
   }
 };
 
-export const getAllPostsWithImagesFromServer = async (callback) => {
+export const getAllPostsWithImagesFromServer = async () => {
   // get all posts from Server
   try {
-    const data = await (
-      await fetch(POSTS_WITH_IMAGES_API_URL)
-    ).json();
+    const data = await (await fetch(POSTS_WITH_IMAGES_API_URL)).json();
 
-    callback(data);
     return data;
   } catch (error) {
     return console.error(error);
   }
 };
 
-export const getFeaturedPostsFromServer = async (callback) => {
+export const getFeaturedPostsFromServer = async () => {
   // get featured posts from Server
   try {
-    const data = await (
-      await fetch(FEATURED_POSTS_API_URL)
-    ).json();
+    const data = await (await fetch(FEATURED_POSTS_API_URL)).json();
 
-    callback(data);
     return data;
   } catch (error) {
     return console.error(error);
   }
 };
 
-export const getBannerPostsFromServer = async (callback) => {
+export const getBannerPostsFromServer = async () => {
   // get featured posts from Server
   try {
-    const data = await (
-      await fetch(BANNER_POSTS_API_URL)
-    ).json();
+    const data = await (await fetch(BANNER_POSTS_API_URL)).json();
 
-    callback(data);
     return data;
   } catch (error) {
     return console.error(error);
   }
 };
 
-export const getFeaturedCategoriesFromServer = async (callback) => {
+export const getFeaturedCategoriesFromServer = async () => {
   // get all child categories of "featured" from Server
   try {
-    const data = await (
-      await fetch(FEATURED_CATEGORIES_API_URL)
-    ).json();
+    const data = await (await fetch(FEATURED_CATEGORIES_API_URL)).json();
 
-    callback(data);
     return data;
   } catch (error) {
     return console.error(error);
   }
 };
 
-export const getAuthor = async (id) => {
+export const getMedia = async (id) => {
   try {
-    const { name } = await (
-      await fetch(`${AUTHORS_API_URL}/${id}`)
-    ).json();
-
-    return name;
-  } catch (error) {
-    return console.error(error);
-  }
-};
-
-export const getFeaturedImage = async (id) => {
-  try {
-    const data = await (
-      await fetch(`${MEDIA_API_URL}/${id}`)
-    ).json();
+    const data = await (await fetch(`${MEDIA_API_URL}/${id}`)).json();
 
     return data.guid.rendered;
   } catch (error) {

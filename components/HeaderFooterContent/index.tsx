@@ -36,6 +36,7 @@ export const HeaderFooterContent = forwardRef<
               <Image
                 alt="Timothy Neil Johnson"
                 layout="fill"
+                noFadeIn
                 priority
                 src={isDarkMode ? '/name-logo-darkMode.svg' : '/name-logo.svg'}
               />

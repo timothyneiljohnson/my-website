@@ -4,7 +4,7 @@ import { HeaderFooterContent } from '../../components/HeaderFooterContent';
 
 interface HeaderProps {
   handleOpenProfileDrawer: () => void;
-  isFullWidth: boolean;
+  isFullWidth?: boolean;
 }
 
 export const Header = forwardRef<HTMLButtonElement, HeaderProps>(

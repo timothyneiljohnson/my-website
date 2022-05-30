@@ -21,6 +21,7 @@ interface MediaQueriesContextProps {
   xl?: boolean;
   portait?: boolean;
   darkMode?: boolean;
+  highContrast?: boolean;
   reduceMotion?: boolean;
 }
 

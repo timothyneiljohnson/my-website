@@ -18,16 +18,30 @@ interface ImageProps extends NextImageProps {
   style?: any;
 }
 export const Image = (props: ImageProps) => {
-  const { className, height, masonry, width, noFadeIn, round, size, ...restProps } =
-    props;
+  const {
+    className,
+    height,
+    masonry,
+    width,
+    noFadeIn,
+    round,
+    size,
+    src,
+    ...restProps
+  } = props;
   const { unoptimized } = useContext(ImageOptimizationContext);
   const shortestSideLength = Math.min(height, width);
   const heightValue = size ?? height;
   const widthValue = size ?? width;
-  const { src } = props;
+  const srcValue = src || '/placeholder.png';
 
   return masonry ? (
-    <MasonryItem className={className} src={src} unoptimized={unoptimized} {...restProps} />
+    <MasonryItem
+      className={className}
+      src={srcValue}
+      unoptimized={unoptimized}
+      {...restProps}
+    />
   ) : (
     <StyledImageContainer
       className={className}
@@ -39,6 +53,7 @@ export const Image = (props: ImageProps) => {
       <StyledImage
         height={heightValue}
         noFadeIn={noFadeIn}
+        src={srcValue}
         unoptimized={unoptimized}
         width={widthValue}
         {...restProps}

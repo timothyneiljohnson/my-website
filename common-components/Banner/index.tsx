@@ -25,7 +25,7 @@ export const Banner = ({ slides = [] }: BannerProps) => {
       setCurrentIndex(
         currentIndex === slides.length - 1 ? 0 : currentIndex + 1
       );
-    }, 4000);
+    }, 5000);
 
     return () => clearTimeout(bannerTimeout);
   }, [currentIndex, slides.length]);

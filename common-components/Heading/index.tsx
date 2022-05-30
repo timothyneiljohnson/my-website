@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { colors } from '../design-tokens';
 import { StyledHeading } from './styles';
 
 interface HeadingProps {
@@ -13,7 +14,7 @@ interface HeadingProps {
 
 export const Heading = ({
   children,
-  color,
+  color = colors.grayDarker,
   className,
   level = 3,
   size,

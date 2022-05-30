@@ -20,6 +20,7 @@ export const RibbonWrapper = styled.div<RibbonWrapperProps>`
   top: ${({ top }) => (top !== undefined ? `${top - 4}px` : undefined)};
   right: ${({ right }) => (right !== undefined ? `${right - 4}px` : undefined)};
   left: ${({ left }) => (left !== undefined ? `${left - 4}px` : undefined)};
+  z-index: 1;
   ${({ side, thickness }) => `${side === 'top' ? 'width' : 'height'}: ${thickness}px;`}
   ${decorations.filterShadow.mdStyle}
 

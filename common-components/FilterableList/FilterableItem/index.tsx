@@ -35,12 +35,17 @@ export const FilterableItem = ({
   const itemForeshadowData = foreshadowMap[itemId] ?? {};
   const itemStartingPositionData = startingPositionsMap[itemId] ?? {};
 
-  const originPositionX = listBaseRef.current?.getBoundingClientRect().left;
-  const originPositionY = listBaseRef.current?.getBoundingClientRect().top;
-  const itemPositionX = currentItemRef.current?.getBoundingClientRect().left;
-  const itemPositionY = currentItemRef.current?.getBoundingClientRect().top;
-  const listBaseHeight = listBaseRef.current?.clientHeight;
-  const itemWidth = currentItemRef.current?.clientWidth;
+  const {
+    offsetLeft: originPositionX,
+    offsetTop: originPositionY,
+    clientHeight: listBaseHeight,
+  } = listBaseRef.current || {};
+
+  const {
+    offsetLeft: itemPositionX,
+    offsetTop: itemPositionY,
+    clientWidth: itemWidth,
+  } = currentItemRef.current || {};
 
   const { offsetLeft, offsetTop, clientWidth } = itemStartingPositionData;
   const animationStartX = offsetLeft || originPositionX;

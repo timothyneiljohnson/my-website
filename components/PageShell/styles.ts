@@ -12,7 +12,7 @@ interface StyledMainProps {
 export const StyledMain = styled.main<StyledMainProps>`
   width: 100%;
   ${({ isFullWidth }) =>
-    isFullWidth ? 'text-align: center;' : 'max-width: 1000px;'}
+    isFullWidth ? 'text-align: center;' : 'max-width: 1032px;'}
   margin: 0 auto ${spacing.x8};
   padding: 0 ${spacing.x4};
 
@@ -64,4 +64,30 @@ export const StyledDate = styled.div<StyledDateProps>`
   font-style: italic;
   letter-spacing: 0.2px;
   padding: ${spacing.x3} 0;
+`;
+
+interface PostContentProps {
+  isDarkMode?: boolean;
+}
+export const PostContent = styled.div<PostContentProps>`
+  a {
+    color: ${({ isDarkMode }) =>
+      isDarkMode ? colors.secondary : colors.primary};
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: underline;
+    }
+  }
+
+  ul,
+  ol {
+    list-style: initial;
+    margin: revert;
+    padding: revert;
+
+    li {
+      margin-bottom: ${spacing.x2};
+    }
+  }
 `;

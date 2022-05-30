@@ -1,42 +1,21 @@
-import { useCallback, useEffect, useState } from 'react';
 import {
   getBannerPostsFromServer,
   getFeaturedCategoriesFromServer,
   getFeaturedPostsFromServer,
 } from '../lib/utils';
 import { Banner } from '../common-components/Banner';
+import { Heading } from '../common-components/Heading';
 import { FeaturedPost } from '../common-components/FeaturedPost';
 import { FilterableList } from '../common-components/FilterableList';
 import { Outdent } from '../common-components/Outdent';
 import { Placeholder } from '../common-components/Placeholder';
 import { PageShell } from '../components/PageShell';
 import { FEATURED_CATEGORY_ID } from '../lib/constants';
-import { useMediaQueries } from '../components/media-queries-context';
-import { spacing } from '../common-components/design-tokens';
+import { colors, spacing } from '../common-components/design-tokens';
+import { useStorageDarkMode } from '../components/storage-dark-mode-context';
 
-const Featured = () => {
-  const [categories, setCategories] = useState([]);
-  const [bannerPosts, setBannerPosts] = useState([]);
-  const [featuredPosts, setFeaturedPosts] = useState([]);
-  const { reduceMotion } = useMediaQueries();
-
-  const onBannerPostsCallback = useCallback((postsFromServer) => {
-    setBannerPosts(postsFromServer);
-  }, []);
-
-  const onCategoriesCallback = useCallback((postsFromServer) => {
-    setCategories(postsFromServer);
-  }, []);
-
-  const onFeaturedPostsCallback = useCallback((postsFromServer) => {
-    setFeaturedPosts(postsFromServer);
-  }, []);
-
-  useEffect(() => {
-    getBannerPostsFromServer(onBannerPostsCallback);
-    getFeaturedCategoriesFromServer(onCategoriesCallback);
-    getFeaturedPostsFromServer(onFeaturedPostsCallback);
-  }, [onBannerPostsCallback, onCategoriesCallback, onFeaturedPostsCallback]);
+const Featured = ({ bannerPosts, categories, featuredPosts }) => {
+  const { isDarkMode } = useStorageDarkMode();
 
   return (
     <PageShell>
@@ -45,26 +24,51 @@ const Featured = () => {
       ) : (
         <Placeholder height={450} />
       )}
-      <Outdent horizontal={5}>
-        {featuredPosts.length > 0 ? (
-          <FilterableList
-            allCategoryId={FEATURED_CATEGORY_ID}
-            categories={categories}
-            gap={spacing.x2}
-            itemsWithCategories={featuredPosts}
-            minWidth="180px"
-            noAnimation={reduceMotion}
-          >
-            {featuredPosts.map((post, index) => (
-              <FeaturedPost key={index} post={post} />
-            ))}
-          </FilterableList>
-        ) : (
-          <Placeholder height={300} topMargin={125} />
-        )}
-      </Outdent>
+
+      {featuredPosts.length > 0 ? (
+        <>
+          <div>
+            <Heading
+              color={isDarkMode ? colors.white : colors.grayDarker}
+              size={2}
+            >
+              Highlighted Articles
+            </Heading>
+          </div>
+          <Outdent horizontal={5}>
+            <FilterableList
+              allCategoryId={FEATURED_CATEGORY_ID}
+              categories={categories}
+              gap={spacing.x2}
+              itemsWithCategories={featuredPosts}
+              minWidth="180px"
+            >
+              {featuredPosts.map((post, index) => (
+                <FeaturedPost key={index} post={post} />
+              ))}
+            </FilterableList>
+          </Outdent>
+        </>
+      ) : (
+        <Placeholder height={300} topMargin={125} />
+      )}
     </PageShell>
   );
+};
+
+// This also gets called at build time
+export const getStaticProps = async () => {
+  const bannerPosts = await getBannerPostsFromServer();
+  const featuredPosts = await getFeaturedPostsFromServer();
+  const categories = await getFeaturedCategoriesFromServer();
+
+  return {
+    props: {
+      bannerPosts,
+      categories,
+      featuredPosts,
+    },
+  };
 };
 
 export default Featured;

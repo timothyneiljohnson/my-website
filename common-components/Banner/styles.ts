@@ -11,21 +11,25 @@ import { Image } from '../Image';
 export const BannerWrapper = styled.div`
   height: 490px;
   width: 100%;
-  max-width: 970px;
+  max-width: 1032px;
 `;
 
 export const StyledBanner = styled.a`
   height: 450px;
   width: 100%;
-  max-width: 970px;
-  overflow: hidden;
+  max-width: 1032px;
   display: block;
   position: relative;
-  ${decorations.boxShadow.mdStyle}
+  transition: box-shadow ${animation.durations.faster}ms ease-in-out;
+  ${decorations.boxShadow.smStyle}
   ${decorations.borderRadiusStyle}
 
   &:focus, &:active {
     ${focusStyle}
+  }
+
+  &:hover {
+    ${decorations.boxShadow.mdStyle}
   }
 `;
 
@@ -45,7 +49,7 @@ export const BannerSlideStyled = styled.div`
   position: absolute;
   height: 450px;
   width: 100%;
-  max-width: 970px;
+  max-width: 1032px;
   overflow: hidden;
 `;
 
@@ -75,8 +79,6 @@ export const StyledBannerControl = styled.button<StyledBannerControlProps>`
   height: 20px;
   margin-left: ${spacing.x2};
   font-weight: bold;
-
-  color: ${({ isActive }) => (isActive ? colors.white : colors.grayDarker)};
   font-size: 11.5px;
   text-align: center;
   line-height: 20px;

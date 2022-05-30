@@ -1,11 +1,12 @@
 import parse from 'html-react-parser';
 import Prism from 'prismjs';
 import { useEffect } from 'react';
-import { getAuthor, getFeaturedImage } from '../../lib/utils';
+import { getMedia } from '../../lib/utils';
 import { POSTS_API_URL } from '../../lib/constants';
 import { PageShell } from '../../components/PageShell';
 import {
   FeaturedImageWrapper,
+  PostContent,
   StyledDate,
   StyledPageContainer,
 } from '../../components/PageShell/styles';
@@ -46,7 +47,7 @@ const Post = ({ title, featuredImg, content, date }) => {
             level={1}
             size={smMax ? 2 : 1}
           >
-            {title}
+            {parse(title)}
           </Heading>
           {featuredImg && !hasPhotoGallery && (
             <FeaturedImageWrapper>
@@ -63,7 +64,7 @@ const Post = ({ title, featuredImg, content, date }) => {
           <StyledDate isDarkMode={isDarkMode}>
             {`Published on ${formattedDate}`}
           </StyledDate>
-          <div>{parsedContent}</div>
+          <PostContent isDarkMode={isDarkMode}>{parsedContent}</PostContent>
           {hasPhotoGallery && (
             <PhotoGallery
               imageUrls={[...Array(29)].map(
@@ -95,16 +96,14 @@ export const getStaticProps = async ({ params }) => {
   const post = await (await fetch(`${POSTS_API_URL}/${params.id}`)).json();
 
   const featuredImg = post.featured_media
-    ? await getFeaturedImage(post.featured_media)
+    ? await getMedia(post.featured_media)
     : null;
-  const author = await getAuthor(post.author);
 
   return {
     props: {
       title: post.title.rendered,
       content: post.content.rendered,
       featuredImg,
-      author,
       date: post.date,
     },
   };

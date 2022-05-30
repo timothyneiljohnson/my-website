@@ -33,7 +33,7 @@ export const PageShell = ({ children, isFullWidth }: PageShellProps) => {
   const [isModalDisplayed, setIsModalDisplayed] = useState(false);
   const focusRef = useRef(null);
   const { isDarkMode } = useStorageDarkMode();
-  const { smMax } = useMediaQueries();
+  const { xsMax, smMax, mdMax } = useMediaQueries();
 
   useEffect(() => {
     if (isModalOpen) {
@@ -58,6 +58,15 @@ export const PageShell = ({ children, isFullWidth }: PageShellProps) => {
       behavior: 'smooth',
     });
   }, []);
+
+  let modalSize = 350;
+  if (xsMax) {
+    modalSize = 400;
+  } else if (smMax) {
+    modalSize = 360;
+  } else if (mdMax) {
+    modalSize = 380;
+  }
 
   return (
     <>
@@ -86,7 +95,7 @@ export const PageShell = ({ children, isFullWidth }: PageShellProps) => {
           direction="top"
           isOpen={isModalOpen}
           onCloseCallback={onCloseCallback}
-          size={smMax ? 320 : 330}
+          size={modalSize}
         >
           <DynamicProfilePulldownContent />
         </DynamicModalDrawer>
