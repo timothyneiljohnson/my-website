@@ -18,30 +18,6 @@ export const pagesMock = [
           name: 'Goodreads',
           image: 'goodreads.jpg',
         },
-        {
-          name: 'Audible4',
-          image: 'audible.jpg',
-        },
-        {
-          name: 'Books4',
-          image: 'books.jpg',
-        },
-        {
-          name: 'Goodreads4',
-          image: 'goodreads.jpg',
-        },
-        {
-          name: 'Audible5',
-          image: 'audible.jpg',
-        },
-        {
-          name: 'Books5',
-          image: 'books.jpg',
-        },
-        {
-          name: 'Goodreads5',
-          image: 'goodreads.jpg',
-        },
       ],
     },
     {
@@ -62,7 +38,7 @@ export const pagesMock = [
       ],
     },
     {
-      name: 'Organizing',
+      name: 'Other',
       apps: [
         {
           name: 'Signal',
@@ -104,8 +80,9 @@ export const pagesMock = [
       image: 'messenger.jpg',
     },
     {
-      name: 'Slack',
-      image: 'slack.jpg',
+      name: 'Clock',
+      image: 'clock.jpg',
+      widget: <Clock />,
     },
     {
       name: 'Weather',
@@ -120,9 +97,8 @@ export const pagesMock = [
       image: 'evernote.jpg',
     },
     {
-      name: 'Clock',
-      image: 'clock.jpg',
-      widget: <Clock />,
+      name: 'Slack',
+      image: 'slack.jpg',
     },
     {
       name: 'Tasks',
@@ -169,7 +145,7 @@ export const pagesMock = [
       ],
     },
     {
-      name: 'Organizing2',
+      name: 'Other2',
       apps: [
         {
           name: 'Signal2',
@@ -276,7 +252,7 @@ export const pagesMock = [
       ],
     },
     {
-      name: 'Organizing3',
+      name: 'Other3',
       apps: [
         {
           name: 'Signa32',

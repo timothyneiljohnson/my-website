@@ -16,7 +16,7 @@ export const StyledPhoneHome = styled.div<StyledPhoneHomeProps>`
   }
   height: 1334px;
   width: 750px;
-  background: url('/athens.jpg') no-repeat;
+  background: url('/image-assets/phone-home/ios-background.png') no-repeat;
   background-size: cover;
   text-align: center;
   position: relative;

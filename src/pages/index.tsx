@@ -58,9 +58,9 @@ const Featured = ({ bannerPosts, categories, featuredPosts }) => {
 
 // This also gets called at build time
 export const getStaticProps = async () => {
-  const bannerPosts = await getBannerPostsFromServer();
-  const featuredPosts = await getFeaturedPostsFromServer();
-  const categories = await getFeaturedCategoriesFromServer();
+  const bannerPosts = await getBannerPostsFromServer() || [];
+  const featuredPosts = await getFeaturedPostsFromServer() || [];
+  const categories = await getFeaturedCategoriesFromServer() || [];
 
   return {
     props: {

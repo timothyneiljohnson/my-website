@@ -2,7 +2,7 @@ import { keyframes } from 'styled-components';
 import { SideNames } from './types';
 
 const colors = {
-  primary: 'hsl(227, 65%, 60%)',
+  primary: '#5874DC',
   secondary: '#6cc0ac',
   tertiary: '#384E78',
   quaternary: '#e06c78',
