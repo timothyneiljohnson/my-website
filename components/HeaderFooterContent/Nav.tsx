@@ -30,6 +30,7 @@ export const Nav = forwardRef<HTMLButtonElement, NavProps>(
         <MainNavListItem>
           <NextLink href="/" passHref>
             <Button
+              aria-current={isHome ? 'page' : undefined}
               gradientEnd={isHome ? gradients.primary.end : null}
               gradientStart={isHome ? gradients.primary.start : null}
               pill
@@ -44,6 +45,7 @@ export const Nav = forwardRef<HTMLButtonElement, NavProps>(
         <MainNavListItem>
           <NextLink href="/blog" passHref>
             <Button
+              aria-current={isBlog ? 'page' : undefined}
               gradientEnd={isBlog ? gradients.primary.end : null}
               gradientStart={isBlog ? gradients.primary.start : null}
               pill

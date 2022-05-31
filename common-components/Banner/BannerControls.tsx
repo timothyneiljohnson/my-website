@@ -1,4 +1,5 @@
 import { useCallback } from 'react';
+import { useMediaQueries } from '../../components/media-queries-context';
 import { useStorageDarkMode } from '../../components/storage-dark-mode-context';
 import { colors } from '../design-tokens';
 import { Icon } from '../Icon';
@@ -21,6 +22,7 @@ export const BannerControls = ({
   onSlideChangeCallback,
 }: BannerControlsProps) => {
   const { isDarkMode } = useStorageDarkMode();
+  const { md } = useMediaQueries();
 
   const handlePreviousSlideControlClick = useCallback(() => {
     const newIndex = currentIndex === 0 ? length - 1 : currentIndex - 1;
@@ -46,7 +48,7 @@ export const BannerControls = ({
           size={18}
         />
       </PreviousControl>
-      {[...Array(length)].map((_, index) => (
+      {md && [...Array(length)].map((_, index) => (
         <StyledBannerControl
           aria-label={`Go to slide ${index + 1}`}
           isActive={index === currentIndex}

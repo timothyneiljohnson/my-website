@@ -28,6 +28,7 @@ export const FeaturedPost = ({ post }: FeaturedPostProps) => {
             layout="fill"
             objectFit="cover"
             priority
+            sizes="33vw"
             src={highlightImageUrl}
           />
           <ViewThisFeature isDarkMode={isDarkMode}>

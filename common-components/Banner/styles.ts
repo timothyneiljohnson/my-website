@@ -4,18 +4,17 @@ import {
   colors,
   decorations,
   focusStyle,
+  mediaQueries,
   spacing,
 } from '../design-tokens';
 import { Image } from '../Image';
 
 export const BannerWrapper = styled.div`
-  height: 490px;
   width: 100%;
   max-width: 1032px;
 `;
 
 export const StyledBanner = styled.a`
-  height: 450px;
   width: 100%;
   max-width: 1032px;
   display: block;
@@ -23,6 +22,11 @@ export const StyledBanner = styled.a`
   transition: box-shadow ${animation.durations.faster}ms ease-in-out;
   ${decorations.boxShadow.smStyle}
   ${decorations.borderRadiusStyle}
+  aspect-ratio: 2.35 / 1;
+
+  @media ${mediaQueries.smMax} {
+    aspect-ratio: 16 / 9;
+  }
 
   &:focus, &:active {
     ${focusStyle}
@@ -47,15 +51,15 @@ export const BannerImageStyled = styled(Image).withConfig({
 
 export const BannerSlideStyled = styled.div`
   position: absolute;
-  height: 450px;
   width: 100%;
+  height: 100%;
   max-width: 1032px;
   overflow: hidden;
 `;
 
 export const BannerControlsStyled = styled.div`
   width: 100%;
-  padding-top: ${spacing.x4};
+  padding: ${spacing.x4} 0 ${spacing.x2};
   display: flex;
   justify-content: flex-end;
   align-items: center;

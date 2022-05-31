@@ -13,7 +13,7 @@ import {
   ExcerptImageWrapper,
   StyledRibbon,
 } from './styles';
-import { monthNames, shortMonthNames } from './constants';
+import { shortMonthNames } from './constants';
 import { PostInfo } from './PostInfoContent';
 import { CategoryIcon } from './CategoryIcon';
 import { colors, gradients } from '../../common-components/design-tokens';
@@ -34,7 +34,6 @@ export const Post = ({ post }) => {
     setIsRibbonHovered(!isRibbonHovered);
   }, [isRibbonHovered]);
   const postDateMonth = new Date(post.date).getMonth();
-  const month = monthNames[postDateMonth];
   const shortMonth = shortMonthNames[postDateMonth];
   const dateOfMonth = new Date(post.date).getDate();
   const featuredMedia = post._embedded['wp:featuredmedia'] ?? {};
@@ -69,14 +68,12 @@ export const Post = ({ post }) => {
                   thickness={smMax ? 45 : 62}
                   top={isDarkMode ? 0 : 2}
                 >
-                  <div aria-label={`Posted on ${month} ${dateOfMonth}`}>
-                    <div aria-hidden>
-                      {xsMax && (
-                        <CategoryIcon categories={post.categories} size={26} />
-                      )}
-                      <Day>{dateOfMonth}</Day>
-                      <Month>{shortMonth}</Month>
-                    </div>
+                  <div aria-hidden>
+                    {xsMax && (
+                      <CategoryIcon categories={post.categories} size={26} />
+                    )}
+                    <Day>{dateOfMonth}</Day>
+                    <Month>{shortMonth}</Month>
                   </div>
                 </StyledRibbon>
               </div>
