@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import styled from 'styled-components';
 import { Transition, TransitionProps } from '.';
-import { globalDecorators } from '../../storybook/decoratorHelpers';
+import { globalDecorators } from '../../src/storybook/decoratorHelpers';
 import { Button } from '../Button';
 import { animation, colors } from '../design-tokens';
 import { Default } from '../Lottie/stories';

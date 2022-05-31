@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
-import { useMediaQueries } from '../../components/media-queries-context';
-import { useStorageDarkMode } from '../../components/storage-dark-mode-context';
+import { useMediaQueries } from '../media-queries-context';
+import { useStorageDarkMode } from '../storage-dark-mode-context';
 import { colors } from '../design-tokens';
 import { Icon } from '../Icon';
 import {

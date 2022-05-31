@@ -28,7 +28,8 @@ export const StyledBanner = styled.a`
     aspect-ratio: 16 / 9;
   }
 
-  &:focus, &:active {
+  &:focus,
+  &:active {
     ${focusStyle}
   }
 
@@ -101,20 +102,16 @@ export const StyledBannerControl = styled.button<StyledBannerControlProps>`
     ${focusStyle}
   }
 
-  ${({ isDarkMode }) =>
+  ${({ isDarkMode, isActive }) =>
     isDarkMode &&
     `
-    ${({ isActive }) => `
-      background-color: ${isActive ? colors.grayLightest : colors.grayLight};
-      box-shadow: inset 0 0 4px 1.5px ${
-        isActive ? colors.grayLightest : colors.grayLight
-      };
+      background-color: ${isActive ? colors.grayLighter : colors.grayLight};
+      ${!isActive ? `box-shadow: inset 0 0 4px 1.5px ${colors.grayLight};` : ''}
     `}
 
-    &:hover {
-      filter: brightness(110%);
-    }
-  `}
+  &:hover {
+    filter: brightness(110%);
+  }
 `;
 
 interface NextPreviousControlProps {
@@ -134,7 +131,7 @@ const NextPreviousControl = styled(
   ${({ isDarkMode }) =>
     isDarkMode &&
     `
-    background-color: ${colors.grayLightest};
+    background-color: ${colors.grayLighter};
   `}
 `;
 

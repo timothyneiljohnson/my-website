@@ -1,4 +1,4 @@
-import { useStorageDarkMode } from '../../components/storage-dark-mode-context';
+import { useStorageDarkMode } from '../storage-dark-mode-context';
 import { StyledPlaceholder } from './styles';
 
 interface PlaceholderProps {

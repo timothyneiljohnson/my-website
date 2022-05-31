@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 import { Toast } from '.';
-import { globalDecorators } from '../../storybook/decoratorHelpers';
+import { globalDecorators } from '../../src/storybook/decoratorHelpers';
 import { Button } from '../Button';
 
 export default {

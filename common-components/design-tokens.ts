@@ -219,6 +219,7 @@ const mediaQueries = {
   portait: '(orientation: portrait)',
   darkMode: '(prefers-color-scheme: dark)', // Avoid this because we need manual override
   reduceMotion: '(prefers-reduced-motion: reduce)',
+  highContrast: '(prefers-contrast: more)',
 };
 
 const spacing = {

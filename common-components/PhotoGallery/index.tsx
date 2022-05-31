@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
-import { useStorageDarkMode } from '../../components/storage-dark-mode-context';
+import { useStorageDarkMode } from '../storage-dark-mode-context';
 import { colors } from '../design-tokens';
 import {
   GalleryNavButton,

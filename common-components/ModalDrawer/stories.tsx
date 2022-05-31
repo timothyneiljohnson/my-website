@@ -2,11 +2,11 @@ import dynamic from 'next/dynamic';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { ModalDrawerProps } from './types';
-import { ProfilePulldownContent } from '../../components/ProfilePulldownContent';
-import { globalDecorators } from '../../storybook/decoratorHelpers';
+import { ProfilePulldownContent } from '../../src/components/ProfilePulldownContent';
+import { globalDecorators } from '../../src/storybook/decoratorHelpers';
 import { Button } from '../Button';
 import { colors } from '../design-tokens';
-import { useMediaQueries } from '../../components/media-queries-context';
+import { useMediaQueries } from '../media-queries-context';
 
 const DynamicModalDrawer = dynamic<ModalDrawerProps>(() =>
   import('.').then(

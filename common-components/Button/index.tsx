@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes, forwardRef, useCallback, useState } from 'react';
-import { useStorageDarkMode } from '../../components/storage-dark-mode-context';
+import { useStorageDarkMode } from '../storage-dark-mode-context';
 import { colors } from '../design-tokens';
 import { StandardSizes } from '../types';
 import { StyledButton, StyledLinkAsButton } from './styles';

@@ -1,7 +1,7 @@
 import React from 'react';
 import { ButtonProps } from '.';
 import { Button } from '.';
-import { globalDecorators } from '../../storybook/decoratorHelpers';
+import { globalDecorators } from '../../src/storybook/decoratorHelpers';
 import { colors, gradients } from '../design-tokens';
 import { Icon } from '../Icon';
 

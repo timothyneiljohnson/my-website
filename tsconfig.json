@@ -24,7 +24,7 @@
     "**/*.ts",
     "**/*.tsx",
     "next.config.js",
-    "pages/_document.js",
+    "src/pages/_document.js",
     "tailwind.config.js",
     "postcss.config.js"
   ],

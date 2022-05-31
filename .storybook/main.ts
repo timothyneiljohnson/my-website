@@ -6,7 +6,8 @@ import type { StorybookConfig } from '@storybook/core-common';
 const config: StorybookConfig = {
   stories: [
     '../common-components/**/stories.@(ts|tsx)',
-    '../components/**/stories.@(ts|tsx)',
+    '../src/components/**/stories.@(ts|tsx)',
+    '../src/experiments/**/stories.@(ts|tsx)',
   ],
   addons: [
     '@storybook/addon-links',

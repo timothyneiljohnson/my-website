@@ -1,7 +1,7 @@
 import React from 'react';
 import { FilterableList } from '.';
-import { globalDecorators } from '../../storybook/decoratorHelpers';
-import { FeaturedPost } from '../FeaturedPost';
+import { globalDecorators } from '../../src/storybook/decoratorHelpers';
+import { FeaturedPost } from '../../src/components/FeaturedPost';
 import {
   CategoriesFixture,
   ItemsWithCategoriesFixture,

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Lottie } from '.';
-import { globalDecorators } from '../../storybook/decoratorHelpers';
+import { globalDecorators } from '../../src/storybook/decoratorHelpers';
 import { colors } from '../design-tokens';
 
 export default {

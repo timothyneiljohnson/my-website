@@ -1,4 +1,4 @@
-import { useMediaQueries } from '../../components/media-queries-context';
+import { useMediaQueries } from '../media-queries-context';
 import { BannerImageStyled, BannerSlideStyled } from './styles';
 
 interface BannerSlideProps {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Banner } from '.';
-import { MediaQueriesProvider } from '../../components/media-queries-context';
-import { globalDecorators } from '../../storybook/decoratorHelpers';
+import { MediaQueriesProvider } from '../media-queries-context';
+import { globalDecorators } from '../../src/storybook/decoratorHelpers';
 import BannerPostsFixture from './__tests__/__fixtures__';
 
 export default {
