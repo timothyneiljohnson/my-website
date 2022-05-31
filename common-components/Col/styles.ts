@@ -9,7 +9,7 @@ const hiddenUpProps = SCREEN_SIZES.map((size) => `${size}HiddenUp`);
 const offsetProps = SCREEN_SIZES.map((size) => `${size}Offset`);
 const shrinkProps = SCREEN_SIZES.map((size) => `${size}Shrink`);
 
-export const applyStyleToScreenSizesAndDefault = (
+const applyStyleToScreenSizesAndDefault = (
   props: any,
   propName: string,
   styles: string

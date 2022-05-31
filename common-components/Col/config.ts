@@ -2,7 +2,7 @@ import { css } from 'styled-components';
 import { breakpoints } from '../design-tokens';
 
 const THEME_CONF = 'flexboxgrid';
-export const BASE_CONF = {
+const BASE_CONF = {
   gridSize: 12,
   gutterWidth: 0,
   outerMargin: '0',

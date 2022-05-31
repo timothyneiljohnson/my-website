@@ -3,7 +3,6 @@ import { Col } from '../../common-components/Col';
 import { Grid } from '../../common-components/Grid';
 import { Heading } from '../../common-components/Heading';
 import { Icon } from '../../common-components/Icon';
-import { Image } from '../../common-components/Image';
 import { Row } from '../../common-components/Row';
 import {
   animation,
@@ -13,10 +12,6 @@ import {
 } from '../../common-components/design-tokens';
 
 export const DEFAULT_PRIMARY_COLOR = '#2ab859';
-
-export const CoverImage = styled(Image)`
-  box-shadow: rgba(0, 0, 0, 0.35) 10px 10px 48px 0;
-`;
 
 interface HoverIconProps {
   isActive?: boolean;

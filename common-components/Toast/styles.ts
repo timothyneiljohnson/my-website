@@ -2,22 +2,7 @@ import styled from 'styled-components';
 import { animation, decorations, focusStyle, spacing } from '../design-tokens';
 import { Heading } from '../Heading';
 import { Icon } from '../Icon';
-import { getOppositedirection } from '../helpers';
 import { SideNamesVertical } from '../types';
-
-interface FloatingCloseButtonWrapperProps {
-  direction: SideNamesVertical;
-  offset: number;
-}
-export const FloatingCloseButtonWrapper = styled.div<FloatingCloseButtonWrapperProps>`
-  text-align: center;
-  position: absolute;
-  align-items: center;
-  justify-content: center;
-  z-index: 100;
-  ${({ direction, offset }) =>
-    `${getOppositedirection(direction)}: ${offset}px;`}
-`;
 
 interface ToastContainerProps {
   direction: SideNamesVertical;

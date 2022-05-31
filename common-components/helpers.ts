@@ -47,11 +47,6 @@ const hexToRgbParts = (hexColor: string) => {
     : null;
 };
 
-export const hexToRgb = (hexColor: string) => {
-  const { r, g, b } = hexToRgbParts(hexColor);
-  return `rgb(${r}, ${g}, ${b})`;
-};
-
 export const hexToRgba = (hexColor: string, alpha: number) => {
   const { r, g, b } = hexToRgbParts(hexColor);
   return `rgba(${r}, ${g}, ${b}, ${alpha})`;

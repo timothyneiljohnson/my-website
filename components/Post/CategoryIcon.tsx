@@ -6,7 +6,7 @@ interface CategoryIconProps {
   size: number;
 }
 
-export const categoryIconMap = {
+const categoryIconMap = {
   '4': 'color-palette', // Web Design
   '6': 'trophy', // Awards
   '7': 'camera', // Photography

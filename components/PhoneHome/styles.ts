@@ -61,13 +61,6 @@ export const AppGridItem = styled.div`
   min-width: 0;
 `;
 
-export const FolderAppCol = styled.div`
-  flex-basis: 28.263%;
-  align-items: center;
-  justify-content: center;
-  min-width: 0;
-`;
-
 const AppOrFolder = styled.div`
   height: 0;
   padding: 50%;
@@ -191,16 +184,6 @@ export const AppDockInnerGrid = styled(PlainGrid)`
   justify-content: center;
   margin: 0 auto;
 `;
-
-export const AppDockRow = styled(Row)`
-  height: 100%;
-`;
-
-export const AppIcon = styled.div``;
-
-export const Keyboard = styled.div``;
-
-export const KeyboardKey = styled.div``;
 
 interface FullscreenFolderFilterProps {
   isShown?: boolean;

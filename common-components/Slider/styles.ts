@@ -79,16 +79,3 @@ export const SliderMarker = styled.div<SliderMarkerProps>`
   );
   ${decorations.boxShadow.smStyle}
 `;
-
-export const HiddenRangeInput = styled.input.attrs({
-  type: 'range',
-})`
-  position: absolute;
-  padding: 0;
-  height: 1px;
-  width: 1px;
-  margin: -1px;
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  overflow: hidden;
-`;

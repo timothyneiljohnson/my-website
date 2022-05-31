@@ -13,7 +13,7 @@ interface StyledReactionsProps {
   topMargin?: number;
 }
 
-export const reactionColors = {
+const reactionColors = {
   gray: '#f2f2f2',
   like: '#287cf1',
   love: '#f1415b',

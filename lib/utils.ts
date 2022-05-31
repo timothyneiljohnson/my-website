@@ -3,21 +3,8 @@ import {
   FEATURED_CATEGORIES_API_URL,
   FEATURED_POSTS_API_URL,
   MEDIA_API_URL,
-  POSTS_API_URL,
   POSTS_WITH_IMAGES_API_URL,
 } from './constants';
-
-export const getAllPostsFromServer = async (callback) => {
-  // get all posts from Server
-  try {
-    const data = await (await fetch(POSTS_API_URL)).json();
-
-    callback(data);
-    return data;
-  } catch (error) {
-    return console.error(error);
-  }
-};
 
 export const getAllPostsWithImagesFromServer = async () => {
   // get all posts from Server

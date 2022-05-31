@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import styled from 'styled-components';
 import config, { SCREEN_SIZES } from '../Col/config';
 
-export interface StyledGridProps {
+interface StyledGridProps {
   fixed?: boolean;
   children?: ReactNode;
 }

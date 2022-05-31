@@ -10,12 +10,6 @@ import {
 import { Heading } from '../Heading';
 import { Image } from '../Image';
 
-export const FeaturedPostBody = styled.div`
-  padding: 0 120px 70px 48px;
-  line-height: 1.6em;
-  font-size: 14px;
-`;
-
 interface FeaturedPostHeadingProps {
   isDarkMode?: boolean;
 }
@@ -28,10 +22,6 @@ export const FeaturedPostHeading = styled(Heading)<FeaturedPostHeadingProps>`
     `
     color: ${colors.white};
   `}
-`;
-
-export const HeroLink = styled.a`
-  display: block;
 `;
 
 export const FeaturedPostImage = styled(Image)`

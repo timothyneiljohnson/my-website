@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { animation } from '../design-tokens';
 import { StandardSizes } from '../types';
 
-export const sizeMap = {
+const sizeMap = {
   xs: 6,
   sm: 8,
   md: 10,
