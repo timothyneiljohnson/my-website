@@ -6,6 +6,7 @@ import { ProfilePulldownContent } from '../../components/ProfilePulldownContent'
 import { globalDecorators } from '../../storybook/decoratorHelpers';
 import { Button } from '../Button';
 import { colors } from '../design-tokens';
+import { useMediaQueries } from '../../components/media-queries-context';
 
 const DynamicModalDrawer = dynamic<ModalDrawerProps>(() =>
   import('.').then(
@@ -99,6 +100,16 @@ export const CustomClose = ({
   const [isModalDrawerOpen, setIsModalDrawerOpen] = useState(false);
   const [isModalOverlayDisplayed, setIsModalOverlayDisplayed] = useState(false);
   const focusRef = useRef(null);
+  const { xsMax, smMax, mdMax } = useMediaQueries();
+
+  let modalSize = 350;
+  if (xsMax) {
+    modalSize = 400;
+  } else if (smMax) {
+    modalSize = 360;
+  } else if (mdMax) {
+    modalSize = 380;
+  }
 
   const handleClick = () => setIsModalDrawerOpen(true);
 
@@ -133,6 +144,7 @@ export const CustomClose = ({
           direction={direction}
           isOpen={isModalDrawerOpen}
           onCloseCallback={onCloseCallback}
+          size={modalSize}
           title={title}
         >
           <ProfilePulldownContent />
@@ -147,7 +159,6 @@ CustomClose.args = {
   direction: 'top',
   closeType: 'floating',
   customClose: <Button size="sm">Close profile</Button>,
-  size: 330,
 };
 
 export const Float = ({
