@@ -7,7 +7,7 @@ module.exports = withBundleAnalyzer({
     defaultLocale: 'en',
   },
   images: {
-    domains: ['localhost'],
+    domains: [process.env.IMAGE_DOMAIN],
     formats: ['image/avif', 'image/webp'],
   },
 });
