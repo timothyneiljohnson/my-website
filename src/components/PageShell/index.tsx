@@ -10,7 +10,7 @@ import { useStorageDarkMode } from '../../../common-components/storage-dark-mode
 import { GlobalStyles } from './globalStyles';
 import { StyledMain } from './styles';
 import { ModalDrawerProps } from '../../../common-components/ModalDrawer/types';
-import { BASE_URL } from '../../lib/constants';
+import { API_BASE_URL } from '../../lib/constants';
 
 const DynamicModalDrawer = dynamic<ModalDrawerProps>(() =>
   import('../../../common-components/ModalDrawer').then(
@@ -74,7 +74,7 @@ export const PageShell = ({ children, isFullWidth }: PageShellProps) => {
         <title>Tim J: Software Engineer</title>
         <meta content="Tim J: Software Engineer" name="description" />
         <meta content={colors.tertiary} name="theme-color" />
-        <link href={BASE_URL} rel="preconnect" />
+        <link href={API_BASE_URL} rel="preconnect" />
         <link href="/favicon.png" rel="icon" />
         <link href="/manifest.json" rel="manifest" />
         <link href="/apple-touch-icon.png" rel="apple-touch-icon" />

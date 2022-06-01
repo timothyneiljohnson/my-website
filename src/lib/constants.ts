@@ -1,4 +1,4 @@
-const { API_BASE_URL } = process.env;
+export const { API_BASE_URL } = process.env;
 export const FEATURED_CATEGORY_ID = 3;
 const BANNER_CATEGORY_ID = 9;
 export const POSTS_API_URL = `${API_BASE_URL}/wp-json/wp/v2/posts`;
