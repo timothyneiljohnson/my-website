@@ -59,7 +59,7 @@ yarn start
 👤 timothyneiljohnson
 
 ## Acknowledgments
-This began as a fork from a helpful repo by https://github.com/onedebos.
+This began as a fork from a helpful repo by https://github.com/Aeeiee-Team.
 
 ## 📝 License
 
