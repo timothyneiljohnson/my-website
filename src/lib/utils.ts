@@ -54,7 +54,7 @@ export const getMedia = async (id) => {
   try {
     const data = await (await fetch(`${MEDIA_API_URL}/${id}`)).json();
 
-    return data.guid.rendered;
+    return data.source_url;
   } catch (error) {
     return console.error(error);
   }
