@@ -77,13 +77,13 @@ export const Nav = forwardRef<HTMLButtonElement, NavProps>(
               <Icon
                 fill={`${isDarkMode ? colors.white : colors.grayDarkest}`}
                 name="sunny"
-                size={20}
+                size={xsMax ? 17 : 20}
               />
             ) : (
               <Icon
                 fill={`${isDarkMode ? colors.white : colors.primary}`}
                 name="moon"
-                size={20}
+                size={xsMax ? 17 : 20}
               />
             )}
           </Button>
