@@ -23,7 +23,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const { isDarkMode = false } = useStorageDarkMode() ?? {};
     const {
       bgColor = isDarkMode ? colors.grayDark : colors.white,
-      textColor = isDarkMode ? colors.white : colors.grayDarkest,
+      textColor = isDarkMode ? colors.grayLightest : colors.grayDarkest,
       fullWidth,
       pointerGradient,
       variant,

@@ -38,7 +38,7 @@ export const StyledPageContainer = styled.div<StyledPageContainerProps>`
 export const FeaturedImageWrapper = styled.div`
   position: relative;
   width: 100%;
-  height: 500px;
+  aspect-ratio: 16 / 9;
   margin: ${spacing.x6} 0 ${spacing.x4};
 
   @media ${mediaQueries.smMax} {

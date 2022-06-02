@@ -109,6 +109,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
       gradientStart &&
       `
       background: linear-gradient(to right, ${gradientStart}, ${gradientEnd});
+      border: transparent;
     `}
 
     ${({ pointerGradient, gradientStart, gradientEnd }) =>

@@ -123,7 +123,7 @@ export const FullscreenOverlay = styled.div<FullscreenOverlayProps>`
   ${({ isDarkMode }) =>
     isDarkMode &&
     `
-    background: rgba(30, 30, 30, 0.95);
+    background: rgba(20, 20, 20, 0.8);
   `}
   animation: ${animation.keyframes.fadeIn} ${animation.durations
     .fast}ms ease-in-out;

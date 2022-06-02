@@ -5,7 +5,7 @@ interface StyledFooterProps {
   isDarkMode?: boolean;
 }
 export const StyledFooter = styled.footer<StyledFooterProps>`
-  background-image: url(${({ isDarkMode }) => isDarkMode ? '/footerbg-darkmode.png' : '/footerbg.png'});
+  background-image: url(${({ isDarkMode }) => isDarkMode ? '/footerbg-darkmode.jpg' : '/footerbg.png'});
   padding: ${spacing.x9} ${spacing.x4} 50px;
   width: 100%;
 

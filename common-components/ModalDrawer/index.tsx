@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { Col } from '../Col';
 import { animation, colors } from '../design-tokens';
 import { Row } from '../Row';
+import { useStorageDarkMode } from '../storage-dark-mode-context';
 import { TransitionTypes } from '../Transition/types';
 import {
   CloseIcon,
@@ -29,6 +30,7 @@ export const ModalDrawer = ({
 }: ModalDrawerProps) => {
   const [floatingCloseOffset, setFloatingCloseOffset] = useState(0);
   const [isFloatingCloseShown, setIsFloatingCloseShown] = useState(false);
+  const { isDarkMode } = useStorageDarkMode();
   const floatingCloseRef = useRef(null);
 
   const onKeyDownCallback = useCallback(
@@ -145,7 +147,11 @@ export const ModalDrawer = ({
         </FloatingCloseButtonWrapper>
       )}
       {modalType !== 'fullscreen' && (
-        <FullscreenOverlay isOpen={isOpen} onClick={onCloseCallback} />
+        <FullscreenOverlay
+          isDarkMode={isDarkMode}
+          isOpen={isOpen}
+          onClick={onCloseCallback}
+        />
       )}
     </ModalDrawerContainer>
   );

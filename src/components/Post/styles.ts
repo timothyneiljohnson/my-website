@@ -17,10 +17,12 @@ export const PostBody = styled.div<PostBodyProps>`
   background-size: 100% auto;
   padding: ${spacing.x8} 120px 70px ${spacing.x12};
   width: 100%;
-  line-height: 1.6em;
+  line-height: 1.5;
 
   @media ${mediaQueries.smMax} {
     padding: ${spacing.x5} ${spacing.x8} ${spacing.x10} ${spacing.x8};
+    font-size: 14px;
+    line-height: 1.4;
   }
 
   @media ${mediaQueries.xsMax} {
