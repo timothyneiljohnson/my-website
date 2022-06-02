@@ -13,7 +13,7 @@ interface ScrollProgressIndicatorWrapperProps {
 export const ScrollProgressIndicatorWrapper = styled.div<ScrollProgressIndicatorWrapperProps>`
   height: calc(var(--indicator-height, 0) * 1px);
   width: 100%;
-  position: relative;
+  position: fixed;
   z-index: 98;
 `;
 
@@ -23,7 +23,6 @@ interface StyledScrollProgressIndicatorProps {
 export const StyledScrollProgressIndicator = styled.div<StyledScrollProgressIndicatorProps>`
   height: calc(var(--indicator-height, 0) * 1px);
   width: calc(var(--scroll-progress, 0) * 100%);
-  position: fixed;
   top: 0;
   background-color: ${({ color }) => color};
 `;
