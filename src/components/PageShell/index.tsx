@@ -61,9 +61,9 @@ export const PageShell = ({ children, isFullWidth }: PageShellProps) => {
 
   let modalSize = 364;
   if (xsMax) {
-    modalSize = 408;
+    modalSize = 350;
   } else if (smMax) {
-    modalSize = 372;
+    modalSize = 304;
   } else if (mdMax) {
     modalSize = 392;
   }

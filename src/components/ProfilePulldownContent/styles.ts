@@ -17,12 +17,20 @@ export const ProfileDescription = styled.div<ProfileDescriptionProps>`
     `
     color: ${colors.grayLighter};
   `}
+
+  @media ${mediaQueries.smMax} {
+    padding: ${spacing.x5} 0;
+  }
 `;
 
 export const BioCallToActionWrapper = styled.ul`
   display: flex;
   column-gap: ${spacing.x3};
   padding-top: ${spacing.x6};
+
+  @media ${mediaQueries.smMax} {
+    padding-top: ${spacing.x2};
+  }
 `;
 
 export const ContactMeWrapper = styled.ul`
@@ -78,6 +86,10 @@ export const StyledHeadingContainer = styled.div`
   &:focus{
     outline: none;   
   }
+
+  @media ${mediaQueries.smMax} {
+    padding-bottom: ${spacing.x2};
+  }
 `;
 
 export const SkillsList = styled.span`
@@ -92,6 +104,10 @@ export const SkillsList = styled.span`
 
 export const SkillsWrapper = styled.p`
   padding-top: ${spacing.x5};
+
+  @media ${mediaQueries.smMax} {
+    padding-top: ${spacing.x3};
+  }
 `;
 
 export const AndMore = styled.span`
