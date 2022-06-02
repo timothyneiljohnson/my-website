@@ -59,13 +59,13 @@ export const PageShell = ({ children, isFullWidth }: PageShellProps) => {
     });
   }, []);
 
-  let modalSize = 350;
+  let modalSize = 364;
   if (xsMax) {
-    modalSize = 400;
+    modalSize = 416;
   } else if (smMax) {
-    modalSize = 360;
+    modalSize = 372;
   } else if (mdMax) {
-    modalSize = 380;
+    modalSize = 392;
   }
 
   return (
@@ -91,7 +91,7 @@ export const PageShell = ({ children, isFullWidth }: PageShellProps) => {
         <DynamicModalDrawer
           background={isDarkMode ? colors.grayDarker : colors.grayLightest}
           closeType="floating"
-          customClose={<Button size="sm">Close profile</Button>}
+          customClose={<Button size="sm">Close Profile</Button>}
           direction="top"
           isOpen={isModalOpen}
           onCloseCallback={onCloseCallback}

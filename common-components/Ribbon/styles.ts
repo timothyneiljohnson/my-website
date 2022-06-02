@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { animation, decorations, spacing } from '../design-tokens';
+import { animation, decorations, mediaQueries, spacing } from '../design-tokens';
 import { getOppositedirection } from '../helpers';
 import { SideNames } from '../types';
 import { getRibbonClipPath } from './helpers';
@@ -67,4 +67,8 @@ export const StyledRibbonPolygon = styled.div<StyledRibbonPolygonProps>`
       : `linear-gradient(${gradientStart}, ${gradientEnd})`};
   transition: clip-path ${animation.durations.slow}ms ease-in-out;
   ${({ endStyle, side, lift }) => getRibbonClipPath({ endStyle, side, lift })}
+
+  @media ${mediaQueries.xsMax} {
+    padding: ${({ side }) => (side === 'top' ? `${spacing.x6} ${spacing.x1}` : `${spacing.x1} ${spacing.x6}`)};
+  }
 `;

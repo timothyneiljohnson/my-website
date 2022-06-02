@@ -8,7 +8,9 @@ import {
   FeaturedPostWrapper,
   ViewThisFeatureWrapper,
   ViewThisFeatureText,
+  FeaturedPostDescription,
 } from './styles';
+import { useMediaQueries } from '../../../common-components/media-queries-context';
 
 interface FeaturedPostProps {
   post: any;
@@ -18,6 +20,7 @@ export const FeaturedPost = ({ post }: FeaturedPostProps) => {
   const { isDarkMode } = useStorageDarkMode();
   const title = post.title.rendered;
   const highlightImageUrl = post.acf.highlight_image;
+  const { smMax } = useMediaQueries();
 
   return (
     <NextLink href={`/post/${post.id}`} passHref>
@@ -28,7 +31,7 @@ export const FeaturedPost = ({ post }: FeaturedPostProps) => {
             layout="fill"
             objectFit="cover"
             priority
-            sizes="33vw"
+            sizes={smMax ? '100vw' : '33vw'}
             src={highlightImageUrl}
           />
           <ViewThisFeature isDarkMode={isDarkMode}>
@@ -37,11 +40,11 @@ export const FeaturedPost = ({ post }: FeaturedPostProps) => {
             </ViewThisFeatureText>
           </ViewThisFeature>
         </ViewThisFeatureWrapper>
-        <div>
-          <FeaturedPostHeading isDarkMode={isDarkMode} level={3} size={4}>
+        <FeaturedPostDescription>
+          <FeaturedPostHeading isDarkMode={isDarkMode} level={3} size={5}>
             {parse(title)}
           </FeaturedPostHeading>
-        </div>
+        </FeaturedPostDescription>
       </FeaturedPostWrapper>
     </NextLink>
   );

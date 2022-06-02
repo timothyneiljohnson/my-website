@@ -17,6 +17,7 @@ import {
   ContactMeIcon,
   StyledHeadingContainer,
   SkillsList,
+  SkillsWrapper,
   AndMore,
 } from './styles';
 
@@ -83,11 +84,10 @@ export const ProfilePulldownContent: FC = () => {
               </Heading>
             </StyledHeadingContainer>
             <p>
-              I'm a driven, experienced developer/designer based in Minneapolis.
+              I'm a driven, experienced developer and designer based in Minneapolis.
             </p>
             <p>Lead Software Engineer at Target.</p>
-            <br />
-            <p>
+            <SkillsWrapper>
               <b>Skills:</b>
               {' '}
               <SkillsList>
@@ -95,7 +95,7 @@ export const ProfilePulldownContent: FC = () => {
               </SkillsList>
               {' '}
               <AndMore>+ more.</AndMore>
-            </p>
+            </SkillsWrapper>
             <BioCallToActionWrapper>
               <Button href="mailto:timothyneiljohnson@gmail.com">
                 Get In Touch

@@ -18,7 +18,6 @@ export const PostBody = styled.div<PostBodyProps>`
   padding: ${spacing.x8} 120px 70px ${spacing.x12};
   width: 100%;
   line-height: 1.6em;
-  font-size: 14px;
 
   @media ${mediaQueries.smMax} {
     padding: ${spacing.x5} ${spacing.x8} ${spacing.x10} ${spacing.x8};
@@ -50,7 +49,8 @@ export const PostHeading = styled(Heading)`
 
 export const ExcerptImageWrapper = styled.div`
   position: relative;
-  height: 300px;
+  width: 100%;
+  aspect-ratio: 16 / 9;
   margin: ${spacing.x6} 0 ${spacing.x6};
 
   @media ${mediaQueries.smMax} {
@@ -59,11 +59,14 @@ export const ExcerptImageWrapper = styled.div`
 `;
 
 export const Day = styled.div`
-  margin-top: ${spacing.x3};
   font-weight: bold;
   text-shadow: 0 -1px 0px ${colors.grayDark};
   font-size: ${spacing.x6};
   letter-spacing: 1px;
+
+  @media ${mediaQueries.md} {
+    margin-top: ${spacing.x3};
+  }
 `;
 
 export const Month = styled.div`

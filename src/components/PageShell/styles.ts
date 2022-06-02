@@ -15,12 +15,6 @@ export const StyledMain = styled.main<StyledMainProps>`
     isFullWidth ? 'text-align: center;' : 'max-width: 1032px;'}
   margin: 0 auto ${spacing.x8};
   padding: 0 ${spacing.x4};
-
-  p {
-    padding-bottom: ${spacing.x2};
-    font-size: 16px;
-    line-height: 24px;
-  }
 `;
 
 interface StyledPageContainerProps {
@@ -89,5 +83,11 @@ export const PostContent = styled.div<PostContentProps>`
     li {
       margin-bottom: ${spacing.x2};
     }
+  }
+
+  p {
+    padding-bottom: ${spacing.x2};
+    font-size: 16px;
+    line-height: 24px;
   }
 `;

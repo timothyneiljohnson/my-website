@@ -158,7 +158,7 @@ CustomClose.args = {
   background: colors.grayLightest,
   direction: 'top',
   closeType: 'floating',
-  customClose: <Button size="sm">Close profile</Button>,
+  customClose: <Button size="sm">Close Profile</Button>,
 };
 
 export const Float = ({

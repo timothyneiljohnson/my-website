@@ -39,14 +39,25 @@ export const Post = ({ post }) => {
   const featuredMedia = post._embedded['wp:featuredmedia'] ?? {};
   const featuredImg = featuredMedia['0']?.source_url;
 
-  const { xsMax, smMax, sm } = useMediaQueries();
+  const { xsMax, smMax, mdMax, sm } = useMediaQueries();
   const { isDarkMode } = useStorageDarkMode();
 
   let postHeadingSize = 1;
   if (xsMax) {
-    postHeadingSize = 3;
+    postHeadingSize = 4;
   } else if (smMax) {
+    postHeadingSize = 3;
+  } else if (mdMax) {
     postHeadingSize = 2;
+  }
+
+  let ribbonTop = 0;
+  if (!isDarkMode) {
+    if (smMax) {
+      ribbonTop = 1;
+    } else if (!isDarkMode) {
+      ribbonTop = 2;
+    }
   }
 
   return (
@@ -66,7 +77,7 @@ export const Post = ({ post }) => {
                   right={smMax ? 20 : 36}
                   textColor={colors.white}
                   thickness={smMax ? 45 : 62}
-                  top={isDarkMode ? 0 : 2}
+                  top={ribbonTop}
                 >
                   <div aria-hidden>
                     {xsMax && (
@@ -106,7 +117,7 @@ export const Post = ({ post }) => {
                             objectFit="cover"
                             objectPosition="top"
                             priority
-                            sizes="50vw"
+                            sizes={smMax ? '90vw' : '50vw'}
                             src={featuredImg}
                           />
                         </ExcerptImageWrapper>

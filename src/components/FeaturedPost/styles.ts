@@ -15,13 +15,17 @@ interface FeaturedPostHeadingProps {
 }
 export const FeaturedPostHeading = styled(Heading)<FeaturedPostHeadingProps>`
   color: ${colors.grayDarkest};
-  margin: ${spacing.x4} ${spacing.x3} 0;
+  margin-top: 0;
 
   ${({ isDarkMode }) =>
     isDarkMode &&
     `
     color: ${colors.white};
   `}
+`;
+
+export const FeaturedPostDescription = styled.div`
+  margin: ${spacing.x4} ${spacing.x3};
 `;
 
 export const FeaturedPostImage = styled(Image)`

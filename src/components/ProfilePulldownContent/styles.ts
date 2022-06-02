@@ -73,6 +73,8 @@ export const ProfilePicture = styled(Image)`
 `;
 
 export const StyledHeadingContainer = styled.div`
+  padding-bottom: ${spacing.x3};
+
   &:focus{
     outline: none;   
   }
@@ -86,6 +88,10 @@ export const SkillsList = styled.span`
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent; 
   -moz-text-fill-color: transparent;
+`;
+
+export const SkillsWrapper = styled.p`
+  padding-top: ${spacing.x5};
 `;
 
 export const AndMore = styled.span`

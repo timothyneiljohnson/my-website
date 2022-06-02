@@ -11,10 +11,10 @@ export const StyledHeader = styled.header<StyledHeaderProps>`
   margin: 0 auto;
 
   @media ${mediaQueries.smMax} {
-    padding: ${spacing.x6} ${spacing.x4} ${spacing.x3};
+    padding: ${spacing.x6} ${spacing.x4} ${spacing.x5};
   }
 
   @media ${mediaQueries.xsMax} {
-    padding: ${spacing.x4} ${spacing.x4} ${spacing.x2};
+    padding: ${spacing.x4} ${spacing.x4} ${spacing.x4};
   }
 `;
