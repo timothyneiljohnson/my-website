@@ -25,7 +25,7 @@ const Blog = ({ posts }) => (
 
 // This also gets called at build time
 export const getStaticProps = async () => {
-  const posts = await getAllPostsWithImagesFromServer();
+  const posts = await getAllPostsWithImagesFromServer() || [];
 
   return {
     props: {
