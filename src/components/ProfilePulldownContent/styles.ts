@@ -49,7 +49,7 @@ export const ContactMeLink = styled.a`
   align-items: center;
 
   &:focus, &:active {
-    ${focusStyle}
+    ${focusStyle.default}
   }
 
   &:hover {

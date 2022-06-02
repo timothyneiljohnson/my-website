@@ -45,11 +45,6 @@ const gradients = {
   },
 };
 
-const focusStyle = `
-  outline: ${colors.grayLight} dashed 1px;
-  outline-offset: 2px;
-`;
-
 const decorations = {
   borderRadiusStyle: 'border-radius: 6px;',
   buttons: {
@@ -66,6 +61,28 @@ const decorations = {
     mdStyle: 'filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.2));',
     lgStyle: '',
   },
+};
+
+const focusStyle = {
+  default: `
+    outline: ${colors.grayLight} dashed 1px;
+    outline-offset: 2px;
+  `,
+  // Safari cannot easily do rounded outlines
+  withRadius: (radius = 6) => `
+    position: relative;
+    outline: none;
+    &::before {
+      content: '';
+      position: absolute;
+      width: calc(100% + 6px);
+      height: calc(100% + 6px);
+      top: -3px;
+      left: -3px;
+      border: ${colors.grayLight} dashed 1px;
+      border-radius: ${radius + 2}px;
+    }
+  `,
 };
 
 const animation = {

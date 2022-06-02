@@ -55,7 +55,7 @@ export const StandardCloseButton = styled.button<StandardCloseButtonProps>`
 
   &:focus,
   &:active {
-    ${focusStyle}
+    ${focusStyle.default}
   }
 `;
 

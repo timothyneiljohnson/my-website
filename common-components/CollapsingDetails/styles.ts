@@ -19,7 +19,7 @@ interface DetailsSectionProps {
   detailsHeight?: number;
 }
 export const DetailsSection = styled.div<DetailsSectionProps>`
-  transition: height ${animation.durations.fast}ms ease-in-out;
+  transition: height ${animation.durations.faster}ms ease-in-out;
   visibility: ${({ isOpen }) => isOpen ? 'visible' : 'hidden'};
   height: ${({ isOpen, detailsHeight }) => isOpen ? `${detailsHeight + 24}px` : '0'};
   margin: ${({ isOpen }) => isOpen ? spacing.x4 : '0'};
@@ -29,7 +29,7 @@ interface StyledIconProps {
   isOpen?: boolean;
 }
 export const StyledIcon = styled(Icon)<StyledIconProps>`
-  transition: transform ${animation.durations.fast}ms ease-in-out;
+  transition: transform ${animation.durations.faster}ms ease-in-out;
   transform: rotate(${({ isOpen }) => isOpen ? 180 : 0}deg);
 `;
 

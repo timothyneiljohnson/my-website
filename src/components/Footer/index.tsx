@@ -13,7 +13,7 @@ export const Footer = ({ handleOpenProfileDrawer }: FooterProps) => {
 
   return (
     <StyledFooter isDarkMode={isDarkMode}>
-      <FooterInner>
+      <FooterInner isDarkMode={isDarkMode}>
         <HeaderFooterContent
           handleOpenProfileDrawer={handleOpenProfileDrawer}
         />

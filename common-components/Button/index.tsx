@@ -6,6 +6,7 @@ import { StyledButton, StyledLinkAsButton } from './styles';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   bgColor?: string;
+  borderColor?: string;
   fullWidth?: boolean;
   gradientStart?: string;
   gradientEnd?: string;
@@ -15,7 +16,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   topMargin?: number;
   pill?: boolean;
   size?: StandardSizes;
-  variant?: 'primary' | 'secondary';
+  variant?: 'primary' | 'secondary' | 'default';
 }
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
@@ -23,6 +24,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const { isDarkMode = false } = useStorageDarkMode() ?? {};
     const {
       bgColor = isDarkMode ? colors.grayDark : colors.white,
+      borderColor,
       textColor = isDarkMode ? colors.grayLightest : colors.grayDarkest,
       fullWidth,
       pointerGradient,
@@ -51,6 +53,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     return props.href ? (
       <StyledLinkAsButton
         bgColor={bgColor}
+        borderColor={borderColor}
         fullWidth={fullWidth}
         onMouseMove={handleMouseMove}
         pointerGradient={pointerGradient}
@@ -62,7 +65,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             : undefined
         }
         textColor={textColor}
-        variant={variant}
+        variant={isDarkMode && variant === 'default' ? 'defaultDarkMode' : variant}
         {...restProps}
       >
         {children}
@@ -70,6 +73,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     ) : (
       <StyledButton
         bgColor={bgColor}
+        borderColor={borderColor}
         fullWidth={fullWidth}
         onMouseMove={handleMouseMove}
         pointerGradient={pointerGradient}
@@ -81,7 +85,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             : undefined
         }
         textColor={textColor}
-        variant={variant}
+        variant={isDarkMode && variant === 'default' ? 'defaultDarkMode' : variant}
         {...restProps}
       >
         {children}

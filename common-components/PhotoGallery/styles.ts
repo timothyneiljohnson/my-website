@@ -82,7 +82,7 @@ export const GalleryNavButton = styled.button`
 
   &:focus,
   &:active {
-    ${focusStyle}
+    ${focusStyle.withRadius()}
   }
 
   @media ${mediaQueries.smMax} {
@@ -101,7 +101,7 @@ export const ImageCountStatus = styled.div`
 
 export const StyledButton = styled.button`
   &:focus {
-    ${focusStyle}
+    ${focusStyle.withRadius()}
     outline-offset: 0;
   }
 `;

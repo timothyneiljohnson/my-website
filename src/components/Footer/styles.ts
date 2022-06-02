@@ -5,20 +5,22 @@ interface StyledFooterProps {
   isDarkMode?: boolean;
 }
 export const StyledFooter = styled.footer<StyledFooterProps>`
-  background-image: url(${({ isDarkMode }) => isDarkMode ? '/footerbg-darkmode.jpg' : '/footerbg.png'});
+  background-image: url(${({ isDarkMode }) => isDarkMode ? '/footerbg-darkmode.png' : '/footerbg.png'});
   padding: ${spacing.x9} ${spacing.x4} 50px;
   width: 100%;
-
-  
 `;
 
-export const FooterInner = styled.div`
+interface FooterInnerProps {
+  isDarkMode?: boolean;
+}
+export const FooterInner = styled.div<FooterInnerProps>`
   max-width: 1000px;
   width: 100%;
   margin: 0 auto;
 
   p {
-    color: ${colors.grayLight};
+    color: ${({ isDarkMode }) =>
+      isDarkMode ? colors.grayLighter : colors.grayLight};
     padding: ${spacing.x5} 0 0;
     font-size: 11px;
   }

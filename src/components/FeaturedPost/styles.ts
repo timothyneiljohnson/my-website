@@ -156,7 +156,7 @@ export const FeaturedPostWrapper = styled.a<FeaturedPostWrapperProps>`
 
   &:focus,
   &:active {
-    ${focusStyle}
+    ${focusStyle.withRadius()}
   }
 
   ${FeaturedPostImage} {

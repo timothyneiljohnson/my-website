@@ -30,13 +30,14 @@ export const Nav = forwardRef<HTMLButtonElement, NavProps>(
         <MainNavListItem>
           <NextLink href="/" passHref>
             <Button
-              aria-current={isHome ? 'page' : undefined}
+              aria-current={isHome ? 'page' : null}
               gradientEnd={isHome ? gradients.primary.end : null}
               gradientStart={isHome ? gradients.primary.start : null}
               pill
               pointerGradient={isHome && md}
               size={navButtonSize}
               textColor={isHome || isDarkMode ? colors.white : null}
+              variant={isHome ? null : 'default'}
             >
               Work
             </Button>
@@ -45,13 +46,14 @@ export const Nav = forwardRef<HTMLButtonElement, NavProps>(
         <MainNavListItem>
           <NextLink href="/blog" passHref>
             <Button
-              aria-current={isBlog ? 'page' : undefined}
+              aria-current={isBlog ? 'page' : null}
               gradientEnd={isBlog ? gradients.primary.end : null}
               gradientStart={isBlog ? gradients.primary.start : null}
               pill
               pointerGradient={isBlog && md}
               size={navButtonSize}
               textColor={isBlog || isDarkMode ? colors.white : null}
+              variant={isBlog ? null : 'default'}
             >
               Blog
             </Button>
@@ -64,12 +66,18 @@ export const Nav = forwardRef<HTMLButtonElement, NavProps>(
             pill
             ref={ref}
             size={navButtonSize}
+            variant="default"
           >
             Profile
           </Button>
         </MainNavListItem>
         <MainNavListItem>
-          <Button onClick={handleDarkModeToggle} pill size={navButtonSize}>
+          <Button
+            onClick={handleDarkModeToggle}
+            pill
+            size={navButtonSize}
+            variant="default"
+          >
             <span className="h-sr-only">
               {isDarkMode ? 'Enable light mode' : 'Enable dark mode'}
             </span>

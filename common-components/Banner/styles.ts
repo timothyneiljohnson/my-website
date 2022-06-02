@@ -30,7 +30,7 @@ export const StyledBanner = styled.a`
 
   &:focus,
   &:active {
-    ${focusStyle}
+    ${focusStyle.withRadius()}
   }
 
   &:hover {
@@ -79,7 +79,6 @@ export const StyledBannerControl = styled.button<StyledBannerControlProps>`
   background-color: ${({ isActive }) =>
     isActive ? colors.grayLight : colors.grayLightest};
   border-radius: 50%;
-  overflow: hidden;
   width: 20px;
   height: 20px;
   margin-left: ${spacing.x2};
@@ -99,7 +98,7 @@ export const StyledBannerControl = styled.button<StyledBannerControlProps>`
   `}
 
   &:focus, &:active {
-    ${focusStyle}
+    ${focusStyle.withRadius(9999)}
   }
 
   ${({ isDarkMode, isActive }) =>

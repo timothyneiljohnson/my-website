@@ -97,7 +97,7 @@ export const ProfilePulldownContent: FC = () => {
               <AndMore>+ more.</AndMore>
             </SkillsWrapper>
             <BioCallToActionWrapper>
-              <Button href="mailto:timothyneiljohnson@gmail.com">
+              <Button href="mailto:timothyneiljohnson@gmail.com" variant="default">
                 Get In Touch
               </Button>
               <Button href="#" variant="primary">
