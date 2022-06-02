@@ -32,7 +32,9 @@ export const FeaturedPostDescription = styled.div`
 interface FeaturedPostImageProps {
   isDarkMode?: boolean;
 }
-export const FeaturedPostImage = styled(Image)<FeaturedPostImageProps>`
+export const FeaturedPostImage = styled(Image).withConfig({
+  shouldForwardProp: (prop) => !['isDarkMode'].includes(prop),
+})<FeaturedPostImageProps>`
   height: 230px;
   width: 100%;
   border-radius: 6px 6px 0 0;
