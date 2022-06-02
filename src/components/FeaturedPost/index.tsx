@@ -28,6 +28,7 @@ export const FeaturedPost = ({ post }: FeaturedPostProps) => {
         <ViewThisFeatureWrapper>
           <FeaturedPostImage
             alt={title}
+            isDarkMode={isDarkMode}
             layout="fill"
             objectFit="cover"
             priority

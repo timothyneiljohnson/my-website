@@ -29,14 +29,17 @@ export const FeaturedPostDescription = styled.div`
   margin: ${spacing.x4} ${spacing.x3};
 `;
 
-export const FeaturedPostImage = styled(Image)`
+interface FeaturedPostImageProps {
+  isDarkMode?: boolean;
+}
+export const FeaturedPostImage = styled(Image)<FeaturedPostImageProps>`
   height: 230px;
   width: 100%;
-  border-radius: 5px 5px 0 0;
-  background-color: ${colors.white};
+  border-radius: 6px 6px 0 0;
+  background-color: ${({ isDarkMode }) => isDarkMode ? colors.grayDarker : colors.white};
 
   @media ${mediaQueries.xsMax} {
-    border-radius: 5px 0 0 5px;
+    border-radius: 6px 0 0 6px;
     height: 124px;
     width: 100px;
   }
