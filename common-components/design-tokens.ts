@@ -261,8 +261,8 @@ const font = {
       line-height: 22px;
     `,
     h4: `
-      font-size: 16px;
-      line-height: 20px;
+      font-size: 15px;
+      line-height: 19px;
     `,
     h5: `
       font-size: 13px;

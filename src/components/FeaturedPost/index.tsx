@@ -20,7 +20,7 @@ export const FeaturedPost = ({ post }: FeaturedPostProps) => {
   const { isDarkMode } = useStorageDarkMode();
   const title = post.title.rendered;
   const highlightImageUrl = post.acf.highlight_image;
-  const { smMax } = useMediaQueries();
+  const { xsMax, sm, smMax } = useMediaQueries();
 
   return (
     <NextLink href={`/post/${post.id}`} passHref>
@@ -34,14 +34,16 @@ export const FeaturedPost = ({ post }: FeaturedPostProps) => {
             sizes={smMax ? '100vw' : '33vw'}
             src={highlightImageUrl}
           />
-          <ViewThisFeature isDarkMode={isDarkMode}>
-            <ViewThisFeatureText isDarkMode={isDarkMode}>
-              View this feature
-            </ViewThisFeatureText>
-          </ViewThisFeature>
+          {sm && (
+            <ViewThisFeature isDarkMode={isDarkMode}>
+              <ViewThisFeatureText isDarkMode={isDarkMode}>
+                View this feature
+              </ViewThisFeatureText>
+            </ViewThisFeature>
+          )}
         </ViewThisFeatureWrapper>
         <FeaturedPostDescription>
-          <FeaturedPostHeading isDarkMode={isDarkMode} level={3} size={5}>
+          <FeaturedPostHeading isDarkMode={isDarkMode} level={3} size={xsMax ? 5 : 4}>
             {parse(title)}
           </FeaturedPostHeading>
         </FeaturedPostDescription>

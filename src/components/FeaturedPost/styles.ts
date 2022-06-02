@@ -5,6 +5,7 @@ import {
   decorations,
   focusStyle,
   gradients,
+  mediaQueries,
   spacing,
 } from '../../../common-components/design-tokens';
 import { Heading } from '../../../common-components/Heading';
@@ -29,19 +30,29 @@ export const FeaturedPostDescription = styled.div`
 `;
 
 export const FeaturedPostImage = styled(Image)`
-  height: 287px;
+  height: 230px;
   width: 100%;
-  object-fit: cover;
   border-radius: 5px 5px 0 0;
   background-color: ${colors.white};
+
+  @media ${mediaQueries.xsMax} {
+    border-radius: 5px 0 0 5px;
+    height: 124px;
+    width: 100px;
+  }
 `;
 
 export const ViewThisFeatureWrapper = styled.div`
   width: 100%;
-  height: 287px;
+  height: 230px;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media ${mediaQueries.xsMax} {
+    width: 100px;
+    height: 124px;
+  }
 `;
 
 interface ViewThisFeatureProps {
@@ -87,14 +98,20 @@ interface FeaturedPostWrapperProps {
   isDarkMode?: boolean;
 }
 export const FeaturedPostWrapper = styled.a<FeaturedPostWrapperProps>`
-  height: 386px;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  height: 375px;
   position: relative;
   margin: 5px;
   background-color: ${colors.white};
   transition: box-shadow ${animation.durations.faster}ms ease-in-out;
   ${decorations.borderRadiusStyle}
   ${decorations.boxShadow.smStyle}
+
+  @media ${mediaQueries.xsMax} {
+    flex-direction: row;
+    height: auto;
+  }
 
   ${({ isDarkMode }) =>
     isDarkMode &&

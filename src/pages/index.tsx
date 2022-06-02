@@ -11,11 +11,13 @@ import { Outdent } from '../../common-components/Outdent';
 import { Placeholder } from '../../common-components/Placeholder';
 import { PageShell } from '../components/PageShell';
 import { FEATURED_CATEGORY_ID } from '../lib/constants';
-import { colors, spacing } from '../../common-components/design-tokens';
+import { breakpoints, colors, spacing } from '../../common-components/design-tokens';
 import { useStorageDarkMode } from '../../common-components/storage-dark-mode-context';
+import { useMediaQueries } from '../../common-components/media-queries-context';
 
 const Featured = ({ bannerPosts, categories, featuredPosts }) => {
   const { isDarkMode } = useStorageDarkMode();
+  const { xsMax } = useMediaQueries();
 
   return (
     <PageShell>
@@ -41,7 +43,7 @@ const Featured = ({ bannerPosts, categories, featuredPosts }) => {
               categories={categories}
               gap={spacing.x2}
               itemsWithCategories={featuredPosts}
-              minWidth="180px"
+              minWidth={xsMax ? breakpoints.xsMax : '195px'}
             >
               {featuredPosts.map((post, index) => (
                 <FeaturedPost key={index} post={post} />
