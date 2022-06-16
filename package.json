@@ -44,6 +44,7 @@
     "@storybook/addon-interactions": "^6.5.3",
     "@storybook/addon-links": "^6.5.3",
     "@storybook/addon-postcss": "^2.0.0",
+    "@storybook/cli": "^6.5.9",
     "@storybook/core-common": "^6.5.3",
     "@storybook/react": "^6.5.3",
     "@storybook/testing-library": "^0.0.11",
