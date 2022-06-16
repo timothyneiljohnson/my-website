@@ -97,8 +97,8 @@ export const PostContent = styled.div<PostContentProps>`
 export const BackToTop = styled(Transition)`
   position: fixed;
   bottom: 0;
-  right: ${spacing.x4};
-  bottom: ${spacing.x4};
+  right: ${spacing.x5};
+  bottom: ${spacing.x5};
   width: 40px;
   height: 40px;
   z-index: 99;
@@ -113,8 +113,8 @@ export const BackToTopButton = styled.button`
   height: 32px;
   
   &::before {
-    margin-left: 4px;
-    margin-top: 4px;
+    margin-left: ${spacing.x1};
+    margin-top: ${spacing.x1};
   }
 
   &:focus {
