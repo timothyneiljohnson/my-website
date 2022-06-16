@@ -8,9 +8,10 @@ import { colors } from '../../../common-components/design-tokens';
 import { useMediaQueries } from '../../../common-components/media-queries-context';
 import { useStorageDarkMode } from '../../../common-components/storage-dark-mode-context';
 import { GlobalStyles } from './globalStyles';
-import { StyledMain } from './styles';
+import { StyledMain, BackToTop, BackToTopButton } from './styles';
 import { ModalDrawerProps } from '../../../common-components/ModalDrawer/types';
 import { API_BASE_URL } from '../../lib/constants';
+import { Icon } from '../../../common-components/Icon';
 
 const DynamicModalDrawer = dynamic<ModalDrawerProps>(() =>
   import('../../../common-components/ModalDrawer').then(
@@ -34,6 +35,20 @@ export const PageShell = ({ children, isFullWidth }: PageShellProps) => {
   const focusRef = useRef(null);
   const { isDarkMode } = useStorageDarkMode();
   const { xsMax, smMax, mdMax } = useMediaQueries();
+  const [showBackToTop, setShowBackToTop] = useState(false);
+
+  const scrollCallback = useCallback((event) => {
+    const { scrollTop } = event.target?.scrollingElement ?? {};
+
+    setShowBackToTop(scrollTop > 500);
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('scroll', scrollCallback);
+    return () => {
+      window.removeEventListener('scroll', scrollCallback);
+    };
+  });
 
   useEffect(() => {
     if (isModalOpen) {
@@ -51,13 +66,17 @@ export const PageShell = ({ children, isFullWidth }: PageShellProps) => {
     }
   }, [focusRef]);
 
-  const handleOpenProfileDrawer = useCallback(() => {
-    setIsModalOpen(true);
+  const handleScrollToTop = useCallback(() => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
     });
   }, []);
+
+  const handleOpenProfileDrawer = useCallback(() => {
+    setIsModalOpen(true);
+    handleScrollToTop();
+  }, [handleScrollToTop]);
 
   let modalSize = 364;
   if (xsMax) {
@@ -87,6 +106,15 @@ export const PageShell = ({ children, isFullWidth }: PageShellProps) => {
       />
       <StyledMain isFullWidth={isFullWidth}>{children}</StyledMain>
       <Footer handleOpenProfileDrawer={handleOpenProfileDrawer} />
+      <BackToTop in={showBackToTop}>
+        <BackToTopButton onClick={handleScrollToTop}>
+          <Icon
+            fill={isDarkMode ? colors.white : colors.grayDark}
+            name="arrow-up-circle"
+            size={40}
+          />
+        </BackToTopButton>
+      </BackToTop>
       {isModalDisplayed && (
         <DynamicModalDrawer
           background={isDarkMode ? colors.grayDarker : colors.grayLightest}

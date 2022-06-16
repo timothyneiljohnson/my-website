@@ -2,9 +2,11 @@ import styled from 'styled-components';
 import {
   colors,
   decorations,
+  focusStyle,
   mediaQueries,
   spacing,
 } from '../../../common-components/design-tokens';
+import { Transition } from '../../../common-components/Transition';
 
 interface StyledMainProps {
   isFullWidth?: boolean;
@@ -89,5 +91,33 @@ export const PostContent = styled.div<PostContentProps>`
     padding-bottom: ${spacing.x2};
     font-size: 16px;
     line-height: 24px;
+  }
+`;
+
+export const BackToTop = styled(Transition)`
+  position: fixed;
+  bottom: 0;
+  right: ${spacing.x4};
+  bottom: ${spacing.x4};
+  width: 40px;
+  height: 40px;
+  z-index: 99;
+  overflow: hidden;
+  cursor: pointer;
+  margin-left: 10px;
+`;
+
+export const BackToTopButton = styled.button`
+  border-radius: 999px;
+  width: 32px;
+  height: 32px;
+  
+  &::before {
+    margin-left: 4px;
+    margin-top: 4px;
+  }
+
+  &:focus {
+    ${focusStyle.withRadius(9999)}
   }
 `;

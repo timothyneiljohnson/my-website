@@ -1,10 +1,10 @@
-import { useCallback, useEffect, useState } from 'react';
+import { HTMLAttributes, useCallback, useEffect, useState } from 'react';
 import { animation } from '../design-tokens';
 import { SideNames } from '../types';
 import { StyledTransition } from './styles';
 import { TransitionTypes } from './types';
 
-export interface TransitionProps {
+export interface TransitionProps extends HTMLAttributes<HTMLDivElement> {
   children?: any;
   className?: string;
   direction?: SideNames;
