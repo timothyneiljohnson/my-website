@@ -11,6 +11,7 @@ import {
 import { Grid } from '../Grid';
 import { hexToRgba } from '../helpers';
 import { Image } from '../Image';
+import { LoadingDots } from '../LoadingDots';
 import { Row } from '../Row';
 
 interface StyledPhotoGalleryProps {
@@ -52,8 +53,13 @@ export const StyledImage = styled(Image)`
   }
 `;
 
-export const StyledFullscreenImage = styled(Image)`
-  height: calc(100% - ${spacing.x10});
+interface StyledFullscreenImageProps {
+  isLoaded: boolean;
+}
+export const StyledFullscreenImage = styled(Image)<StyledFullscreenImageProps>`
+  height: 100%;
+  display: ${({ isLoaded }) => (isLoaded ? 'block' : 'none')};
+  z-index: 99;
 `;
 
 export const StyledGrid = styled(Grid)`
@@ -61,11 +67,18 @@ export const StyledGrid = styled(Grid)`
 `;
 
 export const StyledRow = styled(Row)`
-  height: 100%;
+  height: calc(100% - ${spacing.x10});
 `;
 
 export const StyledCol = styled(Col)`
-  height: calc(100% - ${spacing.x10});
+  height: 100%;
+`;
+
+export const StyledLoadingDots = styled(LoadingDots)`
+  position: fixed;
+  top: 50%;
+  margin: 0 auto;
+  z-index: 98;
 `;
 
 export const GalleryNavButton = styled.button`
@@ -91,12 +104,14 @@ export const GalleryNavButton = styled.button`
 `;
 
 export const ImageCountStatus = styled.div`
-  font-size: 12px;
-  color: ${colors.grayLighter};
-  height: 40px;
+  position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 40px;
+  bottom: 0;
+  font-size: 12px;
+  color: ${colors.grayLighter};
 `;
 
 export const StyledButton = styled.button`

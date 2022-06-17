@@ -13,10 +13,12 @@ import {
   StyledButton,
   StyledGrid,
   StyledCol,
+  StyledLoadingDots,
 } from './styles';
 import { ModalDrawerProps } from '../ModalDrawer/types';
 import { Icon } from '../Icon';
 import { Col } from '../Col';
+import { Row } from '../Row';
 
 const DynamicModalDrawer = dynamic<ModalDrawerProps>(() =>
   import('../ModalDrawer').then(({ ModalDrawer }) => ModalDrawer)
@@ -39,6 +41,7 @@ export const PhotoGallery = ({
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isModalDisplayed, setIsModalDisplayed] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
+  const [fullscreenImageLoaded, setFullscreenImageLoaded] = useState(false);
 
   useEffect(() => {
     if (isModalOpen) {
@@ -64,12 +67,14 @@ export const PhotoGallery = ({
   );
 
   const handleNextImage = useCallback(() => {
+    setFullscreenImageLoaded(false);
     const nextImageIndex =
       selectedImageIndex === imageUrls.length - 1 ? 0 : selectedImageIndex + 1;
     setSelectedImageIndex(nextImageIndex);
   }, [imageUrls, selectedImageIndex]);
 
   const handlePreviousImage = useCallback(() => {
+    setFullscreenImageLoaded(false);
     const previousImageIndex =
       selectedImageIndex === 0 ? imageUrls.length - 1 : selectedImageIndex - 1;
     setSelectedImageIndex(previousImageIndex);
@@ -162,13 +167,14 @@ export const PhotoGallery = ({
               </StyledCol>
               <Col grow>
                 <StyledFullscreenImage
+                  isLoaded={fullscreenImageLoaded}
                   layout="fill"
+                  noFadeIn
                   objectFit="contain"
+                  onLoadingComplete={() => setFullscreenImageLoaded(true)}
                   src={imageUrls[selectedImageIndex]}
                 />
-                <ImageCountStatus>
-                  {`${selectedImageIndex + 1} of ${imageUrls.length}`}
-                </ImageCountStatus>
+                <StyledLoadingDots />
               </Col>
               <StyledCol flex middle>
                 <GalleryNavButton onClick={handleNextImage}>
@@ -180,6 +186,11 @@ export const PhotoGallery = ({
                 </GalleryNavButton>
               </StyledCol>
             </StyledRow>
+            <Row center flex>
+              <ImageCountStatus>
+                {`${selectedImageIndex + 1} of ${imageUrls.length}`}
+              </ImageCountStatus>
+            </Row>
           </StyledGrid>
         </DynamicModalDrawer>
       )}

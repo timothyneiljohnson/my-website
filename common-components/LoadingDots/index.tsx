@@ -10,7 +10,7 @@ export interface LoadingDotsProps {
 export const LoadingDots = ({
   className,
   color = colors.primary,
-  size,
+  size = 'md',
 }: LoadingDotsProps) => (
   <StyledLoadingDots>
     <LoadingDotsWrapper className={className} size={size}>
