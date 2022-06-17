@@ -149,7 +149,7 @@ export const PhotoGallery = ({
       </PhotoGalleryCol>
       {isModalDisplayed && selectedImageIndex !== null && (
         <DynamicModalDrawer
-          background="rgba(0, 0, 0, 0.85)"
+          background="rgba(0, 0, 0, 0.885)"
           isOpen={isModalOpen}
           modalType="fullscreen"
           onCloseCallback={onCloseCallback}
