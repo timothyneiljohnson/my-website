@@ -101,7 +101,7 @@ export const BackToTop = styled(Transition)`
   bottom: ${spacing.x5};
   width: 40px;
   height: 40px;
-  z-index: 99;
+  z-index: 98;
   overflow: hidden;
   cursor: pointer;
   margin-left: 10px;
