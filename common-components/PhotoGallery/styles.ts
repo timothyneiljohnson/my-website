@@ -76,7 +76,7 @@ export const StyledCol = styled(Col)`
 
 export const StyledLoadingDots = styled(LoadingDots)`
   position: fixed;
-  top: 50%;
+  top: calc(50% - 23px);
   margin: 0 auto;
   z-index: 98;
 `;
