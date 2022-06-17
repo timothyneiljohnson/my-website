@@ -87,6 +87,7 @@ export const GalleryNavButton = styled.button`
   height: 200px;
   padding: 0 ${spacing.x4};
   transition: background ${animation.durations.faster}ms ease-in-out;
+  user-select: none;
   ${decorations.borderRadiusStyle}
 
   &:hover {
