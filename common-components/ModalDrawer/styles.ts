@@ -1,5 +1,12 @@
 import styled from 'styled-components';
-import { a11y, animation, decorations, focusStyle, mediaQueries, spacing } from '../design-tokens';
+import {
+  a11y,
+  animation,
+  decorations,
+  focusStyle,
+  mediaQueries,
+  spacing,
+} from '../design-tokens';
 import { Heading } from '../Heading';
 import { Icon } from '../Icon';
 import { getOppositedirection } from '../helpers';
@@ -20,13 +27,14 @@ export const FloatingCloseButtonWrapper = styled.div<FloatingCloseButtonWrapperP
   justify-content: center;
   z-index: 100;
   transition: opacity ${animation.durations.faster}ms ease-in-out;
-  opacity: ${({ isShown }) => isShown ? '1' : '0'};
+  opacity: ${({ isShown }) => (isShown ? '1' : '0')};
   ${({ direction, offset }) =>
     `${getOppositedirection(direction)}: ${-offset}px;`}
 `;
 
 interface ModalDrawerContainerProps {
   direction: SideNames;
+  floatingCloseOffset: number;
   isHorizontal: boolean;
   isOpen: boolean;
   size: number;
@@ -36,43 +44,51 @@ export const ModalDrawerContainer = styled.div<ModalDrawerContainerProps>`
   position: fixed;
   z-index: 99;
 
-  ${({ direction, modalType, isHorizontal, size }) => `
-    ${isHorizontal ? 'width' : 'height'}: ${size}px;
+  ${({ direction, floatingCloseOffset, modalType, isHorizontal, size }) => `
+    ${isHorizontal ? 'width' : 'height'}: min(calc(100% - ${floatingCloseOffset}px), ${size}px);
     ${isHorizontal ? 'height' : 'width'}: 100%;
-    ${modalType === 'fullscreen' ? `
-      height: 100%;
-      width: 100%;
+    ${
+      modalType === 'fullscreen'
+        ? `
+          height: 100%;
+          width: 100%;
 
-      ${ModalDrawerInnerTransition} {
-        left: 0;
-        top: 0;
-      }
-    ` : ''}
-    ${modalType === 'float' ? `
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-      width: 100%;
+          ${ModalDrawerInnerTransition} {
+            left: 0;
+            top: 0;
+          }
+        `
+        : ''
+    }
+    ${
+      modalType === 'float'
+        ? `
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+          width: 100%;
 
-      ${ModalDrawerInnerTransition} {
-        width: 40%;
-        height: auto;
-        max-height: 90%;
-        overflow: auto;
-        ${decorations.borderRadiusStyle}
-        
-        @media ${mediaQueries.lgMax} {
-          width: 60%;
-        }
-        @media ${mediaQueries.mdMax} {
-          width: 80%;
-        }
-        @media ${mediaQueries.smMax} {
-          width: 90%;
-        }
-      }
-    ` : ''}
+          ${ModalDrawerInnerTransition} {
+            width: 40%;
+            height: auto;
+            max-height: 90%;
+            overflow: auto;
+            ${decorations.borderRadiusStyle}
+            
+            @media ${mediaQueries.lgMax} {
+              width: 60%;
+            }
+            @media ${mediaQueries.mdMax} {
+              width: 80%;
+            }
+            @media ${mediaQueries.smMax} {
+              width: 90%;
+            }
+          }
+        `
+        : ''
+    }
     
     ${direction}: 0;
     ${direction === 'bottom' ? 'bottom' : 'top'}: 0;
@@ -90,7 +106,9 @@ export const ModalDrawerContainer = styled.div<ModalDrawerContainerProps>`
 interface ModalDrawerInnerTransitionProps {
   background?: string;
 }
-export const ModalDrawerInnerTransition = styled(Transition)<ModalDrawerInnerTransitionProps>`
+export const ModalDrawerInnerTransition = styled(
+  Transition
+)<ModalDrawerInnerTransitionProps>`
   position: absolute;
   padding: 0 ${spacing.x5};
   width: 100%;
@@ -98,6 +116,7 @@ export const ModalDrawerInnerTransition = styled(Transition)<ModalDrawerInnerTra
   background: ${({ background }) => background};
   overflow: hidden;
   z-index: 100;
+  overflow: auto;
 `;
 
 export const ModalHeading = styled(Heading)`

@@ -83,6 +83,7 @@ export const ModalDrawer = ({
     <ModalDrawerContainer
       aria-hidden={!isOpen}
       direction={direction}
+      floatingCloseOffset={floatingCloseOffset}
       isHorizontal={isHorizontal}
       isOpen={isOpen}
       modalType={modalType}
