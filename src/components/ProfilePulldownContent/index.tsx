@@ -107,7 +107,7 @@ export const ProfilePulldownContent: FC = () => {
                 Get In Touch
               </Button>
               <Button
-                href="https://tinyurl.com/resume-tim-j"
+                href="https://tinyurl.com/resume-tim-johnson"
                 size={smMax ? 'sm' : 'md'}
                 target="_blank"
                 variant="primary"
