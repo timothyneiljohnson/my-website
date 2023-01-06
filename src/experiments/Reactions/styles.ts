@@ -52,7 +52,6 @@ export const StyledReactionsSelectorInner = styled.div`
   align-items: center;
   justify-content: center;
   height: 100%;
-
   animation: ${animation.keyframes.slideFadeIn('bottom', 100)} 400ms ease;
 `;
 

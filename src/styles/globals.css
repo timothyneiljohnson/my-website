@@ -13,11 +13,6 @@ p {
   padding-bottom: 8px;
 }
 
-code,
-pre {
-  background-color: #042f38 !important;
-}
-
 .h-position-relative {
   position: relative;
 }

@@ -36,16 +36,174 @@ export const StyledPageContainer = styled.div<StyledPageContainerProps>`
   @media ${mediaQueries.smMax} {
     padding: ${spacing.x4};
   }
+
+  /* PrismJS Theme Overrides - Darcula Aurora */
+  code[class*='language-'],
+  pre[class*='language-'] {
+    color: #dddddd;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  pre[class*='language-']::-moz-selection,
+  pre[class*='language-'] ::-moz-selection,
+  code[class*='language-']::-moz-selection,
+  code[class*='language-'] ::-moz-selection {
+    text-shadow: none;
+    background: #2f474f;
+  }
+
+  pre[class*='language-']::selection,
+  pre[class*='language-'] ::selection,
+  code[class*='language-']::selection,
+  code[class*='language-'] ::selection {
+    text-shadow: none;
+    background: #2f474f;
+  }
+
+  @media print {
+    code[class*='language-'],
+    pre[class*='language-'] {
+      text-shadow: none;
+    }
+  }
+
+  pre[class*='language-'] {
+    padding: 1em;
+    margin: 0.5em 0;
+    overflow: auto;
+    ${({ isDarkMode }) => isDarkMode ? 'border: 1px solid #666666;' : null}
+    ${decorations.borderRadiusStyle};
+  }
+
+  :not(pre) > code[class*='language-'],
+  pre[class*='language-'] {
+    color: white;
+    background: #303030 !important;
+  }
+
+  :not(pre) > code[class*='language-'] {
+    padding: 0.1em;
+    border-radius: 0.3em;
+    white-space: normal;
+  }
+
+  .token.comment {
+    color: #707070;
+  }
+
+  .token.punctuation {
+    color: #cccccc;
+  }
+
+  .token.interpolation-punctuation {
+    color: #ed8f72;
+  }
+
+  .token.constant,
+  .token.boolean {
+    color: #ed8f72;
+  }
+
+  .token.hexcode {
+    color: #ed8f72;
+  }
+
+  .token.regex {
+    color: #ed8f72;
+  }
+
+  .token.operator {
+    color: #cccccc;
+  }
+
+  .token.keyword {
+    color: #ed8f72;
+  }
+
+  .token.number {
+    color: #88c0d0;
+  }
+
+  .token.property {
+    color: #88c0d0;
+  }
+
+  .token.variable {
+    color: #a985bd;
+  }
+
+  .token.tag {
+    color: #cccccc;
+
+    > .punctuation {
+      &:first-of-type,
+      :last-of-type {
+        color: #fac77d;
+      }
+    }
+  }
+
+  .token.attr-name {
+    color: #88c0d0;
+    font-style: italic;
+  }
+
+  .token.selector {
+    color: #cccccc;
+  }
+
+  .token.builtin {
+    color: #cccccc;
+  }
+
+  .token.string,
+  .token.char,
+  .token.attr-value,
+  .token.regex,
+  .token.variable {
+    color: #9ec67d;
+  }
+
+  .token.class-name {
+    color: #fac77d;
+  }
+
+  .token.function {
+    color: #fac77d;
+  }
+
+  .token.important,
+  .token.bold {
+    font-weight: bold;
+  }
+
+  .token.italic {
+    font-style: italic;
+  }
 `;
 
 export const FeaturedImageWrapper = styled.div`
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 2.35 / 1;
   margin: ${spacing.x6} 0 ${spacing.x4};
 
   @media ${mediaQueries.smMax} {
     margin: ${spacing.x4} 0 ${spacing.x2};
+    aspect-ratio: 16 / 9;
   }
 `;
 
