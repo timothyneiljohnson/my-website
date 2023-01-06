@@ -3,11 +3,13 @@ import Image from 'next/image';
 import styled from 'styled-components';
 
 interface MasonryItemProps {
+  alt: string;
   className: string;
   src: string;
   unoptimized: boolean;
 }
 export const MasonryItem: FC<MasonryItemProps> = ({
+  alt,
   className,
   src,
   unoptimized,
@@ -18,8 +20,8 @@ export const MasonryItem: FC<MasonryItemProps> = ({
   return (
     <Container className={className} style={{ paddingTop }}>
       <Image
-        layout="fill"
-        objectFit="initial"
+        alt={alt}
+        fill
         onLoad={({ target }) => {
           const { naturalWidth, naturalHeight } = target as HTMLImageElement;
           setPaddingTop(`calc(100% / (${naturalWidth} / ${naturalHeight})`);

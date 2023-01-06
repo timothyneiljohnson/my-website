@@ -14,10 +14,8 @@ export const BannerSlide = ({ isCurrentSlide, post }: BannerSlideProps) => {
     <BannerSlideStyled>
       <BannerImageStyled
         alt={post.title.rendered}
+        fill
         isCurrentSlide={isCurrentSlide}
-        layout="fill"
-        objectFit="cover"
-        objectPosition="top"
         priority
         sizes="60vw"
         src={smMax ? banner_image_16_9 : banner_image_wide}

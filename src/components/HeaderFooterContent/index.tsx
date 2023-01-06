@@ -31,11 +31,11 @@ export const HeaderFooterContent = forwardRef<
           start={!smMax ? true : null}
           xs={12}
         >
-          <NextLink href="/" passHref>
+          <NextLink href="/" legacyBehavior passHref>
             <LogoLink>
               <Image
                 alt="Timothy Neil Johnson"
-                layout="fill"
+                fill
                 noFadeIn
                 priority
                 src={isDarkMode ? '/name-logo-darkMode.svg' : '/name-logo.svg'}

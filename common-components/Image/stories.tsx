@@ -9,6 +9,7 @@ export default {
 
 export const Default = ({ height, width, noFadeIn, round, src }) => (
   <Image
+    alt="Default image"
     height={height}
     noFadeIn={noFadeIn}
     round={round}
@@ -25,6 +26,7 @@ Default.decorators = globalDecorators;
 
 export const Round = ({ height, width, noFadeIn, round, src }) => (
   <Image
+    alt="Round image"
     height={height}
     noFadeIn={noFadeIn}
     round={round}

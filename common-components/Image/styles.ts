@@ -45,9 +45,12 @@ export const StyledImageContainer = styled.div.withConfig({
     round
       ? `
         border-radius: 50%;
-        object-fit: cover;
         width: ${shortestSideLength}px;
         height: ${shortestSideLength}px;
+
+        img {
+          object-fit: cover;
+        }
       `
       : ''};
 `;

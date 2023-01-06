@@ -6,9 +6,9 @@ import {
   FeaturedImageWrapper,
   StyledDate,
   StyledPageContainer,
+  StyledImage,
 } from '../../components/PageShell/styles';
 import { Heading } from '../../../common-components/Heading';
-import { Image } from '../../../common-components/Image';
 import { useStorageDarkMode } from '../../../common-components/storage-dark-mode-context';
 
 const Page = ({ title, featuredImg, content, date }) => {
@@ -19,20 +19,11 @@ const Page = ({ title, featuredImg, content, date }) => {
         <Heading level={1}>{title}</Heading>
         {featuredImg && (
           <FeaturedImageWrapper>
-            <Image
-              alt={title}
-              layout="fill"
-              objectFit="cover"
-              objectPosition="top"
-              priority
-              src={featuredImg}
-            />
+            <StyledImage alt={title} fill priority src={featuredImg} />
           </FeaturedImageWrapper>
         )}
         <StyledDate>
-          {`Published on ${new Date(
-            date
-          ).toDateString()}`}
+          {`Published on ${new Date(date).toDateString()}`}
         </StyledDate>
         <div>{parse(content)}</div>
       </StyledPageContainer>

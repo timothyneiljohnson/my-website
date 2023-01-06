@@ -655,7 +655,7 @@ export const MusicPlayer = ({
             <Grid>
               <Row colGap={0.075} middle style={{ padding: '0 15px' }}>
                 <Col xs={3}>
-                  <Image masonry src={image} />
+                  <Image alt={name} masonry src={image} />
                 </Col>
                 <CurrentTrackSummaryCol ref={marqueeContainerRef} xs={7}>
                   <CurrentTrackTitle

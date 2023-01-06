@@ -6,6 +6,7 @@ import { MasonryItem } from './components/MasonryItem';
 import { StyledImage, StyledImageContainer } from './styles';
 
 interface ImageProps extends NextImageProps {
+  alt: string;
   className?: string;
   draggable?: boolean;
   masonry?: boolean;
@@ -19,6 +20,7 @@ interface ImageProps extends NextImageProps {
 }
 export const Image = (props: ImageProps) => {
   const {
+    alt,
     className,
     height,
     masonry,
@@ -37,6 +39,7 @@ export const Image = (props: ImageProps) => {
 
   return masonry ? (
     <MasonryItem
+      alt={alt}
       className={className}
       src={srcValue}
       unoptimized={unoptimized}
@@ -51,6 +54,7 @@ export const Image = (props: ImageProps) => {
       width={widthValue}
     >
       <StyledImage
+        alt={alt}
         height={heightValue}
         noFadeIn={noFadeIn}
         src={srcValue}

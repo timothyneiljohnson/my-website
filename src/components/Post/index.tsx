@@ -12,6 +12,7 @@ import {
   TeardropCategoryInner,
   ExcerptImageWrapper,
   StyledRibbon,
+  StyledPostImage,
 } from './styles';
 import { shortMonthNames } from './constants';
 import { PostInfo } from './PostInfoContent';
@@ -24,7 +25,6 @@ import { Link } from '../../../common-components/Link';
 import { Row } from '../../../common-components/Row';
 import { StickyElement } from '../../../common-components/StickyElement';
 import { useStorageDarkMode } from '../../../common-components/storage-dark-mode-context';
-import { Image } from '../../../common-components/Image';
 import { Outdent } from '../../../common-components/Outdent';
 
 export const Post = ({ post }) => {
@@ -110,14 +110,12 @@ export const Post = ({ post }) => {
                     </NextLink>
                   </PostHeading>
                   {featuredImg && (
-                    <NextLink href={`/post/${post.id}`} passHref>
+                    <NextLink href={`/post/${post.id}`} legacyBehavior passHref>
                       <a>
                         <ExcerptImageWrapper>
-                          <Image
+                          <StyledPostImage
                             alt={post.title.rendered}
-                            layout="fill"
-                            objectFit="cover"
-                            objectPosition="top"
+                            fill
                             priority
                             sizes={smMax ? '90vw' : '50vw'}
                             src={featuredImg}
@@ -129,7 +127,7 @@ export const Post = ({ post }) => {
                   <div>
                     <div>{parse(post.excerpt.rendered)}</div>
                     <p>
-                      <NextLink href={`/post/${post.id}`} passHref>
+                      <NextLink href={`/post/${post.id}`} legacyBehavior passHref>
                         <Link
                           color={isDarkMode ? colors.secondary : colors.primary}
                           noUnderline

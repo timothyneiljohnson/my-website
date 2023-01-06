@@ -48,6 +48,11 @@ export const BannerImageStyled = styled(Image).withConfig({
   opacity: ${({ isCurrentSlide }) => (isCurrentSlide ? 1 : 0)};
   overflow: hidden;
   ${decorations.borderRadiusStyle}
+
+  img {
+    object-fit: cover;
+    object-position: top;
+  }
 `;
 
 export const BannerSlideStyled = styled.div`

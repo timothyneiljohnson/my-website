@@ -6,6 +6,7 @@ import {
   mediaQueries,
   spacing,
 } from '../../../common-components/design-tokens';
+import { Image } from '../../../common-components/Image';
 import { Transition } from '../../../common-components/Transition';
 
 interface StyledMainProps {
@@ -125,5 +126,12 @@ export const BackToTopButton = styled.button`
 
   &:focus {
     ${focusStyle.withRadius(9999)}
+  }
+`;
+
+export const StyledImage = styled(Image)`
+  img {
+    object-fit: cover;
+    object-position: top;
   }
 `;

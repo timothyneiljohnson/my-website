@@ -32,7 +32,7 @@ export const Banner = ({ slides = [] }: BannerProps) => {
 
   return slides ? (
     <BannerWrapper>
-      <NextLink href={`/post/${slides[currentIndex].id}`} passHref>
+      <NextLink href={`/post/${slides[currentIndex].id}`} legacyBehavior passHref>
         <StyledBanner>
           {slides.map((post, index) => (
             <BannerSlide

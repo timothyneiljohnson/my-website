@@ -38,12 +38,17 @@ export const FeaturedPostImage = styled(Image).withConfig({
   height: 230px;
   width: 100%;
   border-radius: 6px 6px 0 0;
-  background-color: ${({ isDarkMode }) => isDarkMode ? colors.grayDarker : colors.white};
+  background-color: ${({ isDarkMode }) =>
+    isDarkMode ? colors.grayDarker : colors.white};
 
   @media ${mediaQueries.xsMax} {
     border-radius: 6px 0 0 6px;
     height: 124px;
     width: 100px;
+  }
+
+  img {
+    object-fit: cover;
   }
 `;
 

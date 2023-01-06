@@ -10,10 +10,10 @@ import {
   PostContent,
   StyledDate,
   StyledPageContainer,
+  StyledImage,
 } from '../../components/PageShell/styles';
 import { colors } from '../../../common-components/design-tokens';
 import { useStorageDarkMode } from '../../../common-components/storage-dark-mode-context';
-import { Image } from '../../../common-components/Image';
 import { Heading } from '../../../common-components/Heading';
 import { ScrollProgressIndicator } from '../../../common-components/ScrollProgressIndicator';
 import { useMediaQueries } from '../../../common-components/media-queries-context';
@@ -67,14 +67,7 @@ const Post = ({ title, featuredImg, content, date }) => {
           </Heading>
           {featuredImg && !hasPhotoGallery && (
             <FeaturedImageWrapper>
-              <Image
-                alt={title}
-                layout="fill"
-                objectFit="cover"
-                objectPosition="top"
-                priority
-                src={featuredImg}
-              />
+              <StyledImage alt={title} fill priority src={featuredImg} />
             </FeaturedImageWrapper>
           )}
           <StyledDate isDarkMode={isDarkMode}>

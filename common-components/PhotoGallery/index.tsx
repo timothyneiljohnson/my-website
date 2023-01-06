@@ -123,7 +123,12 @@ export const PhotoGallery = ({
             key={`${imageUrl}${i}`}
             onClick={() => handleOpenModal(imageUrl)}
           >
-            <StyledImage masonry sizes="33vw" src={imageUrl} />
+            <StyledImage
+              alt={`image ${i}`}
+              masonry
+              sizes="33vw"
+              src={imageUrl}
+            />
           </StyledButton>
         ))}
       </PhotoGalleryCol>
@@ -133,7 +138,12 @@ export const PhotoGallery = ({
             key={`${imageUrl}${i}`}
             onClick={() => handleOpenModal(imageUrl)}
           >
-            <StyledImage masonry sizes="33vw" src={imageUrl} />
+            <StyledImage
+              alt={`image ${i}`}
+              masonry
+              sizes="33vw"
+              src={imageUrl}
+            />
           </StyledButton>
         ))}
       </PhotoGalleryCol>
@@ -143,7 +153,12 @@ export const PhotoGallery = ({
             key={`${imageUrl}${i}`}
             onClick={() => handleOpenModal(imageUrl)}
           >
-            <StyledImage masonry sizes="33vw" src={imageUrl} />
+            <StyledImage
+              alt={`image ${i}`}
+              masonry
+              sizes="33vw"
+              src={imageUrl}
+            />
           </StyledButton>
         ))}
       </PhotoGalleryCol>
@@ -167,10 +182,11 @@ export const PhotoGallery = ({
               </StyledCol>
               <Col grow>
                 <StyledFullscreenImage
+                  alt={`image ${selectedImageIndex}`}
+                  fill
                   isLoaded={fullscreenImageLoaded}
-                  layout="fill"
+                  loading="eager"
                   noFadeIn
-                  objectFit="contain"
                   onLoadingComplete={() => setFullscreenImageLoaded(true)}
                   src={imageUrls[selectedImageIndex]}
                 />

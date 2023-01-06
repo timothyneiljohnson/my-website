@@ -23,14 +23,13 @@ export const FeaturedPost = ({ post }: FeaturedPostProps) => {
   const { xsMax, sm, smMax } = useMediaQueries();
 
   return (
-    <NextLink href={`/post/${post.id}`} passHref>
+    <NextLink href={`/post/${post.id}`} legacyBehavior passHref>
       <FeaturedPostWrapper isDarkMode={isDarkMode}>
         <ViewThisFeatureWrapper>
           <FeaturedPostImage
             alt={title}
+            fill
             isDarkMode={isDarkMode}
-            layout="fill"
-            objectFit="cover"
             priority
             sizes={smMax ? '100vw' : '33vw'}
             src={highlightImageUrl}
@@ -44,7 +43,11 @@ export const FeaturedPost = ({ post }: FeaturedPostProps) => {
           )}
         </ViewThisFeatureWrapper>
         <FeaturedPostDescription>
-          <FeaturedPostHeading isDarkMode={isDarkMode} level={3} size={xsMax ? 5 : 4}>
+          <FeaturedPostHeading
+            isDarkMode={isDarkMode}
+            level={3}
+            size={xsMax ? 5 : 4}
+          >
             {parse(title)}
           </FeaturedPostHeading>
         </FeaturedPostDescription>

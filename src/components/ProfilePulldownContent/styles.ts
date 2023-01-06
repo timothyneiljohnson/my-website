@@ -115,3 +115,9 @@ export const AndMore = styled.span`
   color: ${colors.grayLight};
   white-space: nowrap;
 `;
+
+export const StyledInlineImage = styled(Image)`
+  display: inline-block;
+  vertical-align: bottom;
+  width: 24px;
+`;

@@ -6,6 +6,7 @@ import {
   spacing,
 } from '../../../common-components/design-tokens';
 import { Heading } from '../../../common-components/Heading';
+import { Image } from '../../../common-components/Image';
 import { Ribbon } from '../../../common-components/Ribbon';
 
 interface PostBodyProps {
@@ -46,6 +47,13 @@ export const PostHeading = styled(Heading)`
 
   @media ${mediaQueries.xsMax} {
     padding-right: 85px;
+  }
+`;
+
+export const StyledPostImage = styled(Image)`
+  img {
+    object-fit: cover;
+    object-position: top;
   }
 `;
 

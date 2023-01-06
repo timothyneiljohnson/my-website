@@ -16,6 +16,7 @@ import {
   ProfilePicture,
   ContactMeIcon,
   StyledHeadingContainer,
+  StyledInlineImage,
   SkillsList,
   SkillsWrapper,
   AndMore,
@@ -80,7 +81,17 @@ export const ProfilePulldownContent: FC = () => {
               >
                 Tim Johnson.
                 <br />
-                Software Engineer 👨‍💻
+                Software Engineer{' '}
+                {smMax ? (
+                  <StyledInlineImage
+                    alt="Tim"
+                    round
+                    size={24}
+                    src="/profile.jpg"
+                  />
+                ) : (
+                  '👨‍💻'
+                )}
               </Heading>
             </StyledHeadingContainer>
             <p>
@@ -89,13 +100,11 @@ export const ProfilePulldownContent: FC = () => {
             </p>
             <p>Lead Software Engineer at Target.</p>
             <SkillsWrapper>
-              <b>Skills:</b>
-              {' '}
+              <b>Skills:</b>{' '}
               <SkillsList>
                 React JS, Next JS, TypeScript, Storybook, Jest,
                 styled-components
-              </SkillsList>
-              {' '}
+              </SkillsList>{' '}
               <AndMore>+ more.</AndMore>
             </SkillsWrapper>
             <BioCallToActionWrapper>

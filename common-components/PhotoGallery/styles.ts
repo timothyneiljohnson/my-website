@@ -60,6 +60,10 @@ export const StyledFullscreenImage = styled(Image)<StyledFullscreenImageProps>`
   height: 100%;
   display: ${({ isLoaded }) => (isLoaded ? 'block' : 'none')};
   z-index: 99;
+
+  img {
+    object-fit: contain;
+  }
 `;
 
 export const StyledGrid = styled(Grid)`
