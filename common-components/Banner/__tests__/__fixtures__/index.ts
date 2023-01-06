@@ -1,3 +1,5 @@
+import { API_BASE_URL } from '../../../../src/lib/constants';
+
 export default [
   {
     id: 64,
@@ -420,7 +422,7 @@ export default [
     tags: [],
     acf: {
       highlight_image:
-        'http://localhost:10003/wp-content/uploads/2022/05/darcula-aurora-tall_3.jpg',
+        `${API_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora-tall_3.jpg`,
       banner_image_wide:
         'http://localhost:10003/wp-content/uploads/2022/05/darcula-aurora_239_1.jpg',
       banner_image_16_9:
