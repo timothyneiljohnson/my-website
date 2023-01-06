@@ -80,7 +80,7 @@ const Post = ({ title, featuredImg, content, date }) => {
 
 // This function gets called at build time
 export const getStaticPaths = async () => {
-  const posts = await (await fetch(POSTS_API_URL)).json();
+  const posts = await (await fetch(`${POSTS_API_URL}?per_page=100`)).json();
 
   // Get the paths we want to pre-render based on posts
   const paths = posts.map((post) => ({

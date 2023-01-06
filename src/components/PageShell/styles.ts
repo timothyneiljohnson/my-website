@@ -92,6 +92,12 @@ export const PostContent = styled.div<PostContentProps>`
     font-size: 16px;
     line-height: 24px;
   }
+
+  blockquote {
+    border-left: 2px solid ${colors.grayDark};
+    margin: ${spacing.x2} 0 ${spacing.x4};
+    padding-left: ${spacing.x5};
+  }
 `;
 
 export const BackToTop = styled(Transition)`

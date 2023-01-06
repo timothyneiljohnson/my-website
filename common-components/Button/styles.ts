@@ -35,7 +35,7 @@ const defaultButtonBGColor = colors.white;
 const defaultButtonBorderColor = colors.grayLighter;
 const defaultButtonTextColor = colors.grayDarker;
 
-const defaultDarkModeButtonBGColor = colors.grayDark;
+const defaultDarkModeButtonBGColor = colors.grayLight;
 const defaultDarkModeButtonBorderColor = colors.grayLight;
 const defaultDarkModeButtonBorderColorHover = colors.grayLightest;
 

@@ -84,29 +84,41 @@ export const ProfilePulldownContent: FC = () => {
               </Heading>
             </StyledHeadingContainer>
             <p>
-              I'm a driven, experienced developer and designer based in Minneapolis.
+              I'm a driven, experienced developer and designer based in
+              Minneapolis.
             </p>
             <p>Lead Software Engineer at Target.</p>
             <SkillsWrapper>
               <b>Skills:</b>
               {' '}
               <SkillsList>
-                React JS, Next JS, TypeScript, Storybook, styled-components
+                React JS, Next JS, TypeScript, Storybook, Jest,
+                styled-components
               </SkillsList>
               {' '}
               <AndMore>+ more.</AndMore>
             </SkillsWrapper>
             <BioCallToActionWrapper>
-              <Button href="mailto:timothyneiljohnson@gmail.com" size={smMax ? 'sm' : 'md'} variant="default">
+              <Button
+                href="mailto:timothyneiljohnson@gmail.com"
+                size={smMax ? 'sm' : 'md'}
+                variant="default"
+              >
                 Get In Touch
               </Button>
-              <Button href="#" size={smMax ? 'sm' : 'md'} variant="primary">
+              <Button
+                href="https://tinyurl.com/resume-tim-j"
+                size={smMax ? 'sm' : 'md'}
+                target="_blank"
+                variant="primary"
+              >
                 My Resume
               </Button>
             </BioCallToActionWrapper>
           </Col>
           <Col end flex grow smHiddenDown>
             <ProfilePicture
+              alt="Tim"
               height={222}
               layout="fixed"
               noFadeIn

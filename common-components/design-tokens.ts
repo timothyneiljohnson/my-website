@@ -3,7 +3,7 @@ import { SideNames } from './types';
 
 const colors = {
   primary: '#5874DC',
-  secondary: '#6cc0ac',
+  secondary: '#57b7b4',
   tertiary: '#384E78',
   quaternary: '#e06c78',
   quinary: '#fa9284',

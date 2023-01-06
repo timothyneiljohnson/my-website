@@ -20,7 +20,7 @@ export const Footer = ({ handleOpenProfileDrawer }: FooterProps) => {
         <p>
           {`Copyright © ${year} `}
           <NextLink href="/" passHref>
-            <a>Timothy Neil Johnson</a>
+            Timothy Neil Johnson
           </NextLink>
         </p>
       </FooterInner>

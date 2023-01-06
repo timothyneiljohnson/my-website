@@ -12,4 +12,24 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
         ? `${colors.grayDark} url(/bg-darkmode.jpg) repeat`
         : `${colors.grayLightest} url(/bg.png) repeat`};
   }
+
+  /* Make YouTube videos inserted via WordPress embed full-width */
+
+  .wp-block-embed-youtube {
+    overflow: hidden;
+    position: relative;
+    max-width: 100%;
+    height: auto;
+    padding-bottom: 56.25%;
+  }
+
+  .wp-block-embed-youtube iframe,
+  .wp-block-embed-youtube object,
+  .wp-block-embed-youtube embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 `;

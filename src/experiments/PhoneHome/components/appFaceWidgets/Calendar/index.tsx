@@ -1,3 +1,4 @@
+import React from 'react';
 import { AppFaceWidgetWrapper } from '../styles';
 import { DateOfMonthStyled, DayOfWeekStyled } from './styles';
 

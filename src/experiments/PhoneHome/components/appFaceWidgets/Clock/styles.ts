@@ -3,7 +3,9 @@ import { animation, colors } from '../../../../../../common-components/design-to
 
 export const SecondHand = styled.div`
   border-radius: 4px;
+  background: #eb8b36;
   border: 1px solid #eb8b36;
+  overflow: hidden;
   position: absolute;
   left: calc(50%);
   top: calc(50%);

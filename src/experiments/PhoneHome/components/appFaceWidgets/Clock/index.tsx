@@ -1,3 +1,4 @@
+import React from 'react';
 import { AppFaceWidgetWrapper } from '../styles';
 import { ClockPin, HourHand, MinuteHand, SecondHand } from './styles';
 
@@ -5,7 +6,7 @@ export const Clock = () => {
   const date = new Date();
   const secs = date.getSeconds();
   const mins = date.getMinutes() * 60;
-  const hours = date.getHours() * 3600;
+  const hours = (date.getHours() * 3600) + mins;
 
   return (
     <AppFaceWidgetWrapper>

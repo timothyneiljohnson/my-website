@@ -105,7 +105,9 @@ export const Post = ({ post }) => {
                     level={2}
                     size={postHeadingSize}
                   >
-                    {parse(post.title.rendered)}
+                    <NextLink href={`/post/${post.id}`} passHref>
+                      {parse(post.title.rendered)}
+                    </NextLink>
                   </PostHeading>
                   {featuredImg && (
                     <NextLink href={`/post/${post.id}`} passHref>

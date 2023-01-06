@@ -1,3 +1,4 @@
+import React from 'react';
 import { Calendar } from '../components/appFaceWidgets/Calendar';
 import { Clock } from '../components/appFaceWidgets/Clock';
 
@@ -38,23 +39,6 @@ export const pagesMock = [
       ],
     },
     {
-      name: 'Other',
-      apps: [
-        {
-          name: 'Signal',
-          image: 'signal.jpg',
-        },
-        {
-          name: 'Airtable',
-          image: 'airtable.jpg',
-        },
-        {
-          name: 'WhatsApp',
-          image: 'whatsapp.jpg',
-        },
-      ],
-    },
-    {
       name: 'Photo',
       apps: [
         {
@@ -68,6 +52,23 @@ export const pagesMock = [
         {
           name: 'Lightroom',
           image: 'lightroom.jpg',
+        },
+      ],
+    },
+    {
+      name: 'Social',
+      apps: [
+        {
+          name: 'Signal',
+          image: 'signal.jpg',
+        },
+        {
+          name: 'WhatsApp',
+          image: 'whatsapp.jpg',
+        },
+        {
+          name: 'Zoom',
+          image: 'zoom.jpg',
         },
       ],
     },
@@ -145,23 +146,6 @@ export const pagesMock = [
       ],
     },
     {
-      name: 'Other2',
-      apps: [
-        {
-          name: 'Signal2',
-          image: 'signal.jpg',
-        },
-        {
-          name: 'Airtable2',
-          image: 'airtable.jpg',
-        },
-        {
-          name: 'WhatsApp2',
-          image: 'whatsapp.jpg',
-        },
-      ],
-    },
-    {
       name: 'Photo2',
       apps: [
         {
@@ -175,6 +159,23 @@ export const pagesMock = [
         {
           name: 'Lightroom2',
           image: 'lightroom.jpg',
+        },
+      ],
+    },
+    {
+      name: 'Social2',
+      apps: [
+        {
+          name: 'Signal',
+          image: 'signal.jpg',
+        },
+        {
+          name: 'WhatsApp',
+          image: 'whatsapp.jpg',
+        },
+        {
+          name: 'Zoom',
+          image: 'zoom.jpg',
         },
       ],
     },

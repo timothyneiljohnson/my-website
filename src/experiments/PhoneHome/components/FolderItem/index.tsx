@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { PlainGrid } from '../../../../../common-components/PlainGrid';
 import {
   AppGridItem,
@@ -78,7 +78,7 @@ export const FolderItem = ({
           rowGap="1.5px"
           style={{ alignItems: 'center', transition: 'grid-column-gap 50ms, grid-row-gap 50ms' }}
         >
-          {folderData.apps.map((app) => (
+          {folderData?.apps.map((app) => (
             <AppGridItem key={app.name}>
               <AppItem appData={app} />
               {isOpen && !forceClose && (

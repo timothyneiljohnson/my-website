@@ -33,7 +33,7 @@
     "babel-preset-next": "^1.4.0",
     "html-react-parser": "^1.2.4",
     "lottie-web": "^5.9.4",
-    "next": "latest",
+    "next": "^12",
     "next-compose-plugins": "^2.2.1",
     "next-images": "^1.8.4",
     "normalize.css": "^8.0.1",

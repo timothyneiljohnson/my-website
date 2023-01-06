@@ -12,6 +12,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   gradientEnd?: string;
   pointerGradient?: boolean;
   href?: string;
+  target?: string;
   textColor?: string;
   topMargin?: number;
   pill?: boolean;
@@ -42,7 +43,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const handleMouseMove = useCallback(
       (event) => {
         if (!pointerGradient) return;
-        const { pageX, pageY, target } = event;        
+        const { pageX, pageY, target } = event;
         const { offsetLeft, offsetTop } = target;
 
         setMousePosition({ x: pageX - offsetLeft, y: pageY - offsetTop });
@@ -65,7 +66,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             : undefined
         }
         textColor={textColor}
-        variant={isDarkMode && variant === 'default' ? 'defaultDarkMode' : variant}
+        variant={
+          isDarkMode && variant === 'default' ? 'defaultDarkMode' : variant
+        }
         {...restProps}
       >
         {children}
@@ -85,7 +88,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             : undefined
         }
         textColor={textColor}
-        variant={isDarkMode && variant === 'default' ? 'defaultDarkMode' : variant}
+        variant={
+          isDarkMode && variant === 'default' ? 'defaultDarkMode' : variant
+        }
         {...restProps}
       >
         {children}
