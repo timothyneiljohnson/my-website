@@ -97,7 +97,10 @@ export const PageShell = ({ children, isFullWidth }: PageShellProps) => {
         <link href="/favicon.png" rel="icon" />
         <link href="/manifest.json" rel="manifest" />
         <link href="/apple-touch-icon.png" rel="apple-touch-icon" />
-        <meta content="https://www.timothyneil.com/fb-og.jpg" property="og:image" />
+        <meta
+          content="https://www.timothyneil.com/fb-og.jpg"
+          property="og:image:secure"
+        />
       </Head>
       <GlobalStyles isDarkMode={isDarkMode} />
       <Header
