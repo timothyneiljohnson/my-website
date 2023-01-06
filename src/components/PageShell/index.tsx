@@ -92,15 +92,12 @@ export const PageShell = ({ children, isFullWidth }: PageShellProps) => {
       <Head>
         <title>Tim J: Software Engineer</title>
         <meta content="Tim J: Software Engineer" name="description" />
+        <meta content="timothyneil.com" name="twitter:domain" />
         <meta content={colors.tertiary} name="theme-color" />
         <link href={API_BASE_URL} rel="preconnect" />
         <link href="/favicon.png" rel="icon" />
         <link href="/manifest.json" rel="manifest" />
         <link href="/apple-touch-icon.png" rel="apple-touch-icon" />
-        <meta
-          content="https://www.timothyneil.com/fb-og.jpg"
-          property="og:image:secure"
-        />
       </Head>
       <GlobalStyles isDarkMode={isDarkMode} />
       <Header
@@ -123,7 +120,11 @@ export const PageShell = ({ children, isFullWidth }: PageShellProps) => {
         <DynamicModalDrawer
           background={isDarkMode ? colors.grayDarker : colors.grayLightest}
           closeType="floating"
-          customClose={<Button size="sm" variant="default">Close Profile</Button>}
+          customClose={
+            <Button size="sm" variant="default">
+              Close Profile
+            </Button>
+          }
           direction="top"
           isOpen={isModalOpen}
           onCloseCallback={onCloseCallback}

@@ -1,6 +1,7 @@
 import parse from 'html-react-parser';
 import Prism from 'prismjs';
 import { useEffect } from 'react';
+import Head from 'next/head';
 import { getMedia } from '../../lib/utils';
 import { POSTS_API_URL } from '../../lib/constants';
 import { PageShell } from '../../components/PageShell';
@@ -36,6 +37,19 @@ const Post = ({ title, featuredImg, content, date }) => {
 
   return (
     <>
+      <Head>
+        <meta
+          content={featuredImg}
+          itemProp="image primaryImageOfPage"
+          property="og:image"
+        />
+        <meta
+          content={title}
+          itemProp="name"
+          name="twitter:title"
+          property="og:title"
+        />
+      </Head>
       <ScrollProgressIndicator
         color={isDarkMode ? colors.secondary : colors.primary}
       />
