@@ -13,7 +13,7 @@ const Blog = ({ posts }) => (
         property="og:image"
       />
       <meta
-        content="Blog"
+        content="Recent Posts"
         itemProp="name"
         name="twitter:title"
         property="og:title"
