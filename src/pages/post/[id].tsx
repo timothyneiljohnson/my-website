@@ -38,9 +38,11 @@ const Post = ({ title, featuredImg, content, date }) => {
   return (
     <>
       <Head>
+        <meta content="summary_large_image" name="twitter:card" />
         <meta
           content={featuredImg}
           itemProp="image primaryImageOfPage"
+          name="twitter:image"
           property="og:image"
         />
         <meta

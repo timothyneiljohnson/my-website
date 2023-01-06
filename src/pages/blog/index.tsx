@@ -7,9 +7,11 @@ import { Post } from '../../components/Post';
 const Blog = ({ posts }) => (
   <>
     <Head>
+      <meta content="summary_large_image" name="twitter:card" />
       <meta
         content="https://www.timothyneil.com/fb-og.jpg"
         itemProp="image primaryImageOfPage"
+        name="twitter:image"
         property="og:image"
       />
       <meta
