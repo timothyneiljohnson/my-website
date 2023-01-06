@@ -120,11 +120,7 @@ export const PageShell = ({ children, isFullWidth }: PageShellProps) => {
         <DynamicModalDrawer
           background={isDarkMode ? colors.grayDarker : colors.grayLightest}
           closeType="floating"
-          customClose={
-            <Button size="sm" variant="default">
-              Close Profile
-            </Button>
-          }
+          customClose={<Button size="sm" variant="default">Close Profile</Button>}
           direction="top"
           isOpen={isModalOpen}
           onCloseCallback={onCloseCallback}
