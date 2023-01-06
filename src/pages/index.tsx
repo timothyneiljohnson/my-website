@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import {
   getBannerPostsFromServer,
   getFeaturedCategoriesFromServer,
@@ -20,41 +21,56 @@ const Featured = ({ bannerPosts, categories, featuredPosts }) => {
   const { xsMax } = useMediaQueries();
 
   return (
-    <PageShell>
-      {bannerPosts.length > 0 ? (
-        <Banner slides={bannerPosts} />
-      ) : (
-        <Placeholder height={450} />
-      )}
+    <>
+      <Head>
+        <meta
+          content="https://www.timothyneil.com/fb-og.jpg"
+          itemProp="image primaryImageOfPage"
+          property="og:image"
+        />
+        <meta
+          content="My Work"
+          itemProp="name"
+          name="twitter:title"
+          property="og:title"
+        />
+      </Head>
+      <PageShell>
+        {bannerPosts.length > 0 ? (
+          <Banner slides={bannerPosts} />
+        ) : (
+          <Placeholder height={450} />
+        )}
 
-      {featuredPosts.length > 0 ? (
-        <>
-          <div>
-            <Heading
-              color={isDarkMode ? colors.white : colors.grayDarker}
-              size={2}
-            >
-              Highlighted Articles
-            </Heading>
-          </div>
-          <Outdent horizontal={5}>
-            <FilterableList
-              allCategoryId={FEATURED_CATEGORY_ID}
-              categories={categories}
-              gap={spacing.x2}
-              itemsWithCategories={featuredPosts}
-              minWidth={xsMax ? breakpoints.xsMax : '195px'}
-            >
-              {featuredPosts.map((post, index) => (
-                <FeaturedPost key={index} post={post} />
-              ))}
-            </FilterableList>
-          </Outdent>
-        </>
-      ) : (
-        <Placeholder height={300} topMargin={125} />
-      )}
-    </PageShell>
+        {featuredPosts.length > 0 ? (
+          <>
+            <div>
+              <Heading
+                color={isDarkMode ? colors.white : colors.grayDarker}
+                size={2}
+              >
+                Highlighted Articles
+              </Heading>
+            </div>
+            <Outdent horizontal={5}>
+              <FilterableList
+                allCategoryId={FEATURED_CATEGORY_ID}
+                categories={categories}
+                gap={spacing.x2}
+                itemsWithCategories={featuredPosts}
+                minWidth={xsMax ? breakpoints.xsMax : '195px'}
+              >
+                {featuredPosts.map((post, index) => (
+                  <FeaturedPost key={index} post={post} />
+                ))}
+              </FilterableList>
+            </Outdent>
+          </>
+        ) : (
+          <Placeholder height={300} topMargin={125} />
+        )}
+      </PageShell>
+    </>
   );
 };
 
