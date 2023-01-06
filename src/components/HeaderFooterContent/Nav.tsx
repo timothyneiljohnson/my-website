@@ -1,6 +1,6 @@
 import { forwardRef, useCallback } from 'react';
 import NextLink from 'next/link';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 import { Button } from '../../../common-components/Button';
 import { Icon } from '../../../common-components/Icon';
 import { MainNavList, MainNavListItem } from './styles';
@@ -14,7 +14,7 @@ interface NavProps {
 
 export const Nav = forwardRef<HTMLButtonElement, NavProps>(
   ({ handleOpenProfileDrawer }: NavProps, ref) => {
-    const { pathname } = useRouter() || {};
+    const pathname = usePathname() || '';
     const isHome = pathname === '/';
     const isBlog = pathname === '/blog' || pathname?.startsWith('/post');
     const { isDarkMode, toggleDarkMode } = useStorageDarkMode();
