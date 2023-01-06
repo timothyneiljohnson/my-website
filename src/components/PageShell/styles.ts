@@ -40,6 +40,8 @@ export const StyledPageContainer = styled.div<StyledPageContainerProps>`
   /* PrismJS Theme Overrides - Darcula Aurora */
   code[class*='language-'],
   pre[class*='language-'] {
+    max-height: 550px;
+    overflow-y: auto;
     color: #dddddd;
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     text-align: left;
@@ -55,6 +57,10 @@ export const StyledPageContainer = styled.div<StyledPageContainerProps>`
     -moz-hyphens: none;
     -ms-hyphens: none;
     hyphens: none;
+
+    @media ${mediaQueries.smMax} {
+      font-size: 9px;
+    }
   }
 
   pre[class*='language-']::-moz-selection,
@@ -84,7 +90,7 @@ export const StyledPageContainer = styled.div<StyledPageContainerProps>`
     padding: 1em;
     margin: 0.5em 0;
     overflow: auto;
-    ${({ isDarkMode }) => isDarkMode ? 'border: 1px solid #666666;' : null}
+    ${({ isDarkMode }) => (isDarkMode ? 'border: 1px solid #666666;' : null)}
     ${decorations.borderRadiusStyle};
   }
 
