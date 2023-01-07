@@ -19,9 +19,17 @@ export const Footer = ({ handleOpenProfileDrawer }: FooterProps) => {
         />
         <p>
           {`Copyright © ${year} `}
-          <NextLink href="/" passHref>
-            Timothy Neil Johnson
+          <NextLink href="/">Timothy Neil Johnson</NextLink>
+        </p>
+        <p>
+          🛠
+          <span className="h-sr-only">Tech stack</span>
+          : Vercel, React/NextJS, WP API. See my
+          {' '}
+          <NextLink href="https://storybook.timothyneil.com" target="_blank">
+            live Storybook
           </NextLink>
+          .
         </p>
       </FooterInner>
     </StyledFooter>
