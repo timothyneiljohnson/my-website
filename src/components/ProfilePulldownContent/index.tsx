@@ -55,7 +55,7 @@ export const ProfilePulldownContent: FC = () => {
                 />
               </ContactMeLink>
               <ContactMeLink
-                href="https://linkedin.com/in/timothyneiljohnson"
+                href="https://linkedin.com/in/timjohnsonminneapolis"
                 target="_blank"
               >
                 <ContactMeIcon
