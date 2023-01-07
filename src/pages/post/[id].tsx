@@ -3,7 +3,7 @@ import Prism from 'prismjs';
 import { useEffect } from 'react';
 import Head from 'next/head';
 import { getMedia } from '../../lib/utils';
-import { POSTS_API_URL } from '../../lib/constants';
+import { ALL_POSTS_API_URL, POSTS_API_URL } from '../../lib/constants';
 import { PageShell } from '../../components/PageShell';
 import {
   FeaturedImageWrapper,
@@ -89,7 +89,7 @@ const Post = ({ title, featuredImg, content, date }) => {
 
 // This function gets called at build time
 export const getStaticPaths = async () => {
-  const posts = await (await fetch(`${POSTS_API_URL}?per_page=100`)).json();
+  const posts = await (await fetch(ALL_POSTS_API_URL)).json();
 
   // Get the paths we want to pre-render based on posts
   const paths = posts.map((post) => ({
