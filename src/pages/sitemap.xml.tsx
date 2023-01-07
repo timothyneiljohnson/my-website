@@ -1,5 +1,5 @@
 // pages/sitemap.xml.tsx
-import { ALL_POSTS_API_URL } from '../lib/constants';
+import { ALL_POSTS_API_URL, POSTS_API_URL } from '../lib/constants';
 
 function generateSiteMap(posts) {
   return `<?xml version="1.0" encoding="UTF-8"?>
@@ -15,7 +15,7 @@ function generateSiteMap(posts) {
        .map(
          ({ id }) => `
             <url>
-                <loc>${`${ALL_POSTS_API_URL}/${id}`}</loc>
+                <loc>${`${POSTS_API_URL}/${id}`}</loc>
             </url>
           `
        )
