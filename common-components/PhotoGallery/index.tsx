@@ -188,6 +188,8 @@ export const PhotoGallery = ({
                   loading="eager"
                   noFadeIn
                   onLoadingComplete={() => setFullscreenImageLoaded(true)}
+                  quality="100"
+                  sizes="100vw"
                   src={imageUrls[selectedImageIndex]}
                 />
                 <StyledLoadingDots />
