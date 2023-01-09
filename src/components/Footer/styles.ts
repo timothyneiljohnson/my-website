@@ -24,7 +24,9 @@ export const FooterInner = styled.div<FooterInnerProps>`
     padding: ${spacing.x5} 0 0;
     font-size: 11px;
   }
+`;
 
+export const FooterBottom = styled.div`
   a:hover {
     text-decoration: underline;
   }
