@@ -143,9 +143,7 @@ export const Post = ({ post }) => {
           </Col>
           <Col flex md={3} sm={4} xs={12} xsHiddenDown>
             <StickyElement
-              targetBottomOffset={-38}
-              targetRef={ref}
-              targetTopOffset={20}
+              topOffset={20}
             >
               <PostInfo date={post.date} title={post.title.rendered} />
             </StickyElement>

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { StickyElement } from '.';
 import { colors } from '../design-tokens';
 import { PostInfo } from '../../src/components/Post/PostInfoContent';
@@ -8,23 +8,17 @@ export default {
   component: StickyElement,
 };
 
-export const Default = () => {
-  const ref = useRef(null);
-  return (
-    <div style={{ height: '1000px', marginTop: '100px', width: '100%' }}>
-      <div
-        ref={ref}
-        style={{
-          backgroundColor: colors.grayLight,
-          width: '500px',
-          height: '200px',
-          position: 'relative',
-        }}
-      >
-        <StickyElement targetRef={ref}>
-          <PostInfo date="2022-04-04T18:29:50" title="Stick 'em up!" />
-        </StickyElement>
-      </div>
-    </div>
-  );
-};
+export const Default = () => (
+  <div
+    style={{
+      backgroundColor: colors.grayLight,
+      width: '500px',
+      height: '1500px',
+      position: 'relative',
+    }}
+  >
+    <StickyElement topOffset={20}>
+      <PostInfo date="2022-04-04T18:29:50" title="Stick 'em up!" />
+    </StickyElement>
+  </div>
+);
