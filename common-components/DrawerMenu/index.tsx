@@ -109,7 +109,6 @@ export const DrawerMenu = ({
           />
         </svg>
       </ToggleDrawerButton>
-
       <DrawerMenuContainer
         aria-hidden={!isDrawerMenuOpen}
         hasPageLoaded={hasPageLoaded}
