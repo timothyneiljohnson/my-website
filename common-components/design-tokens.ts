@@ -122,6 +122,14 @@ const animation = {
         opacity: 1;
       }
     `,
+    fadeOut: keyframes`
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }
+    `,
     overflowMarqueeBounce: (distance: number) => keyframes`
       0% {
       transform: translate(0, 0);
@@ -171,6 +179,18 @@ const animation = {
       to {
         transform: translateY(0px);
         pointer-events: auto;
+      }
+    `,
+    slideOut: (direction: SideNames, distance: number) => keyframes`
+      from {
+        transform: translateY(0px);
+        pointer-events: auto;
+      }
+      to {
+        transform: ${
+          ['bottom', 'top'].includes(direction) ? 'translateY' : 'translateX'
+        }(${['bottom', 'right'].includes(direction) ? distance : -distance}px);
+        pointer-events: none;
       }
     `,
     slideFadeIn: (direction: SideNames, distance: number) => keyframes`
