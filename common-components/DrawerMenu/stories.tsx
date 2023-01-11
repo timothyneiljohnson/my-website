@@ -93,10 +93,11 @@ export const Default = ({ size }) => (
           </Grid>
         </MenuItem>,
       ]}
+      size={size}
     />
   </StyledStoryStageContainer>
 );
 Default.decorators = globalDecorators;
 Default.args = {
-  size: 330,
+  size: 320,
 };
