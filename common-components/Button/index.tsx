@@ -21,7 +21,6 @@ import {
   StyledGrid,
 } from './styles';
 import { Icon } from '../Icon';
-import { Grid } from '../Grid';
 import { Row } from '../Row';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
