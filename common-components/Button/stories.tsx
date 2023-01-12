@@ -4,7 +4,6 @@ import { Button } from '.';
 import { ButtonProps } from './types';
 import { globalDecorators } from '../../src/storybook/decoratorHelpers';
 import { colors, gradients, spacing } from '../design-tokens';
-import { Heading } from '../Heading';
 import { Icon } from '../Icon';
 import { Link } from '../Link';
 
