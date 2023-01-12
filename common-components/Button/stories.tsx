@@ -181,9 +181,6 @@ export const ButtonWithDropdown = () => (
   <table>
     <thead>
       <tr>
-        <Heading level={3}>With dropdown</Heading>
-      </tr>
-      <tr>
         <td>primary</td>
         <td>secondary</td>
         <td>default</td>
