@@ -22,6 +22,35 @@ const colors = {
   },
 };
 
+const buttons = {
+  primary: {
+    bg: colors.primary,
+    border: colors.primary,
+    text: colors.white,
+  },
+  secondary: {
+    bg: colors.tertiary,
+    border: colors.tertiary,
+    text: colors.white,
+  },
+  default: {
+    bg: colors.white,
+    border: colors.grayLighter,
+    text: colors.grayDarker,
+  },
+  defaultDarkMode: {
+    bg: colors.grayLight,
+    border: colors.grayLight,
+    borderHover: colors.grayLightest,
+    text: colors.white,
+  },
+  disabled: {
+    bg: colors.grayLighter,
+    border: colors.grayLighter,
+    text: colors.grayLight,
+  },
+};
+
 const gradients = {
   primary: {
     start: colors.primary,
@@ -319,6 +348,7 @@ const a11y = {
 export {
   a11y,
   animation,
+  buttons,
   breakpoints,
   colors,
   decorations,
