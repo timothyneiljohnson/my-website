@@ -44,13 +44,6 @@ export const FolderItem = ({
     showFullScreenFilterCallback(folderData.name);
   }, [folderData.name, showFullScreenFilterCallback]);
 
-  // const handleFolderAnimationEnd = useCallback(() => {
-  //   if (isOpen) {
-  //     console.log('if');
-  //     setIsOpen(false);
-  //   }
-  // }, []);
-
   useEffect(() => {
     if (isOpen && forceClose) {
       setTimeout(() => {

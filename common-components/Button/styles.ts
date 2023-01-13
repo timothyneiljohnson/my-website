@@ -17,6 +17,7 @@ interface ButtonWrapperProps {
 }
 export const ButtonWrapper = styled.div<ButtonWrapperProps>`
   position: relative;
+  display: inline-flex;
   width: ${({ fullWidth }) => (fullWidth ? '100%' : 'fit-content')};
 
   button {

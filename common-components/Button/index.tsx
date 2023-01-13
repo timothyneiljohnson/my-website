@@ -2,7 +2,6 @@ import {
   cloneElement,
   forwardRef,
   useCallback,
-  useEffect,
   useState,
 } from 'react';
 import { useStorageDarkMode } from '../storage-dark-mode-context';
@@ -54,7 +53,6 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     if (variant === 'default' && isDarkMode) {
       variant = 'defaultDarkMode';
     }
-    // console.log(children, variant);
 
     switch (variant) {
       case 'primary':
@@ -87,6 +85,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     }
 
     // POINTER GRADIENT LOGIC
+    const hasGradient = Boolean(gradientStart);
     const [mousePosition, setMousePosition] = useState({
       x: 0,
       y: 0,
@@ -109,27 +108,14 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const hasDropdown = Boolean(dropdown);
     const openDropdown = useCallback(() => {
       setIsDropdownOpen(true);
+      setIsDropdownDisplayed(true);
     }, []);
     const closeDropdown = useCallback(() => {
       setIsDropdownOpen(false);
     }, []);
-
-    const onCloseCallback = useCallback(() => {
-      setIsDropdownOpen(false);
-      setTimeout(() => {
-        setIsDropdownDisplayed(false);
-      }, animation.durations.faster);
+    const isDisplayedCallback = useCallback((isDisplayed: boolean) => {
+      setIsDropdownDisplayed(isDisplayed);
     }, []);
-
-    useEffect(() => {
-      if (isDropdownOpen) {
-        setIsDropdownDisplayed(true);
-      } else {
-        onCloseCallback();
-      }
-    }, [isDropdownOpen, onCloseCallback]);
-
-    const hasGradient = Boolean(gradientStart);
 
     return (
       <ButtonWrapper fullWidth={fullWidth}>
@@ -241,6 +227,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             distance={10}
             duration={animation.durations.faster}
             in={isDropdownOpen}
+            isDisplayedCallback={isDisplayedCallback}
             type="slideFade"
           >
             <DropdownWrapper

@@ -1,4 +1,4 @@
-import { HTMLAttributes, useCallback, useEffect, useState } from 'react';
+import { forwardRef, HTMLAttributes, useCallback, useEffect, useState } from 'react';
 import { animation } from '../design-tokens';
 import { SideNames } from '../types';
 import { StyledTransition } from './styles';
@@ -12,37 +12,49 @@ export interface TransitionProps extends HTMLAttributes<HTMLDivElement> {
   duration?: number;
   in?: boolean;
   initialScale?: number;
+  isDisplayedCallback?: (isDisplayed: boolean) => void;
+  style?: any;
   type?: TransitionTypes;
 }
-export const Transition = ({
-  children,
-  className,
-  direction = 'bottom',
-  distance = 20,
-  duration = animation.durations.fast,
-  in: inValue,
-  initialScale = 0.9,
-  type = 'fade',
-}: TransitionProps) => {
+
+export const Transition = forwardRef<HTMLDivElement, TransitionProps>(
+  ({
+    children,
+    className,
+    direction = 'bottom',
+    distance = 20,
+    duration = animation.durations.fast,
+    in: inValue,
+    initialScale = 0.9,
+    isDisplayedCallback,
+    style,
+    type = 'fade',
+  }: TransitionProps, ref) => {
   const [isShown, setIsShown] = useState(false);
   const [shouldAnimate, setShouldAnimate] = useState(false);
 
   const onAnimationEnd = useCallback(() => {
     if (!inValue) {
       setIsShown(false); // Hide after animation ends
+      if (isDisplayedCallback) {
+        isDisplayedCallback(false); // Tell component when it's no longer displayed
+      }
     }
     setShouldAnimate(false); // animation end
-  }, [inValue]);
+  }, [inValue, isDisplayedCallback]);
 
   useEffect(() => {
     if (inValue !== isShown) {
       // Immediately show element when "in" changes to true
       if (inValue) {
-        setIsShown(!isShown);
+        setIsShown(true);
+        if (isDisplayedCallback) {
+          isDisplayedCallback(true); // Tell component when it's no longer displayed
+        }
       }
       setShouldAnimate(true); // animation start
     }
-  }, [isShown, inValue]);
+  }, [isDisplayedCallback, isShown, inValue]);
 
   let keyframe = animation.keyframes.fadeIn;
   let timingFunction = 'ease-in-out';
@@ -80,12 +92,14 @@ export const Transition = ({
       isShown={isShown}
       keyframe={keyframe}
       onAnimationEnd={onAnimationEnd}
+      ref={ref}
       shouldAnimate={shouldAnimate}
+      style={style}
       timingFunction={timingFunction}
     >
       {children}
     </StyledTransition>
   );
-};
+});
 
 Transition.displayName = 'Transition';
