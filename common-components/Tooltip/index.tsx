@@ -38,7 +38,7 @@ export const Tooltip = ({
   const handleCloseTooltip = useCallback(() => {
     const tooltipCloseTimeout = setTimeout(() => {
       setIsTooltipOpen(false);
-    }, 400);
+    }, 300);
     return () => clearTimeout(tooltipCloseTimeout);
   }, []);
 

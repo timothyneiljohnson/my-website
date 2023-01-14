@@ -58,8 +58,8 @@ export const TruncatedText = ({
             aria-label={`${toggleText}, shows more content`}
             aria-live="assertive"
             href="#"
-            noUnderline
             onClick={handleToggle}
+            reverseUnderline
             role="button"
           >
             {toggleText}

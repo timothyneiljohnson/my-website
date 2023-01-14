@@ -15,11 +15,14 @@ interface StyledHeadingProps {
 export const StyledHeading = styled(HeadingElement)<StyledHeadingProps>`
   font-weight: bold;
   margin: ${({ noMargin }) => (noMargin ? 0 : `${spacing.x2} 0 ${spacing.x3}`)};
-  color: ${({ color }) => (color ?? undefined)};
+  color: ${({ color }) => color ?? undefined};
   ${({ level, size }) => font.headingStyle[`h${size ?? level}`]}
+  ${({ level, noMargin, size }) =>
+    !noMargin && (level > 3 || size > 3) && `margin: ${spacing.x1} 0 ${spacing.x2};`}
 
   ${({ animateTyping, children, color }) =>
-    animateTyping && typeof children === 'string' &&
+    animateTyping &&
+    typeof children === 'string' &&
     `
     display: inline;
     font-family: ${font.families.monospace};

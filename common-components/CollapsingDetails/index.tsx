@@ -1,5 +1,5 @@
 import { ReactElement, useCallback, useRef, useState } from 'react';
-import { colors } from '../design-tokens';
+import { animation, colors } from '../design-tokens';
 import {
   DetailsSection,
   IconWrapper,
@@ -21,11 +21,19 @@ export const CollapsingDetails = ({
 }: CollapsingDetailsProps) => {
   const ref = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
+  const [isDisplayed, setIsDisplayed] = useState(false);
   const [detailsHeight, setDetailsHeight] = useState(0);
 
   const handleToggle = useCallback(() => {
     setDetailsHeight(ref.current?.scrollHeight);
     setIsOpen(!isOpen);
+    if (!isOpen) {
+      setIsDisplayed(true);
+    } else {
+      setTimeout(() => {
+        setIsDisplayed(false);
+      }, animation.durations.faster);
+    }
   }, [isOpen]);
 
   return (
@@ -34,14 +42,19 @@ export const CollapsingDetails = ({
         <TitleWrapper>{isOpen && closeText ? closeText : title}</TitleWrapper>
         <IconWrapper>
           <StyledIcon
-            fill={colors.grayLight}
+            fill={colors.grayDark}
             isOpen={isOpen}
-            name="chevron-down-sharp"
-            size={28}
+            name="chevron-down"
+            size={24}
           />
         </IconWrapper>
       </ToggleButton>
-      <DetailsSection detailsHeight={detailsHeight} isOpen={isOpen} ref={ref}>
+      <DetailsSection
+        detailsHeight={detailsHeight}
+        isDisplayed={isDisplayed}
+        isOpen={isOpen}
+        ref={ref}
+      >
         {children}
       </DetailsSection>
     </StyledCollapsingDetails>

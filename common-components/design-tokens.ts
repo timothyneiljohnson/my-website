@@ -236,12 +236,12 @@ const animation = {
         pointer-events: auto;
       }
     `,
-    rotate360: keyframes`
+    rotate: (degrees: number) => keyframes`
       from {
         transform: rotate(0);
       }
       to {
-        transform: rotate(360deg);
+        transform: rotate(${degrees}deg);
       }
     `,
     changeHeight: (start: number, end: number) => keyframes`

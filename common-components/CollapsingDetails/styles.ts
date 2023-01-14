@@ -15,14 +15,16 @@ export const StyledCollapsingDetails = styled.div<StyledCollapsingDetailsProps>`
 `;
 
 interface DetailsSectionProps {
-  isOpen?: boolean;
+  isOpen: boolean;
+  isDisplayed: boolean;
   detailsHeight?: number;
 }
 export const DetailsSection = styled.div<DetailsSectionProps>`
   transition: height ${animation.durations.faster}ms ease-in-out;
-  visibility: ${({ isOpen }) => isOpen ? 'visible' : 'hidden'};
-  height: ${({ isOpen, detailsHeight }) => isOpen ? `${detailsHeight + 24}px` : '0'};
-  margin: ${({ isOpen }) => isOpen ? spacing.x4 : '0'};
+  visibility: ${({ isDisplayed }) => (isDisplayed ? 'visible' : 'hidden')};
+  height: ${({ isOpen, detailsHeight }) =>
+    isOpen ? `${detailsHeight + 24}px` : '0'};
+  margin: ${({ isDisplayed }) => (isDisplayed ? spacing.x4 : '0')};
 `;
 
 interface StyledIconProps {

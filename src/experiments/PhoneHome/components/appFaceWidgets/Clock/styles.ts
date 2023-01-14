@@ -11,7 +11,7 @@ export const SecondHand = styled.div`
   top: calc(50%);
   height: 41.5%;
   transform-origin: top center;
-  animation: ${animation.keyframes.rotate360} 60s infinite linear;
+  animation: ${animation.keyframes.rotate(360)} 60s infinite linear;
 `;
 
 export const MinuteHand = styled.div`
@@ -23,7 +23,7 @@ export const MinuteHand = styled.div`
   top: calc(50% - 1px);
   height: 41.5%;
   transform-origin: top center;
-  animation: ${animation.keyframes.rotate360} 3600s infinite linear;
+  animation: ${animation.keyframes.rotate(360)} 3600s infinite linear;
 `;
 
 export const HourHand = styled.div`
@@ -35,7 +35,7 @@ export const HourHand = styled.div`
   top: calc(50% - 1px);
   height: 24.5%;
   transform-origin: top center;
-  animation: ${animation.keyframes.rotate360} 43200s infinite linear;
+  animation: ${animation.keyframes.rotate(360)} 43200s infinite linear;
 `;
 
 export const ClockPin = styled.div`

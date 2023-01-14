@@ -7,7 +7,7 @@ export default {
   component: Link,
 };
 
-const DefaultColorArg = {
+const DefaultArgs = {
   color: colors.grayDarker,
 };
 
@@ -16,18 +16,25 @@ export const Default = ({ color }) => (
     This is a test
   </Link>
 );
-Default.args = DefaultColorArg;
+Default.args = DefaultArgs;
+
+export const ReverseUnderline = ({ color }) => (
+  <Link color={color} href="/home" reverseUnderline>
+    This is a test
+  </Link>
+);
+ReverseUnderline.args = DefaultArgs;
 
 export const NoUnderline = ({ color }) => (
   <Link color={color} href="/home" noUnderline>
     This is a test
   </Link>
 );
-NoUnderline.args = DefaultColorArg;
+NoUnderline.args = DefaultArgs;
 
 export const LinkButton = ({ color }) => (
   <Link color={color} role="button">
     This is a test
   </Link>
 );
-LinkButton.args = DefaultColorArg;
+LinkButton.args = DefaultArgs;

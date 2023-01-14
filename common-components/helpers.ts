@@ -64,3 +64,15 @@ export const getOppositedirection = (direction: string) => {
   };
   return oppositesMap[direction];
 };
+
+export const debounce = (func, duration = 500) => {
+  let timer;
+  return (...args) => {
+    const context = this;
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(() => {
+      timer = null;
+      func.apply(context, args);
+    }, duration);
+  };
+};

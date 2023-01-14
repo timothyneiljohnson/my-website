@@ -15,7 +15,7 @@ You Stand, Then You Know Where to Land and If You Fall It Won't
 Matter, Cuz You'll Know That You're Right`;
 
 export const Default = () => (
-  <div style={{ width: '400px' }}>
+  <div style={{ width: '300px' }}>
     <CollapsingDetails
       closeText="Click for less info"
       title="Click for more info"

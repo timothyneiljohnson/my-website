@@ -29,6 +29,7 @@ export const Transition = forwardRef<HTMLDivElement, TransitionProps>(
     isDisplayedCallback,
     style,
     type = 'fade',
+    ...restProps
   }: TransitionProps, ref) => {
   const [isShown, setIsShown] = useState(false);
   const [shouldAnimate, setShouldAnimate] = useState(false);
@@ -96,6 +97,7 @@ export const Transition = forwardRef<HTMLDivElement, TransitionProps>(
       shouldAnimate={shouldAnimate}
       style={style}
       timingFunction={timingFunction}
+      {...restProps}
     >
       {children}
     </StyledTransition>

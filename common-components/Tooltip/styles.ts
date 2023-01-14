@@ -25,8 +25,6 @@ export const TooltipTransition = styled(Transition)<TooltipTransitionProps>`
   position: fixed;
   left: calc(var(--destination-x, 0) * 1px);
   top: calc(var(--destination-y, 0) * 1px);
-  /* top: calc(-100% - 11px); */
-  /* left: 0; */
   z-index: -1;
   ${decorations.borderRadiusStyle}
   ${decorations.boxShadow.smStyle}

@@ -130,7 +130,7 @@ export const Post = ({ post }) => {
                       <NextLink href={`/post/${post.id}`} legacyBehavior passHref>
                         <Link
                           color={isDarkMode ? colors.secondary : colors.primary}
-                          noUnderline
+                          reverseUnderline
                         >
                           Continue reading
                         </Link>
