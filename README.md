@@ -1,11 +1,11 @@
 # WordPress Headless CMS + NextJS 
 
-This repo contains the FrontEnd of an application that uses WordPress as a Headless CMS. 
+This repo contains the front-end of an application that uses WordPress as a Headless CMS — as well as my handrolled `common-components` library, and several experiments.
 
 ## Built With
 
-- React (Next.js)
-- WordPress
+- React + Next.js
+- WordPress API
 - Storybook
 
 ## Getting Started
