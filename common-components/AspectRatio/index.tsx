@@ -4,9 +4,14 @@ import { AspectRatioInner, StyledAspectRatio } from './styles';
 interface AspectRatioProps {
   children: ReactNode;
   ratio?: number;
+  style?: any;
 }
-export const AspectRatio = ({ children, ratio = 1 }: AspectRatioProps) => (
-  <StyledAspectRatio ratio={ratio}>
+export const AspectRatio = ({
+  children,
+  ratio = 1,
+  ...restProps
+}: AspectRatioProps) => (
+  <StyledAspectRatio ratio={ratio} {...restProps}>
     <AspectRatioInner>{children}</AspectRatioInner>
   </StyledAspectRatio>
 );

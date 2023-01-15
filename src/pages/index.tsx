@@ -9,16 +9,21 @@ import { Heading } from '../../common-components/Heading';
 import { FeaturedPost } from '../components/FeaturedPost';
 import { FilterableList } from '../../common-components/FilterableList';
 import { Outdent } from '../../common-components/Outdent';
-import { Placeholder } from '../../common-components/Placeholder';
+import { Skeleton } from '../../common-components/Skeleton';
 import { PageShell } from '../components/PageShell';
 import { FEATURED_CATEGORY_ID } from '../lib/constants';
-import { breakpoints, colors, spacing } from '../../common-components/design-tokens';
+import {
+  breakpoints,
+  colors,
+  spacing,
+} from '../../common-components/design-tokens';
 import { useStorageDarkMode } from '../../common-components/storage-dark-mode-context';
 import { useMediaQueries } from '../../common-components/media-queries-context';
+import { HomeSkeletonBannerAspectRatio, HomeSkeletonPlainGrid } from '../components/PageShell/styles';
 
 const Featured = ({ bannerPosts, categories, featuredPosts }) => {
   const { isDarkMode } = useStorageDarkMode();
-  const { xsMax } = useMediaQueries();
+  const { xsMax, smMax } = useMediaQueries();
 
   return (
     <>
@@ -41,19 +46,26 @@ const Featured = ({ bannerPosts, categories, featuredPosts }) => {
         {bannerPosts.length > 0 ? (
           <Banner slides={bannerPosts} />
         ) : (
-          <Placeholder height={450} />
+          <HomeSkeletonBannerAspectRatio ratio={smMax ? 16 / 9 : 2.35 / 1}>
+            <Skeleton
+              color={isDarkMode ? colors.grayDark : colors.grayLighter}
+              height={425}
+              rounded
+            />
+          </HomeSkeletonBannerAspectRatio>
         )}
 
-        {featuredPosts.length > 0 ? (
-          <>
-            <div>
-              <Heading
-                color={isDarkMode ? colors.white : colors.grayDarker}
-                size={2}
-              >
-                Highlighted Articles
-              </Heading>
-            </div>
+        <>
+          <div>
+            <Heading
+              color={isDarkMode ? colors.white : colors.grayDarker}
+              size={2}
+            >
+              Highlighted Articles
+            </Heading>
+          </div>
+
+          {featuredPosts.length > 0 ? (
             <Outdent horizontal={5}>
               <FilterableList
                 allCategoryId={FEATURED_CATEGORY_ID}
@@ -67,10 +79,22 @@ const Featured = ({ bannerPosts, categories, featuredPosts }) => {
                 ))}
               </FilterableList>
             </Outdent>
-          </>
-        ) : (
-          <Placeholder height={300} topMargin={125} />
-        )}
+          ) : (
+            <HomeSkeletonPlainGrid
+              gap={spacing.x4}
+              min={xsMax ? breakpoints.xsMax : '186px'}
+            >
+              {[...Array(10)].map((_, i) => (
+                <Skeleton
+                  color={isDarkMode ? colors.grayDark : colors.grayLighter}
+                  height={385}
+                  key={i}
+                  rounded
+                />
+              ))}
+            </HomeSkeletonPlainGrid>
+          )}
+        </>
       </PageShell>
     </>
   );
@@ -78,9 +102,9 @@ const Featured = ({ bannerPosts, categories, featuredPosts }) => {
 
 // This also gets called at build time
 export const getStaticProps = async () => {
-  const bannerPosts = await getBannerPostsFromServer() || [];
-  const featuredPosts = await getFeaturedPostsFromServer() || [];
-  const categories = await getFeaturedCategoriesFromServer() || [];
+  const bannerPosts = (await getBannerPostsFromServer()) || [];
+  const featuredPosts = (await getFeaturedPostsFromServer()) || [];
+  const categories = (await getFeaturedCategoriesFromServer()) || [];
 
   return {
     props: {

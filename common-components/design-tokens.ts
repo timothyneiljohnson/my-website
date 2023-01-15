@@ -125,11 +125,14 @@ const animation = {
   },
   keyframes: {
     backgroundPosition: keyframes`
-      from {
+      0% {
         background-position: 100%;
       }
-      to {
+      50% {
         background-position: 0%;
+      }
+      100% {
+        background-position: 100%;
       }
     `,
     emphasisGrowAndRotate: keyframes`

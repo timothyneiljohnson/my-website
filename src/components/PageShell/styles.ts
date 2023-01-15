@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { AspectRatio } from '../../../common-components/AspectRatio';
 import {
   colors,
   decorations,
@@ -7,6 +8,7 @@ import {
   spacing,
 } from '../../../common-components/design-tokens';
 import { Image } from '../../../common-components/Image';
+import { PlainGrid } from '../../../common-components/PlainGrid';
 import { Transition } from '../../../common-components/Transition';
 
 interface StyledMainProps {
@@ -298,4 +300,12 @@ export const StyledImage = styled(Image)`
     object-fit: cover;
     object-position: top;
   }
+`;
+
+export const HomeSkeletonBannerAspectRatio = styled(AspectRatio)`
+  margin-bottom: 55px;
+`;
+
+export const HomeSkeletonPlainGrid = styled(PlainGrid)`
+  margin-top: 75px;
 `;
