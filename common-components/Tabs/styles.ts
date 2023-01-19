@@ -19,7 +19,7 @@ export const TabButton = styled.button`
   margin: ${spacing.x2} ${spacing.x2};
   padding: ${spacing.x1} ${spacing.x2};
   &:focus {
-    ${focusStyle.default};
+    ${focusStyle.default}
   }
 `;
 

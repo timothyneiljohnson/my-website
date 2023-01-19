@@ -40,17 +40,13 @@ export const Toast = ({
   title,
   type,
 }: ToastProps) => {
-  const onClose = useCallback(() => {
-    onCloseCallback();
-  }, [onCloseCallback]);
-
   const onKeyDownCallback = useCallback(
     (event) => {
       if (event.key === 'Escape') {
-        onClose();
+        onCloseCallback();
       }
     },
-    [onClose]
+    [onCloseCallback]
   );
 
   let accentValue = accent;
@@ -110,7 +106,10 @@ export const Toast = ({
               </Col>
             )}
             <Col end flex grow top>
-              <StandardCloseButton direction={direction} onClick={onClose}>
+              <StandardCloseButton
+                direction={direction}
+                onClick={onCloseCallback}
+              >
                 {customClose ?? (
                   <CloseIcon
                     fill={colors.grayDarker}

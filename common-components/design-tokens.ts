@@ -97,6 +97,9 @@ const focusStyle = {
     outline: ${colors.grayLight} dashed 1px;
     outline-offset: 2px;
   `,
+  tight: `
+    outline: ${colors.grayLight} dashed 1px;
+  `,
   // Safari cannot easily do rounded outlines
   withRadius: (radius = 6) => `
     position: relative;
