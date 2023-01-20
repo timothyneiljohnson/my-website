@@ -14,9 +14,10 @@ import { useMediaQueries } from '../../../common-components/media-queries-contex
 
 interface FeaturedPostProps {
   post: any;
+  style?: any;
 }
 
-export const FeaturedPost = ({ post }: FeaturedPostProps) => {
+export const FeaturedPost = ({ post, ...restProps }: FeaturedPostProps) => {
   const { isDarkMode } = useStorageDarkMode();
   const title = post.title.rendered;
   const highlightImageUrl = post.acf.highlight_image;
@@ -24,7 +25,7 @@ export const FeaturedPost = ({ post }: FeaturedPostProps) => {
 
   return (
     <NextLink href={`/post/${post.id}`} legacyBehavior passHref>
-      <FeaturedPostWrapper isDarkMode={isDarkMode}>
+      <FeaturedPostWrapper isDarkMode={isDarkMode} {...restProps}>
         <ViewThisFeatureWrapper>
           <FeaturedPostImage
             alt={title}

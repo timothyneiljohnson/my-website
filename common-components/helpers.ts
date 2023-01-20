@@ -76,3 +76,29 @@ export const debounce = (func, duration = 500) => {
     }, duration);
   };
 };
+
+export const findClosestNumberLessThan = (array: number[], num: number) => {
+  let closestNum = null;
+
+  array.reduce((prev, curr) => {
+    if (curr <= num && Math.abs(curr - num) < Math.abs(prev - num)) {
+      closestNum = curr;
+    }
+    return closestNum;
+  });
+
+  return closestNum;
+};
+
+export const findClosestNumberMoreThan = (array: number[], num: number) => {
+  let closestNum = null;
+
+  array.reduce((prev, curr) => {
+    if (curr >= num && Math.abs(curr - num) < Math.abs(prev - num)) {
+      closestNum = curr;
+    }
+    return closestNum;
+  });
+
+  return closestNum;
+};
