@@ -10,6 +10,7 @@ interface IconProps {
   rotate?: number;
   size?: number;
   src?: string;
+  style?: any;
   width?: number;
 }
 
@@ -23,6 +24,7 @@ export const Icon = ({
   rotate,
   size,
   src,
+  style,
   width,
 }: IconProps) => {
   const heightValue = size ?? height;
@@ -39,6 +41,7 @@ export const Icon = ({
       rotate={rotate}
       size={size}
       src={srcValue}
+      style={style}
       width={widthValue}
     />
   );

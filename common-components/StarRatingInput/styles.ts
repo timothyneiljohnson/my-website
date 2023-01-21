@@ -6,6 +6,7 @@ export const StyledStarRatingInput = styled.div`
 
   &:hover label {
     opacity: 1;
+    cursor: pointer;
   }
 `;
 

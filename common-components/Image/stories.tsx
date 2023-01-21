@@ -20,7 +20,7 @@ export const Default = ({ height, width, noFadeIn, round, src }) => (
 Default.args = {
   height: 569,
   width: 380,
-  src: '/athens.jpg',
+  src: '/image-assets/photo-gallery/3.jpg',
 };
 Default.decorators = globalDecorators;
 
@@ -38,6 +38,6 @@ Round.args = {
   height: 569,
   round: true,
   width: 380,
-  src: '/athens.jpg',
+  src: '/image-assets/photo-gallery/3.jpg',
 };
 Round.decorators = globalDecorators;

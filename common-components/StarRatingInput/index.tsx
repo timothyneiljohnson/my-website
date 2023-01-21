@@ -31,7 +31,7 @@ export const StarRatingInput = ({
   rating,
   size = 'md',
 }: StarRatingInputProps) => (
-  <StyledStarRatingInput>
+  <StyledStarRatingInput style={{ minWidth: starSizes[size] * 5 }}>
     {[...Array(5)].map((_, i) => (
       <Icon fill={color} key={i} name="star-outline" size={starSizes[size]} />
     ))}

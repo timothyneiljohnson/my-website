@@ -52,4 +52,4 @@ const Pagination = ({ totalPages, currentPage }) => {
   );
 };
 
-export default Pagination;
+export { Pagination };
