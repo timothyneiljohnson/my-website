@@ -12,9 +12,10 @@ export const StyledFooter = styled.footer<StyledFooterProps>`
 
 interface FooterInnerProps {
   isDarkMode?: boolean;
+  isFullWidth?: boolean;
 }
 export const FooterInner = styled.div<FooterInnerProps>`
-  max-width: 1000px;
+  ${({ isFullWidth }) => !isFullWidth && 'max-width: 1000px;'};
   width: 100%;
   margin: 0 auto;
 

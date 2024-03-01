@@ -1,19 +1,23 @@
 import NextLink from 'next/link';
-import { HeaderFooterContent } from '../HeaderFooterContent';
 import { useStorageDarkMode } from '../../../common-components/storage-dark-mode-context';
+import { HeaderFooterContent } from '../HeaderFooterContent';
 import { FooterBottom, FooterInner, StyledFooter } from './styles';
 
 interface FooterProps {
   handleOpenProfileDrawer: () => void;
+  isFullWidth?: boolean;
 }
 
-export const Footer = ({ handleOpenProfileDrawer }: FooterProps) => {
+export const Footer = ({
+  handleOpenProfileDrawer,
+  isFullWidth,
+}: FooterProps) => {
   const { isDarkMode } = useStorageDarkMode();
   const year = new Date().getFullYear();
 
   return (
     <StyledFooter isDarkMode={isDarkMode}>
-      <FooterInner isDarkMode={isDarkMode}>
+      <FooterInner isDarkMode={isDarkMode} isFullWidth={isFullWidth}>
         <HeaderFooterContent
           handleOpenProfileDrawer={handleOpenProfileDrawer}
         />
@@ -24,10 +28,8 @@ export const Footer = ({ handleOpenProfileDrawer }: FooterProps) => {
           </p>
           <p>
             🛠
-            <span className="h-sr-only">Tech stack</span>
-            : Vercel, React/NextJS,
-            WP API. See my
-            {' '}
+            <span className="h-sr-only">Tech stack</span>: Vercel, React/NextJS,
+            WP API. See my{' '}
             <NextLink href="https://storybook.timothyneil.com" target="_blank">
               live Storybook
             </NextLink>

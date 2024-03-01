@@ -106,7 +106,7 @@ export const PageShell = ({ children, isFullWidth }: PageShellProps) => {
         ref={focusRef}
       />
       <StyledMain isFullWidth={isFullWidth}>{children}</StyledMain>
-      <Footer handleOpenProfileDrawer={handleOpenProfileDrawer} />
+      <Footer handleOpenProfileDrawer={handleOpenProfileDrawer} isFullWidth={isFullWidth} />
       <BackToTop in={showBackToTop}>
         <BackToTopButton onClick={handleScrollToTop}>
           <Icon
