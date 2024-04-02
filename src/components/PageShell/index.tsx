@@ -123,7 +123,7 @@ export const PageShell = ({ children, isFullWidth }: PageShellProps) => {
         <DynamicModalDrawer
           background={isDarkMode ? '#303438' : colors.grayLightest}
           closeType="floating"
-          customClose={
+          customClose={(
             <Button
               bgColor={isDarkMode ? colors.grayLight : colors.white}
               borderColor={isDarkMode ? colors.grayLight : colors.grayLightest}
@@ -133,7 +133,7 @@ export const PageShell = ({ children, isFullWidth }: PageShellProps) => {
             >
               Close profile
             </Button>
-          }
+          )}
           direction="top"
           isOpen={isModalOpen}
           onCloseCallback={onCloseCallback}
