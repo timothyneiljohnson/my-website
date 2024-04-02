@@ -95,7 +95,7 @@ export const StyledBannerControl = styled.button<StyledBannerControlProps>`
   ${({ isActive }) =>
     !isActive &&
     `
-    box-shadow: inset 0 0 4px 1.5px ${colors.grayLighter};
+    box-shadow: inset 0 0 4px 1.5px #ccc;
     transition: filter ${animation.durations.faster}ms ease-in-out;
     &:hover {
       ${decorations.buttons.hoverFilterStyle}

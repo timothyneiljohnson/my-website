@@ -10,6 +10,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   gradientEnd?: string;
   pointerGradient?: boolean;
   href?: string;
+  isRound?: boolean;
   target?: string;
   textColor?: string;
   topMargin?: number;

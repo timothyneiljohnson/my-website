@@ -9,8 +9,8 @@ const colors = {
   quinary: '#fa9284',
   white: '#fff',
   grayLightest: '#efefef',
-  grayLighter: '#ccc',
-  grayLight: '#999',
+  grayLighter: '#ddd',
+  grayLight: '#8a939d',
   grayDark: '#666',
   grayDarker: '#333',
   grayDarkest: '#222',
@@ -75,7 +75,7 @@ const gradients = {
 };
 
 const decorations = {
-  borderRadiusStyle: 'border-radius: 6px;',
+  borderRadiusStyle: 'border-radius: 10px;',
   buttons: {
     borderRadiusStyle: 'border-radius: 8px;',
     hoverFilterStyle: 'filter: brightness(95%);',
@@ -269,8 +269,8 @@ const breakpoints = {
   lgMax: '1199px',
   lg: '992px',
   mdMax: '991px',
-  md: '668px',
-  smMax: '667px',
+  md: '721px',
+  smMax: '720px',
   sm: '480px',
   xsMax: '479px',
   xs: 0,

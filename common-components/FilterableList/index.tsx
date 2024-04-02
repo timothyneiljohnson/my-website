@@ -32,7 +32,8 @@ export const FilterableList = ({
   const [foreshadowMap, setForeshadowMap] = useState({});
   const [startingPositionsMap, setStartingPositionsMap] = useState({});
   const [startingContainerHeight, setStartingContainerHeight] = useState(null);
-  const [foreshadowContainerHeight, setForeshadowContainerHeight] = useState(null);
+  const [foreshadowContainerHeight, setForeshadowContainerHeight] =
+    useState(null);
   const [isAnimating, setIsAnimating] = useState(false);
   const listBaseRef = useRef(null);
   const foreshadowRef = useRef(null);
@@ -156,7 +157,7 @@ export const FilterableList = ({
         isAnimating={isAnimating}
         onAnimationEnd={onAnimationEnd}
         ref={listBaseRef}
-        startingHeight={startingContainerHeight} 
+        startingHeight={startingContainerHeight}
       >
         {listItems}
       </FilterableItemsContainer>

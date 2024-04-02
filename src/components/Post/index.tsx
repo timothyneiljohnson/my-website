@@ -101,7 +101,7 @@ export const Post = ({ post }) => {
                     </TeardropCategoryWrapper>
                   )}
                   <PostHeading
-                    color={isDarkMode ? colors.white : colors.grayDarkest}
+                    color={isDarkMode ? colors.white : colors.grayDarker}
                     level={2}
                     size={postHeadingSize}
                   >

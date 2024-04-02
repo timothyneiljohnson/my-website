@@ -112,19 +112,23 @@ export const ProfilePulldownContent: FC = () => {
             </SkillsWrapper>
             <BioCallToActionWrapper>
               <Button
+                bgColor={isDarkMode ? colors.grayLight : colors.white}
+                borderColor={isDarkMode ? colors.grayLight : colors.grayLighter}
                 href="mailto:timothyneiljohnson@gmail.com"
+                pill
                 size={smMax ? 'sm' : 'md'}
-                variant="default"
+                textColor={isDarkMode ? colors.white : colors.grayDarker}
               >
-                Get In Touch
+                Get in touch
               </Button>
               <Button
                 href="https://tinyurl.com/timothy-j-resume"
+                pill
                 size={smMax ? 'sm' : 'md'}
                 target="_blank"
                 variant="primary"
               >
-                My Resume
+                My resume
               </Button>
             </BioCallToActionWrapper>
           </Col>

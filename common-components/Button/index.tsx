@@ -1,9 +1,4 @@
-import {
-  cloneElement,
-  forwardRef,
-  useCallback,
-  useState,
-} from 'react';
+import { cloneElement, forwardRef, useCallback, useState } from 'react';
 import { useStorageDarkMode } from '../storage-dark-mode-context';
 import { animation, buttons, colors } from '../design-tokens';
 import {
@@ -43,6 +38,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       fullWidth,
       gradientEnd,
       gradientStart,
+      isRound,
       pointerGradient,
       size = 'md',
       ...restProps
@@ -127,6 +123,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             gradientEnd={gradientEnd}
             gradientStart={gradientStart}
             hasDropdown={hasDropdown}
+            isRound={isRound}
             onMouseMove={handleMouseMove}
             pointerGradient={pointerGradient}
             ref={ref}
@@ -178,6 +175,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             gradientEnd={gradientEnd}
             gradientStart={gradientStart}
             hasDropdown={hasDropdown}
+            isRound={isRound}
             onMouseMove={handleMouseMove}
             pointerGradient={pointerGradient}
             ref={ref}
@@ -199,6 +197,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
                   flex
                   grow
                   hasGradient={hasGradient}
+                  isRound={isRound}
                   middle
                 >
                   {children}

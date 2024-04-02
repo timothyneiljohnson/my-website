@@ -25,7 +25,7 @@ export const ProfileDescription = styled.div<ProfileDescriptionProps>`
 
 export const BioCallToActionWrapper = styled.ul`
   display: flex;
-  column-gap: ${spacing.x3};
+  column-gap: 10px;
   padding-top: ${spacing.x6};
 
   @media ${mediaQueries.smMax} {

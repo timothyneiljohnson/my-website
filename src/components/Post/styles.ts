@@ -38,7 +38,6 @@ export const PostBody = styled.div<PostBodyProps>`
 `;
 
 export const PostHeading = styled(Heading)`
-  text-transform: uppercase;
   word-break: break-word;
 
   @media ${mediaQueries.smMax} {
@@ -82,10 +81,9 @@ export const Day = styled.div`
 export const Month = styled.div`
   font-weight: bold;
   text-shadow: 0 -1px 0px ${colors.grayDark};
-  text-transform: uppercase;
-  font-size: 12px;
+  font-size: 14px;
+  line-height: 15px;
   text-align: center;
-  text-transform: uppercase;
   width: 100%;
   float: left;
 `;

@@ -1,5 +1,4 @@
 import { forwardRef, useCallback } from 'react';
-import NextLink from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from '../../../common-components/Button';
 import { Icon } from '../../../common-components/Icon';
@@ -25,58 +24,67 @@ export const Nav = forwardRef<HTMLButtonElement, NavProps>(
       toggleDarkMode();
     }, [toggleDarkMode]);
 
+    const buttonBGColor = isDarkMode ? colors.grayLight : colors.white;
+    const buttonBorderColor = isDarkMode
+      ? colors.grayLight
+      : colors.grayLighter;
+
     return (
       <MainNavList>
         <MainNavListItem>
-          <NextLink href="/" passHref>
-            <Button
-              aria-current={isHome ? 'page' : null}
-              gradientEnd={isHome ? gradients.primary.end : null}
-              gradientStart={isHome ? gradients.primary.start : null}
-              pill
-              pointerGradient={isHome && md}
-              size={navButtonSize}
-              textColor={isHome || isDarkMode ? colors.white : null}
-              variant={isHome ? null : 'default'}
-            >
-              Work
-            </Button>
-          </NextLink>
+          <Button
+            aria-current={isHome ? 'page' : null}
+            bgColor={`${isHome ? null : buttonBGColor}`}
+            borderColor={`${isHome ? null : buttonBorderColor}`}
+            gradientEnd={isHome ? gradients.primary.end : null}
+            gradientStart={isHome ? gradients.primary.start : null}
+            href="/"
+            pill
+            pointerGradient={isHome && md}
+            size={navButtonSize}
+            textColor={isHome || isDarkMode ? colors.white : null}
+          >
+            Highlights
+          </Button>
         </MainNavListItem>
         <MainNavListItem>
-          <NextLink href="/blog" passHref>
-            <Button
-              aria-current={isBlog ? 'page' : null}
-              gradientEnd={isBlog ? gradients.primary.end : null}
-              gradientStart={isBlog ? gradients.primary.start : null}
-              pill
-              pointerGradient={isBlog && md}
-              size={navButtonSize}
-              textColor={isBlog || isDarkMode ? colors.white : null}
-              variant={isBlog ? null : 'default'}
-            >
-              Blog
-            </Button>
-          </NextLink>
+          <Button
+            aria-current={isBlog ? 'page' : null}
+            bgColor={`${isBlog ? null : buttonBGColor}`}
+            borderColor={`${isBlog ? null : buttonBorderColor}`}
+            gradientEnd={isBlog ? gradients.primary.end : null}
+            gradientStart={isBlog ? gradients.primary.start : null}
+            href="/blog"
+            pill
+            pointerGradient={isBlog && md}
+            size={navButtonSize}
+            textColor={isBlog || isDarkMode ? colors.white : null}
+          >
+            Blog
+          </Button>
         </MainNavListItem>
         <MainNavListItem>
           <Button
             aria-label="Profile - shows more content"
+            bgColor={buttonBGColor}
+            borderColor={buttonBorderColor}
             onClick={handleOpenProfileDrawer}
             pill
             ref={ref}
             size={navButtonSize}
-            variant="default"
+            textColor={isDarkMode ? colors.white : colors.grayDarker}
           >
             Profile
           </Button>
         </MainNavListItem>
         <MainNavListItem>
           <Button
+            bgColor={buttonBGColor}
+            borderColor={buttonBorderColor}
+            isRound
             onClick={handleDarkModeToggle}
             pill
             size={navButtonSize}
-            variant="default"
           >
             <span className="h-sr-only">
               {isDarkMode ? 'Enable light mode' : 'Enable dark mode'}
@@ -85,13 +93,13 @@ export const Nav = forwardRef<HTMLButtonElement, NavProps>(
               <Icon
                 fill={`${isDarkMode ? colors.white : colors.grayDarkest}`}
                 name="sunny"
-                size={xsMax ? 17 : 20}
+                size={xsMax ? 12.5 : 19}
               />
             ) : (
               <Icon
                 fill={`${isDarkMode ? colors.white : colors.primary}`}
                 name="moon"
-                size={xsMax ? 17 : 20}
+                size={xsMax ? 12.5 : 19}
               />
             )}
           </Button>

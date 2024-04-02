@@ -31,6 +31,7 @@ interface StyledButtonProps {
   hasDropdown?: boolean;
   gradientStart?: string;
   gradientEnd?: string;
+  isRound?: boolean;
   pointerGradient?: boolean;
   textColor?: string;
   topMargin?: number;
@@ -47,8 +48,8 @@ export const StyledButton = styled.button<StyledButtonProps>`
   column-gap: ${spacing.x2};
   z-index: 0;
   ${({ size }) => size === 'xs' && 'font-size: 12px;'}
-  ${({ size }) => size === 'sm' && 'font-size: 14px;'}
-  ${({ size }) => size === 'md' && 'font-size: 16px;'}
+  ${({ size }) => size === 'sm' && 'font-size: 13px;'}
+  ${({ size }) => size === 'md' && 'font-size: 15px;'}
   ${({ size }) => size === 'lg' && 'font-size: 18px;'}
   ${({ size }) => size === 'xl' && 'font-size: 20px;'}
   font-weight: bold;
@@ -99,7 +100,6 @@ export const StyledButton = styled.button<StyledButtonProps>`
   &:active {
     ${({ pill }) =>
       pill ? focusStyle.withRadius(9999) : focusStyle.withRadius(8)}
-    text-decoration: underline;
   }
 
   &:disabled {
@@ -120,21 +120,23 @@ export const StyledLinkAsButton = styled(StyledButton).attrs({
 interface ButtonContentColProps {
   buttonSize: StandardSizes;
   hasGradient?: boolean;
+  isRound?: boolean;
 }
 export const ButtonContentCol = styled(Col)<ButtonContentColProps>`
   ${({ buttonSize }) => css`
-    ${buttonSize === 'xs' && 'padding: 6px 10px;'}
-    ${buttonSize === 'sm' && 'padding: 8px 12px;'}
-    ${buttonSize === 'md' && 'padding: 10px 14px;'}
+    ${buttonSize === 'xs' && 'padding: 7px 11px;'}
+    ${buttonSize === 'sm' && 'padding: 7.5px 11.5px;'}
+    ${buttonSize === 'md' && 'padding: 9.5px 13.5px;'}
     ${buttonSize === 'lg' && 'padding: 12px 18px;'}
     ${buttonSize === 'xl' && 'padding: 14px 24px;'}
   `}
+  ${({ isRound }) => isRound && 'padding: 9px;'}
   ${({ buttonSize, hasGradient }) =>
     hasGradient &&
     css`
       ${buttonSize === 'xs' && 'padding: 7px 11px;'}
-      ${buttonSize === 'sm' && 'padding: 9px 13px;'}
-      ${buttonSize === 'md' && 'padding: 11px 15px;'}
+      ${buttonSize === 'sm' && 'padding: 8.5px 12.5px;'}
+      ${buttonSize === 'md' && 'padding: 10.5px 14.5px;'}
       ${buttonSize === 'lg' && 'padding: 13px 19px;'}
       ${buttonSize === 'xl' && 'padding: 15px 25px;'}
     `}

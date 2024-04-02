@@ -18,7 +18,7 @@ export const FilterListWrapper = styled.div`
 
 export const FilterListItemStyled = styled.li`
   display: inline-block;
-  margin: 0 ${spacing.x3} 0 0;
+  margin: 0 ${spacing.x2} 0 0;
 `;
 
 export const HiddenForeshadow = styled.div`
@@ -44,7 +44,7 @@ export const FilterableItemsContainer = styled.div<FilterableItemsContainerProps
   ${({ isAnimating, startingHeight, endingHeight }) =>
     isAnimating &&
     startingHeight !== null &&
-    endingHeight !== null && 
+    endingHeight !== null &&
     css`
       height: ${Math.max(startingHeight, endingHeight)}px;
       overflow: hidden;
@@ -52,8 +52,9 @@ export const FilterableItemsContainer = styled.div<FilterableItemsContainerProps
         animation: ${animation.keyframes.changeHeight(
             Math.max(startingHeight, endingHeight),
             endingHeight
-          )} ${animation.durations.fast}ms ${animation.durations.faster}ms ease-in-out forwards;
+          )}
+          ${animation.durations.fast}ms ${animation.durations.faster}ms
+          ease-in-out forwards;
       `}
-    `
-  }
+    `}
 `;

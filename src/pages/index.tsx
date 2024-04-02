@@ -19,7 +19,10 @@ import {
 } from '../../common-components/design-tokens';
 import { useStorageDarkMode } from '../../common-components/storage-dark-mode-context';
 import { useMediaQueries } from '../../common-components/media-queries-context';
-import { HomeSkeletonBannerAspectRatio, HomeSkeletonPlainGrid } from '../components/PageShell/styles';
+import {
+  HomeSkeletonBannerAspectRatio,
+  HomeSkeletonPlainGrid,
+} from '../components/PageShell/styles';
 
 const Featured = ({ bannerPosts, categories, featuredPosts }) => {
   const { isDarkMode } = useStorageDarkMode();
@@ -61,7 +64,7 @@ const Featured = ({ bannerPosts, categories, featuredPosts }) => {
               color={isDarkMode ? colors.white : colors.grayDarker}
               size={2}
             >
-              Highlighted Articles
+              Highlighted articles
             </Heading>
           </div>
 

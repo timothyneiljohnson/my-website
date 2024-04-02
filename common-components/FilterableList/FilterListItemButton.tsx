@@ -18,8 +18,8 @@ export const FilterListItemButton = ({
 }: FilterListItemLinkProps) => {
   const { isDarkMode } = useStorageDarkMode();
 
-  let bgColor = isDarkMode ? colors.grayDark : colors.white;
-  let borderColor;
+  let bgColor = isDarkMode ? colors.grayLight : colors.white;
+  let borderColor = isDarkMode ? colors.grayLight : colors.grayLighter;
   let textColor = isDarkMode ? colors.white : colors.grayDarker;
   if (isSelected) {
     bgColor = colors.tertiary;
@@ -34,9 +34,9 @@ export const FilterListItemButton = ({
       gradientEnd={isSelected && isDarkMode ? gradients.quinary.end : null}
       gradientStart={isSelected && isDarkMode ? gradients.quinary.start : null}
       onClick={() => onFilterCallback(categoryId)}
+      pill
       size="sm"
       textColor={textColor}
-      variant={isSelected ? null : 'default'}
     >
       {children}
       {isSelected && <span className="h-sr-only"> - active</span>}

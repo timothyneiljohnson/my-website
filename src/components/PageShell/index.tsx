@@ -106,11 +106,14 @@ export const PageShell = ({ children, isFullWidth }: PageShellProps) => {
         ref={focusRef}
       />
       <StyledMain isFullWidth={isFullWidth}>{children}</StyledMain>
-      <Footer handleOpenProfileDrawer={handleOpenProfileDrawer} isFullWidth={isFullWidth} />
+      <Footer
+        handleOpenProfileDrawer={handleOpenProfileDrawer}
+        isFullWidth={isFullWidth}
+      />
       <BackToTop in={showBackToTop}>
         <BackToTopButton onClick={handleScrollToTop}>
           <Icon
-            fill={isDarkMode ? colors.white : colors.grayDark}
+            fill={isDarkMode ? colors.white : colors.tertiary}
             name="arrow-up-circle"
             size={40}
           />
@@ -118,9 +121,19 @@ export const PageShell = ({ children, isFullWidth }: PageShellProps) => {
       </BackToTop>
       {isModalDisplayed && (
         <DynamicModalDrawer
-          background={isDarkMode ? colors.grayDarker : colors.grayLightest}
+          background={isDarkMode ? '#2A2E33' : colors.grayLightest}
           closeType="floating"
-          customClose={<Button size="sm" variant="default">Close Profile</Button>}
+          customClose={
+            <Button
+              bgColor={isDarkMode ? colors.grayLight : colors.white}
+              borderColor={isDarkMode ? colors.grayLight : colors.grayLightest}
+              pill
+              size="xs"
+              textColor={isDarkMode ? colors.white : colors.grayDarker}
+            >
+              Close profile
+            </Button>
+          }
           direction="top"
           isOpen={isModalOpen}
           onCloseCallback={onCloseCallback}

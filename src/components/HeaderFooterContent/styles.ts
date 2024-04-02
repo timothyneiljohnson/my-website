@@ -1,14 +1,19 @@
 import styled from 'styled-components';
-import { mediaQueries, spacing } from '../../../common-components/design-tokens';
+import {
+  mediaQueries,
+  spacing,
+} from '../../../common-components/design-tokens';
 
 export const MainNavList = styled.ul`
   margin: ${spacing.x2} 0;
   right: 0;
+  white-space: nowrap;
 `;
 
 export const MainNavListItem = styled.li`
-  float: left;
-  margin-right: ${spacing.x3};
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: middle;
 
   @media ${mediaQueries.xsMax} {
     margin-right: ${spacing.x2};

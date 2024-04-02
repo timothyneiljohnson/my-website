@@ -9,7 +9,7 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
     transition: background ${animation.durations.fastest}ms ease;
     background: ${({ isDarkMode }) =>
       isDarkMode
-        ? `${colors.grayDark} url(/bg-darkmode.jpg) repeat`
+        ? `#515961 url(/bg-darkmode.jpg) repeat`
         : `${colors.grayLightest} url(/bg.png) repeat`};
   }
 

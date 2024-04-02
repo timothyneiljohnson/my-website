@@ -15,7 +15,7 @@ interface FeaturedPostHeadingProps {
   isDarkMode?: boolean;
 }
 export const FeaturedPostHeading = styled(Heading)<FeaturedPostHeadingProps>`
-  color: ${colors.grayDarkest};
+  color: ${colors.grayDarker};
   margin-top: 0;
 
   ${({ isDarkMode }) =>
@@ -37,12 +37,12 @@ export const FeaturedPostImage = styled(Image).withConfig({
 })<FeaturedPostImageProps>`
   height: 230px;
   width: 100%;
-  border-radius: 6px 6px 0 0;
+  border-radius: 10px 10px 0 0;
   background-color: ${({ isDarkMode }) =>
     isDarkMode ? colors.grayDarker : colors.white};
 
   @media ${mediaQueries.xsMax} {
-    border-radius: 6px 0 0 6px;
+    border-radius: 10px 0 0 10px;
     height: 124px;
     width: 100px;
   }
@@ -110,7 +110,7 @@ interface FeaturedPostWrapperProps {
 export const FeaturedPostWrapper = styled.a<FeaturedPostWrapperProps>`
   display: flex;
   flex-direction: column;
-  height: 375px;
+  height: 345px;
   position: relative;
   margin: 5px;
   background-color: ${colors.white};
@@ -126,7 +126,7 @@ export const FeaturedPostWrapper = styled.a<FeaturedPostWrapperProps>`
   ${({ isDarkMode }) =>
     isDarkMode &&
     css`
-      background-color: ${colors.grayDarker};
+      background-color: #2A2E33;
       background-clip: padding-box;
 
       &:hover {
@@ -179,7 +179,8 @@ export const FeaturedPostWrapper = styled.a<FeaturedPostWrapperProps>`
     transform: scale(0.92);
   }
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     ${decorations.boxShadow.mdStyle}
 
     ${ViewThisFeature} {
