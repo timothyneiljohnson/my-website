@@ -15,7 +15,7 @@ export const Nav = forwardRef<HTMLButtonElement, NavProps>(
   ({ handleOpenProfileDrawer }: NavProps, ref) => {
     const pathname = usePathname() || '';
     const isHome = pathname === '/';
-    const isBlog = pathname === '/blog' || pathname?.startsWith('/post');
+    const isJournal = pathname === '/journal' || pathname?.startsWith('/post');
     const { isDarkMode, toggleDarkMode } = useStorageDarkMode();
     const { xsMax, md } = useMediaQueries();
     const navButtonSize = xsMax ? 'sm' : 'md';
@@ -49,18 +49,18 @@ export const Nav = forwardRef<HTMLButtonElement, NavProps>(
         </MainNavListItem>
         <MainNavListItem>
           <Button
-            aria-current={isBlog ? 'page' : null}
-            bgColor={`${isBlog ? null : buttonBGColor}`}
-            borderColor={`${isBlog ? null : buttonBorderColor}`}
-            gradientEnd={isBlog ? gradients.primary.end : null}
-            gradientStart={isBlog ? gradients.primary.start : null}
-            href="/blog"
+            aria-current={isJournal ? 'page' : null}
+            bgColor={`${isJournal ? null : buttonBGColor}`}
+            borderColor={`${isJournal ? null : buttonBorderColor}`}
+            gradientEnd={isJournal ? gradients.primary.end : null}
+            gradientStart={isJournal ? gradients.primary.start : null}
+            href="/journal"
             pill
-            pointerGradient={isBlog && md}
+            pointerGradient={isJournal && md}
             size={navButtonSize}
-            textColor={isBlog || isDarkMode ? colors.white : null}
+            textColor={isJournal || isDarkMode ? colors.white : null}
           >
-            Blog
+            Journal
           </Button>
         </MainNavListItem>
         <MainNavListItem>

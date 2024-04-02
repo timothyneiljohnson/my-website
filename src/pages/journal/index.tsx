@@ -6,7 +6,7 @@ import { Post } from '../../components/Post';
 import { useStorageDarkMode } from '../../../common-components/storage-dark-mode-context';
 import { colors } from '../../../common-components/design-tokens';
 
-const Blog = ({ posts }) => {
+const Journal = ({ posts }) => {
   const { isDarkMode } = useStorageDarkMode();
   return (
     <>
@@ -63,4 +63,4 @@ export const getStaticProps = async () => {
   };
 };
 
-export default Blog;
+export default Journal;

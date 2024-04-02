@@ -27,7 +27,7 @@ interface StyledPageContainerProps {
 }
 export const StyledPageContainer = styled.div<StyledPageContainerProps>`
   ${({ isDarkMode }) => `
-    background-color: ${isDarkMode ? '#2A2E33' : colors.white};
+    background-color: ${isDarkMode ? '#303438' : colors.white};
     color: ${isDarkMode ? colors.grayLightest : colors.grayDarker};
   `}
   padding: ${spacing.x9};

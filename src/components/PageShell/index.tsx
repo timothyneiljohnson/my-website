@@ -121,7 +121,7 @@ export const PageShell = ({ children, isFullWidth }: PageShellProps) => {
       </BackToTop>
       {isModalDisplayed && (
         <DynamicModalDrawer
-          background={isDarkMode ? '#2A2E33' : colors.grayLightest}
+          background={isDarkMode ? '#303438' : colors.grayLightest}
           closeType="floating"
           customClose={
             <Button

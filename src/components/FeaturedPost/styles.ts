@@ -126,7 +126,7 @@ export const FeaturedPostWrapper = styled.a<FeaturedPostWrapperProps>`
   ${({ isDarkMode }) =>
     isDarkMode &&
     css`
-      background-color: #2A2E33;
+      background-color: #303438;
       background-clip: padding-box;
 
       &:hover {

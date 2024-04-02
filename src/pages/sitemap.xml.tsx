@@ -9,7 +9,7 @@ function generateSiteMap(posts) {
        <loc>https://timothyneil.com</loc>
      </url>
      <url>
-       <loc>https://timothyneil.com/blog</loc>
+       <loc>https://timothyneil.com/journal</loc>
      </url>
      ${posts
        .map(

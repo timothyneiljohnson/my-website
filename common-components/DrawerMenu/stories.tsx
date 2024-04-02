@@ -51,7 +51,7 @@ export const Default = ({ size }) => (
                 <Icon fill={colors.grayLighter} name="cog" size={24} />
               </Col>
               <MenuColTitle flex grow middle>
-                Work
+                Highlights
               </MenuColTitle>
             </Row>
           </Grid>
@@ -63,7 +63,7 @@ export const Default = ({ size }) => (
                 <Icon fill={colors.secondary} name="list" size={24} />
               </Col>
               <MenuColTitle flex grow middle>
-                Blog
+                Journal
               </MenuColTitle>
             </Row>
           </Grid>

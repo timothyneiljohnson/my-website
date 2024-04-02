@@ -38,7 +38,7 @@ export const FeaturedPost = ({ post, ...restProps }: FeaturedPostProps) => {
           {sm && (
             <ViewThisFeature isDarkMode={isDarkMode}>
               <ViewThisFeatureText isDarkMode={isDarkMode}>
-                View this feature
+                View this article
               </ViewThisFeatureText>
             </ViewThisFeature>
           )}
