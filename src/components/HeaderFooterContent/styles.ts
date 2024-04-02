@@ -32,18 +32,23 @@ interface LogoLinkProps {
 export const LogoLink = styled.a<LogoLinkProps>`
   font-family: 'Crimson Text', serif;
   font-size: 42px;
+  height: 47px;
+  line-height: 38px;
   letter-spacing: 0.5px;
   color: ${({ isDarkMode }) => (isDarkMode ? colors.white : colors.tertiary)};
-  vertical-align: top;
   max-width: 100%;
-  display: inline-block;
+  display: block;
   outline: none;
-  margin: ${spacing.x1} 0;
+  margin-top: 10px;
   position: relative;
   aspect-ratio: 1507 / 92;
 
   @media ${mediaQueries.mdMax} {
     font-size: 36px;
+  }
+  @media ${mediaQueries.smMax} {
+    text-align: center;
+    height: 38px;
   }
   @media ${mediaQueries.xsMax} {
     font-size: 31px;
