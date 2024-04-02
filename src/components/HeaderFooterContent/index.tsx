@@ -3,7 +3,6 @@ import { forwardRef } from 'react';
 import { Grid } from '../../../common-components/Grid';
 import { Row } from '../../../common-components/Row';
 import { Col } from '../../../common-components/Col';
-import { Image } from '../../../common-components/Image';
 import { useMediaQueries } from '../../../common-components/media-queries-context';
 import { useStorageDarkMode } from '../../../common-components/storage-dark-mode-context';
 import { Nav } from './Nav';
@@ -32,14 +31,12 @@ export const HeaderFooterContent = forwardRef<
           xs={12}
         >
           <NextLink href="/" legacyBehavior passHref>
-            <LogoLink>
-              <Image
-                alt="Timothy Neil Johnson"
-                fill
-                noFadeIn
-                priority
-                src={isDarkMode ? '/name-logo-darkMode.svg' : '/name-logo.svg'}
-              />
+            <LogoLink isDarkMode={isDarkMode}>
+              Timothy
+              {' '}
+              <span>Neil</span>
+              {' '}
+              Johnson
             </LogoLink>
           </NextLink>
         </Col>

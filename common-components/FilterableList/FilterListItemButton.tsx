@@ -22,7 +22,7 @@ export const FilterListItemButton = ({
   let borderColor = isDarkMode ? colors.grayLight : colors.grayLighter;
   let textColor = isDarkMode ? colors.white : colors.grayDarker;
   if (isSelected) {
-    bgColor = colors.tertiary;
+    bgColor = colors.quinary;
     borderColor = isDarkMode ? colors.grayLighter : bgColor;
     textColor = colors.white;
   }
@@ -31,8 +31,8 @@ export const FilterListItemButton = ({
     <Button
       bgColor={bgColor}
       borderColor={borderColor}
-      gradientEnd={isSelected && isDarkMode ? gradients.quinary.end : null}
-      gradientStart={isSelected && isDarkMode ? gradients.quinary.start : null}
+      gradientEnd={isSelected ? gradients.quinary.end : null}
+      gradientStart={isSelected ? gradients.quinary.start : null}
       onClick={() => onFilterCallback(categoryId)}
       pill
       size="sm"

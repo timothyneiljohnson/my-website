@@ -1,7 +1,14 @@
 import styled from 'styled-components';
 import { Icon } from '../../../common-components/Icon';
 import { Image } from '../../../common-components/Image';
-import { animation, colors, focusStyle, gradients, mediaQueries, spacing } from '../../../common-components/design-tokens';
+import {
+  animation,
+  colors,
+  focusStyle,
+  gradients,
+  mediaQueries,
+  spacing,
+} from '../../../common-components/design-tokens';
 
 interface ProfileDescriptionProps {
   isDarkMode?: boolean;
@@ -20,6 +27,7 @@ export const ProfileDescription = styled.div<ProfileDescriptionProps>`
 
   @media ${mediaQueries.smMax} {
     padding: ${spacing.x5} 0;
+    font-size: 15px;
   }
 `;
 
@@ -56,7 +64,8 @@ export const ContactMeLink = styled.a`
   display: flex;
   align-items: center;
 
-  &:focus, &:active {
+  &:focus,
+  &:active {
     ${focusStyle.default}
   }
 
@@ -73,6 +82,17 @@ export const MyNameIs = styled.p`
   font-weight: 500;
   padding-bottom: 0;
   line-height: 1.5;
+
+  background-image: linear-gradient(
+    45deg,
+    ${gradients.secondary.start},
+    ${gradients.secondary.end}
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
 `;
 
 export const ProfilePicture = styled(Image)`
@@ -83,8 +103,8 @@ export const ProfilePicture = styled(Image)`
 export const StyledHeadingContainer = styled.div`
   padding-bottom: ${spacing.x3};
 
-  &:focus{
-    outline: none;   
+  &:focus {
+    outline: none;
   }
 
   @media ${mediaQueries.smMax} {
@@ -94,11 +114,15 @@ export const StyledHeadingContainer = styled.div`
 
 export const SkillsList = styled.span`
   font-weight: bold;
-  background-image: linear-gradient(45deg, ${gradients.primary.start}, ${gradients.primary.end});
+  background-image: linear-gradient(
+    45deg,
+    ${gradients.primary.start},
+    ${gradients.primary.end}
+  );
   background-clip: text;
   -webkit-background-clip: text;
   -moz-background-clip: text;
-  -webkit-text-fill-color: transparent; 
+  -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
 `;
 

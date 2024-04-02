@@ -74,12 +74,12 @@ export const ProfilePulldownContent: FC = () => {
               role="heading"
               tabIndex={-1}
             >
-              <MyNameIs>Hi, my name is</MyNameIs>
+              <MyNameIs>Hi, my name is:</MyNameIs>
               <Heading
                 color={isDarkMode ? colors.grayLightest : colors.grayDarker}
                 level={smMax ? 2 : 1}
               >
-                Tim Johnson.
+                Tim Johnson,
                 <br />
                 Software Engineer
                 {' '}

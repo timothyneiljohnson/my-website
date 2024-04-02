@@ -60,6 +60,13 @@ export const Post = ({ post }) => {
     }
   }
 
+  const buttonGradientStart = isDarkMode
+    ? gradients.secondary.end
+    : gradients.quinary.end;
+  const buttonGradientEnd = isDarkMode
+    ? gradients.secondary.start
+    : gradients.quinary.start;
+
   return (
     <PostWrapper isDarkMode={isDarkMode} ref={ref}>
       <Grid>
@@ -72,8 +79,8 @@ export const Post = ({ post }) => {
               >
                 <StyledRibbon
                   endStyle={isRibbonHovered ? 'point' : 'split'}
-                  gradientEnd={gradients.secondary.end}
-                  gradientStart={gradients.secondary.start}
+                  gradientEnd={buttonGradientEnd}
+                  gradientStart={buttonGradientStart}
                   right={smMax ? 20 : 36}
                   textColor={colors.white}
                   thickness={smMax ? 45 : 62}
@@ -110,7 +117,11 @@ export const Post = ({ post }) => {
                     </NextLink>
                   </PostHeading>
                   {featuredImg && (
-                    <NextLink href={`/article/${post.id}`} legacyBehavior passHref>
+                    <NextLink
+                      href={`/article/${post.id}`}
+                      legacyBehavior
+                      passHref
+                    >
                       <a>
                         <ExcerptImageWrapper>
                           <StyledPostImage
@@ -127,7 +138,11 @@ export const Post = ({ post }) => {
                   <div>
                     <div>{parse(post.excerpt.rendered)}</div>
                     <p>
-                      <NextLink href={`/article/${post.id}`} legacyBehavior passHref>
+                      <NextLink
+                        href={`/article/${post.id}`}
+                        legacyBehavior
+                        passHref
+                      >
                         <Link
                           color={isDarkMode ? colors.secondary : colors.primary}
                           reverseUnderline
@@ -142,9 +157,7 @@ export const Post = ({ post }) => {
             </PostInnerContainer>
           </Col>
           <Col flex md={3} sm={4} xs={12} xsHiddenDown>
-            <StickyElement
-              topOffset={20}
-            >
+            <StickyElement topOffset={20}>
               <PostInfo date={post.date} title={post.title.rendered} />
             </StickyElement>
           </Col>

@@ -28,6 +28,12 @@ export const Nav = forwardRef<HTMLButtonElement, NavProps>(
     const buttonBorderColor = isDarkMode
       ? colors.grayLight
       : colors.grayLighter;
+    const buttonGradientStart = isDarkMode
+      ? gradients.primary.start
+      : gradients.secondary.end;
+    const buttonGradientEnd = isDarkMode
+      ? gradients.primary.end
+      : gradients.secondary.start;
 
     return (
       <MainNavList>
@@ -36,8 +42,8 @@ export const Nav = forwardRef<HTMLButtonElement, NavProps>(
             aria-current={isHome ? 'page' : null}
             bgColor={`${isHome ? null : buttonBGColor}`}
             borderColor={`${isHome ? null : buttonBorderColor}`}
-            gradientEnd={isHome ? gradients.primary.end : null}
-            gradientStart={isHome ? gradients.primary.start : null}
+            gradientEnd={isHome ? buttonGradientEnd : null}
+            gradientStart={isHome ? buttonGradientStart : null}
             href="/"
             pill
             pointerGradient={isHome && md}
@@ -52,8 +58,8 @@ export const Nav = forwardRef<HTMLButtonElement, NavProps>(
             aria-current={isJournal ? 'page' : null}
             bgColor={`${isJournal ? null : buttonBGColor}`}
             borderColor={`${isJournal ? null : buttonBorderColor}`}
-            gradientEnd={isJournal ? gradients.primary.end : null}
-            gradientStart={isJournal ? gradients.primary.start : null}
+            gradientEnd={isJournal ? buttonGradientEnd : null}
+            gradientStart={isJournal ? buttonGradientStart : null}
             href="/journal"
             pill
             pointerGradient={isJournal && md}
