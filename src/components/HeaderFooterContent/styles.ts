@@ -33,7 +33,7 @@ export const LogoLink = styled.a<LogoLinkProps>`
   font-family: 'Crimson Text', serif;
   font-size: 42px;
   letter-spacing: 0.5px;
-  color: ${({ isDarkMode }) => (isDarkMode ? colors.white : '#3D4D75')};
+  color: ${({ isDarkMode }) => (isDarkMode ? colors.white : colors.tertiary)};
   vertical-align: top;
   max-width: 100%;
   display: inline;

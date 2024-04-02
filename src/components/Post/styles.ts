@@ -125,7 +125,7 @@ interface TeardropCategoryWrapperProps {
 export const TeardropCategoryWrapper = styled.div<TeardropCategoryWrapperProps>`
   top: ${spacing.x8};
   position: absolute;
-  background-color: ${colors.grayDarkest};
+  background-color: ${colors.tertiary};
   align-items: center;
   display: flex;
   justify-content: center;
