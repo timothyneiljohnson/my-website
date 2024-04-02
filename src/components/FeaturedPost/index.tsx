@@ -24,7 +24,7 @@ export const FeaturedPost = ({ post, ...restProps }: FeaturedPostProps) => {
   const { xsMax, sm, smMax } = useMediaQueries();
 
   return (
-    <NextLink href={`/post/${post.id}`} legacyBehavior passHref>
+    <NextLink href={`/article/${post.id}`} legacyBehavior passHref>
       <FeaturedPostWrapper isDarkMode={isDarkMode} {...restProps}>
         <ViewThisFeatureWrapper>
           <FeaturedPostImage

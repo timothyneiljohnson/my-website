@@ -15,7 +15,7 @@ function generateSiteMap(posts) {
        .map(
          ({ id }) => `
             <url>
-                <loc>https://timothyneil.com/post/${id}</loc>
+                <loc>https://timothyneil.com/article/${id}</loc>
             </url>
           `
        )

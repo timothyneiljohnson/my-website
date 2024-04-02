@@ -105,12 +105,12 @@ export const Post = ({ post }) => {
                     level={2}
                     size={postHeadingSize}
                   >
-                    <NextLink href={`/post/${post.id}`} passHref>
+                    <NextLink href={`/article/${post.id}`} passHref>
                       {parse(post.title.rendered)}
                     </NextLink>
                   </PostHeading>
                   {featuredImg && (
-                    <NextLink href={`/post/${post.id}`} legacyBehavior passHref>
+                    <NextLink href={`/article/${post.id}`} legacyBehavior passHref>
                       <a>
                         <ExcerptImageWrapper>
                           <StyledPostImage
@@ -127,7 +127,7 @@ export const Post = ({ post }) => {
                   <div>
                     <div>{parse(post.excerpt.rendered)}</div>
                     <p>
-                      <NextLink href={`/post/${post.id}`} legacyBehavior passHref>
+                      <NextLink href={`/article/${post.id}`} legacyBehavior passHref>
                         <Link
                           color={isDarkMode ? colors.secondary : colors.primary}
                           reverseUnderline
