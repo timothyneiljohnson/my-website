@@ -46,8 +46,9 @@ export const LogoLink = styled.a<LogoLinkProps>`
     font-size: 36px;
   }
   @media ${mediaQueries.xsMax} {
-      font-size: 31px;
-    }
+    font-size: 31px;
+    line-height: 38px;
+  }
 
   span {
     font-family: 'Pacifico', cursive;
