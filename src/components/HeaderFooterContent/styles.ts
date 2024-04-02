@@ -36,7 +36,7 @@ export const LogoLink = styled.a<LogoLinkProps>`
   color: ${({ isDarkMode }) => (isDarkMode ? colors.white : colors.tertiary)};
   vertical-align: top;
   max-width: 100%;
-  display: inline;
+  display: inline-block;
   outline: none;
   margin: ${spacing.x1} 0;
   position: relative;
