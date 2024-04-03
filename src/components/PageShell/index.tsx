@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { Cousine, Crimson_Text, Pacifico } from 'next/font/google';
 import dynamic from 'next/dynamic';
 import { useRef, useCallback, useState, useEffect, ReactNode } from 'react';
 import { Button } from '../../../common-components/Button';
@@ -24,6 +25,30 @@ const DynamicProfilePulldownContent = dynamic(() =>
     ({ ProfilePulldownContent }) => ProfilePulldownContent
   )
 );
+
+const crimson_text = Crimson_Text({
+  subsets: ['latin'],
+  weight: '400',
+  style: 'normal',
+  display: 'swap',
+  variable: '--font-crimson-text',
+});
+
+const pacifico = Pacifico({
+  subsets: ['latin'],
+  weight: '400',
+  style: 'normal',
+  display: 'swap',
+  variable: '--font-pacifico',
+});
+
+const cousine = Cousine({
+  subsets: ['latin'],
+  weight: '700',
+  style: 'normal',
+  display: 'swap',
+  variable: '--font-cousine',
+});
 
 interface PageShellProps {
   children?: ReactNode;
@@ -101,12 +126,16 @@ export const PageShell = ({ children, isFullWidth }: PageShellProps) => {
       </Head>
       <GlobalStyles isDarkMode={isDarkMode} />
       <Header
+        className={`${crimson_text.variable} ${pacifico.variable}`}
         handleOpenProfileDrawer={handleOpenProfileDrawer}
         isFullWidth={isFullWidth}
         ref={focusRef}
       />
-      <StyledMain isFullWidth={isFullWidth}>{children}</StyledMain>
+      <StyledMain className={cousine.variable} isFullWidth={isFullWidth}>
+        {children}
+      </StyledMain>
       <Footer
+        className={`${crimson_text.variable} ${pacifico.variable}`}
         handleOpenProfileDrawer={handleOpenProfileDrawer}
         isFullWidth={isFullWidth}
       />

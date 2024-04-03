@@ -4,11 +4,13 @@ import { HeaderFooterContent } from '../HeaderFooterContent';
 import { FooterBottom, FooterInner, StyledFooter } from './styles';
 
 interface FooterProps {
+  className?: any;
   handleOpenProfileDrawer: () => void;
   isFullWidth?: boolean;
 }
 
 export const Footer = ({
+  className,
   handleOpenProfileDrawer,
   isFullWidth,
 }: FooterProps) => {
@@ -16,7 +18,7 @@ export const Footer = ({
   const year = new Date().getFullYear();
 
   return (
-    <StyledFooter isDarkMode={isDarkMode}>
+    <StyledFooter className={className} isDarkMode={isDarkMode}>
       <FooterInner isDarkMode={isDarkMode} isFullWidth={isFullWidth}>
         <HeaderFooterContent
           handleOpenProfileDrawer={handleOpenProfileDrawer}

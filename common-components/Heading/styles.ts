@@ -25,7 +25,7 @@ export const StyledHeading = styled(HeadingElement)<StyledHeadingProps>`
     typeof children === 'string' &&
     `
     display: inline;
-    font-family: ${font.families.monospace};
+    font-family: var(--font-cousine);
     color: #0000;
     background:
       linear-gradient(-90deg, ${colors.primary} 4px, #0000 0) 10px 0,

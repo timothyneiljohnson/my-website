@@ -30,7 +30,7 @@ interface LogoLinkProps {
   isDarkMode: boolean;
 }
 export const LogoLink = styled.a<LogoLinkProps>`
-  font-family: 'Crimson Text', serif;
+  font-family: var(--font-crimson-text);
   font-size: 42px;
   height: 47px;
   line-height: 38px;
@@ -56,7 +56,7 @@ export const LogoLink = styled.a<LogoLinkProps>`
   }
 
   span {
-    font-family: 'Pacifico', cursive;
+    font-family: var(--font-pacifico);
     font-size: 31px;
     color: ${({ isDarkMode }) => (isDarkMode ? colors.white : '#4A78A0')};
     padding-right: 3.5px;

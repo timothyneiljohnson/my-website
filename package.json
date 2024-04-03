@@ -28,10 +28,8 @@
     "@storybook/testing-library": "^0.2.0",
     "@use-gesture/react": "^10.2.11",
     "autoprefixer": "^10.4.4",
-    "babel-plugin-prismjs": "^2.1.0",
-    "babel-plugin-styled-components": "^2.0.7",
-    "babel-preset-next": "^1.4.0",
     "html-react-parser": "^1.2.4",
+    "isomorphic-dompurify": "^2.6.0",
     "lottie-web": "^5.9.4",
     "next": "^13.4.13",
     "next-compose-plugins": "^2.2.1",
@@ -50,14 +48,11 @@
     "webpack": "^5.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.19.1",
     "@next/eslint-plugin-next": "^13",
     "@storybook/nextjs": "^7.2.1",
     "@types/styled-components": "^5.1.24",
     "@typescript-eslint/eslint-plugin": "^5.22.0",
     "@typescript-eslint/parser": "^5.22.0",
-    "babel-eslint": "^10.1.0",
-    "babel-loader": "^8.2.5",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.26.0",
@@ -71,5 +66,8 @@
     "storybook": "7.2.1",
     "typescript": "^4.6.3",
     "webpack-bundle-analyzer": "^4.5.0"
+  },
+  "resolutions": {
+    "@types/mime": "3.0.4"
   }
 }

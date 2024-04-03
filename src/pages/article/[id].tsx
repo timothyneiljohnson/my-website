@@ -1,7 +1,10 @@
-import parse from 'html-react-parser';
 import Prism from 'prismjs';
-import { useEffect } from 'react';
+import 'prismjs/components/prism-jsx';
+import 'prismjs/themes/prism-okaidia.css'; // Theme
+import parse from 'html-react-parser';
+import DOMPurify from 'isomorphic-dompurify';
 import Head from 'next/head';
+import { useEffect } from 'react';
 import { getMedia } from '../../lib/utils';
 import { ALL_POSTS_API_URL, POSTS_API_URL } from '../../lib/constants';
 import { PageShell } from '../../components/PageShell';
@@ -19,6 +22,25 @@ import { ScrollProgressIndicator } from '../../../common-components/ScrollProgre
 import { useMediaQueries } from '../../../common-components/media-queries-context';
 import { PhotoGallery } from '../../../common-components/PhotoGallery';
 
+const replacePreNode = (domNode) => {
+  if (domNode.name === 'pre' || domNode.name === 'code') {
+    const highlightedCode = Prism.highlight(
+      domNode.children[0].children[0].data ?? '',
+      Prism.languages.jsx,
+      'jsx'
+    );
+    return (
+      <pre
+        className={domNode.attribs.class}
+        dangerouslySetInnerHTML={{
+          __html: DOMPurify.sanitize(highlightedCode),
+        }}
+      />
+    );
+  }
+  return domNode;
+};
+
 const Post = ({ title, featuredImg, content, date }) => {
   // PrismJS requires the DOM
   useEffect(() => {
@@ -33,7 +55,9 @@ const Post = ({ title, featuredImg, content, date }) => {
 
   // TODO: Figure out better way to handle post shortcodes
   const hasPhotoGallery = content.includes('[photogallery]');
-  const parsedContent = parse(content.replace('[photogallery]', ''));
+  const parsedContent = parse(content.replace('[photogallery]', ''), {
+    replace: replacePreNode,
+  });
 
   return (
     <>
