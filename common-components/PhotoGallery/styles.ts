@@ -85,7 +85,7 @@ export const StyledLoadingDots = styled(LoadingDots)`
   z-index: 98;
 `;
 
-export const GalleryNavButton = styled.button`
+const GalleryNavButton = styled.button`
   display: flex;
   align-items: center;
   height: 200px;
@@ -108,15 +108,27 @@ export const GalleryNavButton = styled.button`
   }
 `;
 
+export const GalleryNavButtonPrev = styled(GalleryNavButton)`
+  @media ${mediaQueries.xsMax} {
+    margin-left: -${spacing.x4};
+  }
+`;
+
+export const GalleryNavButtonNext = styled(GalleryNavButton)`
+  @media ${mediaQueries.xsMax} {
+    margin-right: -${spacing.x4};
+  }
+`;
+
 export const ImageCountStatus = styled.div`
   position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 40px;
   bottom: 0;
   font-size: 12px;
   color: ${colors.grayLighter};
+  height: 40px;
 `;
 
 export const StyledButton = styled.button`

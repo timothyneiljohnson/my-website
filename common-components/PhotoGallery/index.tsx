@@ -3,7 +3,8 @@ import dynamic from 'next/dynamic';
 import { useStorageDarkMode } from '../storage-dark-mode-context';
 import { colors, spacing } from '../design-tokens';
 import {
-  GalleryNavButton,
+  GalleryNavButtonPrev,
+  GalleryNavButtonNext,
   ImageCountStatus,
   PhotoGalleryCol,
   StyledPhotoGallery,
@@ -20,6 +21,7 @@ import { Icon } from '../Icon';
 import { Col } from '../Col';
 import { Row } from '../Row';
 import { AspectRatio } from '../AspectRatio';
+import { useMediaQueries } from '../media-queries-context';
 
 const DynamicModalDrawer = dynamic<ModalDrawerProps>(() =>
   import('../ModalDrawer').then(({ ModalDrawer }) => ModalDrawer)
@@ -46,6 +48,7 @@ export const PhotoGallery = ({
   const [isModalDisplayed, setIsModalDisplayed] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
   const [fullscreenImageLoaded, setFullscreenImageLoaded] = useState(false);
+  const { xsMax } = useMediaQueries();
 
   useEffect(() => {
     if (isModalOpen) {
@@ -126,7 +129,11 @@ export const PhotoGallery = ({
           <AspectRatio
             key={`${image.url}${i}`}
             ratio={image.ratio}
-            style={{ overflow: 'hidden', borderRadius: 0, marginBottom: spacing.x2 }}
+            style={{
+              overflow: 'hidden',
+              borderRadius: 0,
+              marginBottom: spacing.x2,
+            }}
           >
             <StyledButton
               onClick={() => handleOpenModal(image.url)}
@@ -147,7 +154,11 @@ export const PhotoGallery = ({
           <AspectRatio
             key={`${image.url}${i}`}
             ratio={image.ratio}
-            style={{ overflow: 'hidden', borderRadius: 0, marginBottom: spacing.x2 }}
+            style={{
+              overflow: 'hidden',
+              borderRadius: 0,
+              marginBottom: spacing.x2,
+            }}
           >
             <StyledButton onClick={() => handleOpenModal(image.url)}>
               <StyledImage
@@ -165,7 +176,11 @@ export const PhotoGallery = ({
           <AspectRatio
             key={`${image.url}${i}`}
             ratio={image.ratio}
-            style={{ overflow: 'hidden', borderRadius: 0, marginBottom: spacing.x2 }}
+            style={{
+              overflow: 'hidden',
+              borderRadius: 0,
+              marginBottom: spacing.x2,
+            }}
           >
             <StyledButton
               onClick={() => handleOpenModal(image.url)}
@@ -189,15 +204,15 @@ export const PhotoGallery = ({
           onCloseCallback={onCloseCallback}
         >
           <StyledGrid>
-            <StyledRow gap={0.05}>
+            <StyledRow gap={xsMax ? 0.015 : 0.05}>
               <StyledCol flex middle>
-                <GalleryNavButton onClick={handlePreviousImage}>
+                <GalleryNavButtonPrev onClick={handlePreviousImage}>
                   <Icon
                     fill={colors.grayLightest}
                     name="chevron-back-sharp"
-                    size={60}
+                    size={xsMax ? 34 : 60}
                   />
-                </GalleryNavButton>
+                </GalleryNavButtonPrev>
               </StyledCol>
               <Col grow>
                 <StyledFullscreenImage
@@ -214,13 +229,13 @@ export const PhotoGallery = ({
                 <StyledLoadingDots />
               </Col>
               <StyledCol flex middle>
-                <GalleryNavButton onClick={handleNextImage}>
+                <GalleryNavButtonNext onClick={handleNextImage}>
                   <Icon
                     fill={colors.grayLightest}
                     name="chevron-forward-sharp"
-                    size={60}
+                    size={xsMax ? 34 : 60}
                   />
-                </GalleryNavButton>
+                </GalleryNavButtonNext>
               </StyledCol>
             </StyledRow>
             <Row center flex>
