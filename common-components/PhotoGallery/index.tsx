@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { useStorageDarkMode } from '../storage-dark-mode-context';
-import { colors } from '../design-tokens';
+import { colors, spacing } from '../design-tokens';
 import {
   GalleryNavButton,
   ImageCountStatus,
@@ -19,6 +19,7 @@ import { ModalDrawerProps } from '../ModalDrawer/types';
 import { Icon } from '../Icon';
 import { Col } from '../Col';
 import { Row } from '../Row';
+import { AspectRatio } from '../AspectRatio';
 
 const DynamicModalDrawer = dynamic<ModalDrawerProps>(() =>
   import('../ModalDrawer').then(({ ModalDrawer }) => ModalDrawer)
@@ -27,14 +28,17 @@ const DynamicModalDrawer = dynamic<ModalDrawerProps>(() =>
 interface PhotoGalleryProps {
   className?: string;
   height?: number;
-  imageUrls?: string[];
+  images?: {
+    url?: string;
+    ratio?: number;
+  }[];
   width?: number;
   topMargin?: number;
 }
 export const PhotoGallery = ({
   className,
   height,
-  imageUrls,
+  images,
   width,
   topMargin,
 }: PhotoGalleryProps) => {
@@ -59,26 +63,26 @@ export const PhotoGallery = ({
   const handleOpenModal = useCallback(
     (imageUrl: string) => {
       setIsModalOpen(true);
-      const imageIndex = imageUrls.findIndex((url) => url === imageUrl);
+      const imageIndex = images.findIndex(({ url }) => url === imageUrl);
 
       setSelectedImageIndex(imageIndex);
     },
-    [imageUrls]
+    [images]
   );
 
   const handleNextImage = useCallback(() => {
     setFullscreenImageLoaded(false);
     const nextImageIndex =
-      selectedImageIndex === imageUrls.length - 1 ? 0 : selectedImageIndex + 1;
+      selectedImageIndex === images.length - 1 ? 0 : selectedImageIndex + 1;
     setSelectedImageIndex(nextImageIndex);
-  }, [imageUrls, selectedImageIndex]);
+  }, [images, selectedImageIndex]);
 
   const handlePreviousImage = useCallback(() => {
     setFullscreenImageLoaded(false);
     const previousImageIndex =
-      selectedImageIndex === 0 ? imageUrls.length - 1 : selectedImageIndex - 1;
+      selectedImageIndex === 0 ? images.length - 1 : selectedImageIndex - 1;
     setSelectedImageIndex(previousImageIndex);
-  }, [imageUrls, selectedImageIndex]);
+  }, [images, selectedImageIndex]);
 
   const onKeyDownCallback = useCallback(
     (event) => {
@@ -99,14 +103,14 @@ export const PhotoGallery = ({
   }, [onKeyDownCallback]);
 
   const { isDarkMode } = useStorageDarkMode();
-  const imageUrlsChunk1 = imageUrls.slice(0, Math.ceil(imageUrls.length / 3));
-  const imageUrlsChunk2 = imageUrls.slice(
-    Math.ceil(imageUrls.length / 3),
-    Math.ceil(imageUrls.length / 1.5)
+  const imagesChunk1 = images.slice(0, Math.ceil(images.length / 3));
+  const imagesChunk2 = images.slice(
+    Math.ceil(images.length / 3),
+    Math.ceil(images.length / 1.5)
   );
-  const imageUrlsChunk3 = imageUrls.slice(
-    Math.ceil(imageUrls.length / 1.5),
-    imageUrls.length
+  const imagesChunk3 = images.slice(
+    Math.ceil(images.length / 1.5),
+    images.length
   );
 
   return (
@@ -118,48 +122,63 @@ export const PhotoGallery = ({
       width={width}
     >
       <PhotoGalleryCol>
-        {imageUrlsChunk1.map((imageUrl, i) => (
-          <StyledButton
-            key={`${imageUrl}${i}`}
-            onClick={() => handleOpenModal(imageUrl)}
+        {imagesChunk1.map((image, i) => (
+          <AspectRatio
+            key={`${image.url}${i}`}
+            ratio={image.ratio}
+            style={{ overflow: 'hidden', borderRadius: 0, marginBottom: '3px' }}
           >
-            <StyledImage
-              alt={`image ${i}`}
-              masonry
-              sizes="33vw"
-              src={imageUrl}
-            />
-          </StyledButton>
+            <StyledButton
+              onClick={() => handleOpenModal(image.url)}
+              style={{ position: 'relative' }}
+            >
+              <StyledImage
+                alt={`image ${i}`}
+                fill
+                sizes="33vw"
+                src={image.url}
+              />
+            </StyledButton>
+          </AspectRatio>
         ))}
       </PhotoGalleryCol>
       <PhotoGalleryCol>
-        {imageUrlsChunk2.map((imageUrl, i) => (
-          <StyledButton
-            key={`${imageUrl}${i}`}
-            onClick={() => handleOpenModal(imageUrl)}
+        {imagesChunk2.map((image, i) => (
+          <AspectRatio
+            key={`${image.url}${i}`}
+            ratio={image.ratio}
+            style={{ overflow: 'hidden', borderRadius: 0, marginBottom: '3px' }}
           >
-            <StyledImage
-              alt={`image ${i}`}
-              masonry
-              sizes="33vw"
-              src={imageUrl}
-            />
-          </StyledButton>
+            <StyledButton onClick={() => handleOpenModal(image.url)}>
+              <StyledImage
+                alt={`image ${i}`}
+                fill
+                sizes="33vw"
+                src={image.url}
+              />
+            </StyledButton>
+          </AspectRatio>
         ))}
       </PhotoGalleryCol>
       <PhotoGalleryCol>
-        {imageUrlsChunk3.map((imageUrl, i) => (
-          <StyledButton
-            key={`${imageUrl}${i}`}
-            onClick={() => handleOpenModal(imageUrl)}
+        {imagesChunk3.map((image, i) => (
+          <AspectRatio
+            key={`${image.url}${i}`}
+            ratio={image.ratio}
+            style={{ overflow: 'hidden', borderRadius: 0, marginBottom: spacing.x1 }}
           >
-            <StyledImage
-              alt={`image ${i}`}
-              masonry
-              sizes="33vw"
-              src={imageUrl}
-            />
-          </StyledButton>
+            <StyledButton
+              onClick={() => handleOpenModal(image.url)}
+              style={{ position: 'relative' }}
+            >
+              <StyledImage
+                alt={`image ${i}`}
+                fill
+                sizes="33vw"
+                src={image.url}
+              />
+            </StyledButton>
+          </AspectRatio>
         ))}
       </PhotoGalleryCol>
       {isModalDisplayed && selectedImageIndex !== null && (
@@ -190,7 +209,7 @@ export const PhotoGallery = ({
                   onLoadingComplete={() => setFullscreenImageLoaded(true)}
                   quality="100"
                   sizes="100vw"
-                  src={imageUrls[selectedImageIndex]}
+                  src={images[selectedImageIndex].url}
                 />
                 <StyledLoadingDots />
               </Col>
@@ -206,7 +225,7 @@ export const PhotoGallery = ({
             </StyledRow>
             <Row center flex>
               <ImageCountStatus>
-                {`${selectedImageIndex + 1} of ${imageUrls.length}`}
+                {`${selectedImageIndex + 1} of ${images.length}`}
               </ImageCountStatus>
             </Row>
           </StyledGrid>

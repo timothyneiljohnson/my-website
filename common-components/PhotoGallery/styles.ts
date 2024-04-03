@@ -27,6 +27,7 @@ export const StyledPhotoGallery = styled.div<StyledPhotoGalleryProps>`
   place-content: stretch center;
   box-sizing: border-box;
   width: 100%;
+  gap: ${spacing.x1};
 `;
 
 export const PhotoGalleryCol = styled.div`
@@ -38,7 +39,6 @@ export const PhotoGalleryCol = styled.div`
 `;
 
 export const StyledImage = styled(Image)`
-  margin: 1.5px;
   overflow: hidden;
   cursor: pointer;
 

@@ -15,7 +15,8 @@ export const Nav = forwardRef<HTMLButtonElement, NavProps>(
   ({ handleOpenProfileDrawer }: NavProps, ref) => {
     const pathname = usePathname() || '';
     const isHome = pathname === '/';
-    const isJournal = pathname === '/journal' || pathname?.startsWith('/post');
+    const isJournal =
+      pathname === '/journal' || pathname?.startsWith('/article');
     const { isDarkMode, toggleDarkMode } = useStorageDarkMode();
     const { xsMax, md } = useMediaQueries();
     const navButtonSize = xsMax ? 'sm' : 'md';

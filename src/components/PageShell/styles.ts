@@ -11,17 +11,6 @@ import { Image } from '../../../common-components/Image';
 import { PlainGrid } from '../../../common-components/PlainGrid';
 import { Transition } from '../../../common-components/Transition';
 
-interface StyledMainProps {
-  isFullWidth?: boolean;
-}
-export const StyledMain = styled.main<StyledMainProps>`
-  width: 100%;
-  ${({ isFullWidth }) =>
-    isFullWidth ? 'text-align: center;' : 'max-width: 1032px;'}
-  margin: 0 auto ${spacing.x8};
-  padding: 0 ${spacing.x4};
-`;
-
 interface StyledPageContainerProps {
   isDarkMode?: boolean;
 }
@@ -30,10 +19,7 @@ export const StyledPageContainer = styled.div<StyledPageContainerProps>`
     background-color: ${isDarkMode ? '#303438' : colors.white};
     color: ${isDarkMode ? colors.grayLightest : colors.grayDarker};
   `}
-  padding: ${spacing.x9};
-  ${decorations.borderRadiusStyle}
   ${decorations.boxShadow.smStyle}
-
 
   @media ${mediaQueries.smMax} {
     padding: ${spacing.x4};
@@ -203,6 +189,30 @@ export const StyledPageContainer = styled.div<StyledPageContainerProps>`
   }
 `;
 
+interface StyledMainProps {
+  isFullWidth?: boolean;
+}
+export const StyledMain = styled.main<StyledMainProps>`
+  width: 100%;
+  ${({ isFullWidth }) =>
+    isFullWidth
+      ? `
+    text-align: center;
+    ${StyledPageContainer} {
+      padding: ${spacing.x9} 0;
+    }
+  `
+      : `
+    max-width: 1032px;
+    padding: 0 ${spacing.x4};
+    margin: 0 auto ${spacing.x8};
+    ${StyledPageContainer} {
+      padding: ${spacing.x9};
+      ${decorations.borderRadiusStyle}
+    }
+  `}
+`;
+
 export const FeaturedImageWrapper = styled.div`
   position: relative;
   width: 100%;
@@ -284,7 +294,7 @@ export const BackToTopButton = styled.button`
   border-radius: 999px;
   width: 32px;
   height: 32px;
-  
+
   &::before {
     margin-left: ${spacing.x1};
     margin-top: ${spacing.x1};
