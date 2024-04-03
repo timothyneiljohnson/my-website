@@ -79,7 +79,7 @@ export const ContactMeLink = styled.a`
 
 export const MyNameIs = styled.p`
   color: ${colors.secondary};
-  font-weight: 500;
+  font-weight: 700;
   padding-bottom: 0;
   line-height: 1.5;
 
