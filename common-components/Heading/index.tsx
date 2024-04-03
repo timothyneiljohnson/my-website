@@ -3,9 +3,10 @@ import { colors } from '../design-tokens';
 import { StyledHeading } from './styles';
 
 interface HeadingProps {
-  children: string | ReactNode | ReactNode[];
+  children?: string | ReactNode | ReactNode[];
   className?: string;
   color?: string;
+  dangerouslySetInnerHTML?: any;
   level?: number;
   size?: number;
   noMargin?: boolean;
@@ -20,6 +21,7 @@ export const Heading = ({
   size,
   animateTyping,
   noMargin,
+  ...props
 }: HeadingProps) =>
   animateTyping ? (
     <div className={className}>
@@ -30,6 +32,7 @@ export const Heading = ({
         level={level}
         noMargin={noMargin}
         size={size}
+        {...props}
       >
         {children}
       </StyledHeading>
@@ -42,6 +45,7 @@ export const Heading = ({
       level={level}
       noMargin={noMargin}
       size={size}
+      {...props}
     >
       {children}
     </StyledHeading>

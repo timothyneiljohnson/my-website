@@ -1,4 +1,5 @@
 import { useMediaQueries } from '../media-queries-context';
+import { BannerTitle } from './BannerTitle';
 import { BannerImageStyled, BannerSlideStyled } from './styles';
 
 interface BannerSlideProps {
@@ -20,6 +21,7 @@ export const BannerSlide = ({ isCurrentSlide, post }: BannerSlideProps) => {
         sizes="60vw"
         src={smMax ? banner_image_16_9 : banner_image_wide}
       />
+      <BannerTitle isCurrentSlide={isCurrentSlide} post={post} />
     </BannerSlideStyled>
   );
 };

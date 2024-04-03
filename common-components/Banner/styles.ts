@@ -8,6 +8,9 @@ import {
   spacing,
 } from '../design-tokens';
 import { Image } from '../Image';
+import { StandardSizes } from '../types';
+import { Heading } from '../Heading';
+import { hexToRgba } from '../helpers';
 
 export const BannerWrapper = styled.div`
   width: 100%;
@@ -145,4 +148,124 @@ export const NextControl = styled(NextPreviousControl)`
 
 export const PreviousControl = styled(NextPreviousControl)`
   padding-right: 1px;
+`;
+
+const paddingBySize = {
+  md: `${spacing.x5} ${spacing.x6}`,
+  lg: spacing.x4,
+};
+
+const fontSizeBySize = {
+  md: '22px',
+  lg: '32px',
+};
+
+const lineHeightBySize = {
+  md: '25px',
+  lg: '35px',
+};
+
+const paddingBySizeSmMaxScreen = {
+  md: `${spacing.x4} ${spacing.x5}`,
+  lg: spacing.x4,
+};
+
+const fontSizeBySizeSmMaxScreen = {
+  md: '18px',
+  lg: '28px',
+};
+
+const lineHeightBySizeSmMaxScreen = {
+  md: '21px',
+  lg: '31px',
+};
+
+const paddingBySizeXsMaxScreen = {
+  md: `${spacing.x2} ${spacing.x3}`,
+  lg: spacing.x2,
+};
+
+const fontSizeBySizeXsMaxScreen = {
+  md: '10px',
+  lg: '10px',
+};
+
+const lineHeightBySizeXsScreen = {
+  md: '13px',
+  lg: '13px',
+};
+
+interface BannerTitleWrapperProps {
+  background: string;
+  gradientEnd: string;
+  gradientStart: string;
+  isCurrentSlide: boolean;
+  position: string;
+  size: StandardSizes;
+}
+export const BannerTitleWrapper = styled.div<BannerTitleWrapperProps>`
+  position: absolute;
+  transition: opacity ${animation.durations.slow}ms ease-in-out;
+  opacity: ${({ isCurrentSlide }) => (isCurrentSlide ? 1 : 0)};
+  padding: ${({ size }) => paddingBySize[size]};
+  backdrop-filter: blur(3px) brightness(60%);
+  ${decorations.borderRadiusStyle}
+
+  ${({ position, size }) => `
+    ${position.includes('top') ? 'top' : 'bottom'}: ${
+    ['lg', 'xl'].includes(size) ? spacing.x10 : spacing.x9
+  };
+    ${position.includes('left') ? 'left' : 'right'}: ${spacing.x9};
+    text-align: ${position.includes('left') ? 'left' : 'right'};
+  `}
+  ${({ background }) =>
+    background
+      ? `
+    background: ${hexToRgba(colors[background], 0.4)};`
+      : ''}
+  ${({ gradientStart, gradientEnd }) =>
+    gradientStart && gradientEnd
+      ? `
+    background: linear-gradient(to right, ${gradientStart}, ${gradientEnd});
+  `
+      : ''}
+
+  @media ${mediaQueries.smMax} {
+    padding: ${({ size }) => paddingBySizeSmMaxScreen[size]};
+    ${({ position }) => `
+      ${position.includes('top') ? 'top' : 'bottom'}: ${spacing.x8};
+      ${position.includes('left') ? 'left' : 'right'}: ${spacing.x8};
+      text-align: ${position.includes('left') ? 'left' : 'right'};
+    `}
+  }
+  @media ${mediaQueries.xsMax} {
+    padding: ${({ size }) => paddingBySizeXsMaxScreen[size]};
+    ${({ position }) => `
+      ${position.includes('top') ? 'top' : 'bottom'}: ${spacing.x3};
+      ${position.includes('left') ? 'left' : 'right'}: ${spacing.x3};
+      text-align: ${position.includes('left') ? 'left' : 'right'};
+    `}
+  }
+`;
+
+interface StyledHeadingProps {
+  overrideSize: StandardSizes;
+}
+export const StyledHeading = styled(Heading)<StyledHeadingProps>`
+  font-size: ${({ overrideSize }) => fontSizeBySize[overrideSize]};
+  line-height: ${({ overrideSize }) => lineHeightBySize[overrideSize]};
+  letter-spacing: 0.25px;
+  text-transform: uppercase;
+  margin: 0;
+
+  @media ${mediaQueries.smMax} {
+    font-size: ${({ overrideSize }) => fontSizeBySizeSmMaxScreen[overrideSize]};
+    line-height: ${({ overrideSize }) =>
+      lineHeightBySizeSmMaxScreen[overrideSize]};
+  }
+  @media ${mediaQueries.xsMax} {
+    font-size: ${({ overrideSize }) => fontSizeBySizeXsMaxScreen[overrideSize]};
+    line-height: ${({ overrideSize }) =>
+      lineHeightBySizeXsScreen[overrideSize]};
+  }
 `;
