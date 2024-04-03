@@ -30,8 +30,6 @@ const crimson_text = Crimson_Text({
   subsets: ['latin'],
   weight: '400',
   style: 'normal',
-  display: 'swap',
-  preload: true,
   variable: '--font-crimson-text',
 });
 
@@ -39,8 +37,6 @@ const pacifico = Pacifico({
   subsets: ['latin'],
   weight: '400',
   style: 'normal',
-  display: 'swap',
-  preload: true,
   variable: '--font-pacifico',
 });
 
@@ -48,8 +44,6 @@ const cousine = Cousine({
   subsets: ['latin'],
   weight: '700',
   style: 'normal',
-  display: 'swap',
-  preload: true,
   variable: '--font-cousine',
 });
 
