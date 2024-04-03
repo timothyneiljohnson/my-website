@@ -254,7 +254,7 @@ interface StyledHeadingProps {
 export const StyledHeading = styled(Heading)<StyledHeadingProps>`
   font-size: ${({ overrideSize }) => fontSizeBySize[overrideSize]};
   line-height: ${({ overrideSize }) => lineHeightBySize[overrideSize]};
-  letter-spacing: 0.25px;
+  letter-spacing: 0.15px;
   text-transform: uppercase;
   margin: 0;
 
