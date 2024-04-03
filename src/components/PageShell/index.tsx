@@ -31,6 +31,7 @@ const crimson_text = Crimson_Text({
   weight: '400',
   style: 'normal',
   display: 'swap',
+  preload: true,
   variable: '--font-crimson-text',
 });
 
@@ -39,6 +40,7 @@ const pacifico = Pacifico({
   weight: '400',
   style: 'normal',
   display: 'swap',
+  preload: true,
   variable: '--font-pacifico',
 });
 
@@ -47,6 +49,7 @@ const cousine = Cousine({
   weight: '700',
   style: 'normal',
   display: 'swap',
+  preload: true,
   variable: '--font-cousine',
 });
 
