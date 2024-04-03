@@ -126,7 +126,7 @@ export const PhotoGallery = ({
           <AspectRatio
             key={`${image.url}${i}`}
             ratio={image.ratio}
-            style={{ overflow: 'hidden', borderRadius: 0, marginBottom: '3px' }}
+            style={{ overflow: 'hidden', borderRadius: 0, marginBottom: spacing.x2 }}
           >
             <StyledButton
               onClick={() => handleOpenModal(image.url)}
@@ -147,7 +147,7 @@ export const PhotoGallery = ({
           <AspectRatio
             key={`${image.url}${i}`}
             ratio={image.ratio}
-            style={{ overflow: 'hidden', borderRadius: 0, marginBottom: '3px' }}
+            style={{ overflow: 'hidden', borderRadius: 0, marginBottom: spacing.x2 }}
           >
             <StyledButton onClick={() => handleOpenModal(image.url)}>
               <StyledImage
@@ -165,7 +165,7 @@ export const PhotoGallery = ({
           <AspectRatio
             key={`${image.url}${i}`}
             ratio={image.ratio}
-            style={{ overflow: 'hidden', borderRadius: 0, marginBottom: spacing.x1 }}
+            style={{ overflow: 'hidden', borderRadius: 0, marginBottom: spacing.x2 }}
           >
             <StyledButton
               onClick={() => handleOpenModal(image.url)}
