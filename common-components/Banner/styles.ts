@@ -44,17 +44,30 @@ export const StyledBanner = styled.a`
 interface BannerImageStyledProps {
   isCurrentSlide: boolean;
 }
-export const BannerImageStyled = styled(Image).withConfig({
+const BannerImageStyled = styled(Image).withConfig({
   shouldForwardProp: (prop) => !['isCurrentSlide'].includes(prop),
 })<BannerImageStyledProps>`
   transition: opacity ${animation.durations.slow}ms ease-in-out;
   opacity: ${({ isCurrentSlide }) => (isCurrentSlide ? 1 : 0)};
   overflow: hidden;
+  display: none;
   ${decorations.borderRadiusStyle}
 
   img {
     object-fit: cover;
     object-position: top;
+  }
+`;
+
+export const BannerImageStyledSmMax = styled(BannerImageStyled)`
+  @media ${mediaQueries.smMax} {
+    display: block;
+  }
+`;
+
+export const BannerImageStyledMd = styled(BannerImageStyled)`
+  @media ${mediaQueries.md} {
+    display: block;
   }
 `;
 
