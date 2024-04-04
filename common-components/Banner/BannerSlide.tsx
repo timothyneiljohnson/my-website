@@ -1,4 +1,3 @@
-import { useMediaQueries } from '../media-queries-context';
 import { BannerTitle } from './BannerTitle';
 import {
   BannerImageStyledSmMax,
@@ -13,7 +12,6 @@ interface BannerSlideProps {
 
 export const BannerSlide = ({ isCurrentSlide, post }: BannerSlideProps) => {
   const { banner_image_16_9, banner_image_wide } = post.acf;
-  const { smMax } = useMediaQueries();
 
   return (
     <BannerSlideStyled>
