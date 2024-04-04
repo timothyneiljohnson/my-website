@@ -91,7 +91,7 @@ const Post = ({ title, featuredImg, content, date }) => {
           </Heading>
           {featuredImg && !hasPhotoGallery && (
             <FeaturedImageWrapper>
-              <StyledImage alt={title} fill priority src={featuredImg} />
+              <StyledImage alt={title} fill noFadeIn priority src={featuredImg} />
             </FeaturedImageWrapper>
           )}
           <StyledDate isDarkMode={isDarkMode}>
