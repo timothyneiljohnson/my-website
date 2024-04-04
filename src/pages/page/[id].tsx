@@ -19,7 +19,7 @@ const Page = ({ title, featuredImg, content, date }) => {
         <Heading level={1}>{title}</Heading>
         {featuredImg && (
           <FeaturedImageWrapper>
-            <StyledImage alt={title} fill noFadeIn priority src={featuredImg} />
+            <StyledImage alt={title} fill priority src={featuredImg} />
           </FeaturedImageWrapper>
         )}
         <StyledDate>

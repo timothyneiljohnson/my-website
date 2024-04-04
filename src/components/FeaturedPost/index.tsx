@@ -31,7 +31,6 @@ export const FeaturedPost = ({ post, ...restProps }: FeaturedPostProps) => {
             alt={title}
             fill
             isDarkMode={isDarkMode}
-            noFadeIn
             priority
             sizes={smMax ? '100vw' : '33vw'}
             src={highlightImageUrl}

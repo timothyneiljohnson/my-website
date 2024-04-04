@@ -19,7 +19,6 @@ export const BannerSlide = ({ isCurrentSlide, post }: BannerSlideProps) => {
         alt={post.title.rendered}
         fill
         isCurrentSlide={isCurrentSlide}
-        noFadeIn
         priority
         sizes="60vw"
         src={banner_image_16_9}
@@ -28,7 +27,6 @@ export const BannerSlide = ({ isCurrentSlide, post }: BannerSlideProps) => {
         alt={post.title.rendered}
         fill
         isCurrentSlide={isCurrentSlide}
-        noFadeIn
         priority
         sizes="60vw"
         src={banner_image_wide}
