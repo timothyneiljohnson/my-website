@@ -6,20 +6,21 @@ import { MainNavList, MainNavListItem } from './styles';
 import { colors, gradients } from '../../../common-components/design-tokens';
 import { useStorageDarkMode } from '../../../common-components/storage-dark-mode-context';
 import { useMediaQueries } from '../../../common-components/media-queries-context';
+import { StandardSizes } from '../../../common-components/types';
 
 interface NavProps {
   handleOpenProfileDrawer: () => void;
+  size: StandardSizes;
 }
 
 export const Nav = forwardRef<HTMLButtonElement, NavProps>(
-  ({ handleOpenProfileDrawer }: NavProps, ref) => {
+  ({ handleOpenProfileDrawer, size }: NavProps, ref) => {
     const pathname = usePathname() || '';
     const isHome = pathname === '/';
     const isJournal =
       pathname === '/journal' || pathname?.startsWith('/article');
     const { isDarkMode, toggleDarkMode } = useStorageDarkMode();
-    const { xsMax, md } = useMediaQueries();
-    const navButtonSize = xsMax ? 'sm' : 'md';
+    const { md } = useMediaQueries();
 
     const handleDarkModeToggle = useCallback(() => {
       toggleDarkMode();
@@ -37,7 +38,7 @@ export const Nav = forwardRef<HTMLButtonElement, NavProps>(
       : gradients.secondary.start;
 
     return (
-      <MainNavList>
+      <MainNavList size={size}>
         <MainNavListItem>
           <Button
             aria-current={isHome ? 'page' : null}
@@ -48,7 +49,7 @@ export const Nav = forwardRef<HTMLButtonElement, NavProps>(
             href="/"
             pill
             pointerGradient={isHome && md}
-            size={navButtonSize}
+            size={size}
             textColor={isHome || isDarkMode ? colors.white : null}
           >
             Highlights
@@ -64,7 +65,7 @@ export const Nav = forwardRef<HTMLButtonElement, NavProps>(
             href="/journal"
             pill
             pointerGradient={isJournal && md}
-            size={navButtonSize}
+            size={size}
             textColor={isJournal || isDarkMode ? colors.white : null}
           >
             Journal
@@ -78,7 +79,7 @@ export const Nav = forwardRef<HTMLButtonElement, NavProps>(
             onClick={handleOpenProfileDrawer}
             pill
             ref={ref}
-            size={navButtonSize}
+            size={size}
             textColor={isDarkMode ? colors.white : colors.grayDarker}
           >
             Profile
@@ -91,7 +92,7 @@ export const Nav = forwardRef<HTMLButtonElement, NavProps>(
             isRound
             onClick={handleDarkModeToggle}
             pill
-            size={navButtonSize}
+            size={size}
           >
             <span className="h-sr-only">
               {isDarkMode ? 'Enable light mode' : 'Enable dark mode'}
@@ -100,13 +101,13 @@ export const Nav = forwardRef<HTMLButtonElement, NavProps>(
               <Icon
                 fill={`${isDarkMode ? colors.white : colors.grayDarkest}`}
                 name="sunny"
-                size={xsMax ? 12.5 : 19}
+                size={size === 'sm' ? 12.5 : 19}
               />
             ) : (
               <Icon
                 fill={`${isDarkMode ? colors.white : colors.primary}`}
                 name="moon"
-                size={xsMax ? 12.5 : 19}
+                size={size === 'sm' ? 12.5 : 19}
               />
             )}
           </Button>

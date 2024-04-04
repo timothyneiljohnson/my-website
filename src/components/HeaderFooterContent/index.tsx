@@ -18,6 +18,7 @@ export const HeaderFooterContent = forwardRef<
 >(({ handleOpenProfileDrawer }: HeaderFooterContentProps, ref) => {
   const { smMax } = useMediaQueries();
   const { isDarkMode } = useStorageDarkMode();
+  const { xsMax } = useMediaQueries();
 
   return (
     <Grid>
@@ -41,7 +42,16 @@ export const HeaderFooterContent = forwardRef<
           </NextLink>
         </Col>
         <Col center flex md={6} mdEnd middle xs={12}>
-          <Nav handleOpenProfileDrawer={handleOpenProfileDrawer} ref={ref} />
+          <Nav
+            handleOpenProfileDrawer={handleOpenProfileDrawer}
+            ref={xsMax ? ref : null}
+            size="sm"
+          />
+          <Nav
+            handleOpenProfileDrawer={handleOpenProfileDrawer}
+            ref={!xsMax ? ref : null}
+            size="md"
+          />
         </Col>
       </Row>
     </Grid>

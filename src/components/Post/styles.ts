@@ -2,12 +2,14 @@ import styled from 'styled-components';
 import {
   colors,
   decorations,
+  font,
   mediaQueries,
   spacing,
 } from '../../../common-components/design-tokens';
 import { Heading } from '../../../common-components/Heading';
 import { Image } from '../../../common-components/Image';
 import { Ribbon } from '../../../common-components/Ribbon';
+import { Icon } from '../../../common-components/Icon';
 
 interface PostBodyProps {
   isDarkMode?: boolean;
@@ -40,12 +42,17 @@ export const PostBody = styled.div<PostBodyProps>`
 export const PostHeading = styled(Heading)`
   word-break: break-word;
 
+  ${font.headingStyle.h1}
+  @media ${mediaQueries.mdMax} {
+    ${font.headingStyle.h2}
+  }
   @media ${mediaQueries.smMax} {
     padding-right: 90px;
+    ${font.headingStyle.h3}
   }
-
   @media ${mediaQueries.xsMax} {
     padding-right: 85px;
+    ${font.headingStyle.h4}
   }
 `;
 
@@ -123,11 +130,15 @@ interface TeardropCategoryWrapperProps {
   isDarkMode?: boolean;
 }
 export const TeardropCategoryWrapper = styled.div<TeardropCategoryWrapperProps>`
+  display: none;
+  @media ${mediaQueries.sm} {
+    display: flex;
+  }
+
   top: ${spacing.x8};
   position: absolute;
   background-color: ${colors.tertiary};
   align-items: center;
-  display: flex;
   justify-content: center;
   border-radius: 0 50% 50%;
   transform: rotate(135deg);
@@ -158,4 +169,25 @@ export const TeardropCategoryInner = styled.div`
 
 export const StyledRibbon = styled(Ribbon)`
   z-index: 1;
+  right: 36px;
+  width: 62px;
+  &:before {
+    right: 62px;
+  }
+
+  @media ${mediaQueries.smMax} {
+    right: 20px;
+    width: 45px;
+    &:before {
+      right: 45px;
+    }
+  }
+
+  
+`;
+
+export const StyledIcon = styled(Icon)`
+  @media ${mediaQueries.xsMax} {
+    display: none;
+  }
 `;

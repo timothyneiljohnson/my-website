@@ -5,11 +5,22 @@ import {
   mediaQueries,
   spacing,
 } from '../../../common-components/design-tokens';
+import { StandardSizes } from '../../../common-components/types';
 
-export const MainNavList = styled.ul`
+interface MainNavListProps {
+  size: StandardSizes;
+}
+export const MainNavList = styled.ul<MainNavListProps>`
   margin: ${spacing.x2} 0;
   right: 0;
   white-space: nowrap;
+  display: block;
+  
+  ${({ size }) => `
+    @media ${mediaQueries[size === 'md' ? 'xsMax' : 'sm']} {
+      display: none;
+    }
+  `}
 `;
 
 export const MainNavListItem = styled.li`

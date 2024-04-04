@@ -36,7 +36,7 @@ export const Ribbon = ({
   side = 'top',
   bottom,
 }: RibbonProps) => {
-  const lift = thickness * 0.25 ?? 0;
+  const lift = thickness * 0.25;
   const defaultFacingValue = side === 'top' ? 'right' : 'bottom';
   const facing = reverse
     ? getOppositedirection(defaultFacingValue)

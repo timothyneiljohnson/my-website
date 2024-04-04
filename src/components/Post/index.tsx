@@ -39,23 +39,14 @@ export const Post = ({ post }) => {
   const featuredMedia = post._embedded['wp:featuredmedia'] ?? {};
   const featuredImg = featuredMedia['0']?.source_url;
 
-  const { xsMax, smMax, mdMax, sm } = useMediaQueries();
+  const { smMax } = useMediaQueries();
   const { isDarkMode } = useStorageDarkMode();
-
-  let postHeadingSize = 1;
-  if (xsMax) {
-    postHeadingSize = 4;
-  } else if (smMax) {
-    postHeadingSize = 3;
-  } else if (mdMax) {
-    postHeadingSize = 2;
-  }
 
   let ribbonTop = 0;
   if (!isDarkMode) {
     if (smMax) {
       ribbonTop = 1;
-    } else if (!isDarkMode) {
+    } else {
       ribbonTop = 2;
     }
   }
@@ -87,9 +78,8 @@ export const Post = ({ post }) => {
                   top={ribbonTop}
                 >
                   <div aria-hidden>
-                    {xsMax && (
-                      <CategoryIcon categories={post.categories} size={26} />
-                    )}
+                    {/* Icon only shows for xsMax */}
+                    <CategoryIcon categories={post.categories} size={26} />
                     <Day>{dateOfMonth}</Day>
                     <Month>{shortMonth}</Month>
                   </div>
@@ -97,20 +87,18 @@ export const Post = ({ post }) => {
               </div>
               <Outdent horizontal={3}>
                 <PostBody isDarkMode={isDarkMode}>
-                  {sm && (
-                    <TeardropCategoryWrapper isDarkMode={isDarkMode}>
-                      <TeardropCategoryInner>
-                        <CategoryIcon
-                          categories={post.categories}
-                          size={smMax ? 22 : 26}
-                        />
-                      </TeardropCategoryInner>
-                    </TeardropCategoryWrapper>
-                  )}
+                  {/* Teardrop category only shows for sm */}
+                  <TeardropCategoryWrapper isDarkMode={isDarkMode}>
+                    <TeardropCategoryInner>
+                      <CategoryIcon
+                        categories={post.categories}
+                        size={smMax ? 22 : 26}
+                      />
+                    </TeardropCategoryInner>
+                  </TeardropCategoryWrapper>
                   <PostHeading
                     color={isDarkMode ? colors.white : colors.grayDarker}
                     level={2}
-                    size={postHeadingSize}
                   >
                     <NextLink href={`/article/${post.id}`} passHref>
                       {parse(post.title.rendered)}
