@@ -16,4 +16,13 @@ module.exports = withBundleAnalyzer({
     domains: [process.env.IMAGE_DOMAIN],
     formats: ['image/avif', 'image/webp'],
   },
+  async redirects() {
+    return [
+      {
+        source: '/blog/:path*',
+        destination: '/journal/:path*',
+        permanent: true
+      }
+    ]
+  },
 });
