@@ -1,9 +1,11 @@
+const { API_BASE_URL } = process.env;
+
 export const CategoriesFixture = [
   {
     id: 8,
     count: 1,
     description: '',
-    link: 'http://localhost:10006/category/featured/accessibility/',
+    link: '#',
     name: 'Accessibility',
     slug: 'accessibility',
     taxonomy: 'category',
@@ -13,28 +15,28 @@ export const CategoriesFixture = [
     _links: {
       self: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/categories/8',
+          href: '#',
         },
       ],
       collection: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/categories',
+          href: '#',
         },
       ],
       about: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+          href: '#',
         },
       ],
       up: [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/categories/3',
+          href: '#',
         },
       ],
       'wp:post_type': [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=8',
+          href: '#',
         },
       ],
       curies: [
@@ -50,7 +52,7 @@ export const CategoriesFixture = [
     id: 6,
     count: 1,
     description: '',
-    link: 'http://localhost:10006/category/featured/awards/',
+    link: '#',
     name: 'Awards',
     slug: 'awards',
     taxonomy: 'category',
@@ -60,28 +62,28 @@ export const CategoriesFixture = [
     _links: {
       self: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/categories/6',
+          href: '#',
         },
       ],
       collection: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/categories',
+          href: '#',
         },
       ],
       about: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+          href: '#',
         },
       ],
       up: [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/categories/3',
+          href: '#',
         },
       ],
       'wp:post_type': [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=6',
+          href: '#',
         },
       ],
       curies: [
@@ -97,7 +99,7 @@ export const CategoriesFixture = [
     id: 7,
     count: 1,
     description: '',
-    link: 'http://localhost:10006/category/featured/photography/',
+    link: '#',
     name: 'Photography',
     slug: 'photography',
     taxonomy: 'category',
@@ -107,28 +109,28 @@ export const CategoriesFixture = [
     _links: {
       self: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/categories/7',
+          href: '#',
         },
       ],
       collection: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/categories',
+          href: '#',
         },
       ],
       about: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+          href: '#',
         },
       ],
       up: [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/categories/3',
+          href: '#',
         },
       ],
       'wp:post_type': [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=7',
+          href: '#',
         },
       ],
       curies: [
@@ -144,7 +146,7 @@ export const CategoriesFixture = [
     id: 11,
     count: 4,
     description: '',
-    link: 'http://localhost:10006/category/featured/tutorials/',
+    link: '#',
     name: 'Tutorials',
     slug: 'tutorials',
     taxonomy: 'category',
@@ -154,28 +156,28 @@ export const CategoriesFixture = [
     _links: {
       self: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/categories/11',
+          href: '#',
         },
       ],
       collection: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/categories',
+          href: '#',
         },
       ],
       about: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+          href: '#',
         },
       ],
       up: [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/categories/3',
+          href: '#',
         },
       ],
       'wp:post_type': [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=11',
+          href: '#',
         },
       ],
       curies: [
@@ -191,7 +193,7 @@ export const CategoriesFixture = [
     id: 4,
     count: 5,
     description: '',
-    link: 'http://localhost:10006/category/featured/web-design/',
+    link: '#',
     name: 'Web Design',
     slug: 'web-design',
     taxonomy: 'category',
@@ -201,28 +203,28 @@ export const CategoriesFixture = [
     _links: {
       self: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/categories/4',
+          href: '#',
         },
       ],
       collection: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/categories',
+          href: '#',
         },
       ],
       about: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+          href: '#',
         },
       ],
       up: [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/categories/3',
+          href: '#',
         },
       ],
       'wp:post_type': [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=4',
+          href: '#',
         },
       ],
       curies: [
@@ -242,14 +244,14 @@ export const ItemsWithCategoriesFixture = [
     date: '2022-05-29T17:51:44',
     date_gmt: '2022-05-29T17:51:44',
     guid: {
-      rendered: 'http://localhost:10006/?p=143',
+      rendered: '',
     },
     modified: '2022-05-31T00:19:52',
     modified_gmt: '2022-05-31T00:19:52',
     slug: 'filterable-list-with-animated-transitions',
     status: 'publish',
     type: 'post',
-    link: 'http://localhost:10006/filterable-list-with-animated-transitions/',
+    link: '#',
     title: {
       rendered: 'Filterable List with Animated Transitions',
     },
@@ -274,71 +276,71 @@ export const ItemsWithCategoriesFixture = [
     tags: [],
     acf: {
       highlight_image:
-        'http://localhost:10006/wp-content/uploads/2022/05/filterable-list-tall-4.jpg',
+        `${API_BASE_URL}/wp-content/uploads/2022/05/filterable-list-tall-4.jpg`,
       banner_image_wide: false,
       banner_image_16_9: false,
     },
     _links: {
       self: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/posts/143',
+          href: '#',
         },
       ],
       collection: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/posts',
+          href: '#',
         },
       ],
       about: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/types/post',
+          href: '#',
         },
       ],
       author: [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+          href: '#',
         },
       ],
       replies: [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/comments?post=143',
+          href: '#',
         },
       ],
       'version-history': [
         {
           count: 7,
-          href: 'http://localhost:10006/wp-json/wp/v2/posts/143/revisions',
+          href: '#',
         },
       ],
       'predecessor-version': [
         {
           id: 263,
-          href: 'http://localhost:10006/wp-json/wp/v2/posts/143/revisions/263',
+          href: '#',
         },
       ],
       'wp:featuredmedia': [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/media/144',
+          href: '#',
         },
       ],
       'wp:attachment': [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/media?parent=143',
+          href: '#',
         },
       ],
       'wp:term': [
         {
           taxonomy: 'category',
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/categories?post=143',
+          href: '#',
         },
         {
           taxonomy: 'post_tag',
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/tags?post=143',
+          href: '#',
         },
       ],
       curies: [
@@ -354,9 +356,9 @@ export const ItemsWithCategoriesFixture = [
         {
           id: 1,
           name: 'timothyneiljohnson',
-          url: 'http://localhost:10006',
+          url: '#',
           description: '',
-          link: 'http://localhost:10006/author/timothyneiljohnson/',
+          link: '#',
           slug: 'timothyneiljohnson',
           avatar_urls: {
             '24': 'http://2.gravatar.com/avatar/e5b5d508ca128c58fb8ff4335477e7d3?s=24&d=mm&r=g',
@@ -367,12 +369,12 @@ export const ItemsWithCategoriesFixture = [
           _links: {
             self: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+                href: '#',
               },
             ],
             collection: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/users',
+                href: '#',
               },
             ],
           },
@@ -384,7 +386,7 @@ export const ItemsWithCategoriesFixture = [
           date: '2022-05-29T17:51:12',
           slug: 'filterable-list',
           type: 'attachment',
-          link: 'http://localhost:10006/filterable-list-with-animated-transitions/filterable-list/',
+          link: '#',
           title: {
             rendered: 'filterable-list',
           },
@@ -409,7 +411,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 83744,
                 mime_type: 'image/png',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/filterable-list-300x189.png',
+                  `${API_BASE_URL}/wp-content/uploads/2022/05/filterable-list-300x189.png`,
               },
               large: {
                 file: 'filterable-list-1024x645.png',
@@ -418,7 +420,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 640907,
                 mime_type: 'image/png',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/filterable-list-1024x645.png',
+                  `${API_BASE_URL}/wp-content/uploads/2022/05/filterable-list-1024x645.png`,
               },
               thumbnail: {
                 file: 'filterable-list-150x150.png',
@@ -427,7 +429,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 34628,
                 mime_type: 'image/png',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/filterable-list-150x150.png',
+                  `${API_BASE_URL}/wp-content/uploads/2022/05/filterable-list-150x150.png`,
               },
               medium_large: {
                 file: 'filterable-list-768x483.png',
@@ -436,7 +438,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 405840,
                 mime_type: 'image/png',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/filterable-list-768x483.png',
+                  `${API_BASE_URL}/wp-content/uploads/2022/05/filterable-list-768x483.png`,
               },
               full: {
                 file: 'filterable-list.png',
@@ -444,7 +446,7 @@ export const ItemsWithCategoriesFixture = [
                 height: 717,
                 mime_type: 'image/png',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/filterable-list.png',
+                  `${API_BASE_URL}/wp-content/uploads/2022/05/filterable-list.png`,
               },
             },
             image_meta: {
@@ -463,33 +465,33 @@ export const ItemsWithCategoriesFixture = [
             },
           },
           source_url:
-            'http://localhost:10006/wp-content/uploads/2022/05/filterable-list.png',
+            `${API_BASE_URL}/wp-content/uploads/2022/05/filterable-list.png`,
           _links: {
             self: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/media/144',
+                href: '#',
               },
             ],
             collection: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/media',
+                href: '#',
               },
             ],
             about: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/types/attachment',
+                href: '#',
               },
             ],
             author: [
               {
                 embeddable: true,
-                href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+                href: '#',
               },
             ],
             replies: [
               {
                 embeddable: true,
-                href: 'http://localhost:10006/wp-json/wp/v2/comments?post=144',
+                href: '#',
               },
             ],
           },
@@ -499,7 +501,7 @@ export const ItemsWithCategoriesFixture = [
         [
           {
             id: 3,
-            link: 'http://localhost:10006/category/featured/',
+            link: '#',
             name: 'Featured',
             slug: 'featured',
             taxonomy: 'category',
@@ -507,22 +509,22 @@ export const ItemsWithCategoriesFixture = [
             _links: {
               self: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/3',
+                  href: '#',
                 },
               ],
               collection: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories',
+                  href: '#',
                 },
               ],
               about: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+                  href: '#',
                 },
               ],
               'wp:post_type': [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=3',
+                  href: '#',
                 },
               ],
               curies: [
@@ -536,7 +538,7 @@ export const ItemsWithCategoriesFixture = [
           },
           {
             id: 11,
-            link: 'http://localhost:10006/category/featured/tutorials/',
+            link: '#',
             name: 'Tutorials',
             slug: 'tutorials',
             taxonomy: 'category',
@@ -544,28 +546,28 @@ export const ItemsWithCategoriesFixture = [
             _links: {
               self: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/11',
+                  href: '#',
                 },
               ],
               collection: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories',
+                  href: '#',
                 },
               ],
               about: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+                  href: '#',
                 },
               ],
               up: [
                 {
                   embeddable: true,
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/3',
+                  href: '#',
                 },
               ],
               'wp:post_type': [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=11',
+                  href: '#',
                 },
               ],
               curies: [
@@ -587,14 +589,14 @@ export const ItemsWithCategoriesFixture = [
     date: '2022-05-29T16:58:00',
     date_gmt: '2022-05-29T16:58:00',
     guid: {
-      rendered: 'http://localhost:10006/?p=64',
+      rendered: '',
     },
     modified: '2022-05-30T23:34:38',
     modified_gmt: '2022-05-30T23:34:38',
     slug: 'travel-photography',
     status: 'publish',
     type: 'post',
-    link: 'http://localhost:10006/travel-photography/',
+    link: '#',
     title: {
       rendered: 'Travel Photography',
     },
@@ -619,73 +621,73 @@ export const ItemsWithCategoriesFixture = [
     tags: [],
     acf: {
       highlight_image:
-        'http://localhost:10006/wp-content/uploads/2022/05/travel-photography-tall-2.jpg',
+        `${API_BASE_URL}/wp-content/uploads/2022/05/travel-photography-tall-2.jpg`,
       banner_image_wide:
-        'http://localhost:10006/wp-content/uploads/2022/05/travel-photography_239_1.jpg',
+        `${API_BASE_URL}/wp-content/uploads/2022/05/travel-photography_239_1.jpg`,
       banner_image_16_9:
-        'http://localhost:10006/wp-content/uploads/2022/05/travel-photography_16_9.jpg',
+        `${API_BASE_URL}/wp-content/uploads/2022/05/travel-photography_16_9.jpg`,
     },
     _links: {
       self: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/posts/64',
+          href: '#',
         },
       ],
       collection: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/posts',
+          href: '#',
         },
       ],
       about: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/types/post',
+          href: '#',
         },
       ],
       author: [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+          href: '#',
         },
       ],
       replies: [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/comments?post=64',
+          href: '#',
         },
       ],
       'version-history': [
         {
           count: 9,
-          href: 'http://localhost:10006/wp-json/wp/v2/posts/64/revisions',
+          href: '#',
         },
       ],
       'predecessor-version': [
         {
           id: 247,
-          href: 'http://localhost:10006/wp-json/wp/v2/posts/64/revisions/247',
+          href: '#',
         },
       ],
       'wp:featuredmedia': [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/media/136',
+          href: '#',
         },
       ],
       'wp:attachment': [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/media?parent=64',
+          href: '#',
         },
       ],
       'wp:term': [
         {
           taxonomy: 'category',
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/categories?post=64',
+          href: '#',
         },
         {
           taxonomy: 'post_tag',
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/tags?post=64',
+          href: '#',
         },
       ],
       curies: [
@@ -701,9 +703,9 @@ export const ItemsWithCategoriesFixture = [
         {
           id: 1,
           name: 'timothyneiljohnson',
-          url: 'http://localhost:10006',
+          url: '#',
           description: '',
-          link: 'http://localhost:10006/author/timothyneiljohnson/',
+          link: '#',
           slug: 'timothyneiljohnson',
           avatar_urls: {
             '24': 'http://2.gravatar.com/avatar/e5b5d508ca128c58fb8ff4335477e7d3?s=24&d=mm&r=g',
@@ -714,12 +716,12 @@ export const ItemsWithCategoriesFixture = [
           _links: {
             self: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+                href: '#',
               },
             ],
             collection: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/users',
+                href: '#',
               },
             ],
           },
@@ -731,7 +733,7 @@ export const ItemsWithCategoriesFixture = [
           date: '2022-05-29T17:22:32',
           slug: 'travel-photography-2',
           type: 'attachment',
-          link: 'http://localhost:10006/travel-photography/travel-photography-2/',
+          link: '#',
           title: {
             rendered: 'travel-photography',
           },
@@ -756,7 +758,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 23876,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/04/travel-photography-300x194.jpg',
+                  `${API_BASE_URL}/wp-content/uploads/2022/04/travel-photography-300x194.jpg`,
               },
               large: {
                 file: 'travel-photography-1024x663.jpg',
@@ -765,7 +767,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 196646,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/04/travel-photography-1024x663.jpg',
+                  `${API_BASE_URL}/wp-content/uploads/2022/04/travel-photography-1024x663.jpg`,
               },
               thumbnail: {
                 file: 'travel-photography-150x150.jpg',
@@ -774,7 +776,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 11069,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/04/travel-photography-150x150.jpg',
+                  `${API_BASE_URL}/wp-content/uploads/2022/04/travel-photography-150x150.jpg`,
               },
               medium_large: {
                 file: 'travel-photography-768x497.jpg',
@@ -783,7 +785,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 120823,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/04/travel-photography-768x497.jpg',
+                  `${API_BASE_URL}/wp-content/uploads/2022/04/travel-photography-768x497.jpg`,
               },
               full: {
                 file: 'travel-photography.jpg',
@@ -791,7 +793,7 @@ export const ItemsWithCategoriesFixture = [
                 height: 971,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/04/travel-photography.jpg',
+                  `${API_BASE_URL}/wp-content/uploads/2022/04/travel-photography.jpg`,
               },
             },
             image_meta: {
@@ -810,33 +812,33 @@ export const ItemsWithCategoriesFixture = [
             },
           },
           source_url:
-            'http://localhost:10006/wp-content/uploads/2022/04/travel-photography.jpg',
+            `${API_BASE_URL}/wp-content/uploads/2022/04/travel-photography.jpg`,
           _links: {
             self: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/media/136',
+                href: '#',
               },
             ],
             collection: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/media',
+                href: '#',
               },
             ],
             about: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/types/attachment',
+                href: '#',
               },
             ],
             author: [
               {
                 embeddable: true,
-                href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+                href: '#',
               },
             ],
             replies: [
               {
                 embeddable: true,
-                href: 'http://localhost:10006/wp-json/wp/v2/comments?post=136',
+                href: '#',
               },
             ],
           },
@@ -846,7 +848,7 @@ export const ItemsWithCategoriesFixture = [
         [
           {
             id: 9,
-            link: 'http://localhost:10006/category/banner/',
+            link: '#',
             name: 'Banner',
             slug: 'banner',
             taxonomy: 'category',
@@ -854,22 +856,22 @@ export const ItemsWithCategoriesFixture = [
             _links: {
               self: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/9',
+                  href: '#',
                 },
               ],
               collection: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories',
+                  href: '#',
                 },
               ],
               about: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+                  href: '#',
                 },
               ],
               'wp:post_type': [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=9',
+                  href: '#',
                 },
               ],
               curies: [
@@ -883,7 +885,7 @@ export const ItemsWithCategoriesFixture = [
           },
           {
             id: 3,
-            link: 'http://localhost:10006/category/featured/',
+            link: '#',
             name: 'Featured',
             slug: 'featured',
             taxonomy: 'category',
@@ -891,22 +893,22 @@ export const ItemsWithCategoriesFixture = [
             _links: {
               self: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/3',
+                  href: '#',
                 },
               ],
               collection: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories',
+                  href: '#',
                 },
               ],
               about: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+                  href: '#',
                 },
               ],
               'wp:post_type': [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=3',
+                  href: '#',
                 },
               ],
               curies: [
@@ -920,7 +922,7 @@ export const ItemsWithCategoriesFixture = [
           },
           {
             id: 7,
-            link: 'http://localhost:10006/category/featured/photography/',
+            link: '#',
             name: 'Photography',
             slug: 'photography',
             taxonomy: 'category',
@@ -928,28 +930,28 @@ export const ItemsWithCategoriesFixture = [
             _links: {
               self: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/7',
+                  href: '#',
                 },
               ],
               collection: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories',
+                  href: '#',
                 },
               ],
               about: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+                  href: '#',
                 },
               ],
               up: [
                 {
                   embeddable: true,
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/3',
+                  href: '#',
                 },
               ],
               'wp:post_type': [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=7',
+                  href: '#',
                 },
               ],
               curies: [
@@ -971,14 +973,14 @@ export const ItemsWithCategoriesFixture = [
     date: '2022-05-29T16:34:21',
     date_gmt: '2022-05-29T16:34:21',
     guid: {
-      rendered: 'http://localhost:10006/?p=124',
+      rendered: '',
     },
     modified: '2022-05-30T23:16:07',
     modified_gmt: '2022-05-30T23:16:07',
     slug: 'vs-code-color-theme-darcula-aurora',
     status: 'publish',
     type: 'post',
-    link: 'http://localhost:10006/vs-code-color-theme-darcula-aurora/',
+    link: '#',
     title: {
       rendered: 'VS Code Color Theme: Darcula Aurora',
     },
@@ -1003,73 +1005,73 @@ export const ItemsWithCategoriesFixture = [
     tags: [],
     acf: {
       highlight_image:
-        'http://localhost:10006/wp-content/uploads/2022/05/darcula-aurora-tall_3.jpg',
+        `${API_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora-tall_3.jpg`,
       banner_image_wide:
-        'http://localhost:10006/wp-content/uploads/2022/05/darcula-aurora_239_1.jpg',
+        `${API_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora_239_1.jpg`,
       banner_image_16_9:
-        'http://localhost:10006/wp-content/uploads/2022/05/darcula-aurora_16_9.jpg',
+        `${API_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora_16_9.jpg`,
     },
     _links: {
       self: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/posts/124',
+          href: '#',
         },
       ],
       collection: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/posts',
+          href: '#',
         },
       ],
       about: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/types/post',
+          href: '#',
         },
       ],
       author: [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+          href: '#',
         },
       ],
       replies: [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/comments?post=124',
+          href: '#',
         },
       ],
       'version-history': [
         {
           count: 10,
-          href: 'http://localhost:10006/wp-json/wp/v2/posts/124/revisions',
+          href: '#',
         },
       ],
       'predecessor-version': [
         {
           id: 245,
-          href: 'http://localhost:10006/wp-json/wp/v2/posts/124/revisions/245',
+          href: '#',
         },
       ],
       'wp:featuredmedia': [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/media/128',
+          href: '#',
         },
       ],
       'wp:attachment': [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/media?parent=124',
+          href: '#',
         },
       ],
       'wp:term': [
         {
           taxonomy: 'category',
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/categories?post=124',
+          href: '#',
         },
         {
           taxonomy: 'post_tag',
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/tags?post=124',
+          href: '#',
         },
       ],
       curies: [
@@ -1085,9 +1087,9 @@ export const ItemsWithCategoriesFixture = [
         {
           id: 1,
           name: 'timothyneiljohnson',
-          url: 'http://localhost:10006',
+          url: '#',
           description: '',
-          link: 'http://localhost:10006/author/timothyneiljohnson/',
+          link: '#',
           slug: 'timothyneiljohnson',
           avatar_urls: {
             '24': 'http://2.gravatar.com/avatar/e5b5d508ca128c58fb8ff4335477e7d3?s=24&d=mm&r=g',
@@ -1098,12 +1100,12 @@ export const ItemsWithCategoriesFixture = [
           _links: {
             self: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+                href: '#',
               },
             ],
             collection: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/users',
+                href: '#',
               },
             ],
           },
@@ -1115,7 +1117,7 @@ export const ItemsWithCategoriesFixture = [
           date: '2022-05-29T16:36:14',
           slug: 'darcula-aurora',
           type: 'attachment',
-          link: 'http://localhost:10006/vs-code-color-theme-darcula-aurora/darcula-aurora/',
+          link: '#',
           title: {
             rendered: 'darcula-aurora',
           },
@@ -1140,7 +1142,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 10583,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/darcula-aurora-300x212.jpg',
+                  `${API_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora-300x212.jpg`,
               },
               large: {
                 file: 'darcula-aurora-1024x724.jpg',
@@ -1149,7 +1151,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 79738,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/darcula-aurora-1024x724.jpg',
+                  `${API_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora-1024x724.jpg`,
               },
               thumbnail: {
                 file: 'darcula-aurora-150x150.jpg',
@@ -1158,7 +1160,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 4591,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/darcula-aurora-150x150.jpg',
+                  `${API_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora-150x150.jpg`,
               },
               medium_large: {
                 file: 'darcula-aurora-768x543.jpg',
@@ -1167,7 +1169,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 52316,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/darcula-aurora-768x543.jpg',
+                  `${API_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora-768x543.jpg`,
               },
               full: {
                 file: 'darcula-aurora.jpg',
@@ -1175,7 +1177,7 @@ export const ItemsWithCategoriesFixture = [
                 height: 849,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/darcula-aurora.jpg',
+                  `${API_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora.jpg`,
               },
             },
             image_meta: {
@@ -1194,33 +1196,33 @@ export const ItemsWithCategoriesFixture = [
             },
           },
           source_url:
-            'http://localhost:10006/wp-content/uploads/2022/05/darcula-aurora.jpg',
+            `${API_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora.jpg`,
           _links: {
             self: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/media/128',
+                href: '#',
               },
             ],
             collection: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/media',
+                href: '#',
               },
             ],
             about: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/types/attachment',
+                href: '#',
               },
             ],
             author: [
               {
                 embeddable: true,
-                href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+                href: '#',
               },
             ],
             replies: [
               {
                 embeddable: true,
-                href: 'http://localhost:10006/wp-json/wp/v2/comments?post=128',
+                href: '#',
               },
             ],
           },
@@ -1230,7 +1232,7 @@ export const ItemsWithCategoriesFixture = [
         [
           {
             id: 9,
-            link: 'http://localhost:10006/category/banner/',
+            link: '#',
             name: 'Banner',
             slug: 'banner',
             taxonomy: 'category',
@@ -1238,22 +1240,22 @@ export const ItemsWithCategoriesFixture = [
             _links: {
               self: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/9',
+                  href: '#',
                 },
               ],
               collection: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories',
+                  href: '#',
                 },
               ],
               about: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+                  href: '#',
                 },
               ],
               'wp:post_type': [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=9',
+                  href: '#',
                 },
               ],
               curies: [
@@ -1267,7 +1269,7 @@ export const ItemsWithCategoriesFixture = [
           },
           {
             id: 3,
-            link: 'http://localhost:10006/category/featured/',
+            link: '#',
             name: 'Featured',
             slug: 'featured',
             taxonomy: 'category',
@@ -1275,22 +1277,22 @@ export const ItemsWithCategoriesFixture = [
             _links: {
               self: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/3',
+                  href: '#',
                 },
               ],
               collection: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories',
+                  href: '#',
                 },
               ],
               about: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+                  href: '#',
                 },
               ],
               'wp:post_type': [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=3',
+                  href: '#',
                 },
               ],
               curies: [
@@ -1304,7 +1306,7 @@ export const ItemsWithCategoriesFixture = [
           },
           {
             id: 4,
-            link: 'http://localhost:10006/category/featured/web-design/',
+            link: '#',
             name: 'Web Design',
             slug: 'web-design',
             taxonomy: 'category',
@@ -1312,28 +1314,28 @@ export const ItemsWithCategoriesFixture = [
             _links: {
               self: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/4',
+                  href: '#',
                 },
               ],
               collection: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories',
+                  href: '#',
                 },
               ],
               about: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+                  href: '#',
                 },
               ],
               up: [
                 {
                   embeddable: true,
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/3',
+                  href: '#',
                 },
               ],
               'wp:post_type': [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=4',
+                  href: '#',
                 },
               ],
               curies: [
@@ -1355,14 +1357,14 @@ export const ItemsWithCategoriesFixture = [
     date: '2022-05-29T16:22:05',
     date_gmt: '2022-05-29T16:22:05',
     guid: {
-      rendered: 'http://localhost:10006/?p=116',
+      rendered: '',
     },
     modified: '2022-05-30T23:13:21',
     modified_gmt: '2022-05-30T23:13:21',
     slug: 'see-it-in-your-space-feature',
     status: 'publish',
     type: 'post',
-    link: 'http://localhost:10006/see-it-in-your-space-feature/',
+    link: '#',
     title: {
       rendered: '&#8220;See It In Your Space&#8221;',
     },
@@ -1387,71 +1389,71 @@ export const ItemsWithCategoriesFixture = [
     tags: [],
     acf: {
       highlight_image:
-        'http://localhost:10006/wp-content/uploads/2022/05/see-it-in-your-space-tall-3.jpg',
+        `${API_BASE_URL}/wp-content/uploads/2022/05/see-it-in-your-space-tall-3.jpg`,
       banner_image_wide: false,
       banner_image_16_9: false,
     },
     _links: {
       self: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/posts/116',
+          href: '#',
         },
       ],
       collection: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/posts',
+          href: '#',
         },
       ],
       about: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/types/post',
+          href: '#',
         },
       ],
       author: [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+          href: '#',
         },
       ],
       replies: [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/comments?post=116',
+          href: '#',
         },
       ],
       'version-history': [
         {
           count: 7,
-          href: 'http://localhost:10006/wp-json/wp/v2/posts/116/revisions',
+          href: '#',
         },
       ],
       'predecessor-version': [
         {
           id: 243,
-          href: 'http://localhost:10006/wp-json/wp/v2/posts/116/revisions/243',
+          href: '#',
         },
       ],
       'wp:featuredmedia': [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/media/194',
+          href: '#',
         },
       ],
       'wp:attachment': [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/media?parent=116',
+          href: '#',
         },
       ],
       'wp:term': [
         {
           taxonomy: 'category',
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/categories?post=116',
+          href: '#',
         },
         {
           taxonomy: 'post_tag',
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/tags?post=116',
+          href: '#',
         },
       ],
       curies: [
@@ -1467,9 +1469,9 @@ export const ItemsWithCategoriesFixture = [
         {
           id: 1,
           name: 'timothyneiljohnson',
-          url: 'http://localhost:10006',
+          url: '#',
           description: '',
-          link: 'http://localhost:10006/author/timothyneiljohnson/',
+          link: '#',
           slug: 'timothyneiljohnson',
           avatar_urls: {
             '24': 'http://2.gravatar.com/avatar/e5b5d508ca128c58fb8ff4335477e7d3?s=24&d=mm&r=g',
@@ -1480,12 +1482,12 @@ export const ItemsWithCategoriesFixture = [
           _links: {
             self: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+                href: '#',
               },
             ],
             collection: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/users',
+                href: '#',
               },
             ],
           },
@@ -1497,7 +1499,7 @@ export const ItemsWithCategoriesFixture = [
           date: '2022-05-30T07:26:26',
           slug: 'see-it-in-your-space',
           type: 'attachment',
-          link: 'http://localhost:10006/see-it-in-your-space-feature/see-it-in-your-space/',
+          link: '#',
           title: {
             rendered: 'see-it-in-your-space',
           },
@@ -1522,7 +1524,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 16734,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/see-it-in-your-space-300x184.jpg',
+                  `${API_BASE_URL}/wp-content/uploads/2022/05/see-it-in-your-space-300x184.jpg`,
               },
               large: {
                 file: 'see-it-in-your-space-1024x627.jpg',
@@ -1531,7 +1533,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 105686,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/see-it-in-your-space-1024x627.jpg',
+                  `${API_BASE_URL}/wp-content/uploads/2022/05/see-it-in-your-space-1024x627.jpg`,
               },
               thumbnail: {
                 file: 'see-it-in-your-space-150x150.jpg',
@@ -1540,7 +1542,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 7907,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/see-it-in-your-space-150x150.jpg',
+                  `${API_BASE_URL}/wp-content/uploads/2022/05/see-it-in-your-space-150x150.jpg`,
               },
               medium_large: {
                 file: 'see-it-in-your-space-768x470.jpg',
@@ -1549,7 +1551,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 68265,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/see-it-in-your-space-768x470.jpg',
+                  `${API_BASE_URL}/wp-content/uploads/2022/05/see-it-in-your-space-768x470.jpg`,
               },
               full: {
                 file: 'see-it-in-your-space.jpg',
@@ -1557,7 +1559,7 @@ export const ItemsWithCategoriesFixture = [
                 height: 735,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/see-it-in-your-space.jpg',
+                  `${API_BASE_URL}/wp-content/uploads/2022/05/see-it-in-your-space.jpg`,
               },
             },
             image_meta: {
@@ -1576,33 +1578,33 @@ export const ItemsWithCategoriesFixture = [
             },
           },
           source_url:
-            'http://localhost:10006/wp-content/uploads/2022/05/see-it-in-your-space.jpg',
+            `${API_BASE_URL}/wp-content/uploads/2022/05/see-it-in-your-space.jpg`,
           _links: {
             self: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/media/194',
+                href: '#',
               },
             ],
             collection: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/media',
+                href: '#',
               },
             ],
             about: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/types/attachment',
+                href: '#',
               },
             ],
             author: [
               {
                 embeddable: true,
-                href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+                href: '#',
               },
             ],
             replies: [
               {
                 embeddable: true,
-                href: 'http://localhost:10006/wp-json/wp/v2/comments?post=194',
+                href: '#',
               },
             ],
           },
@@ -1612,7 +1614,7 @@ export const ItemsWithCategoriesFixture = [
         [
           {
             id: 3,
-            link: 'http://localhost:10006/category/featured/',
+            link: '#',
             name: 'Featured',
             slug: 'featured',
             taxonomy: 'category',
@@ -1620,22 +1622,22 @@ export const ItemsWithCategoriesFixture = [
             _links: {
               self: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/3',
+                  href: '#',
                 },
               ],
               collection: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories',
+                  href: '#',
                 },
               ],
               about: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+                  href: '#',
                 },
               ],
               'wp:post_type': [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=3',
+                  href: '#',
                 },
               ],
               curies: [
@@ -1649,7 +1651,7 @@ export const ItemsWithCategoriesFixture = [
           },
           {
             id: 4,
-            link: 'http://localhost:10006/category/featured/web-design/',
+            link: '#',
             name: 'Web Design',
             slug: 'web-design',
             taxonomy: 'category',
@@ -1657,28 +1659,28 @@ export const ItemsWithCategoriesFixture = [
             _links: {
               self: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/4',
+                  href: '#',
                 },
               ],
               collection: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories',
+                  href: '#',
                 },
               ],
               about: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+                  href: '#',
                 },
               ],
               up: [
                 {
                   embeddable: true,
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/3',
+                  href: '#',
                 },
               ],
               'wp:post_type': [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=4',
+                  href: '#',
                 },
               ],
               curies: [
@@ -1700,14 +1702,14 @@ export const ItemsWithCategoriesFixture = [
     date: '2022-05-29T16:09:11',
     date_gmt: '2022-05-29T16:09:11',
     guid: {
-      rendered: 'http://localhost:10006/?p=111',
+      rendered: '',
     },
     modified: '2022-05-30T23:12:26',
     modified_gmt: '2022-05-30T23:12:26',
     slug: 'building-the-ios-home-screen-in-react',
     status: 'publish',
     type: 'post',
-    link: 'http://localhost:10006/building-the-ios-home-screen-in-react/',
+    link: '#',
     title: {
       rendered: 'Build an iOS Home Screen in React',
     },
@@ -1732,73 +1734,73 @@ export const ItemsWithCategoriesFixture = [
     tags: [],
     acf: {
       highlight_image:
-        'http://localhost:10006/wp-content/uploads/2022/05/ios-home-screen-tall-2.jpg',
+        `${API_BASE_URL}/wp-content/uploads/2022/05/ios-home-screen-tall-2.jpg`,
       banner_image_wide:
-        'http://localhost:10006/wp-content/uploads/2022/05/ios-home-screen-banner_239_1.jpg',
+        `${API_BASE_URL}/wp-content/uploads/2022/05/ios-home-screen-banner_239_1.jpg`,
       banner_image_16_9:
-        'http://localhost:10006/wp-content/uploads/2022/05/ios-home-screen-banner_16_9.jpg',
+        `${API_BASE_URL}/wp-content/uploads/2022/05/ios-home-screen-banner_16_9.jpg`,
     },
     _links: {
       self: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/posts/111',
+          href: '#',
         },
       ],
       collection: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/posts',
+          href: '#',
         },
       ],
       about: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/types/post',
+          href: '#',
         },
       ],
       author: [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+          href: '#',
         },
       ],
       replies: [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/comments?post=111',
+          href: '#',
         },
       ],
       'version-history': [
         {
           count: 10,
-          href: 'http://localhost:10006/wp-json/wp/v2/posts/111/revisions',
+          href: '#',
         },
       ],
       'predecessor-version': [
         {
           id: 241,
-          href: 'http://localhost:10006/wp-json/wp/v2/posts/111/revisions/241',
+          href: '#',
         },
       ],
       'wp:featuredmedia': [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/media/192',
+          href: '#',
         },
       ],
       'wp:attachment': [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/media?parent=111',
+          href: '#',
         },
       ],
       'wp:term': [
         {
           taxonomy: 'category',
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/categories?post=111',
+          href: '#',
         },
         {
           taxonomy: 'post_tag',
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/tags?post=111',
+          href: '#',
         },
       ],
       curies: [
@@ -1814,9 +1816,9 @@ export const ItemsWithCategoriesFixture = [
         {
           id: 1,
           name: 'timothyneiljohnson',
-          url: 'http://localhost:10006',
+          url: '#',
           description: '',
-          link: 'http://localhost:10006/author/timothyneiljohnson/',
+          link: '#',
           slug: 'timothyneiljohnson',
           avatar_urls: {
             '24': 'http://2.gravatar.com/avatar/e5b5d508ca128c58fb8ff4335477e7d3?s=24&d=mm&r=g',
@@ -1827,12 +1829,12 @@ export const ItemsWithCategoriesFixture = [
           _links: {
             self: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+                href: '#',
               },
             ],
             collection: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/users',
+                href: '#',
               },
             ],
           },
@@ -1844,7 +1846,7 @@ export const ItemsWithCategoriesFixture = [
           date: '2022-05-30T07:12:06',
           slug: 'ios-home-screen',
           type: 'attachment',
-          link: 'http://localhost:10006/building-the-ios-home-screen-in-react/ios-home-screen/',
+          link: '#',
           title: {
             rendered: 'ios-home-screen',
           },
@@ -1869,7 +1871,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 20463,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/ios-home-screen-300x186.jpg',
+                  `${API_BASE_URL}/wp-content/uploads/2022/05/ios-home-screen-300x186.jpg`,
               },
               large: {
                 file: 'ios-home-screen-1024x636.jpg',
@@ -1878,7 +1880,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 123102,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/ios-home-screen-1024x636.jpg',
+                  `${API_BASE_URL}/wp-content/uploads/2022/05/ios-home-screen-1024x636.jpg`,
               },
               thumbnail: {
                 file: 'ios-home-screen-150x150.jpg',
@@ -1887,7 +1889,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 9448,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/ios-home-screen-150x150.jpg',
+                  `${API_BASE_URL}/wp-content/uploads/2022/05/ios-home-screen-150x150.jpg`,
               },
               medium_large: {
                 file: 'ios-home-screen-768x477.jpg',
@@ -1896,7 +1898,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 80428,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/ios-home-screen-768x477.jpg',
+                  `${API_BASE_URL}/wp-content/uploads/2022/05/ios-home-screen-768x477.jpg`,
               },
               full: {
                 file: 'ios-home-screen.jpg',
@@ -1904,7 +1906,7 @@ export const ItemsWithCategoriesFixture = [
                 height: 745,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/ios-home-screen.jpg',
+                  `${API_BASE_URL}/wp-content/uploads/2022/05/ios-home-screen.jpg`,
               },
             },
             image_meta: {
@@ -1923,33 +1925,33 @@ export const ItemsWithCategoriesFixture = [
             },
           },
           source_url:
-            'http://localhost:10006/wp-content/uploads/2022/05/ios-home-screen.jpg',
+            `${API_BASE_URL}/wp-content/uploads/2022/05/ios-home-screen.jpg`,
           _links: {
             self: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/media/192',
+                href: '#',
               },
             ],
             collection: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/media',
+                href: '#',
               },
             ],
             about: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/types/attachment',
+                href: '#',
               },
             ],
             author: [
               {
                 embeddable: true,
-                href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+                href: '#',
               },
             ],
             replies: [
               {
                 embeddable: true,
-                href: 'http://localhost:10006/wp-json/wp/v2/comments?post=192',
+                href: '#',
               },
             ],
           },
@@ -1959,7 +1961,7 @@ export const ItemsWithCategoriesFixture = [
         [
           {
             id: 9,
-            link: 'http://localhost:10006/category/banner/',
+            link: '#',
             name: 'Banner',
             slug: 'banner',
             taxonomy: 'category',
@@ -1967,22 +1969,22 @@ export const ItemsWithCategoriesFixture = [
             _links: {
               self: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/9',
+                  href: '#',
                 },
               ],
               collection: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories',
+                  href: '#',
                 },
               ],
               about: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+                  href: '#',
                 },
               ],
               'wp:post_type': [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=9',
+                  href: '#',
                 },
               ],
               curies: [
@@ -1996,7 +1998,7 @@ export const ItemsWithCategoriesFixture = [
           },
           {
             id: 3,
-            link: 'http://localhost:10006/category/featured/',
+            link: '#',
             name: 'Featured',
             slug: 'featured',
             taxonomy: 'category',
@@ -2004,22 +2006,22 @@ export const ItemsWithCategoriesFixture = [
             _links: {
               self: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/3',
+                  href: '#',
                 },
               ],
               collection: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories',
+                  href: '#',
                 },
               ],
               about: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+                  href: '#',
                 },
               ],
               'wp:post_type': [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=3',
+                  href: '#',
                 },
               ],
               curies: [
@@ -2033,7 +2035,7 @@ export const ItemsWithCategoriesFixture = [
           },
           {
             id: 11,
-            link: 'http://localhost:10006/category/featured/tutorials/',
+            link: '#',
             name: 'Tutorials',
             slug: 'tutorials',
             taxonomy: 'category',
@@ -2041,28 +2043,28 @@ export const ItemsWithCategoriesFixture = [
             _links: {
               self: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/11',
+                  href: '#',
                 },
               ],
               collection: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories',
+                  href: '#',
                 },
               ],
               about: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+                  href: '#',
                 },
               ],
               up: [
                 {
                   embeddable: true,
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/3',
+                  href: '#',
                 },
               ],
               'wp:post_type': [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=11',
+                  href: '#',
                 },
               ],
               curies: [
@@ -2084,14 +2086,14 @@ export const ItemsWithCategoriesFixture = [
     date: '2022-05-29T16:01:27',
     date_gmt: '2022-05-29T16:01:27',
     guid: {
-      rendered: 'http://localhost:10006/?p=107',
+      rendered: '',
     },
     modified: '2022-05-31T00:10:37',
     modified_gmt: '2022-05-31T00:10:37',
     slug: 'create-a-music-player-from-scratch',
     status: 'publish',
     type: 'post',
-    link: 'http://localhost:10006/create-a-music-player-from-scratch/',
+    link: '#',
     title: {
       rendered: 'Create a Music Player from Scratch',
     },
@@ -2116,71 +2118,71 @@ export const ItemsWithCategoriesFixture = [
     tags: [],
     acf: {
       highlight_image:
-        'http://localhost:10006/wp-content/uploads/2022/05/music-player-tall2.jpg',
+        `${API_BASE_URL}/wp-content/uploads/2022/05/music-player-tall2.jpg`,
       banner_image_wide: false,
       banner_image_16_9: false,
     },
     _links: {
       self: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/posts/107',
+          href: '#',
         },
       ],
       collection: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/posts',
+          href: '#',
         },
       ],
       about: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/types/post',
+          href: '#',
         },
       ],
       author: [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+          href: '#',
         },
       ],
       replies: [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/comments?post=107',
+          href: '#',
         },
       ],
       'version-history': [
         {
           count: 7,
-          href: 'http://localhost:10006/wp-json/wp/v2/posts/107/revisions',
+          href: '#',
         },
       ],
       'predecessor-version': [
         {
           id: 259,
-          href: 'http://localhost:10006/wp-json/wp/v2/posts/107/revisions/259',
+          href: '#',
         },
       ],
       'wp:featuredmedia': [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/media/108',
+          href: '#',
         },
       ],
       'wp:attachment': [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/media?parent=107',
+          href: '#',
         },
       ],
       'wp:term': [
         {
           taxonomy: 'category',
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/categories?post=107',
+          href: '#',
         },
         {
           taxonomy: 'post_tag',
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/tags?post=107',
+          href: '#',
         },
       ],
       curies: [
@@ -2196,9 +2198,9 @@ export const ItemsWithCategoriesFixture = [
         {
           id: 1,
           name: 'timothyneiljohnson',
-          url: 'http://localhost:10006',
+          url: '#',
           description: '',
-          link: 'http://localhost:10006/author/timothyneiljohnson/',
+          link: '#',
           slug: 'timothyneiljohnson',
           avatar_urls: {
             '24': 'http://2.gravatar.com/avatar/e5b5d508ca128c58fb8ff4335477e7d3?s=24&d=mm&r=g',
@@ -2209,12 +2211,12 @@ export const ItemsWithCategoriesFixture = [
           _links: {
             self: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+                href: '#',
               },
             ],
             collection: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/users',
+                href: '#',
               },
             ],
           },
@@ -2226,7 +2228,7 @@ export const ItemsWithCategoriesFixture = [
           date: '2022-05-29T16:01:16',
           slug: 'music-player',
           type: 'attachment',
-          link: 'http://localhost:10006/create-a-music-player-from-scratch/music-player/',
+          link: '#',
           title: {
             rendered: 'music-player',
           },
@@ -2251,7 +2253,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 12465,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/music-player-300x201.jpg',
+                  `${API_BASE_URL}/wp-content/uploads/2022/05/music-player-300x201.jpg`,
               },
               large: {
                 file: 'music-player-1024x686.jpg',
@@ -2260,7 +2262,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 71437,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/music-player-1024x686.jpg',
+                  `${API_BASE_URL}/wp-content/uploads/2022/05/music-player-1024x686.jpg`,
               },
               thumbnail: {
                 file: 'music-player-150x150.jpg',
@@ -2269,7 +2271,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 6353,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/music-player-150x150.jpg',
+                  `${API_BASE_URL}/wp-content/uploads/2022/05/music-player-150x150.jpg`,
               },
               medium_large: {
                 file: 'music-player-768x515.jpg',
@@ -2278,7 +2280,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 48749,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/music-player-768x515.jpg',
+                  `${API_BASE_URL}/wp-content/uploads/2022/05/music-player-768x515.jpg`,
               },
               full: {
                 file: 'music-player.jpg',
@@ -2286,7 +2288,7 @@ export const ItemsWithCategoriesFixture = [
                 height: 707,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/music-player.jpg',
+                  `${API_BASE_URL}/wp-content/uploads/2022/05/music-player.jpg`,
               },
             },
             image_meta: {
@@ -2305,33 +2307,33 @@ export const ItemsWithCategoriesFixture = [
             },
           },
           source_url:
-            'http://localhost:10006/wp-content/uploads/2022/05/music-player.jpg',
+            `${API_BASE_URL}/wp-content/uploads/2022/05/music-player.jpg`,
           _links: {
             self: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/media/108',
+                href: '#',
               },
             ],
             collection: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/media',
+                href: '#',
               },
             ],
             about: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/types/attachment',
+                href: '#',
               },
             ],
             author: [
               {
                 embeddable: true,
-                href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+                href: '#',
               },
             ],
             replies: [
               {
                 embeddable: true,
-                href: 'http://localhost:10006/wp-json/wp/v2/comments?post=108',
+                href: '#',
               },
             ],
           },
@@ -2341,7 +2343,7 @@ export const ItemsWithCategoriesFixture = [
         [
           {
             id: 3,
-            link: 'http://localhost:10006/category/featured/',
+            link: '#',
             name: 'Featured',
             slug: 'featured',
             taxonomy: 'category',
@@ -2349,22 +2351,22 @@ export const ItemsWithCategoriesFixture = [
             _links: {
               self: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/3',
+                  href: '#',
                 },
               ],
               collection: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories',
+                  href: '#',
                 },
               ],
               about: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+                  href: '#',
                 },
               ],
               'wp:post_type': [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=3',
+                  href: '#',
                 },
               ],
               curies: [
@@ -2378,7 +2380,7 @@ export const ItemsWithCategoriesFixture = [
           },
           {
             id: 11,
-            link: 'http://localhost:10006/category/featured/tutorials/',
+            link: '#',
             name: 'Tutorials',
             slug: 'tutorials',
             taxonomy: 'category',
@@ -2386,28 +2388,28 @@ export const ItemsWithCategoriesFixture = [
             _links: {
               self: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/11',
+                  href: '#',
                 },
               ],
               collection: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories',
+                  href: '#',
                 },
               ],
               about: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+                  href: '#',
                 },
               ],
               up: [
                 {
                   embeddable: true,
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/3',
+                  href: '#',
                 },
               ],
               'wp:post_type': [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=11',
+                  href: '#',
                 },
               ],
               curies: [
@@ -2429,14 +2431,14 @@ export const ItemsWithCategoriesFixture = [
     date: '2022-05-29T15:48:33',
     date_gmt: '2022-05-29T15:48:33',
     guid: {
-      rendered: 'http://localhost:10006/?p=101',
+      rendered: '',
     },
     modified: '2022-05-30T23:54:52',
     modified_gmt: '2022-05-30T23:54:52',
     slug: 'creating-facebook-style-reactions',
     status: 'publish',
     type: 'post',
-    link: 'http://localhost:10006/creating-facebook-style-reactions/',
+    link: '#',
     title: {
       rendered: 'Facebook-Style Animated Reactions',
     },
@@ -2461,73 +2463,73 @@ export const ItemsWithCategoriesFixture = [
     tags: [],
     acf: {
       highlight_image:
-        'http://localhost:10006/wp-content/uploads/2022/05/fb-style-reactions-tall6.jpg',
+        `${API_BASE_URL}/wp-content/uploads/2022/05/fb-style-reactions-tall6.jpg`,
       banner_image_wide:
-        'http://localhost:10006/wp-content/uploads/2022/05/fb-style-reactions_239-1-1.jpg',
+        `${API_BASE_URL}/wp-content/uploads/2022/05/fb-style-reactions_239-1-1.jpg`,
       banner_image_16_9:
-        'http://localhost:10006/wp-content/uploads/2022/05/fb-style-reactions_16-9-1.jpg',
+        `${API_BASE_URL}/wp-content/uploads/2022/05/fb-style-reactions_16-9-1.jpg`,
     },
     _links: {
       self: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/posts/101',
+          href: '#',
         },
       ],
       collection: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/posts',
+          href: '#',
         },
       ],
       about: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/types/post',
+          href: '#',
         },
       ],
       author: [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+          href: '#',
         },
       ],
       replies: [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/comments?post=101',
+          href: '#',
         },
       ],
       'version-history': [
         {
           count: 13,
-          href: 'http://localhost:10006/wp-json/wp/v2/posts/101/revisions',
+          href: '#',
         },
       ],
       'predecessor-version': [
         {
           id: 257,
-          href: 'http://localhost:10006/wp-json/wp/v2/posts/101/revisions/257',
+          href: '#',
         },
       ],
       'wp:featuredmedia': [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/media/102',
+          href: '#',
         },
       ],
       'wp:attachment': [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/media?parent=101',
+          href: '#',
         },
       ],
       'wp:term': [
         {
           taxonomy: 'category',
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/categories?post=101',
+          href: '#',
         },
         {
           taxonomy: 'post_tag',
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/tags?post=101',
+          href: '#',
         },
       ],
       curies: [
@@ -2543,9 +2545,9 @@ export const ItemsWithCategoriesFixture = [
         {
           id: 1,
           name: 'timothyneiljohnson',
-          url: 'http://localhost:10006',
+          url: '#',
           description: '',
-          link: 'http://localhost:10006/author/timothyneiljohnson/',
+          link: '#',
           slug: 'timothyneiljohnson',
           avatar_urls: {
             '24': 'http://2.gravatar.com/avatar/e5b5d508ca128c58fb8ff4335477e7d3?s=24&d=mm&r=g',
@@ -2556,12 +2558,12 @@ export const ItemsWithCategoriesFixture = [
           _links: {
             self: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+                href: '#',
               },
             ],
             collection: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/users',
+                href: '#',
               },
             ],
           },
@@ -2573,7 +2575,7 @@ export const ItemsWithCategoriesFixture = [
           date: '2022-05-29T15:47:58',
           slug: 'fb-style-reactions',
           type: 'attachment',
-          link: 'http://localhost:10006/creating-facebook-style-reactions/fb-style-reactions/',
+          link: '#',
           title: {
             rendered: 'fb-style-reactions',
           },
@@ -2598,7 +2600,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 7964,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/fb-style-reactions-300x149.jpg',
+                  `${API_BASE_URL}/wp-content/uploads/2022/05/fb-style-reactions-300x149.jpg`,
               },
               large: {
                 file: 'fb-style-reactions-1024x508.jpg',
@@ -2607,7 +2609,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 38088,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/fb-style-reactions-1024x508.jpg',
+                  `${API_BASE_URL}/wp-content/uploads/2022/05/fb-style-reactions-1024x508.jpg`,
               },
               thumbnail: {
                 file: 'fb-style-reactions-150x150.jpg',
@@ -2616,7 +2618,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 5351,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/fb-style-reactions-150x150.jpg',
+                  `${API_BASE_URL}/wp-content/uploads/2022/05/fb-style-reactions-150x150.jpg`,
               },
               medium_large: {
                 file: 'fb-style-reactions-768x381.jpg',
@@ -2625,7 +2627,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 26423,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/fb-style-reactions-768x381.jpg',
+                  `${API_BASE_URL}/wp-content/uploads/2022/05/fb-style-reactions-768x381.jpg`,
               },
               full: {
                 file: 'fb-style-reactions.jpg',
@@ -2633,7 +2635,7 @@ export const ItemsWithCategoriesFixture = [
                 height: 598,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/fb-style-reactions.jpg',
+                  `${API_BASE_URL}/wp-content/uploads/2022/05/fb-style-reactions.jpg`,
               },
             },
             image_meta: {
@@ -2652,33 +2654,33 @@ export const ItemsWithCategoriesFixture = [
             },
           },
           source_url:
-            'http://localhost:10006/wp-content/uploads/2022/05/fb-style-reactions.jpg',
+            `${API_BASE_URL}/wp-content/uploads/2022/05/fb-style-reactions.jpg`,
           _links: {
             self: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/media/102',
+                href: '#',
               },
             ],
             collection: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/media',
+                href: '#',
               },
             ],
             about: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/types/attachment',
+                href: '#',
               },
             ],
             author: [
               {
                 embeddable: true,
-                href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+                href: '#',
               },
             ],
             replies: [
               {
                 embeddable: true,
-                href: 'http://localhost:10006/wp-json/wp/v2/comments?post=102',
+                href: '#',
               },
             ],
           },
@@ -2688,7 +2690,7 @@ export const ItemsWithCategoriesFixture = [
         [
           {
             id: 9,
-            link: 'http://localhost:10006/category/banner/',
+            link: '#',
             name: 'Banner',
             slug: 'banner',
             taxonomy: 'category',
@@ -2696,22 +2698,22 @@ export const ItemsWithCategoriesFixture = [
             _links: {
               self: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/9',
+                  href: '#',
                 },
               ],
               collection: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories',
+                  href: '#',
                 },
               ],
               about: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+                  href: '#',
                 },
               ],
               'wp:post_type': [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=9',
+                  href: '#',
                 },
               ],
               curies: [
@@ -2725,7 +2727,7 @@ export const ItemsWithCategoriesFixture = [
           },
           {
             id: 3,
-            link: 'http://localhost:10006/category/featured/',
+            link: '#',
             name: 'Featured',
             slug: 'featured',
             taxonomy: 'category',
@@ -2733,22 +2735,22 @@ export const ItemsWithCategoriesFixture = [
             _links: {
               self: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/3',
+                  href: '#',
                 },
               ],
               collection: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories',
+                  href: '#',
                 },
               ],
               about: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+                  href: '#',
                 },
               ],
               'wp:post_type': [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=3',
+                  href: '#',
                 },
               ],
               curies: [
@@ -2762,7 +2764,7 @@ export const ItemsWithCategoriesFixture = [
           },
           {
             id: 11,
-            link: 'http://localhost:10006/category/featured/tutorials/',
+            link: '#',
             name: 'Tutorials',
             slug: 'tutorials',
             taxonomy: 'category',
@@ -2770,28 +2772,28 @@ export const ItemsWithCategoriesFixture = [
             _links: {
               self: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/11',
+                  href: '#',
                 },
               ],
               collection: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories',
+                  href: '#',
                 },
               ],
               about: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+                  href: '#',
                 },
               ],
               up: [
                 {
                   embeddable: true,
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/3',
+                  href: '#',
                 },
               ],
               'wp:post_type': [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=11',
+                  href: '#',
                 },
               ],
               curies: [
@@ -2813,14 +2815,14 @@ export const ItemsWithCategoriesFixture = [
     date: '2022-05-28T17:35:00',
     date_gmt: '2022-05-28T17:35:00',
     guid: {
-      rendered: 'http://localhost:10006/?p=137',
+      rendered: '',
     },
     modified: '2022-05-30T07:55:34',
     modified_gmt: '2022-05-30T07:55:34',
     slug: 'context-provider-for-dark-mode-reduced-motion-etc',
     status: 'publish',
     type: 'post',
-    link: 'http://localhost:10006/context-provider-for-dark-mode-reduced-motion-etc/',
+    link: '#',
     title: {
       rendered: 'Context Provider for Dark Mode, Reduced Motion, etc.',
     },
@@ -2845,71 +2847,71 @@ export const ItemsWithCategoriesFixture = [
     tags: [],
     acf: {
       highlight_image:
-        'http://localhost:10006/wp-content/uploads/2022/05/reduced-motion-tall.jpg',
+        `${API_BASE_URL}/wp-content/uploads/2022/05/reduced-motion-tall.jpg`,
       banner_image_wide: false,
       banner_image_16_9: false,
     },
     _links: {
       self: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/posts/137',
+          href: '#',
         },
       ],
       collection: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/posts',
+          href: '#',
         },
       ],
       about: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/types/post',
+          href: '#',
         },
       ],
       author: [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+          href: '#',
         },
       ],
       replies: [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/comments?post=137',
+          href: '#',
         },
       ],
       'version-history': [
         {
           count: 4,
-          href: 'http://localhost:10006/wp-json/wp/v2/posts/137/revisions',
+          href: '#',
         },
       ],
       'predecessor-version': [
         {
           id: 202,
-          href: 'http://localhost:10006/wp-json/wp/v2/posts/137/revisions/202',
+          href: '#',
         },
       ],
       'wp:featuredmedia': [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/media/204',
+          href: '#',
         },
       ],
       'wp:attachment': [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/media?parent=137',
+          href: '#',
         },
       ],
       'wp:term': [
         {
           taxonomy: 'category',
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/categories?post=137',
+          href: '#',
         },
         {
           taxonomy: 'post_tag',
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/tags?post=137',
+          href: '#',
         },
       ],
       curies: [
@@ -2925,9 +2927,9 @@ export const ItemsWithCategoriesFixture = [
         {
           id: 1,
           name: 'timothyneiljohnson',
-          url: 'http://localhost:10006',
+          url: '#',
           description: '',
-          link: 'http://localhost:10006/author/timothyneiljohnson/',
+          link: '#',
           slug: 'timothyneiljohnson',
           avatar_urls: {
             '24': 'http://2.gravatar.com/avatar/e5b5d508ca128c58fb8ff4335477e7d3?s=24&d=mm&r=g',
@@ -2938,12 +2940,12 @@ export const ItemsWithCategoriesFixture = [
           _links: {
             self: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+                href: '#',
               },
             ],
             collection: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/users',
+                href: '#',
               },
             ],
           },
@@ -2955,7 +2957,7 @@ export const ItemsWithCategoriesFixture = [
           date: '2022-05-30T07:55:31',
           slug: 'reduced-motion',
           type: 'attachment',
-          link: 'http://localhost:10006/context-provider-for-dark-mode-reduced-motion-etc/reduced-motion/',
+          link: '#',
           title: {
             rendered: 'reduced-motion',
           },
@@ -2980,7 +2982,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 6017,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/reduced-motion-300x139.jpg',
+                  `${API_BASE_URL}/wp-content/uploads/2022/05/reduced-motion-300x139.jpg`,
               },
               large: {
                 file: 'reduced-motion-1024x474.jpg',
@@ -2989,7 +2991,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 24784,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/reduced-motion-1024x474.jpg',
+                  `${API_BASE_URL}/wp-content/uploads/2022/05/reduced-motion-1024x474.jpg`,
               },
               thumbnail: {
                 file: 'reduced-motion-150x150.jpg',
@@ -2998,7 +3000,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 6242,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/reduced-motion-150x150.jpg',
+                  `${API_BASE_URL}/wp-content/uploads/2022/05/reduced-motion-150x150.jpg`,
               },
               medium_large: {
                 file: 'reduced-motion-768x356.jpg',
@@ -3007,7 +3009,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 17901,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/reduced-motion-768x356.jpg',
+                  `${API_BASE_URL}/wp-content/uploads/2022/05/reduced-motion-768x356.jpg`,
               },
               full: {
                 file: 'reduced-motion.jpg',
@@ -3015,7 +3017,7 @@ export const ItemsWithCategoriesFixture = [
                 height: 695,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/reduced-motion.jpg',
+                  `${API_BASE_URL}/wp-content/uploads/2022/05/reduced-motion.jpg`,
               },
             },
             image_meta: {
@@ -3034,33 +3036,33 @@ export const ItemsWithCategoriesFixture = [
             },
           },
           source_url:
-            'http://localhost:10006/wp-content/uploads/2022/05/reduced-motion.jpg',
+            `${API_BASE_URL}/wp-content/uploads/2022/05/reduced-motion.jpg`,
           _links: {
             self: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/media/204',
+                href: '#',
               },
             ],
             collection: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/media',
+                href: '#',
               },
             ],
             about: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/types/attachment',
+                href: '#',
               },
             ],
             author: [
               {
                 embeddable: true,
-                href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+                href: '#',
               },
             ],
             replies: [
               {
                 embeddable: true,
-                href: 'http://localhost:10006/wp-json/wp/v2/comments?post=204',
+                href: '#',
               },
             ],
           },
@@ -3070,7 +3072,7 @@ export const ItemsWithCategoriesFixture = [
         [
           {
             id: 8,
-            link: 'http://localhost:10006/category/featured/accessibility/',
+            link: '#',
             name: 'Accessibility',
             slug: 'accessibility',
             taxonomy: 'category',
@@ -3078,28 +3080,28 @@ export const ItemsWithCategoriesFixture = [
             _links: {
               self: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/8',
+                  href: '#',
                 },
               ],
               collection: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories',
+                  href: '#',
                 },
               ],
               about: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+                  href: '#',
                 },
               ],
               up: [
                 {
                   embeddable: true,
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/3',
+                  href: '#',
                 },
               ],
               'wp:post_type': [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=8',
+                  href: '#',
                 },
               ],
               curies: [
@@ -3113,7 +3115,7 @@ export const ItemsWithCategoriesFixture = [
           },
           {
             id: 3,
-            link: 'http://localhost:10006/category/featured/',
+            link: '#',
             name: 'Featured',
             slug: 'featured',
             taxonomy: 'category',
@@ -3121,22 +3123,22 @@ export const ItemsWithCategoriesFixture = [
             _links: {
               self: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/3',
+                  href: '#',
                 },
               ],
               collection: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories',
+                  href: '#',
                 },
               ],
               about: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+                  href: '#',
                 },
               ],
               'wp:post_type': [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=3',
+                  href: '#',
                 },
               ],
               curies: [
@@ -3158,14 +3160,14 @@ export const ItemsWithCategoriesFixture = [
     date: '2015-03-05T17:31:35',
     date_gmt: '2015-03-05T17:31:35',
     guid: {
-      rendered: 'http://localhost:10006/?p=26',
+      rendered: '',
     },
     modified: '2022-05-30T17:38:09',
     modified_gmt: '2022-05-30T17:38:09',
     slug: 'sift-target-recommendations',
     status: 'publish',
     type: 'post',
-    link: 'http://localhost:10006/sift-target-recommendations/',
+    link: '#',
     title: {
       rendered: 'Sift: Target Recommendations',
     },
@@ -3190,71 +3192,71 @@ export const ItemsWithCategoriesFixture = [
     tags: [],
     acf: {
       highlight_image:
-        'http://localhost:10006/wp-content/uploads/2015/03/sift-tall.jpg',
+        `${API_BASE_URL}/wp-content/uploads/2015/03/sift-tall.jpg`,
       banner_image_wide: false,
       banner_image_16_9: false,
     },
     _links: {
       self: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/posts/26',
+          href: '#',
         },
       ],
       collection: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/posts',
+          href: '#',
         },
       ],
       about: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/types/post',
+          href: '#',
         },
       ],
       author: [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+          href: '#',
         },
       ],
       replies: [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/comments?post=26',
+          href: '#',
         },
       ],
       'version-history': [
         {
           count: 4,
-          href: 'http://localhost:10006/wp-json/wp/v2/posts/26/revisions',
+          href: '#',
         },
       ],
       'predecessor-version': [
         {
           id: 216,
-          href: 'http://localhost:10006/wp-json/wp/v2/posts/26/revisions/216',
+          href: '#',
         },
       ],
       'wp:featuredmedia': [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/media/134',
+          href: '#',
         },
       ],
       'wp:attachment': [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/media?parent=26',
+          href: '#',
         },
       ],
       'wp:term': [
         {
           taxonomy: 'category',
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/categories?post=26',
+          href: '#',
         },
         {
           taxonomy: 'post_tag',
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/tags?post=26',
+          href: '#',
         },
       ],
       curies: [
@@ -3270,9 +3272,9 @@ export const ItemsWithCategoriesFixture = [
         {
           id: 1,
           name: 'timothyneiljohnson',
-          url: 'http://localhost:10006',
+          url: '#',
           description: '',
-          link: 'http://localhost:10006/author/timothyneiljohnson/',
+          link: '#',
           slug: 'timothyneiljohnson',
           avatar_urls: {
             '24': 'http://2.gravatar.com/avatar/e5b5d508ca128c58fb8ff4335477e7d3?s=24&d=mm&r=g',
@@ -3283,12 +3285,12 @@ export const ItemsWithCategoriesFixture = [
           _links: {
             self: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+                href: '#',
               },
             ],
             collection: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/users',
+                href: '#',
               },
             ],
           },
@@ -3300,7 +3302,7 @@ export const ItemsWithCategoriesFixture = [
           date: '2022-05-29T17:00:36',
           slug: 'sift',
           type: 'attachment',
-          link: 'http://localhost:10006/sift-target-recommendations/sift/',
+          link: '#',
           title: {
             rendered: 'sift',
           },
@@ -3325,7 +3327,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 9824,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2015/03/sift-300x173.jpeg',
+                  `${API_BASE_URL}/wp-content/uploads/2015/03/sift-300x173.jpeg`,
               },
               large: {
                 file: 'sift-1024x591.jpeg',
@@ -3334,7 +3336,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 70614,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2015/03/sift-1024x591.jpeg',
+                  `${API_BASE_URL}/wp-content/uploads/2015/03/sift-1024x591.jpeg`,
               },
               thumbnail: {
                 file: 'sift-150x150.jpeg',
@@ -3343,7 +3345,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 5961,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2015/03/sift-150x150.jpeg',
+                  `${API_BASE_URL}/wp-content/uploads/2015/03/sift-150x150.jpeg`,
               },
               medium_large: {
                 file: 'sift-768x443.jpeg',
@@ -3352,7 +3354,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 45816,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2015/03/sift-768x443.jpeg',
+                  `${API_BASE_URL}/wp-content/uploads/2015/03/sift-768x443.jpeg`,
               },
               '1536x1536': {
                 file: 'sift-1536x886.jpeg',
@@ -3361,7 +3363,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 129216,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2015/03/sift-1536x886.jpeg',
+                  `${API_BASE_URL}/wp-content/uploads/2015/03/sift-1536x886.jpeg`,
               },
               '2048x2048': {
                 file: 'sift-2048x1182.jpeg',
@@ -3370,7 +3372,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 192394,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2015/03/sift-2048x1182.jpeg',
+                  `${API_BASE_URL}/wp-content/uploads/2015/03/sift-2048x1182.jpeg`,
               },
               full: {
                 file: 'sift-scaled.jpeg',
@@ -3378,7 +3380,7 @@ export const ItemsWithCategoriesFixture = [
                 height: 1477,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2015/03/sift-scaled.jpeg',
+                  `${API_BASE_URL}/wp-content/uploads/2015/03/sift-scaled.jpeg`,
               },
             },
             image_meta: {
@@ -3398,33 +3400,33 @@ export const ItemsWithCategoriesFixture = [
             original_image: 'sift.jpeg',
           },
           source_url:
-            'http://localhost:10006/wp-content/uploads/2015/03/sift-scaled.jpeg',
+            `${API_BASE_URL}/wp-content/uploads/2015/03/sift-scaled.jpeg`,
           _links: {
             self: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/media/134',
+                href: '#',
               },
             ],
             collection: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/media',
+                href: '#',
               },
             ],
             about: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/types/attachment',
+                href: '#',
               },
             ],
             author: [
               {
                 embeddable: true,
-                href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+                href: '#',
               },
             ],
             replies: [
               {
                 embeddable: true,
-                href: 'http://localhost:10006/wp-json/wp/v2/comments?post=134',
+                href: '#',
               },
             ],
           },
@@ -3434,7 +3436,7 @@ export const ItemsWithCategoriesFixture = [
         [
           {
             id: 3,
-            link: 'http://localhost:10006/category/featured/',
+            link: '#',
             name: 'Featured',
             slug: 'featured',
             taxonomy: 'category',
@@ -3442,22 +3444,22 @@ export const ItemsWithCategoriesFixture = [
             _links: {
               self: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/3',
+                  href: '#',
                 },
               ],
               collection: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories',
+                  href: '#',
                 },
               ],
               about: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+                  href: '#',
                 },
               ],
               'wp:post_type': [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=3',
+                  href: '#',
                 },
               ],
               curies: [
@@ -3471,7 +3473,7 @@ export const ItemsWithCategoriesFixture = [
           },
           {
             id: 1,
-            link: 'http://localhost:10006/category/uncategorized/',
+            link: '#',
             name: 'Uncategorized',
             slug: 'uncategorized',
             taxonomy: 'category',
@@ -3479,22 +3481,22 @@ export const ItemsWithCategoriesFixture = [
             _links: {
               self: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/1',
+                  href: '#',
                 },
               ],
               collection: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories',
+                  href: '#',
                 },
               ],
               about: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+                  href: '#',
                 },
               ],
               'wp:post_type': [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=1',
+                  href: '#',
                 },
               ],
               curies: [
@@ -3516,14 +3518,14 @@ export const ItemsWithCategoriesFixture = [
     date: '2014-05-16T17:33:41',
     date_gmt: '2014-05-16T17:33:41',
     guid: {
-      rendered: 'http://localhost:10006/?p=28',
+      rendered: '',
     },
     modified: '2022-05-30T17:32:23',
     modified_gmt: '2022-05-30T17:32:23',
     slug: 'employee-of-the-quarter',
     status: 'publish',
     type: 'post',
-    link: 'http://localhost:10006/employee-of-the-quarter/',
+    link: '#',
     title: {
       rendered: 'Employee of the Quarter',
     },
@@ -3548,71 +3550,71 @@ export const ItemsWithCategoriesFixture = [
     tags: [],
     acf: {
       highlight_image:
-        'http://localhost:10006/wp-content/uploads/2014/05/rotq-tall.jpg',
+        `${API_BASE_URL}/wp-content/uploads/2014/05/rotq-tall.jpg`,
       banner_image_wide: false,
       banner_image_16_9: false,
     },
     _links: {
       self: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/posts/28',
+          href: '#',
         },
       ],
       collection: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/posts',
+          href: '#',
         },
       ],
       about: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/types/post',
+          href: '#',
         },
       ],
       author: [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+          href: '#',
         },
       ],
       replies: [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/comments?post=28',
+          href: '#',
         },
       ],
       'version-history': [
         {
           count: 5,
-          href: 'http://localhost:10006/wp-json/wp/v2/posts/28/revisions',
+          href: '#',
         },
       ],
       'predecessor-version': [
         {
           id: 214,
-          href: 'http://localhost:10006/wp-json/wp/v2/posts/28/revisions/214',
+          href: '#',
         },
       ],
       'wp:featuredmedia': [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/media/48',
+          href: '#',
         },
       ],
       'wp:attachment': [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/media?parent=28',
+          href: '#',
         },
       ],
       'wp:term': [
         {
           taxonomy: 'category',
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/categories?post=28',
+          href: '#',
         },
         {
           taxonomy: 'post_tag',
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/tags?post=28',
+          href: '#',
         },
       ],
       curies: [
@@ -3628,9 +3630,9 @@ export const ItemsWithCategoriesFixture = [
         {
           id: 1,
           name: 'timothyneiljohnson',
-          url: 'http://localhost:10006',
+          url: '#',
           description: '',
-          link: 'http://localhost:10006/author/timothyneiljohnson/',
+          link: '#',
           slug: 'timothyneiljohnson',
           avatar_urls: {
             '24': 'http://2.gravatar.com/avatar/e5b5d508ca128c58fb8ff4335477e7d3?s=24&d=mm&r=g',
@@ -3641,12 +3643,12 @@ export const ItemsWithCategoriesFixture = [
           _links: {
             self: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+                href: '#',
               },
             ],
             collection: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/users',
+                href: '#',
               },
             ],
           },
@@ -3658,7 +3660,7 @@ export const ItemsWithCategoriesFixture = [
           date: '2022-04-04T18:28:19',
           slug: 'rotq-1',
           type: 'attachment',
-          link: 'http://localhost:10006/employee-of-the-quarter/rotq-1/',
+          link: '#',
           title: {
             rendered: 'ROTQ-1',
           },
@@ -3681,7 +3683,7 @@ export const ItemsWithCategoriesFixture = [
                 height: 198,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2014/05/ROTQ-1-300x198.jpeg',
+                  `${API_BASE_URL}/wp-content/uploads/2014/05/ROTQ-1-300x198.jpeg`,
               },
               thumbnail: {
                 file: 'ROTQ-1-150x150.jpeg',
@@ -3689,7 +3691,7 @@ export const ItemsWithCategoriesFixture = [
                 height: 150,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2014/05/ROTQ-1-150x150.jpeg',
+                  `${API_BASE_URL}/wp-content/uploads/2014/05/ROTQ-1-150x150.jpeg`,
               },
               full: {
                 file: 'ROTQ-1.jpeg',
@@ -3697,7 +3699,7 @@ export const ItemsWithCategoriesFixture = [
                 height: 422,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2014/05/ROTQ-1.jpeg',
+                  `${API_BASE_URL}/wp-content/uploads/2014/05/ROTQ-1.jpeg`,
               },
             },
             image_meta: {
@@ -3716,33 +3718,33 @@ export const ItemsWithCategoriesFixture = [
             },
           },
           source_url:
-            'http://localhost:10006/wp-content/uploads/2014/05/ROTQ-1.jpeg',
+            `${API_BASE_URL}/wp-content/uploads/2014/05/ROTQ-1.jpeg`,
           _links: {
             self: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/media/48',
+                href: '#',
               },
             ],
             collection: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/media',
+                href: '#',
               },
             ],
             about: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/types/attachment',
+                href: '#',
               },
             ],
             author: [
               {
                 embeddable: true,
-                href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+                href: '#',
               },
             ],
             replies: [
               {
                 embeddable: true,
-                href: 'http://localhost:10006/wp-json/wp/v2/comments?post=48',
+                href: '#',
               },
             ],
           },
@@ -3752,7 +3754,7 @@ export const ItemsWithCategoriesFixture = [
         [
           {
             id: 6,
-            link: 'http://localhost:10006/category/featured/awards/',
+            link: '#',
             name: 'Awards',
             slug: 'awards',
             taxonomy: 'category',
@@ -3760,28 +3762,28 @@ export const ItemsWithCategoriesFixture = [
             _links: {
               self: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/6',
+                  href: '#',
                 },
               ],
               collection: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories',
+                  href: '#',
                 },
               ],
               about: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+                  href: '#',
                 },
               ],
               up: [
                 {
                   embeddable: true,
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/3',
+                  href: '#',
                 },
               ],
               'wp:post_type': [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=6',
+                  href: '#',
                 },
               ],
               curies: [
@@ -3795,7 +3797,7 @@ export const ItemsWithCategoriesFixture = [
           },
           {
             id: 3,
-            link: 'http://localhost:10006/category/featured/',
+            link: '#',
             name: 'Featured',
             slug: 'featured',
             taxonomy: 'category',
@@ -3803,22 +3805,22 @@ export const ItemsWithCategoriesFixture = [
             _links: {
               self: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/3',
+                  href: '#',
                 },
               ],
               collection: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories',
+                  href: '#',
                 },
               ],
               about: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+                  href: '#',
                 },
               ],
               'wp:post_type': [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=3',
+                  href: '#',
                 },
               ],
               curies: [

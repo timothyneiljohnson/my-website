@@ -1,17 +1,19 @@
+const { API_BASE_URL } = process.env;
+
 export default [
   {
     id: 64,
     date: '2022-05-29T16:58:00',
     date_gmt: '2022-05-29T16:58:00',
     guid: {
-      rendered: 'http://localhost:10006/?p=64',
+      rendered: '#',
     },
     modified: '2022-05-30T23:34:38',
     modified_gmt: '2022-05-30T23:34:38',
     slug: 'travel-photography',
     status: 'publish',
     type: 'post',
-    link: 'http://localhost:10006/travel-photography/',
+    link: '#',
     title: {
       rendered: 'Travel Photography',
     },
@@ -36,73 +38,73 @@ export default [
     tags: [],
     acf: {
       highlight_image:
-        'http://localhost:10006/wp-content/uploads/2022/05/travel-photography-tall-2.jpg',
+        `${API_BASE_URL}/wp-content/uploads/2022/05/travel-photography-tall-2.jpg`,
       banner_image_wide:
-        'http://localhost:10006/wp-content/uploads/2022/05/travel-photography_239_1.jpg',
+        `${API_BASE_URL}/wp-content/uploads/2022/05/travel-photography_239_1.jpg`,
       banner_image_16_9:
-        'http://localhost:10006/wp-content/uploads/2022/05/travel-photography_16_9.jpg',
+        `${API_BASE_URL}/wp-content/uploads/2022/05/travel-photography_16_9.jpg`,
     },
     _links: {
       self: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/posts/64',
+          href: '#',
         },
       ],
       collection: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/posts',
+          href: '#',
         },
       ],
       about: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/types/post',
+          href: '#',
         },
       ],
       author: [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+          href: '#',
         },
       ],
       replies: [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/comments?post=64',
+          href: '#',
         },
       ],
       'version-history': [
         {
           count: 9,
-          href: 'http://localhost:10006/wp-json/wp/v2/posts/64/revisions',
+          href: '#',
         },
       ],
       'predecessor-version': [
         {
           id: 247,
-          href: 'http://localhost:10006/wp-json/wp/v2/posts/64/revisions/247',
+          href: '#',
         },
       ],
       'wp:featuredmedia': [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/media/136',
+          href: '#',
         },
       ],
       'wp:attachment': [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/media?parent=64',
+          href: '#',
         },
       ],
       'wp:term': [
         {
           taxonomy: 'category',
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/categories?post=64',
+          href: '#',
         },
         {
           taxonomy: 'post_tag',
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/tags?post=64',
+          href: '#',
         },
       ],
       curies: [
@@ -118,9 +120,9 @@ export default [
         {
           id: 1,
           name: 'timothyneiljohnson',
-          url: 'http://localhost:10006',
+          url: '#',
           description: '',
-          link: 'http://localhost:10006/author/timothyneiljohnson/',
+          link: '#',
           slug: 'timothyneiljohnson',
           avatar_urls: {
             '24': 'http://2.gravatar.com/avatar/e5b5d508ca128c58fb8ff4335477e7d3?s=24&d=mm&r=g',
@@ -131,12 +133,12 @@ export default [
           _links: {
             self: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+                href: '#',
               },
             ],
             collection: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/users',
+                href: '#',
               },
             ],
           },
@@ -148,7 +150,7 @@ export default [
           date: '2022-05-29T17:22:32',
           slug: 'travel-photography-2',
           type: 'attachment',
-          link: 'http://localhost:10006/travel-photography/travel-photography-2/',
+          link: '#',
           title: {
             rendered: 'travel-photography',
           },
@@ -173,7 +175,7 @@ export default [
                 filesize: 23876,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/04/travel-photography-300x194.jpg',
+                  '#',
               },
               large: {
                 file: 'travel-photography-1024x663.jpg',
@@ -182,7 +184,7 @@ export default [
                 filesize: 196646,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/04/travel-photography-1024x663.jpg',
+                  '#',
               },
               thumbnail: {
                 file: 'travel-photography-150x150.jpg',
@@ -191,7 +193,7 @@ export default [
                 filesize: 11069,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/04/travel-photography-150x150.jpg',
+                  '#',
               },
               medium_large: {
                 file: 'travel-photography-768x497.jpg',
@@ -200,7 +202,7 @@ export default [
                 filesize: 120823,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/04/travel-photography-768x497.jpg',
+                  '#',
               },
               full: {
                 file: 'travel-photography.jpg',
@@ -208,7 +210,7 @@ export default [
                 height: 971,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/04/travel-photography.jpg',
+                  '#',
               },
             },
             image_meta: {
@@ -227,33 +229,33 @@ export default [
             },
           },
           source_url:
-            'http://localhost:10006/wp-content/uploads/2022/04/travel-photography.jpg',
+            '#',
           _links: {
             self: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/media/136',
+                href: '#',
               },
             ],
             collection: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/media',
+                href: '#',
               },
             ],
             about: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/types/attachment',
+                href: '#',
               },
             ],
             author: [
               {
                 embeddable: true,
-                href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+                href: '#',
               },
             ],
             replies: [
               {
                 embeddable: true,
-                href: 'http://localhost:10006/wp-json/wp/v2/comments?post=136',
+                href: '#',
               },
             ],
           },
@@ -263,7 +265,7 @@ export default [
         [
           {
             id: 9,
-            link: 'http://localhost:10006/category/banner/',
+            link: '#',
             name: 'Banner',
             slug: 'banner',
             taxonomy: 'category',
@@ -271,22 +273,22 @@ export default [
             _links: {
               self: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/9',
+                  href: '#',
                 },
               ],
               collection: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories',
+                  href: '#',
                 },
               ],
               about: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+                  href: '#',
                 },
               ],
               'wp:post_type': [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=9',
+                  href: '#',
                 },
               ],
               curies: [
@@ -300,7 +302,7 @@ export default [
           },
           {
             id: 3,
-            link: 'http://localhost:10006/category/featured/',
+            link: '#',
             name: 'Featured',
             slug: 'featured',
             taxonomy: 'category',
@@ -308,22 +310,22 @@ export default [
             _links: {
               self: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/3',
+                  href: '#',
                 },
               ],
               collection: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories',
+                  href: '#',
                 },
               ],
               about: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+                  href: '#',
                 },
               ],
               'wp:post_type': [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=3',
+                  href: '#',
                 },
               ],
               curies: [
@@ -337,7 +339,7 @@ export default [
           },
           {
             id: 7,
-            link: 'http://localhost:10006/category/featured/photography/',
+            link: '#',
             name: 'Photography',
             slug: 'photography',
             taxonomy: 'category',
@@ -345,28 +347,28 @@ export default [
             _links: {
               self: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/7',
+                  href: '#',
                 },
               ],
               collection: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories',
+                  href: '#',
                 },
               ],
               about: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+                  href: '#',
                 },
               ],
               up: [
                 {
                   embeddable: true,
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/3',
+                  href: '#',
                 },
               ],
               'wp:post_type': [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=7',
+                  href: '#',
                 },
               ],
               curies: [
@@ -388,14 +390,14 @@ export default [
     date: '2022-05-29T16:34:21',
     date_gmt: '2022-05-29T16:34:21',
     guid: {
-      rendered: 'http://localhost:10006/?p=124',
+      rendered: '#',
     },
     modified: '2022-05-30T23:16:07',
     modified_gmt: '2022-05-30T23:16:07',
     slug: 'vs-code-color-theme-darcula-aurora',
     status: 'publish',
     type: 'post',
-    link: 'http://localhost:10006/vs-code-color-theme-darcula-aurora/',
+    link: '#',
     title: {
       rendered: 'VS Code Color Theme: Darcula Aurora',
     },
@@ -420,73 +422,73 @@ export default [
     tags: [],
     acf: {
       highlight_image:
-        'http://localhost:10006/wp-content/uploads/2022/05/darcula-aurora-tall_3.jpg',
+        `${API_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora-tall_3.jpg`,
       banner_image_wide:
-        'http://localhost:10006/wp-content/uploads/2022/05/darcula-aurora_239_1.jpg',
+        `${API_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora_239_1.jpg`,
       banner_image_16_9:
-        'http://localhost:10006/wp-content/uploads/2022/05/darcula-aurora_16_9.jpg',
+        `${API_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora_16_9.jpg`,
     },
     _links: {
       self: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/posts/124',
+          href: '#',
         },
       ],
       collection: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/posts',
+          href: '#',
         },
       ],
       about: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/types/post',
+          href: '#',
         },
       ],
       author: [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+          href: '#',
         },
       ],
       replies: [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/comments?post=124',
+          href: '#',
         },
       ],
       'version-history': [
         {
           count: 10,
-          href: 'http://localhost:10006/wp-json/wp/v2/posts/124/revisions',
+          href: '#',
         },
       ],
       'predecessor-version': [
         {
           id: 245,
-          href: 'http://localhost:10006/wp-json/wp/v2/posts/124/revisions/245',
+          href: '#',
         },
       ],
       'wp:featuredmedia': [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/media/128',
+          href: '#',
         },
       ],
       'wp:attachment': [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/media?parent=124',
+          href: '#',
         },
       ],
       'wp:term': [
         {
           taxonomy: 'category',
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/categories?post=124',
+          href: '#',
         },
         {
           taxonomy: 'post_tag',
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/tags?post=124',
+          href: '#',
         },
       ],
       curies: [
@@ -502,9 +504,9 @@ export default [
         {
           id: 1,
           name: 'timothyneiljohnson',
-          url: 'http://localhost:10006',
+          url: '#',
           description: '',
-          link: 'http://localhost:10006/author/timothyneiljohnson/',
+          link: '#',
           slug: 'timothyneiljohnson',
           avatar_urls: {
             '24': 'http://2.gravatar.com/avatar/e5b5d508ca128c58fb8ff4335477e7d3?s=24&d=mm&r=g',
@@ -515,12 +517,12 @@ export default [
           _links: {
             self: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+                href: '#',
               },
             ],
             collection: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/users',
+                href: '#',
               },
             ],
           },
@@ -532,7 +534,7 @@ export default [
           date: '2022-05-29T16:36:14',
           slug: 'darcula-aurora',
           type: 'attachment',
-          link: 'http://localhost:10006/vs-code-color-theme-darcula-aurora/darcula-aurora/',
+          link: '#',
           title: {
             rendered: 'darcula-aurora',
           },
@@ -557,7 +559,7 @@ export default [
                 filesize: 10583,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/darcula-aurora-300x212.jpg',
+                  '#',
               },
               large: {
                 file: 'darcula-aurora-1024x724.jpg',
@@ -566,7 +568,7 @@ export default [
                 filesize: 79738,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/darcula-aurora-1024x724.jpg',
+                  '#',
               },
               thumbnail: {
                 file: 'darcula-aurora-150x150.jpg',
@@ -575,7 +577,7 @@ export default [
                 filesize: 4591,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/darcula-aurora-150x150.jpg',
+                  '#',
               },
               medium_large: {
                 file: 'darcula-aurora-768x543.jpg',
@@ -584,7 +586,7 @@ export default [
                 filesize: 52316,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/darcula-aurora-768x543.jpg',
+                  '#',
               },
               full: {
                 file: 'darcula-aurora.jpg',
@@ -592,7 +594,7 @@ export default [
                 height: 849,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/darcula-aurora.jpg',
+                  '#',
               },
             },
             image_meta: {
@@ -611,33 +613,33 @@ export default [
             },
           },
           source_url:
-            'http://localhost:10006/wp-content/uploads/2022/05/darcula-aurora.jpg',
+            '#',
           _links: {
             self: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/media/128',
+                href: '#',
               },
             ],
             collection: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/media',
+                href: '#',
               },
             ],
             about: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/types/attachment',
+                href: '#',
               },
             ],
             author: [
               {
                 embeddable: true,
-                href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+                href: '#',
               },
             ],
             replies: [
               {
                 embeddable: true,
-                href: 'http://localhost:10006/wp-json/wp/v2/comments?post=128',
+                href: '#',
               },
             ],
           },
@@ -647,7 +649,7 @@ export default [
         [
           {
             id: 9,
-            link: 'http://localhost:10006/category/banner/',
+            link: '#',
             name: 'Banner',
             slug: 'banner',
             taxonomy: 'category',
@@ -655,22 +657,22 @@ export default [
             _links: {
               self: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/9',
+                  href: '#',
                 },
               ],
               collection: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories',
+                  href: '#',
                 },
               ],
               about: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+                  href: '#',
                 },
               ],
               'wp:post_type': [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=9',
+                  href: '#',
                 },
               ],
               curies: [
@@ -684,7 +686,7 @@ export default [
           },
           {
             id: 3,
-            link: 'http://localhost:10006/category/featured/',
+            link: '#',
             name: 'Featured',
             slug: 'featured',
             taxonomy: 'category',
@@ -692,22 +694,22 @@ export default [
             _links: {
               self: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/3',
+                  href: '#',
                 },
               ],
               collection: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories',
+                  href: '#',
                 },
               ],
               about: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+                  href: '#',
                 },
               ],
               'wp:post_type': [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=3',
+                  href: '#',
                 },
               ],
               curies: [
@@ -721,7 +723,7 @@ export default [
           },
           {
             id: 4,
-            link: 'http://localhost:10006/category/featured/web-design/',
+            link: '#',
             name: 'Web Design',
             slug: 'web-design',
             taxonomy: 'category',
@@ -729,28 +731,28 @@ export default [
             _links: {
               self: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/4',
+                  href: '#',
                 },
               ],
               collection: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories',
+                  href: '#',
                 },
               ],
               about: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+                  href: '#',
                 },
               ],
               up: [
                 {
                   embeddable: true,
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/3',
+                  href: '#',
                 },
               ],
               'wp:post_type': [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=4',
+                  href: '#',
                 },
               ],
               curies: [
@@ -772,14 +774,14 @@ export default [
     date: '2022-05-29T16:09:11',
     date_gmt: '2022-05-29T16:09:11',
     guid: {
-      rendered: 'http://localhost:10006/?p=111',
+      rendered: '#',
     },
     modified: '2022-05-30T23:12:26',
     modified_gmt: '2022-05-30T23:12:26',
     slug: 'building-the-ios-home-screen-in-react',
     status: 'publish',
     type: 'post',
-    link: 'http://localhost:10006/building-the-ios-home-screen-in-react/',
+    link: '#',
     title: {
       rendered: 'Build an iOS Home Screen in React',
     },
@@ -804,73 +806,73 @@ export default [
     tags: [],
     acf: {
       highlight_image:
-        'http://localhost:10006/wp-content/uploads/2022/05/ios-home-screen-tall-2.jpg',
+        `${API_BASE_URL}/wp-content/uploads/2022/05/ios-home-screen-tall-2.jpg`,
       banner_image_wide:
-        'http://localhost:10006/wp-content/uploads/2022/05/ios-home-screen-banner_239_1.jpg',
+        `${API_BASE_URL}/wp-content/uploads/2022/05/ios-home-screen-banner_239_1.jpg`,
       banner_image_16_9:
-        'http://localhost:10006/wp-content/uploads/2022/05/ios-home-screen-banner_16_9.jpg',
+        `${API_BASE_URL}/wp-content/uploads/2022/05/ios-home-screen-banner_16_9.jpg`,
     },
     _links: {
       self: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/posts/111',
+          href: '#',
         },
       ],
       collection: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/posts',
+          href: '#',
         },
       ],
       about: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/types/post',
+          href: '#',
         },
       ],
       author: [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+          href: '#',
         },
       ],
       replies: [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/comments?post=111',
+          href: '#',
         },
       ],
       'version-history': [
         {
           count: 10,
-          href: 'http://localhost:10006/wp-json/wp/v2/posts/111/revisions',
+          href: '#',
         },
       ],
       'predecessor-version': [
         {
           id: 241,
-          href: 'http://localhost:10006/wp-json/wp/v2/posts/111/revisions/241',
+          href: '#',
         },
       ],
       'wp:featuredmedia': [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/media/192',
+          href: '#',
         },
       ],
       'wp:attachment': [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/media?parent=111',
+          href: '#',
         },
       ],
       'wp:term': [
         {
           taxonomy: 'category',
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/categories?post=111',
+          href: '#',
         },
         {
           taxonomy: 'post_tag',
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/tags?post=111',
+          href: '#',
         },
       ],
       curies: [
@@ -886,9 +888,9 @@ export default [
         {
           id: 1,
           name: 'timothyneiljohnson',
-          url: 'http://localhost:10006',
+          url: '#',
           description: '',
-          link: 'http://localhost:10006/author/timothyneiljohnson/',
+          link: '#',
           slug: 'timothyneiljohnson',
           avatar_urls: {
             '24': 'http://2.gravatar.com/avatar/e5b5d508ca128c58fb8ff4335477e7d3?s=24&d=mm&r=g',
@@ -899,12 +901,12 @@ export default [
           _links: {
             self: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+                href: '#',
               },
             ],
             collection: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/users',
+                href: '#',
               },
             ],
           },
@@ -916,7 +918,7 @@ export default [
           date: '2022-05-30T07:12:06',
           slug: 'ios-home-screen',
           type: 'attachment',
-          link: 'http://localhost:10006/building-the-ios-home-screen-in-react/ios-home-screen/',
+          link: '#',
           title: {
             rendered: 'ios-home-screen',
           },
@@ -941,7 +943,7 @@ export default [
                 filesize: 20463,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/ios-home-screen-300x186.jpg',
+                  '#',
               },
               large: {
                 file: 'ios-home-screen-1024x636.jpg',
@@ -950,7 +952,7 @@ export default [
                 filesize: 123102,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/ios-home-screen-1024x636.jpg',
+                  '#',
               },
               thumbnail: {
                 file: 'ios-home-screen-150x150.jpg',
@@ -959,7 +961,7 @@ export default [
                 filesize: 9448,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/ios-home-screen-150x150.jpg',
+                  '#',
               },
               medium_large: {
                 file: 'ios-home-screen-768x477.jpg',
@@ -968,7 +970,7 @@ export default [
                 filesize: 80428,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/ios-home-screen-768x477.jpg',
+                  '#',
               },
               full: {
                 file: 'ios-home-screen.jpg',
@@ -976,7 +978,7 @@ export default [
                 height: 745,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/ios-home-screen.jpg',
+                  '#',
               },
             },
             image_meta: {
@@ -995,33 +997,33 @@ export default [
             },
           },
           source_url:
-            'http://localhost:10006/wp-content/uploads/2022/05/ios-home-screen.jpg',
+            '#',
           _links: {
             self: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/media/192',
+                href: '#',
               },
             ],
             collection: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/media',
+                href: '#',
               },
             ],
             about: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/types/attachment',
+                href: '#',
               },
             ],
             author: [
               {
                 embeddable: true,
-                href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+                href: '#',
               },
             ],
             replies: [
               {
                 embeddable: true,
-                href: 'http://localhost:10006/wp-json/wp/v2/comments?post=192',
+                href: '#',
               },
             ],
           },
@@ -1031,7 +1033,7 @@ export default [
         [
           {
             id: 9,
-            link: 'http://localhost:10006/category/banner/',
+            link: '#',
             name: 'Banner',
             slug: 'banner',
             taxonomy: 'category',
@@ -1039,22 +1041,22 @@ export default [
             _links: {
               self: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/9',
+                  href: '#',
                 },
               ],
               collection: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories',
+                  href: '#',
                 },
               ],
               about: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+                  href: '#',
                 },
               ],
               'wp:post_type': [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=9',
+                  href: '#',
                 },
               ],
               curies: [
@@ -1068,7 +1070,7 @@ export default [
           },
           {
             id: 3,
-            link: 'http://localhost:10006/category/featured/',
+            link: '#',
             name: 'Featured',
             slug: 'featured',
             taxonomy: 'category',
@@ -1076,22 +1078,22 @@ export default [
             _links: {
               self: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/3',
+                  href: '#',
                 },
               ],
               collection: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories',
+                  href: '#',
                 },
               ],
               about: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+                  href: '#',
                 },
               ],
               'wp:post_type': [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=3',
+                  href: '#',
                 },
               ],
               curies: [
@@ -1105,7 +1107,7 @@ export default [
           },
           {
             id: 11,
-            link: 'http://localhost:10006/category/featured/tutorials/',
+            link: '#',
             name: 'Tutorials',
             slug: 'tutorials',
             taxonomy: 'category',
@@ -1113,28 +1115,28 @@ export default [
             _links: {
               self: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/11',
+                  href: '#',
                 },
               ],
               collection: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories',
+                  href: '#',
                 },
               ],
               about: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+                  href: '#',
                 },
               ],
               up: [
                 {
                   embeddable: true,
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/3',
+                  href: '#',
                 },
               ],
               'wp:post_type': [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=11',
+                  href: '#',
                 },
               ],
               curies: [
@@ -1156,14 +1158,14 @@ export default [
     date: '2022-05-29T15:48:33',
     date_gmt: '2022-05-29T15:48:33',
     guid: {
-      rendered: 'http://localhost:10006/?p=101',
+      rendered: '#',
     },
     modified: '2022-05-30T23:54:52',
     modified_gmt: '2022-05-30T23:54:52',
     slug: 'creating-facebook-style-reactions',
     status: 'publish',
     type: 'post',
-    link: 'http://localhost:10006/creating-facebook-style-reactions/',
+    link: '#',
     title: {
       rendered: 'Facebook-Style Animated Reactions',
     },
@@ -1188,73 +1190,73 @@ export default [
     tags: [],
     acf: {
       highlight_image:
-        'http://localhost:10006/wp-content/uploads/2022/05/fb-style-reactions-tall6.jpg',
+        `${API_BASE_URL}/wp-content/uploads/2022/05/fb-style-reactions-tall6.jpg`,
       banner_image_wide:
-        'http://localhost:10006/wp-content/uploads/2022/05/fb-style-reactions_239-1-1.jpg',
+        `${API_BASE_URL}/wp-content/uploads/2022/05/fb-style-reactions_239-1-1.jpg`,
       banner_image_16_9:
-        'http://localhost:10006/wp-content/uploads/2022/05/fb-style-reactions_16-9-1.jpg',
+        `${API_BASE_URL}/wp-content/uploads/2022/05/fb-style-reactions_16-9-1.jpg`,
     },
     _links: {
       self: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/posts/101',
+          href: '#',
         },
       ],
       collection: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/posts',
+          href: '#',
         },
       ],
       about: [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/types/post',
+          href: '#',
         },
       ],
       author: [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+          href: '#',
         },
       ],
       replies: [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/comments?post=101',
+          href: '#',
         },
       ],
       'version-history': [
         {
           count: 13,
-          href: 'http://localhost:10006/wp-json/wp/v2/posts/101/revisions',
+          href: '#',
         },
       ],
       'predecessor-version': [
         {
           id: 257,
-          href: 'http://localhost:10006/wp-json/wp/v2/posts/101/revisions/257',
+          href: '#',
         },
       ],
       'wp:featuredmedia': [
         {
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/media/102',
+          href: '#',
         },
       ],
       'wp:attachment': [
         {
-          href: 'http://localhost:10006/wp-json/wp/v2/media?parent=101',
+          href: '#',
         },
       ],
       'wp:term': [
         {
           taxonomy: 'category',
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/categories?post=101',
+          href: '#',
         },
         {
           taxonomy: 'post_tag',
           embeddable: true,
-          href: 'http://localhost:10006/wp-json/wp/v2/tags?post=101',
+          href: '#',
         },
       ],
       curies: [
@@ -1270,9 +1272,9 @@ export default [
         {
           id: 1,
           name: 'timothyneiljohnson',
-          url: 'http://localhost:10006',
+          url: '#',
           description: '',
-          link: 'http://localhost:10006/author/timothyneiljohnson/',
+          link: '#',
           slug: 'timothyneiljohnson',
           avatar_urls: {
             '24': 'http://2.gravatar.com/avatar/e5b5d508ca128c58fb8ff4335477e7d3?s=24&d=mm&r=g',
@@ -1283,12 +1285,12 @@ export default [
           _links: {
             self: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+                href: '#',
               },
             ],
             collection: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/users',
+                href: '#',
               },
             ],
           },
@@ -1300,7 +1302,7 @@ export default [
           date: '2022-05-29T15:47:58',
           slug: 'fb-style-reactions',
           type: 'attachment',
-          link: 'http://localhost:10006/creating-facebook-style-reactions/fb-style-reactions/',
+          link: '#',
           title: {
             rendered: 'fb-style-reactions',
           },
@@ -1325,7 +1327,7 @@ export default [
                 filesize: 7964,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/fb-style-reactions-300x149.jpg',
+                  '#',
               },
               large: {
                 file: 'fb-style-reactions-1024x508.jpg',
@@ -1334,7 +1336,7 @@ export default [
                 filesize: 38088,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/fb-style-reactions-1024x508.jpg',
+                  '#',
               },
               thumbnail: {
                 file: 'fb-style-reactions-150x150.jpg',
@@ -1343,7 +1345,7 @@ export default [
                 filesize: 5351,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/fb-style-reactions-150x150.jpg',
+                  '#',
               },
               medium_large: {
                 file: 'fb-style-reactions-768x381.jpg',
@@ -1352,7 +1354,7 @@ export default [
                 filesize: 26423,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/fb-style-reactions-768x381.jpg',
+                  '#',
               },
               full: {
                 file: 'fb-style-reactions.jpg',
@@ -1360,7 +1362,7 @@ export default [
                 height: 598,
                 mime_type: 'image/jpeg',
                 source_url:
-                  'http://localhost:10006/wp-content/uploads/2022/05/fb-style-reactions.jpg',
+                  '#',
               },
             },
             image_meta: {
@@ -1379,33 +1381,33 @@ export default [
             },
           },
           source_url:
-            'http://localhost:10006/wp-content/uploads/2022/05/fb-style-reactions.jpg',
+            '#',
           _links: {
             self: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/media/102',
+                href: '#',
               },
             ],
             collection: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/media',
+                href: '#',
               },
             ],
             about: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/types/attachment',
+                href: '#',
               },
             ],
             author: [
               {
                 embeddable: true,
-                href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+                href: '#',
               },
             ],
             replies: [
               {
                 embeddable: true,
-                href: 'http://localhost:10006/wp-json/wp/v2/comments?post=102',
+                href: '#',
               },
             ],
           },
@@ -1415,7 +1417,7 @@ export default [
         [
           {
             id: 9,
-            link: 'http://localhost:10006/category/banner/',
+            link: '#',
             name: 'Banner',
             slug: 'banner',
             taxonomy: 'category',
@@ -1423,22 +1425,22 @@ export default [
             _links: {
               self: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/9',
+                  href: '#',
                 },
               ],
               collection: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories',
+                  href: '#',
                 },
               ],
               about: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+                  href: '#',
                 },
               ],
               'wp:post_type': [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=9',
+                  href: '#',
                 },
               ],
               curies: [
@@ -1452,7 +1454,7 @@ export default [
           },
           {
             id: 3,
-            link: 'http://localhost:10006/category/featured/',
+            link: '#',
             name: 'Featured',
             slug: 'featured',
             taxonomy: 'category',
@@ -1460,22 +1462,22 @@ export default [
             _links: {
               self: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/3',
+                  href: '#',
                 },
               ],
               collection: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories',
+                  href: '#',
                 },
               ],
               about: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+                  href: '#',
                 },
               ],
               'wp:post_type': [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=3',
+                  href: '#',
                 },
               ],
               curies: [
@@ -1489,7 +1491,7 @@ export default [
           },
           {
             id: 11,
-            link: 'http://localhost:10006/category/featured/tutorials/',
+            link: '#',
             name: 'Tutorials',
             slug: 'tutorials',
             taxonomy: 'category',
@@ -1497,28 +1499,28 @@ export default [
             _links: {
               self: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/11',
+                  href: '#',
                 },
               ],
               collection: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories',
+                  href: '#',
                 },
               ],
               about: [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+                  href: '#',
                 },
               ],
               up: [
                 {
                   embeddable: true,
-                  href: 'http://localhost:10006/wp-json/wp/v2/categories/3',
+                  href: '#',
                 },
               ],
               'wp:post_type': [
                 {
-                  href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=11',
+                  href: '#',
                 },
               ],
               curies: [
