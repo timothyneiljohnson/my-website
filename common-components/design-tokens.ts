@@ -86,7 +86,7 @@ const decorations = {
     lgStyle: '',
   },
   filterShadow: {
-    smStyle: '',
+    smStyle: 'filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.1));',
     mdStyle: 'filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.2));',
     lgStyle: '',
   },

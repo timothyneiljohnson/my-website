@@ -42,14 +42,7 @@ export const Post = ({ post }) => {
   const { smMax } = useMediaQueries();
   const { isDarkMode } = useStorageDarkMode();
 
-  let ribbonTop = 0;
-  if (!isDarkMode) {
-    if (smMax) {
-      ribbonTop = 1;
-    } else {
-      ribbonTop = 2;
-    }
-  }
+  const ribbonTop = 0;
 
   const buttonGradientStart = isDarkMode
     ? gradients.secondary.end
@@ -72,7 +65,7 @@ export const Post = ({ post }) => {
                   endStyle={isRibbonHovered ? 'point' : 'split'}
                   gradientEnd={buttonGradientEnd}
                   gradientStart={buttonGradientStart}
-                  right={smMax ? 20 : 36}
+                  right={smMax ? 20 : 31}
                   textColor={colors.white}
                   thickness={smMax ? 45 : 62}
                   top={ribbonTop}

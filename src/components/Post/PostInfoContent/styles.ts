@@ -9,15 +9,15 @@ export const PostInfoWrapper = styled.div`
   color: ${colors.white};
   height: auto;
   width: calc(100% - ${spacing.x5});
-  padding: ${spacing.x2} ${spacing.x4};
+  padding: ${spacing.x3} ${spacing.x4};
   margin-left: ${spacing.x5};
   line-height: 16px;
   font-size: 12px;
   font-weight: bold;
   position: relative;
-  border: ridge 1.2px ${colors.grayDark};
-  background: linear-gradient(${colors.grayDark}, ${colors.grayDarkest});
+  background: ${colors.grayDarker};
   ${decorations.borderRadiusStyle}
+  ${decorations.boxShadow.smStyle}
 
   &:before {
     content: '';
@@ -27,7 +27,7 @@ export const PostInfoWrapper = styled.div`
     width: 0;
     height: 0;
     border-top: 8px solid transparent;
-    border-right: 8px solid #4d4d4d;
+    border-right: 8px solid ${colors.grayDarker};
     border-bottom: 8px solid transparent;
   }
 `;

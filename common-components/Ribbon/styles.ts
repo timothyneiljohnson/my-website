@@ -22,7 +22,7 @@ export const RibbonWrapper = styled.div<RibbonWrapperProps>`
   left: ${({ left }) => (left !== undefined ? `${left - 4}px` : undefined)};
   z-index: 1;
   ${({ side, thickness }) => `${side === 'top' ? 'width' : 'height'}: ${thickness}px;`}
-  ${decorations.filterShadow.mdStyle}
+  ${decorations.filterShadow.smStyle}
 
   &:before {
     height: 0;
