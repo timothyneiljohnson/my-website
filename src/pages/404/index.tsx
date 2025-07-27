@@ -8,14 +8,12 @@ const StyledLottie = styled(Lottie)`
   ${decorations.borderRadiusStyle}
 `;
 
-const PageNotFound = () => {
-  return (
-    <PageShell>
-      <StyledLottie
-        src="/image-assets/lotties/404.json"
-      />
-    </PageShell>
-  );
-};
+const PageNotFound = () => (
+  <PageShell>
+    <StyledLottie
+      src="/image-assets/lotties/404.json"
+    />
+  </PageShell>
+);
 
 export default PageNotFound;
