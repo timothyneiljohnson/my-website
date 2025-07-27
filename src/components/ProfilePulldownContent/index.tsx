@@ -135,11 +135,11 @@ export const ProfilePulldownContent: FC = () => {
           <Col end flex grow smHiddenDown>
             <ProfilePicture
               alt="Tim"
-              height={222}
+              height={214}
               layout="fixed"
               noFadeIn
               src="/photo.png"
-              width={184}
+              width={177}
             />
           </Col>
         </Row>

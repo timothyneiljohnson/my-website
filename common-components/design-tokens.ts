@@ -321,12 +321,12 @@ const font = {
   },
   headingStyle: {
     h1: `
-      font-size: 32px;
-      line-height: 36px;
+      font-size: 26px;
+      line-height: 30px;
     `,
     h2: `
-      font-size: 22px;
-      line-height: 26px;
+      font-size: 20px;
+      line-height: 24px;
     `,
     h3: `
       font-size: 18px;
