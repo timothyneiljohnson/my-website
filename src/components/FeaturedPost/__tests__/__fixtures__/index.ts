@@ -1,18 +1,18 @@
-import { API_BASE_URL } from '../../../../lib/constants';
+const { STORYBOOK_IMAGE_BASE_URL } = process.env;
 
 export default {
   id: 124,
   date: '2022-05-29T16:34:21',
   date_gmt: '2022-05-29T16:34:21',
   guid: {
-    rendered: 'http://localhost:10006/?p=124',
+    rendered: '',
   },
   modified: '2022-05-30T23:16:07',
   modified_gmt: '2022-05-30T23:16:07',
   slug: 'vs-code-color-theme-darcula-aurora',
   status: 'publish',
   type: 'post',
-  link: 'http://localhost:10006/vs-code-color-theme-darcula-aurora/',
+  link: '#',
   title: {
     rendered: 'VS Code Color Theme: Darcula Aurora',
   },
@@ -36,73 +36,73 @@ export default {
   categories: [9, 3, 4],
   tags: [],
   acf: {
-    highlight_image: `${API_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora-tall_3.jpg`,
+    highlight_image: `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora-tall_3.jpg`,
     banner_image_wide:
-      'http://localhost:10006/wp-content/uploads/2022/05/darcula-aurora_239_1.jpg',
+      `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora_239_1.jpg`,
     banner_image_16_9:
-      'http://localhost:10006/wp-content/uploads/2022/05/darcula-aurora_16_9.jpg',
+      `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora_16_9.jpg`,
   },
   _links: {
     self: [
       {
-        href: 'http://localhost:10006/wp-json/wp/v2/posts/124',
+        href: '#',
       },
     ],
     collection: [
       {
-        href: 'http://localhost:10006/wp-json/wp/v2/posts',
+        href: '#',
       },
     ],
     about: [
       {
-        href: 'http://localhost:10006/wp-json/wp/v2/types/post',
+        href: '#',
       },
     ],
     author: [
       {
         embeddable: true,
-        href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+        href: '#',
       },
     ],
     replies: [
       {
         embeddable: true,
-        href: 'http://localhost:10006/wp-json/wp/v2/comments?post=124',
+        href: '#',
       },
     ],
     'version-history': [
       {
         count: 10,
-        href: 'http://localhost:10006/wp-json/wp/v2/posts/124/revisions',
+        href: '#',
       },
     ],
     'predecessor-version': [
       {
         id: 245,
-        href: 'http://localhost:10006/wp-json/wp/v2/posts/124/revisions/245',
+        href: '#',
       },
     ],
     'wp:featuredmedia': [
       {
         embeddable: true,
-        href: 'http://localhost:10006/wp-json/wp/v2/media/128',
+        href: '#',
       },
     ],
     'wp:attachment': [
       {
-        href: 'http://localhost:10006/wp-json/wp/v2/media?parent=124',
+        href: '#',
       },
     ],
     'wp:term': [
       {
         taxonomy: 'category',
         embeddable: true,
-        href: 'http://localhost:10006/wp-json/wp/v2/categories?post=124',
+        href: '#',
       },
       {
         taxonomy: 'post_tag',
         embeddable: true,
-        href: 'http://localhost:10006/wp-json/wp/v2/tags?post=124',
+        href: '#',
       },
     ],
     curies: [
@@ -118,9 +118,9 @@ export default {
       {
         id: 1,
         name: 'timothyneiljohnson',
-        url: 'http://localhost:10006',
+        url: '#',
         description: '',
-        link: 'http://localhost:10006/author/timothyneiljohnson/',
+        link: '#',
         slug: 'timothyneiljohnson',
         avatar_urls: {
           '24': 'http://2.gravatar.com/avatar/e5b5d508ca128c58fb8ff4335477e7d3?s=24&d=mm&r=g',
@@ -131,12 +131,12 @@ export default {
         _links: {
           self: [
             {
-              href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+              href: '#',
             },
           ],
           collection: [
             {
-              href: 'http://localhost:10006/wp-json/wp/v2/users',
+              href: '#',
             },
           ],
         },
@@ -148,7 +148,7 @@ export default {
         date: '2022-05-29T16:36:14',
         slug: 'darcula-aurora',
         type: 'attachment',
-        link: 'http://localhost:10006/vs-code-color-theme-darcula-aurora/darcula-aurora/',
+        link: '#',
         title: {
           rendered: 'darcula-aurora',
         },
@@ -173,7 +173,7 @@ export default {
               filesize: 10583,
               mime_type: 'image/jpeg',
               source_url:
-                'http://localhost:10006/wp-content/uploads/2022/05/darcula-aurora-300x212.jpg',
+                `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora-300x212.jpg`,
             },
             large: {
               file: 'darcula-aurora-1024x724.jpg',
@@ -182,7 +182,7 @@ export default {
               filesize: 79738,
               mime_type: 'image/jpeg',
               source_url:
-                'http://localhost:10006/wp-content/uploads/2022/05/darcula-aurora-1024x724.jpg',
+                `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora-1024x724.jpg`,
             },
             thumbnail: {
               file: 'darcula-aurora-150x150.jpg',
@@ -191,7 +191,7 @@ export default {
               filesize: 4591,
               mime_type: 'image/jpeg',
               source_url:
-                'http://localhost:10006/wp-content/uploads/2022/05/darcula-aurora-150x150.jpg',
+                `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora-150x150.jpg`,
             },
             medium_large: {
               file: 'darcula-aurora-768x543.jpg',
@@ -200,7 +200,7 @@ export default {
               filesize: 52316,
               mime_type: 'image/jpeg',
               source_url:
-                'http://localhost:10006/wp-content/uploads/2022/05/darcula-aurora-768x543.jpg',
+                `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora-768x543.jpg`,
             },
             full: {
               file: 'darcula-aurora.jpg',
@@ -208,7 +208,7 @@ export default {
               height: 849,
               mime_type: 'image/jpeg',
               source_url:
-                'http://localhost:10006/wp-content/uploads/2022/05/darcula-aurora.jpg',
+                `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora.jpg`,
             },
           },
           image_meta: {
@@ -227,33 +227,33 @@ export default {
           },
         },
         source_url:
-          'http://localhost:10006/wp-content/uploads/2022/05/darcula-aurora.jpg',
+          `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora.jpg`,
         _links: {
           self: [
             {
-              href: 'http://localhost:10006/wp-json/wp/v2/media/128',
+              href: '#',
             },
           ],
           collection: [
             {
-              href: 'http://localhost:10006/wp-json/wp/v2/media',
+              href: '#',
             },
           ],
           about: [
             {
-              href: 'http://localhost:10006/wp-json/wp/v2/types/attachment',
+              href: '#',
             },
           ],
           author: [
             {
               embeddable: true,
-              href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+              href: '#',
             },
           ],
           replies: [
             {
               embeddable: true,
-              href: 'http://localhost:10006/wp-json/wp/v2/comments?post=128',
+              href: '#',
             },
           ],
         },
@@ -263,7 +263,7 @@ export default {
       [
         {
           id: 9,
-          link: 'http://localhost:10006/category/banner/',
+          link: '#',
           name: 'Banner',
           slug: 'banner',
           taxonomy: 'category',
@@ -271,22 +271,22 @@ export default {
           _links: {
             self: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/categories/9',
+                href: '#',
               },
             ],
             collection: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/categories',
+                href: '#',
               },
             ],
             about: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+                href: '#',
               },
             ],
             'wp:post_type': [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=9',
+                href: '#',
               },
             ],
             curies: [
@@ -300,7 +300,7 @@ export default {
         },
         {
           id: 3,
-          link: 'http://localhost:10006/category/featured/',
+          link: '#',
           name: 'Featured',
           slug: 'featured',
           taxonomy: 'category',
@@ -308,22 +308,22 @@ export default {
           _links: {
             self: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/categories/3',
+                href: '#',
               },
             ],
             collection: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/categories',
+                href: '#',
               },
             ],
             about: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+                href: '#',
               },
             ],
             'wp:post_type': [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=3',
+                href: '#',
               },
             ],
             curies: [
@@ -337,7 +337,7 @@ export default {
         },
         {
           id: 4,
-          link: 'http://localhost:10006/category/featured/web-design/',
+          link: '#',
           name: 'Web Design',
           slug: 'web-design',
           taxonomy: 'category',
@@ -345,28 +345,28 @@ export default {
           _links: {
             self: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/categories/4',
+                href: '#',
               },
             ],
             collection: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/categories',
+                href: '#',
               },
             ],
             about: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+                href: '#',
               },
             ],
             up: [
               {
                 embeddable: true,
-                href: 'http://localhost:10006/wp-json/wp/v2/categories/3',
+                href: '#',
               },
             ],
             'wp:post_type': [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=4',
+                href: '#',
               },
             ],
             curies: [
