@@ -12,7 +12,7 @@ export const Default = ({ background, height, width }) => (
   <Lottie
     background={background}
     height={height}
-    src="/image-assets/lotties/aussie.json"
+    src="/image-assets/lotties/dog-walking.json"
     width={width}
   />
 );
