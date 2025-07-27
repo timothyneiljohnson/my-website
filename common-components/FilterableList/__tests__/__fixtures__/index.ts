@@ -1,4 +1,4 @@
-const { API_BASE_URL } = process.env;
+const { STORYBOOK_IMAGE_BASE_URL } = process.env;
 
 export const CategoriesFixture = [
   {
@@ -276,7 +276,7 @@ export const ItemsWithCategoriesFixture = [
     tags: [],
     acf: {
       highlight_image:
-        `${API_BASE_URL}/wp-content/uploads/2022/05/filterable-list-tall-4.jpg`,
+        `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/filterable-list-tall-4.jpg`,
       banner_image_wide: false,
       banner_image_16_9: false,
     },
@@ -411,7 +411,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 83744,
                 mime_type: 'image/png',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2022/05/filterable-list-300x189.png`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/filterable-list-300x189.png`,
               },
               large: {
                 file: 'filterable-list-1024x645.png',
@@ -420,7 +420,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 640907,
                 mime_type: 'image/png',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2022/05/filterable-list-1024x645.png`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/filterable-list-1024x645.png`,
               },
               thumbnail: {
                 file: 'filterable-list-150x150.png',
@@ -429,7 +429,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 34628,
                 mime_type: 'image/png',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2022/05/filterable-list-150x150.png`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/filterable-list-150x150.png`,
               },
               medium_large: {
                 file: 'filterable-list-768x483.png',
@@ -438,7 +438,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 405840,
                 mime_type: 'image/png',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2022/05/filterable-list-768x483.png`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/filterable-list-768x483.png`,
               },
               full: {
                 file: 'filterable-list.png',
@@ -446,7 +446,7 @@ export const ItemsWithCategoriesFixture = [
                 height: 717,
                 mime_type: 'image/png',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2022/05/filterable-list.png`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/filterable-list.png`,
               },
             },
             image_meta: {
@@ -465,7 +465,7 @@ export const ItemsWithCategoriesFixture = [
             },
           },
           source_url:
-            `${API_BASE_URL}/wp-content/uploads/2022/05/filterable-list.png`,
+            `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/filterable-list.png`,
           _links: {
             self: [
               {
@@ -621,11 +621,11 @@ export const ItemsWithCategoriesFixture = [
     tags: [],
     acf: {
       highlight_image:
-        `${API_BASE_URL}/wp-content/uploads/2022/05/travel-photography-tall-2.jpg`,
+        `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/travel-photography-tall-2.jpg`,
       banner_image_wide:
-        `${API_BASE_URL}/wp-content/uploads/2022/05/travel-photography_239_1.jpg`,
+        `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/travel-photography_239_1.jpg`,
       banner_image_16_9:
-        `${API_BASE_URL}/wp-content/uploads/2022/05/travel-photography_16_9.jpg`,
+        `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/travel-photography_16_9.jpg`,
     },
     _links: {
       self: [
@@ -758,7 +758,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 23876,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2022/04/travel-photography-300x194.jpg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/04/travel-photography-300x194.jpg`,
               },
               large: {
                 file: 'travel-photography-1024x663.jpg',
@@ -767,7 +767,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 196646,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2022/04/travel-photography-1024x663.jpg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/04/travel-photography-1024x663.jpg`,
               },
               thumbnail: {
                 file: 'travel-photography-150x150.jpg',
@@ -776,7 +776,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 11069,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2022/04/travel-photography-150x150.jpg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/04/travel-photography-150x150.jpg`,
               },
               medium_large: {
                 file: 'travel-photography-768x497.jpg',
@@ -785,7 +785,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 120823,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2022/04/travel-photography-768x497.jpg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/04/travel-photography-768x497.jpg`,
               },
               full: {
                 file: 'travel-photography.jpg',
@@ -793,7 +793,7 @@ export const ItemsWithCategoriesFixture = [
                 height: 971,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2022/04/travel-photography.jpg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/04/travel-photography.jpg`,
               },
             },
             image_meta: {
@@ -812,7 +812,7 @@ export const ItemsWithCategoriesFixture = [
             },
           },
           source_url:
-            `${API_BASE_URL}/wp-content/uploads/2022/04/travel-photography.jpg`,
+            `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/04/travel-photography.jpg`,
           _links: {
             self: [
               {
@@ -1005,11 +1005,11 @@ export const ItemsWithCategoriesFixture = [
     tags: [],
     acf: {
       highlight_image:
-        `${API_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora-tall_3.jpg`,
+        `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora-tall_3.jpg`,
       banner_image_wide:
-        `${API_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora_239_1.jpg`,
+        `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora_239_1.jpg`,
       banner_image_16_9:
-        `${API_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora_16_9.jpg`,
+        `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora_16_9.jpg`,
     },
     _links: {
       self: [
@@ -1142,7 +1142,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 10583,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora-300x212.jpg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora-300x212.jpg`,
               },
               large: {
                 file: 'darcula-aurora-1024x724.jpg',
@@ -1151,7 +1151,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 79738,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora-1024x724.jpg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora-1024x724.jpg`,
               },
               thumbnail: {
                 file: 'darcula-aurora-150x150.jpg',
@@ -1160,7 +1160,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 4591,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora-150x150.jpg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora-150x150.jpg`,
               },
               medium_large: {
                 file: 'darcula-aurora-768x543.jpg',
@@ -1169,7 +1169,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 52316,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora-768x543.jpg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora-768x543.jpg`,
               },
               full: {
                 file: 'darcula-aurora.jpg',
@@ -1177,7 +1177,7 @@ export const ItemsWithCategoriesFixture = [
                 height: 849,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora.jpg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora.jpg`,
               },
             },
             image_meta: {
@@ -1196,7 +1196,7 @@ export const ItemsWithCategoriesFixture = [
             },
           },
           source_url:
-            `${API_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora.jpg`,
+            `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora.jpg`,
           _links: {
             self: [
               {
@@ -1389,7 +1389,7 @@ export const ItemsWithCategoriesFixture = [
     tags: [],
     acf: {
       highlight_image:
-        `${API_BASE_URL}/wp-content/uploads/2022/05/see-it-in-your-space-tall-3.jpg`,
+        `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/see-it-in-your-space-tall-3.jpg`,
       banner_image_wide: false,
       banner_image_16_9: false,
     },
@@ -1524,7 +1524,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 16734,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2022/05/see-it-in-your-space-300x184.jpg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/see-it-in-your-space-300x184.jpg`,
               },
               large: {
                 file: 'see-it-in-your-space-1024x627.jpg',
@@ -1533,7 +1533,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 105686,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2022/05/see-it-in-your-space-1024x627.jpg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/see-it-in-your-space-1024x627.jpg`,
               },
               thumbnail: {
                 file: 'see-it-in-your-space-150x150.jpg',
@@ -1542,7 +1542,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 7907,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2022/05/see-it-in-your-space-150x150.jpg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/see-it-in-your-space-150x150.jpg`,
               },
               medium_large: {
                 file: 'see-it-in-your-space-768x470.jpg',
@@ -1551,7 +1551,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 68265,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2022/05/see-it-in-your-space-768x470.jpg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/see-it-in-your-space-768x470.jpg`,
               },
               full: {
                 file: 'see-it-in-your-space.jpg',
@@ -1559,7 +1559,7 @@ export const ItemsWithCategoriesFixture = [
                 height: 735,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2022/05/see-it-in-your-space.jpg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/see-it-in-your-space.jpg`,
               },
             },
             image_meta: {
@@ -1578,7 +1578,7 @@ export const ItemsWithCategoriesFixture = [
             },
           },
           source_url:
-            `${API_BASE_URL}/wp-content/uploads/2022/05/see-it-in-your-space.jpg`,
+            `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/see-it-in-your-space.jpg`,
           _links: {
             self: [
               {
@@ -1734,11 +1734,11 @@ export const ItemsWithCategoriesFixture = [
     tags: [],
     acf: {
       highlight_image:
-        `${API_BASE_URL}/wp-content/uploads/2022/05/ios-home-screen-tall-2.jpg`,
+        `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/ios-home-screen-tall-2.jpg`,
       banner_image_wide:
-        `${API_BASE_URL}/wp-content/uploads/2022/05/ios-home-screen-banner_239_1.jpg`,
+        `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/ios-home-screen-banner_239_1.jpg`,
       banner_image_16_9:
-        `${API_BASE_URL}/wp-content/uploads/2022/05/ios-home-screen-banner_16_9.jpg`,
+        `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/ios-home-screen-banner_16_9.jpg`,
     },
     _links: {
       self: [
@@ -1871,7 +1871,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 20463,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2022/05/ios-home-screen-300x186.jpg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/ios-home-screen-300x186.jpg`,
               },
               large: {
                 file: 'ios-home-screen-1024x636.jpg',
@@ -1880,7 +1880,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 123102,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2022/05/ios-home-screen-1024x636.jpg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/ios-home-screen-1024x636.jpg`,
               },
               thumbnail: {
                 file: 'ios-home-screen-150x150.jpg',
@@ -1889,7 +1889,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 9448,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2022/05/ios-home-screen-150x150.jpg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/ios-home-screen-150x150.jpg`,
               },
               medium_large: {
                 file: 'ios-home-screen-768x477.jpg',
@@ -1898,7 +1898,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 80428,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2022/05/ios-home-screen-768x477.jpg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/ios-home-screen-768x477.jpg`,
               },
               full: {
                 file: 'ios-home-screen.jpg',
@@ -1906,7 +1906,7 @@ export const ItemsWithCategoriesFixture = [
                 height: 745,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2022/05/ios-home-screen.jpg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/ios-home-screen.jpg`,
               },
             },
             image_meta: {
@@ -1925,7 +1925,7 @@ export const ItemsWithCategoriesFixture = [
             },
           },
           source_url:
-            `${API_BASE_URL}/wp-content/uploads/2022/05/ios-home-screen.jpg`,
+            `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/ios-home-screen.jpg`,
           _links: {
             self: [
               {
@@ -2118,7 +2118,7 @@ export const ItemsWithCategoriesFixture = [
     tags: [],
     acf: {
       highlight_image:
-        `${API_BASE_URL}/wp-content/uploads/2022/05/music-player-tall2.jpg`,
+        `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/music-player-tall2.jpg`,
       banner_image_wide: false,
       banner_image_16_9: false,
     },
@@ -2253,7 +2253,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 12465,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2022/05/music-player-300x201.jpg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/music-player-300x201.jpg`,
               },
               large: {
                 file: 'music-player-1024x686.jpg',
@@ -2262,7 +2262,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 71437,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2022/05/music-player-1024x686.jpg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/music-player-1024x686.jpg`,
               },
               thumbnail: {
                 file: 'music-player-150x150.jpg',
@@ -2271,7 +2271,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 6353,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2022/05/music-player-150x150.jpg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/music-player-150x150.jpg`,
               },
               medium_large: {
                 file: 'music-player-768x515.jpg',
@@ -2280,7 +2280,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 48749,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2022/05/music-player-768x515.jpg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/music-player-768x515.jpg`,
               },
               full: {
                 file: 'music-player.jpg',
@@ -2288,7 +2288,7 @@ export const ItemsWithCategoriesFixture = [
                 height: 707,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2022/05/music-player.jpg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/music-player.jpg`,
               },
             },
             image_meta: {
@@ -2307,7 +2307,7 @@ export const ItemsWithCategoriesFixture = [
             },
           },
           source_url:
-            `${API_BASE_URL}/wp-content/uploads/2022/05/music-player.jpg`,
+            `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/music-player.jpg`,
           _links: {
             self: [
               {
@@ -2463,11 +2463,11 @@ export const ItemsWithCategoriesFixture = [
     tags: [],
     acf: {
       highlight_image:
-        `${API_BASE_URL}/wp-content/uploads/2022/05/fb-style-reactions-tall6.jpg`,
+        `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/fb-style-reactions-tall6.jpg`,
       banner_image_wide:
-        `${API_BASE_URL}/wp-content/uploads/2022/05/fb-style-reactions_239-1-1.jpg`,
+        `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/fb-style-reactions_239-1-1.jpg`,
       banner_image_16_9:
-        `${API_BASE_URL}/wp-content/uploads/2022/05/fb-style-reactions_16-9-1.jpg`,
+        `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/fb-style-reactions_16-9-1.jpg`,
     },
     _links: {
       self: [
@@ -2600,7 +2600,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 7964,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2022/05/fb-style-reactions-300x149.jpg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/fb-style-reactions-300x149.jpg`,
               },
               large: {
                 file: 'fb-style-reactions-1024x508.jpg',
@@ -2609,7 +2609,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 38088,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2022/05/fb-style-reactions-1024x508.jpg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/fb-style-reactions-1024x508.jpg`,
               },
               thumbnail: {
                 file: 'fb-style-reactions-150x150.jpg',
@@ -2618,7 +2618,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 5351,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2022/05/fb-style-reactions-150x150.jpg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/fb-style-reactions-150x150.jpg`,
               },
               medium_large: {
                 file: 'fb-style-reactions-768x381.jpg',
@@ -2627,7 +2627,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 26423,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2022/05/fb-style-reactions-768x381.jpg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/fb-style-reactions-768x381.jpg`,
               },
               full: {
                 file: 'fb-style-reactions.jpg',
@@ -2635,7 +2635,7 @@ export const ItemsWithCategoriesFixture = [
                 height: 598,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2022/05/fb-style-reactions.jpg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/fb-style-reactions.jpg`,
               },
             },
             image_meta: {
@@ -2654,7 +2654,7 @@ export const ItemsWithCategoriesFixture = [
             },
           },
           source_url:
-            `${API_BASE_URL}/wp-content/uploads/2022/05/fb-style-reactions.jpg`,
+            `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/fb-style-reactions.jpg`,
           _links: {
             self: [
               {
@@ -2847,7 +2847,7 @@ export const ItemsWithCategoriesFixture = [
     tags: [],
     acf: {
       highlight_image:
-        `${API_BASE_URL}/wp-content/uploads/2022/05/reduced-motion-tall.jpg`,
+        `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/reduced-motion-tall.jpg`,
       banner_image_wide: false,
       banner_image_16_9: false,
     },
@@ -2982,7 +2982,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 6017,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2022/05/reduced-motion-300x139.jpg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/reduced-motion-300x139.jpg`,
               },
               large: {
                 file: 'reduced-motion-1024x474.jpg',
@@ -2991,7 +2991,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 24784,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2022/05/reduced-motion-1024x474.jpg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/reduced-motion-1024x474.jpg`,
               },
               thumbnail: {
                 file: 'reduced-motion-150x150.jpg',
@@ -3000,7 +3000,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 6242,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2022/05/reduced-motion-150x150.jpg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/reduced-motion-150x150.jpg`,
               },
               medium_large: {
                 file: 'reduced-motion-768x356.jpg',
@@ -3009,7 +3009,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 17901,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2022/05/reduced-motion-768x356.jpg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/reduced-motion-768x356.jpg`,
               },
               full: {
                 file: 'reduced-motion.jpg',
@@ -3017,7 +3017,7 @@ export const ItemsWithCategoriesFixture = [
                 height: 695,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2022/05/reduced-motion.jpg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/reduced-motion.jpg`,
               },
             },
             image_meta: {
@@ -3036,7 +3036,7 @@ export const ItemsWithCategoriesFixture = [
             },
           },
           source_url:
-            `${API_BASE_URL}/wp-content/uploads/2022/05/reduced-motion.jpg`,
+            `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/reduced-motion.jpg`,
           _links: {
             self: [
               {
@@ -3192,7 +3192,7 @@ export const ItemsWithCategoriesFixture = [
     tags: [],
     acf: {
       highlight_image:
-        `${API_BASE_URL}/wp-content/uploads/2015/03/sift-tall.jpg`,
+        `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2015/03/sift-tall.jpg`,
       banner_image_wide: false,
       banner_image_16_9: false,
     },
@@ -3327,7 +3327,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 9824,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2015/03/sift-300x173.jpeg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2015/03/sift-300x173.jpeg`,
               },
               large: {
                 file: 'sift-1024x591.jpeg',
@@ -3336,7 +3336,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 70614,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2015/03/sift-1024x591.jpeg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2015/03/sift-1024x591.jpeg`,
               },
               thumbnail: {
                 file: 'sift-150x150.jpeg',
@@ -3345,7 +3345,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 5961,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2015/03/sift-150x150.jpeg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2015/03/sift-150x150.jpeg`,
               },
               medium_large: {
                 file: 'sift-768x443.jpeg',
@@ -3354,7 +3354,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 45816,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2015/03/sift-768x443.jpeg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2015/03/sift-768x443.jpeg`,
               },
               '1536x1536': {
                 file: 'sift-1536x886.jpeg',
@@ -3363,7 +3363,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 129216,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2015/03/sift-1536x886.jpeg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2015/03/sift-1536x886.jpeg`,
               },
               '2048x2048': {
                 file: 'sift-2048x1182.jpeg',
@@ -3372,7 +3372,7 @@ export const ItemsWithCategoriesFixture = [
                 filesize: 192394,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2015/03/sift-2048x1182.jpeg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2015/03/sift-2048x1182.jpeg`,
               },
               full: {
                 file: 'sift-scaled.jpeg',
@@ -3380,7 +3380,7 @@ export const ItemsWithCategoriesFixture = [
                 height: 1477,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2015/03/sift-scaled.jpeg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2015/03/sift-scaled.jpeg`,
               },
             },
             image_meta: {
@@ -3400,7 +3400,7 @@ export const ItemsWithCategoriesFixture = [
             original_image: 'sift.jpeg',
           },
           source_url:
-            `${API_BASE_URL}/wp-content/uploads/2015/03/sift-scaled.jpeg`,
+            `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2015/03/sift-scaled.jpeg`,
           _links: {
             self: [
               {
@@ -3550,7 +3550,7 @@ export const ItemsWithCategoriesFixture = [
     tags: [],
     acf: {
       highlight_image:
-        `${API_BASE_URL}/wp-content/uploads/2014/05/rotq-tall.jpg`,
+        `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2014/05/rotq-tall.jpg`,
       banner_image_wide: false,
       banner_image_16_9: false,
     },
@@ -3683,7 +3683,7 @@ export const ItemsWithCategoriesFixture = [
                 height: 198,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2014/05/ROTQ-1-300x198.jpeg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2014/05/ROTQ-1-300x198.jpeg`,
               },
               thumbnail: {
                 file: 'ROTQ-1-150x150.jpeg',
@@ -3691,7 +3691,7 @@ export const ItemsWithCategoriesFixture = [
                 height: 150,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2014/05/ROTQ-1-150x150.jpeg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2014/05/ROTQ-1-150x150.jpeg`,
               },
               full: {
                 file: 'ROTQ-1.jpeg',
@@ -3699,7 +3699,7 @@ export const ItemsWithCategoriesFixture = [
                 height: 422,
                 mime_type: 'image/jpeg',
                 source_url:
-                  `${API_BASE_URL}/wp-content/uploads/2014/05/ROTQ-1.jpeg`,
+                  `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2014/05/ROTQ-1.jpeg`,
               },
             },
             image_meta: {
@@ -3718,7 +3718,7 @@ export const ItemsWithCategoriesFixture = [
             },
           },
           source_url:
-            `${API_BASE_URL}/wp-content/uploads/2014/05/ROTQ-1.jpeg`,
+            `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2014/05/ROTQ-1.jpeg`,
           _links: {
             self: [
               {

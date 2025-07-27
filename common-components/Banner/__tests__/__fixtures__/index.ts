@@ -1,4 +1,4 @@
-const { API_BASE_URL } = process.env;
+const { STORYBOOK_IMAGE_BASE_URL } = process.env;
 
 export default [
   {
@@ -38,11 +38,11 @@ export default [
     tags: [],
     acf: {
       highlight_image:
-        `${API_BASE_URL}/wp-content/uploads/2022/05/travel-photography-tall-2.jpg`,
+        `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/travel-photography-tall-2.jpg`,
       banner_image_wide:
-        `${API_BASE_URL}/wp-content/uploads/2022/05/travel-photography_239_1.jpg`,
+        `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/travel-photography_239_1.jpg`,
       banner_image_16_9:
-        `${API_BASE_URL}/wp-content/uploads/2022/05/travel-photography_16_9.jpg`,
+        `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/travel-photography_16_9.jpg`,
     },
     _links: {
       self: [
@@ -422,11 +422,11 @@ export default [
     tags: [],
     acf: {
       highlight_image:
-        `${API_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora-tall_3.jpg`,
+        `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora-tall_3.jpg`,
       banner_image_wide:
-        `${API_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora_239_1.jpg`,
+        `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora_239_1.jpg`,
       banner_image_16_9:
-        `${API_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora_16_9.jpg`,
+        `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/darcula-aurora_16_9.jpg`,
     },
     _links: {
       self: [
@@ -806,11 +806,11 @@ export default [
     tags: [],
     acf: {
       highlight_image:
-        `${API_BASE_URL}/wp-content/uploads/2022/05/ios-home-screen-tall-2.jpg`,
+        `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/ios-home-screen-tall-2.jpg`,
       banner_image_wide:
-        `${API_BASE_URL}/wp-content/uploads/2022/05/ios-home-screen-banner_239_1.jpg`,
+        `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/ios-home-screen-banner_239_1.jpg`,
       banner_image_16_9:
-        `${API_BASE_URL}/wp-content/uploads/2022/05/ios-home-screen-banner_16_9.jpg`,
+        `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/ios-home-screen-banner_16_9.jpg`,
     },
     _links: {
       self: [
@@ -1190,11 +1190,11 @@ export default [
     tags: [],
     acf: {
       highlight_image:
-        `${API_BASE_URL}/wp-content/uploads/2022/05/fb-style-reactions-tall6.jpg`,
+        `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/fb-style-reactions-tall6.jpg`,
       banner_image_wide:
-        `${API_BASE_URL}/wp-content/uploads/2022/05/fb-style-reactions_239-1-1.jpg`,
+        `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/fb-style-reactions_239-1-1.jpg`,
       banner_image_16_9:
-        `${API_BASE_URL}/wp-content/uploads/2022/05/fb-style-reactions_16-9-1.jpg`,
+        `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2022/05/fb-style-reactions_16-9-1.jpg`,
     },
     _links: {
       self: [
