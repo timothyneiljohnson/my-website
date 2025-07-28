@@ -52,7 +52,6 @@ export const Post = ({ post }) => {
     ? gradients.secondary.start
     : gradients.quinary.start;
 
-  console.log(post.title.rendered, 'Boolean(featuredImg)', Boolean(featuredImg));
   return (
     <PostWrapper isDarkMode={isDarkMode} ref={ref}>
       <Grid>
