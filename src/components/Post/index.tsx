@@ -39,7 +39,7 @@ export const Post = ({ post }) => {
   const featuredMedia = post._embedded['wp:featuredmedia'] ?? {};
   const featuredImg = featuredMedia['0']?.source_url;
 
-  const { smMax } = useMediaQueries();
+  const { smMax, xsMax } = useMediaQueries();
   const { isDarkMode } = useStorageDarkMode();
 
   const ribbonTop = 0;
@@ -67,14 +67,13 @@ export const Post = ({ post }) => {
                   gradientStart={buttonGradientStart}
                   right={smMax ? 20 : 31}
                   textColor={colors.white}
-                  thickness={smMax ? 45 : 62}
+                  thickness={smMax ? 45 : 56}
                   top={ribbonTop}
                 >
                   <div aria-hidden>
-                    {/* Icon only shows for xsMax */}
-                    <CategoryIcon categories={post.categories} size={26} />
+                    {xsMax ? (<CategoryIcon categories={post.categories} size={26} />) : <br />}
+                    <Month>{shortMonth.toUpperCase()}</Month>
                     <Day>{dateOfMonth}</Day>
-                    <Month>{shortMonth}</Month>
                   </div>
                 </StyledRibbon>
               </div>

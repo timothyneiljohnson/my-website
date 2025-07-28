@@ -15,7 +15,7 @@ interface PostBodyProps {
   isDarkMode?: boolean;
 }
 export const PostBody = styled.div<PostBodyProps>`
-  padding: ${spacing.x8} 120px 70px ${spacing.x12};
+  padding: ${spacing.x8} ${spacing.x12} 70px ${spacing.x12};
   width: 100%;
   line-height: 1.5;
 
@@ -32,6 +32,7 @@ export const PostBody = styled.div<PostBodyProps>`
 
 export const PostHeading = styled(Heading)`
   word-break: break-word;
+  padding-right: 58px;
 
   ${font.headingStyle.h1}
   @media ${mediaQueries.mdMax} {
@@ -155,14 +156,9 @@ export const TeardropCategoryInner = styled.div`
 
 export const StyledRibbon = styled(Ribbon)`
   z-index: 1;
-  width: 62px;
-  &:before {
-    right: 62px;
-  }
 
   @media ${mediaQueries.smMax} {
     right: 20px;
-    width: 45px;
     &:before {
       right: 45px;
     }
