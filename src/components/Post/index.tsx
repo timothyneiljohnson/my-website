@@ -3,10 +3,11 @@ import { useCallback, useRef, useState } from 'react';
 import parse from 'html-react-parser';
 import {
   PostBody,
+  PostInnerContainer,
   Day,
   Month,
   PostHeading,
-  PostInnerContainer,
+  PostOuterContainer,
   PostWrapper,
   TeardropCategoryWrapper,
   TeardropCategoryInner,
@@ -51,12 +52,13 @@ export const Post = ({ post }) => {
     ? gradients.secondary.start
     : gradients.quinary.start;
 
+  console.log(post.title.rendered, 'Boolean(featuredImg)', Boolean(featuredImg));
   return (
     <PostWrapper isDarkMode={isDarkMode} ref={ref}>
       <Grid>
         <Row>
           <Col flex md={9} sm={8} xs={12}>
-            <PostInnerContainer isDarkMode={isDarkMode}>
+            <PostOuterContainer isDarkMode={isDarkMode}>
               <div
                 onMouseEnter={toggleRibbonHover}
                 onMouseLeave={toggleRibbonHover}
@@ -78,7 +80,7 @@ export const Post = ({ post }) => {
                 </StyledRibbon>
               </div>
               <Outdent horizontal={3}>
-                <PostBody isDarkMode={isDarkMode}>
+                <PostInnerContainer>
                   {/* Teardrop category only shows for sm */}
                   <TeardropCategoryWrapper isDarkMode={isDarkMode}>
                     <TeardropCategoryInner>
@@ -115,7 +117,7 @@ export const Post = ({ post }) => {
                       </a>
                     </NextLink>
                   )}
-                  <div>
+                  <PostBody hasFeaturedImage={Boolean(featuredImg)}>
                     <div>{parse(post.excerpt.rendered)}</div>
                     <NextLink
                       href={`/article/${post.id}`}
@@ -129,10 +131,10 @@ export const Post = ({ post }) => {
                         Continue reading
                       </Link>
                     </NextLink>
-                  </div>
-                </PostBody>
+                  </PostBody>
+                </PostInnerContainer>
               </Outdent>
-            </PostInnerContainer>
+            </PostOuterContainer>
           </Col>
           <Col flex md={3} sm={4} xs={12} xsHiddenDown>
             <StickyElement topOffset={20}>

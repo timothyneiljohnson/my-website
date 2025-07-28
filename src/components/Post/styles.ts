@@ -11,10 +11,7 @@ import { Image } from '../../../common-components/Image';
 import { Ribbon } from '../../../common-components/Ribbon';
 import { Icon } from '../../../common-components/Icon';
 
-interface PostBodyProps {
-  isDarkMode?: boolean;
-}
-export const PostBody = styled.div<PostBodyProps>`
+export const PostInnerContainer = styled.div`
   padding: ${spacing.x8} ${spacing.x12} ${spacing.x13} ${spacing.x12};
   width: 100%;
   line-height: 1.5;
@@ -39,13 +36,29 @@ export const PostHeading = styled(Heading)`
     ${font.headingStyle.h2}
   }
   @media ${mediaQueries.smMax} {
-    padding-right: 90px;
+    padding-right: 52px;
     ${font.headingStyle.h3}
   }
   @media ${mediaQueries.xsMax} {
-    padding-right: 85px;
+    padding-right: 55px;
     ${font.headingStyle.h4}
   }
+`;
+
+interface PostBodyProps {
+  hasFeaturedImage?: boolean;
+}
+export const PostBody = styled.div<PostBodyProps>`
+  ${({ hasFeaturedImage }) => hasFeaturedImage ? '' : `
+    padding-right: 58px;
+
+    @media ${mediaQueries.smMax} {
+      padding-right: 52px;
+    }
+    @media ${mediaQueries.xsMax} {
+      padding-right: 55px;
+    }
+  `}
 `;
 
 export const StyledPostImage = styled(Image)`
@@ -87,10 +100,10 @@ export const Month = styled.div`
   float: left;
 `;
 
-interface PostInnerContainerProps {
+interface PostOuterContainerProps {
   isDarkMode?: boolean;
 }
-export const PostInnerContainer = styled.div<PostInnerContainerProps>`
+export const PostOuterContainer = styled.div<PostOuterContainerProps>`
   position: relative;
   width: 100%;
   background: ${colors.white};
