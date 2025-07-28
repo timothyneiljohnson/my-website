@@ -15,7 +15,7 @@ interface PostBodyProps {
   isDarkMode?: boolean;
 }
 export const PostBody = styled.div<PostBodyProps>`
-  padding: ${spacing.x8} ${spacing.x12} 70px ${spacing.x12};
+  padding: ${spacing.x8} ${spacing.x12} ${spacing.x13} ${spacing.x12};
   width: 100%;
   line-height: 1.5;
 

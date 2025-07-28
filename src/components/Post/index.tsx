@@ -117,20 +117,18 @@ export const Post = ({ post }) => {
                   )}
                   <div>
                     <div>{parse(post.excerpt.rendered)}</div>
-                    <p>
-                      <NextLink
-                        href={`/article/${post.id}`}
-                        legacyBehavior
-                        passHref
+                    <NextLink
+                      href={`/article/${post.id}`}
+                      legacyBehavior
+                      passHref
+                    >
+                      <Link
+                        color={isDarkMode ? colors.secondary : colors.primary}
+                        reverseUnderline
                       >
-                        <Link
-                          color={isDarkMode ? colors.secondary : colors.primary}
-                          reverseUnderline
-                        >
-                          Continue reading
-                        </Link>
-                      </NextLink>
-                    </p>
+                        Continue reading
+                      </Link>
+                    </NextLink>
                   </div>
                 </PostBody>
               </Outdent>
