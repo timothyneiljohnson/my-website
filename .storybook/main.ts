@@ -5,17 +5,26 @@ import { dirname, join } from 'path';
 const config = {
   stories: ['../common-components/**/stories.@(ts|tsx)', '../src/components/**/stories.@(ts|tsx)', '../src/experiments/**/stories.@(ts|tsx)'],
   addons: [getAbsolutePath("@storybook/addon-links"), getAbsolutePath("@storybook/addon-essentials"), getAbsolutePath("@storybook/addon-interactions"), {
-    name: '@storybook/addon-postcss',
+    name: '@storybook/addon-styling-webpack',
     options: {
-      cssLoaderOptions: {
-        // When you have split your css over multiple files
-        // and use @import('./other-styles.css')
-        importLoaders: 1
-      },
-      postcssLoaderOptions: {
-        // When using postCSS 8
-        implementation: require('postcss')
-      }
+      rules: [
+        // Replaces existing CSS rules to support PostCSS
+        {
+          test: /\.css$/,
+          use: [
+            'style-loader',
+            {
+              loader: 'css-loader',
+              options: { importLoaders: 1 }
+            },
+            {
+              // Gets options from `postcss.config.js` in your project root
+              loader: 'postcss-loader',
+              options: { implementation: require.resolve('postcss') }
+            }
+          ],
+        }
+      ]
     }
   }],
   framework: {

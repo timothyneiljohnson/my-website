@@ -1,16 +1,18 @@
+const { STORYBOOK_IMAGE_BASE_URL } = process.env;
+
 export default {
   id: 36,
   date: '2013-05-12T17:39:09',
   date_gmt: '2013-05-12T17:39:09',
   guid: {
-    rendered: 'http://localhost:10006/?p=36',
+    rendered: '',
   },
   modified: '2022-04-05T03:01:03',
   modified_gmt: '2022-04-05T03:01:03',
   slug: 'life-time-digital-toolkit',
   status: 'publish',
   type: 'post',
-  link: 'http://localhost:10006/life-time-digital-toolkit/',
+  link: '#',
   title: {
     rendered: 'Life Time Digital Toolkit',
   },
@@ -37,64 +39,64 @@ export default {
   _links: {
     self: [
       {
-        href: 'http://localhost:10006/wp-json/wp/v2/posts/36',
+        href: '#',
       },
     ],
     collection: [
       {
-        href: 'http://localhost:10006/wp-json/wp/v2/posts',
+        href: '#',
       },
     ],
     about: [
       {
-        href: 'http://localhost:10006/wp-json/wp/v2/types/post',
+        href: '#',
       },
     ],
     author: [
       {
         embeddable: true,
-        href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+        href: '#',
       },
     ],
     replies: [
       {
         embeddable: true,
-        href: 'http://localhost:10006/wp-json/wp/v2/comments?post=36',
+        href: '#',
       },
     ],
     'version-history': [
       {
         count: 2,
-        href: 'http://localhost:10006/wp-json/wp/v2/posts/36/revisions',
+        href: '#',
       },
     ],
     'predecessor-version': [
       {
         id: 55,
-        href: 'http://localhost:10006/wp-json/wp/v2/posts/36/revisions/55',
+        href: '#',
       },
     ],
     'wp:featuredmedia': [
       {
         embeddable: true,
-        href: 'http://localhost:10006/wp-json/wp/v2/media/54',
+        href: '#',
       },
     ],
     'wp:attachment': [
       {
-        href: 'http://localhost:10006/wp-json/wp/v2/media?parent=36',
+        href: '#',
       },
     ],
     'wp:term': [
       {
         taxonomy: 'category',
         embeddable: true,
-        href: 'http://localhost:10006/wp-json/wp/v2/categories?post=36',
+        href: '#',
       },
       {
         taxonomy: 'post_tag',
         embeddable: true,
-        href: 'http://localhost:10006/wp-json/wp/v2/tags?post=36',
+        href: '#',
       },
     ],
     curies: [
@@ -110,9 +112,9 @@ export default {
       {
         id: 1,
         name: 'timothyneiljohnson',
-        url: 'http://localhost:10006',
+        url: '#',
         description: '',
-        link: 'http://localhost:10006/author/timothyneiljohnson/',
+        link: '#',
         slug: 'timothyneiljohnson',
         avatar_urls: {
           '24': 'http://2.gravatar.com/avatar/e5b5d508ca128c58fb8ff4335477e7d3?s=24&d=mm&r=g',
@@ -122,12 +124,12 @@ export default {
         _links: {
           self: [
             {
-              href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+              href: '#',
             },
           ],
           collection: [
             {
-              href: 'http://localhost:10006/wp-json/wp/v2/users',
+              href: '#',
             },
           ],
         },
@@ -139,7 +141,7 @@ export default {
         date: '2022-04-04T18:29:50',
         slug: 'toolkit',
         type: 'attachment',
-        link: 'http://localhost:10006/life-time-digital-toolkit/toolkit/',
+        link: '#',
         title: {
           rendered: 'toolkit',
         },
@@ -161,7 +163,7 @@ export default {
               height: 202,
               mime_type: 'image/jpeg',
               source_url:
-                'http://localhost:10006/wp-content/uploads/2013/05/toolkit-300x202.jpeg',
+                `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2013/05/toolkit-300x202.jpeg`,
             },
             thumbnail: {
               file: 'toolkit-150x150.jpeg',
@@ -169,7 +171,7 @@ export default {
               height: 150,
               mime_type: 'image/jpeg',
               source_url:
-                'http://localhost:10006/wp-content/uploads/2013/05/toolkit-150x150.jpeg',
+                `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2013/05/toolkit-150x150.jpeg`,
             },
             full: {
               file: 'toolkit.jpeg',
@@ -177,7 +179,7 @@ export default {
               height: 430,
               mime_type: 'image/jpeg',
               source_url:
-                'http://localhost:10006/wp-content/uploads/2013/05/toolkit.jpeg',
+                `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2013/05/toolkit.jpeg`,
             },
           },
           image_meta: {
@@ -196,33 +198,33 @@ export default {
           },
         },
         source_url:
-          'http://localhost:10006/wp-content/uploads/2013/05/toolkit.jpeg',
+        `${STORYBOOK_IMAGE_BASE_URL}/wp-content/uploads/2013/05/toolkit.jpeg`,
         _links: {
           self: [
             {
-              href: 'http://localhost:10006/wp-json/wp/v2/media/54',
+              href: '#',
             },
           ],
           collection: [
             {
-              href: 'http://localhost:10006/wp-json/wp/v2/media',
+              href: '#',
             },
           ],
           about: [
             {
-              href: 'http://localhost:10006/wp-json/wp/v2/types/attachment',
+              href: '#',
             },
           ],
           author: [
             {
               embeddable: true,
-              href: 'http://localhost:10006/wp-json/wp/v2/users/1',
+              href: '#',
             },
           ],
           replies: [
             {
               embeddable: true,
-              href: 'http://localhost:10006/wp-json/wp/v2/comments?post=54',
+              href: '#',
             },
           ],
         },
@@ -232,29 +234,29 @@ export default {
       [
         {
           id: 3,
-          link: 'http://localhost:10006/category/featured/',
+          link: '#',
           name: 'Featured',
           slug: 'featured',
           taxonomy: 'category',
           _links: {
             self: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/categories/3',
+                href: '#',
               },
             ],
             collection: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/categories',
+                href: '#',
               },
             ],
             about: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+                href: '#',
               },
             ],
             'wp:post_type': [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=3',
+                href: '#',
               },
             ],
             curies: [
@@ -268,29 +270,29 @@ export default {
         },
         {
           id: 1,
-          link: 'http://localhost:10006/category/uncategorized/',
+          link: '#',
           name: 'Uncategorized',
           slug: 'uncategorized',
           taxonomy: 'category',
           _links: {
             self: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/categories/1',
+                href: '#',
               },
             ],
             collection: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/categories',
+                href: '#',
               },
             ],
             about: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+                href: '#',
               },
             ],
             'wp:post_type': [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=1',
+                href: '#',
               },
             ],
             curies: [
@@ -304,35 +306,35 @@ export default {
         },
         {
           id: 4,
-          link: 'http://localhost:10006/category/featured/web-design/',
+          link: '#',
           name: 'Web Design',
           slug: 'web-design',
           taxonomy: 'category',
           _links: {
             self: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/categories/4',
+                href: '#',
               },
             ],
             collection: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/categories',
+                href: '#',
               },
             ],
             about: [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/taxonomies/category',
+                href: '#',
               },
             ],
             up: [
               {
                 embeddable: true,
-                href: 'http://localhost:10006/wp-json/wp/v2/categories/3',
+                href: '#',
               },
             ],
             'wp:post_type': [
               {
-                href: 'http://localhost:10006/wp-json/wp/v2/posts?categories=4',
+                href: '#',
               },
             ],
             curies: [

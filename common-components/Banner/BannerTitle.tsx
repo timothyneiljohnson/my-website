@@ -11,8 +11,8 @@ interface BannerTitleProps {
 export const BannerTitle = ({ isCurrentSlide, post }: BannerTitleProps) => {
   const {
     banner_title = '',
-    banner_title_background,
-    banner_title_position,
+    banner_title_background = '',
+    banner_title_position = '',
     banner_title_size,
   } = post.acf;
   let bgColor;

@@ -100,13 +100,13 @@ export const PageShell = ({ children, isFullWidth }: PageShellProps) => {
     handleScrollToTop();
   }, [handleScrollToTop]);
 
-  let modalSize = 364;
+  let modalSize = 353;
   if (xsMax) {
-    modalSize = 350;
+    modalSize = 339;
   } else if (smMax) {
     modalSize = 304;
   } else if (mdMax) {
-    modalSize = 392;
+    modalSize = 381;
   }
 
   return (

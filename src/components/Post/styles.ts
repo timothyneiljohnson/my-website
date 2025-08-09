@@ -11,14 +11,8 @@ import { Image } from '../../../common-components/Image';
 import { Ribbon } from '../../../common-components/Ribbon';
 import { Icon } from '../../../common-components/Icon';
 
-interface PostBodyProps {
-  isDarkMode?: boolean;
-}
-export const PostBody = styled.div<PostBodyProps>`
-  background: url('/postBottom.jpg') no-repeat 0 bottom,
-    url('/postTop.jpg') no-repeat 0 top, url('/postbg.png') repeat-y 0 0;
-  background-size: 100% auto;
-  padding: ${spacing.x8} 120px 70px ${spacing.x12};
+export const PostInnerContainer = styled.div`
+  padding: ${spacing.x8} ${spacing.x12} ${spacing.x13} ${spacing.x12};
   width: 100%;
   line-height: 1.5;
 
@@ -31,29 +25,40 @@ export const PostBody = styled.div<PostBodyProps>`
   @media ${mediaQueries.xsMax} {
     padding: ${spacing.x4} ${spacing.x6} ${spacing.x8} ${spacing.x6};
   }
-
-  ${({ isDarkMode }) =>
-    isDarkMode &&
-    `
-    background: none;
-  `}
 `;
 
 export const PostHeading = styled(Heading)`
   word-break: break-word;
+  padding-right: 58px;
 
   ${font.headingStyle.h1}
   @media ${mediaQueries.mdMax} {
     ${font.headingStyle.h2}
   }
   @media ${mediaQueries.smMax} {
-    padding-right: 90px;
+    padding-right: 52px;
     ${font.headingStyle.h3}
   }
   @media ${mediaQueries.xsMax} {
-    padding-right: 85px;
+    padding-right: 55px;
     ${font.headingStyle.h4}
   }
+`;
+
+interface PostBodyProps {
+  hasFeaturedImage?: boolean;
+}
+export const PostBody = styled.div<PostBodyProps>`
+  ${({ hasFeaturedImage }) => hasFeaturedImage ? '' : `
+    padding-right: 58px;
+
+    @media ${mediaQueries.smMax} {
+      padding-right: 52px;
+    }
+    @media ${mediaQueries.xsMax} {
+      padding-right: 55px;
+    }
+  `}
 `;
 
 export const StyledPostImage = styled(Image)`
@@ -95,20 +100,21 @@ export const Month = styled.div`
   float: left;
 `;
 
-interface PostInnerContainerProps {
+interface PostOuterContainerProps {
   isDarkMode?: boolean;
 }
-export const PostInnerContainer = styled.div<PostInnerContainerProps>`
+export const PostOuterContainer = styled.div<PostOuterContainerProps>`
   position: relative;
   width: 100%;
+  background: ${colors.white};
+  ${decorations.borderRadiusStyle}
+  ${decorations.boxShadow.smStyle}
 
   ${({ isDarkMode }) =>
     isDarkMode &&
     `
     color: ${colors.grayLightest};
     background: ${colors.grayDarker};
-    ${decorations.borderRadiusStyle}
-    ${decorations.boxShadow.mdStyle}
   `}
 `;
 
@@ -118,12 +124,6 @@ interface PostWrapperProps {
 export const PostWrapper = styled.div<PostWrapperProps>`
   position: relative;
   margin-bottom: ${spacing.x14};
-
-  ${({ isDarkMode }) =>
-    isDarkMode &&
-    `
-    background: none;
-  `}
 `;
 
 interface TeardropCategoryWrapperProps {
@@ -169,21 +169,13 @@ export const TeardropCategoryInner = styled.div`
 
 export const StyledRibbon = styled(Ribbon)`
   z-index: 1;
-  right: 36px;
-  width: 62px;
-  &:before {
-    right: 62px;
-  }
 
   @media ${mediaQueries.smMax} {
     right: 20px;
-    width: 45px;
     &:before {
       right: 45px;
     }
   }
-
-  
 `;
 
 export const StyledIcon = styled(Icon)`

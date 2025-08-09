@@ -102,13 +102,13 @@ export const CustomClose = ({
   const focusRef = useRef(null);
   const { xsMax, smMax, mdMax } = useMediaQueries();
 
-  let modalSize = 350;
+  let modalSize = 353;
   if (xsMax) {
-    modalSize = 400;
+    modalSize = 339;
   } else if (smMax) {
-    modalSize = 360;
+    modalSize = 304;
   } else if (mdMax) {
-    modalSize = 380;
+    modalSize = 381;
   }
 
   const handleClick = () => setIsModalDrawerOpen(true);

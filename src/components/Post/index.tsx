@@ -3,10 +3,11 @@ import { useCallback, useRef, useState } from 'react';
 import parse from 'html-react-parser';
 import {
   PostBody,
+  PostInnerContainer,
   Day,
   Month,
   PostHeading,
-  PostInnerContainer,
+  PostOuterContainer,
   PostWrapper,
   TeardropCategoryWrapper,
   TeardropCategoryInner,
@@ -39,17 +40,10 @@ export const Post = ({ post }) => {
   const featuredMedia = post._embedded['wp:featuredmedia'] ?? {};
   const featuredImg = featuredMedia['0']?.source_url;
 
-  const { smMax } = useMediaQueries();
+  const { smMax, xsMax } = useMediaQueries();
   const { isDarkMode } = useStorageDarkMode();
 
-  let ribbonTop = 0;
-  if (!isDarkMode) {
-    if (smMax) {
-      ribbonTop = 1;
-    } else {
-      ribbonTop = 2;
-    }
-  }
+  const ribbonTop = 0;
 
   const buttonGradientStart = isDarkMode
     ? gradients.secondary.end
@@ -63,7 +57,7 @@ export const Post = ({ post }) => {
       <Grid>
         <Row>
           <Col flex md={9} sm={8} xs={12}>
-            <PostInnerContainer isDarkMode={isDarkMode}>
+            <PostOuterContainer isDarkMode={isDarkMode}>
               <div
                 onMouseEnter={toggleRibbonHover}
                 onMouseLeave={toggleRibbonHover}
@@ -72,21 +66,20 @@ export const Post = ({ post }) => {
                   endStyle={isRibbonHovered ? 'point' : 'split'}
                   gradientEnd={buttonGradientEnd}
                   gradientStart={buttonGradientStart}
-                  right={smMax ? 20 : 36}
+                  right={smMax ? 20 : 31}
                   textColor={colors.white}
-                  thickness={smMax ? 45 : 62}
+                  thickness={smMax ? 45 : 56}
                   top={ribbonTop}
                 >
                   <div aria-hidden>
-                    {/* Icon only shows for xsMax */}
-                    <CategoryIcon categories={post.categories} size={26} />
+                    {xsMax ? (<CategoryIcon categories={post.categories} size={26} />) : <br />}
+                    <Month>{shortMonth.toUpperCase()}</Month>
                     <Day>{dateOfMonth}</Day>
-                    <Month>{shortMonth}</Month>
                   </div>
                 </StyledRibbon>
               </div>
               <Outdent horizontal={3}>
-                <PostBody isDarkMode={isDarkMode}>
+                <PostInnerContainer>
                   {/* Teardrop category only shows for sm */}
                   <TeardropCategoryWrapper isDarkMode={isDarkMode}>
                     <TeardropCategoryInner>
@@ -123,26 +116,24 @@ export const Post = ({ post }) => {
                       </a>
                     </NextLink>
                   )}
-                  <div>
+                  <PostBody hasFeaturedImage={Boolean(featuredImg)}>
                     <div>{parse(post.excerpt.rendered)}</div>
-                    <p>
-                      <NextLink
-                        href={`/article/${post.id}`}
-                        legacyBehavior
-                        passHref
+                    <NextLink
+                      href={`/article/${post.id}`}
+                      legacyBehavior
+                      passHref
+                    >
+                      <Link
+                        color={isDarkMode ? colors.secondary : colors.primary}
+                        reverseUnderline
                       >
-                        <Link
-                          color={isDarkMode ? colors.secondary : colors.primary}
-                          reverseUnderline
-                        >
-                          Continue reading
-                        </Link>
-                      </NextLink>
-                    </p>
-                  </div>
-                </PostBody>
+                        Continue reading
+                      </Link>
+                    </NextLink>
+                  </PostBody>
+                </PostInnerContainer>
               </Outdent>
-            </PostInnerContainer>
+            </PostOuterContainer>
           </Col>
           <Col flex md={3} sm={4} xs={12} xsHiddenDown>
             <StickyElement topOffset={20}>

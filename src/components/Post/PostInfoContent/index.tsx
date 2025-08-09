@@ -8,7 +8,7 @@ interface PostInfoProps {
 
 export const PostInfo = ({ title, date }: PostInfoProps) => {
   const formattedDate = new Intl.DateTimeFormat('en-US', {
-    month: 'short',
+    month: 'long',
     day: 'numeric',
     year: 'numeric',
   }).format(new Date(date));

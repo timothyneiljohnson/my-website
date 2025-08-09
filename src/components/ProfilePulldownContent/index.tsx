@@ -122,7 +122,7 @@ export const ProfilePulldownContent: FC = () => {
                 Get in touch
               </Button>
               <Button
-                href="https://tinyurl.com/timothy-j-resume"
+                href="/image-assets/TimJohnson-Resume.pdf"
                 pill
                 size={smMax ? 'sm' : 'md'}
                 target="_blank"
@@ -135,11 +135,11 @@ export const ProfilePulldownContent: FC = () => {
           <Col end flex grow smHiddenDown>
             <ProfilePicture
               alt="Tim"
-              height={222}
+              height={214}
               layout="fixed"
               noFadeIn
               src="/photo.png"
-              width={184}
+              width={177}
             />
           </Col>
         </Row>
