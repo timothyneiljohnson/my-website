@@ -39,7 +39,7 @@ const Featured = ({ bannerPosts, categories, featuredPosts }) => {
           property="og:image"
         />
         <meta
-          content="My Work"
+          content="My Portfolio"
           itemProp="name"
           name="twitter:title"
           property="og:title"
