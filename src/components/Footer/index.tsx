@@ -31,7 +31,7 @@ export const Footer = ({
           <p>
             🛠
             <span className="h-sr-only">Tech stack</span>
-            : Vercel, React/NextJS, WP API. See my
+            : React/NextJS, WP API. See my
             {' '}
             <NextLink href="https://storybook.timothyneil.com" target="_blank">
               live Storybook
