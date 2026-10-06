@@ -118,7 +118,6 @@ export const PageShell = ({ children, isFullWidth }: PageShellProps) => {
         <meta content={colors.tertiary} name="theme-color" />
         <link href={API_BASE_URL} rel="preconnect" />
         <link href="/favicon.png" rel="icon" />
-        <link href="/manifest.json" rel="manifest" />
         <link href="/apple-touch-icon.png" rel="apple-touch-icon" />
       </Head>
       <GlobalStyles isDarkMode={isDarkMode} />
