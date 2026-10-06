@@ -123,7 +123,7 @@ export const DrawerMenu = ({
                 key={i}
                 menuLength={menuItemElements.length}
               >
-                {cloneElement(menuItem)}
+                {cloneElement<React.HTMLAttributes<HTMLElement>>(menuItem)}
               </MenuItemWrapper>
             ))}
           </MenuItemsWrapper>

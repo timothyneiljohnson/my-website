@@ -218,7 +218,7 @@ export const Carousel = ({ children, className, height }: CarouselProps) => {
         style={{ '--translate-carousel-row-x': translationX }}
       >
         {children.map((child, i) =>
-          cloneElement(child, {
+          cloneElement<React.HTMLAttributes<HTMLElement>>(child, {
             tabIndex:
               mapOfChildPositions[i]?.offsetRight >
                 Math.abs(translationX) + carouselVisibleWidth ||

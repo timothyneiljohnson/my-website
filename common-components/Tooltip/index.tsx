@@ -82,7 +82,7 @@ export const Tooltip = ({
         }}
         type="slideFade"
       >
-        {cloneElement(content)}
+        {cloneElement<React.HTMLAttributes<HTMLElement>>(content)}
       </TooltipTransition>
     </TooltipAndTriggerWrapper>
   );

@@ -233,7 +233,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
               onMouseEnter={openDropdown}
               onMouseLeave={closeDropdown}
             >
-              {cloneElement(dropdown)}
+              {cloneElement<React.HTMLAttributes<HTMLElement>>(dropdown)}
             </DropdownWrapper>
           </StyledDropdownTransition>
         )}
