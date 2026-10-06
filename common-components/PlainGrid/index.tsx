@@ -5,7 +5,7 @@ const gapProps = SCREEN_SIZES.map((d) => `${d}Gap`);
 const columnsProps = SCREEN_SIZES.map((d) => `${d}Columns`);
 const rowsProps = SCREEN_SIZES.map((d) => `${d}Rows`);
 
-type GridTemplateCol = number | boolean;
+type GridTemplateCol = number;
 
 interface PlainGridProps {
   columns?: GridTemplateCol;

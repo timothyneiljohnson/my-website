@@ -1,7 +1,4 @@
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
-});
-module.exports = withBundleAnalyzer({
+const nextConfig = {
   compiler: {
     styledComponents: true,
   },
@@ -13,7 +10,10 @@ module.exports = withBundleAnalyzer({
     defaultLocale: 'en',
   },
   images: {
-    domains: [process.env.IMAGE_DOMAIN],
+    remotePatterns: [process.env.IMAGE_DOMAIN].map((hostname) => ({
+      protocol: 'https',
+      hostname,
+    })),
     formats: ['image/avif', 'image/webp'],
   },
   async redirects() {
@@ -30,4 +30,6 @@ module.exports = withBundleAnalyzer({
       }
     ]
   },
-});
+};
+
+export default nextConfig;
